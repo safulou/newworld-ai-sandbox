@@ -1,0 +1,25 @@
+{
+  "name": "newworld-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "three": "^0.168.0",
+    "pinia": "^2.2.2",
+    "vue": "^3.5.11"
+  },
+  "devDependencies": {
+    "@types/three": "^0.168.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2",
+    "vue-tsc": "^2.1.6"
+  }
+}
