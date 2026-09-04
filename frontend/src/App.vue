@@ -21,6 +21,24 @@
       <KeybindsModal v-if="ui.mode === 'keybinds'" />
     </Transition>
     <Transition name="fade">
+      <ToolsModal v-if="ui.mode === 'tools'" />
+    </Transition>
+    <Transition name="fade">
+      <PhotoModeModal v-if="ui.mode === 'photo'" />
+    </Transition>
+    <Transition name="fade">
+      <AchievementsModal v-if="ui.mode === 'achievements'" />
+    </Transition>
+    <Transition name="fade">
+      <ExportModal
+        v-if="ui.mode === 'export'"
+        :player-blocks="gameCanvas?.getWorldBlocks()"
+      />
+    </Transition>
+    <Transition name="fade">
+      <SynthStudioModal v-if="ui.mode === 'synth'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -55,6 +73,11 @@ import Minimap from '@/components/Minimap.vue'
 import Hotbar from '@/components/Hotbar.vue'
 import InventoryModal from '@/components/InventoryModal.vue'
 import KeybindsModal from '@/components/KeybindsModal.vue'
+import ToolsModal from '@/components/ToolsModal.vue'
+import PhotoModeModal from '@/components/PhotoModeModal.vue'
+import AchievementsModal from '@/components/AchievementsModal.vue'
+import ExportModal from '@/components/ExportModal.vue'
+import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

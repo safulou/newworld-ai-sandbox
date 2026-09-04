@@ -9,15 +9,19 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import {
   createScene, createCamera, createRenderer, createAtmosphere, AtmosphereController,
-  addBlockHighlight, createPostProcessing, makePremiumMaterial,
+  addBlockHighlight, createPostProcessing,
 } from '@/engine/scene'
 import { BLOCK_COLORS } from '@/engine/blocks'
 import { WorldEngine } from '@/engine/world'
 import { raycastMouse } from '@/engine/raycast'
 import { useUIStore } from '@/stores/ui'
 import { useSettingsStore } from '@/stores/settings'
-import { AIBuildResponse, BuildAction } from '@/types/world'
+import { AIBuildResponse, BuildAction, BlockType } from '@/types/world'
 import { sound } from '@/engine/audio'
+import { tools } from '@/engine/tools'
+import { physics } from '@/engine/physics'
+import { achievements } from '@/engine/achievements'
+import { npcManager } from '@/engine/npc'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -64,22 +68,8 @@ function init(): void {
 
   clock = new THREE.Clock()
 
-  // Holographic AI Guide / NPC
-  const npcGroup = new THREE.Group()
-  const body = new THREE.Mesh(
-    new THREE.BoxGeometry(0.7, 1.1, 0.4),
-    makePremiumMaterial(0x00ffff, 'emissive')
-  )
-  body.position.y = 0.55
-  const head = new THREE.Mesh(
-    new THREE.BoxGeometry(0.55, 0.55, 0.4),
-    makePremiumMaterial(0x00ffff, 'emissive')
-  )
-  head.position.y = 1.38
-  npcGroup.add(body, head)
-  npcGroup.position.set(0, 0, 4)
-  npcGroup.userData = { isNPC: true, name: 'Cyber Architect' }
-  scene.add(npcGroup)
+  // Initialize Autonomous AI NPC Roster
+  npcManager.init(scene, world, new THREE.Vector3(0, 0, 0))
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
@@ -90,6 +80,7 @@ function init(): void {
   window.addEventListener('time-of-day', onTimeOfDayChange)
   window.addEventListener('undo-build', onUndoBuild)
   window.addEventListener('direct-build', onDirectBuild)
+  window.addEventListener('update-fov', onUpdateFOV)
 
   emit('ready', world)
   loop()
@@ -103,6 +94,7 @@ function loop(): void {
   atmosphere.update(delta)
   world.animateBlocks(delta)
   world.updateChunks(camera.position.x, camera.position.z)
+  npcManager.update(delta, camera.position)
   
   // Throttle player broadcast & HUD position update
   if (Math.random() < 0.1) {
@@ -117,7 +109,6 @@ function loop(): void {
     const rc = raycastMouse(camera, mouse, world, scene)
     highlight.visible = rc.hit && !rc.npcName
     if (rc.hit && !rc.npcName) {
-      // Show highlight at the adjacent placement voxel
       const p = rc.point.clone().add(rc.normal.clone().multiplyScalar(0.1))
       highlight.position.set(Math.floor(p.x) + 0.5, Math.floor(p.y) + 0.5, Math.floor(p.z) + 0.5)
     }
@@ -143,7 +134,6 @@ function onMouseUp(e: MouseEvent): void {
 
   const dist = Math.hypot(e.clientX - pointerDownPos.x, e.clientY - pointerDownPos.y)
   if (dist > 5) {
-    // Player was dragging camera orbit, ignore block placement/breaking
     return
   }
 
@@ -157,8 +147,51 @@ function onMouseUp(e: MouseEvent): void {
     return
   }
 
+  const activeTool = tools.getActiveTool()
+
+  if (activeTool === 'blaster') {
+    // Plasma Blaster Tool
+    const target = rc.point.clone()
+    physics.triggerExplosion(target.x, target.y, target.z, 3.5, world)
+    atmosphere.spawnBreakEffect(target.x, target.y, target.z, 0xff0055)
+    achievements.unlock('tnt_blast')
+    ui.setBuildStatus('💥 Plasma Blaster Detonation!')
+    setTimeout(() => ui.setBuildStatus(''), 1500)
+    return
+  }
+
+  if (activeTool === 'palette_brush') {
+    // Palette Brush Tool: replace block material in place
+    const targetPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
+    const bx = Math.floor(targetPos.x)
+    const by = Math.floor(targetPos.y)
+    const bz = Math.floor(targetPos.z)
+    world.setBlock(bx, by, bz, ui.selectedBlock)
+    sound.playBlockPlace(ui.selectedBlock)
+    return
+  }
+
+  if (activeTool === 'ruler') {
+    // Ruler Distance Measurement Tool
+    const targetPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
+    const res = tools.setRulerPoint({
+      x: Math.floor(targetPos.x),
+      y: Math.floor(targetPos.y),
+      z: Math.floor(targetPos.z),
+    })
+    if (res) {
+      ui.setBuildStatus(`📐 Distance: ${res.distance.toFixed(2)}m (ΔX: ${res.dx}, ΔY: ${res.dy}, ΔZ: ${res.dz})`)
+      setTimeout(() => ui.setBuildStatus(''), 3500)
+    } else {
+      ui.setBuildStatus('📐 Ruler Point 1 set! Click Point 2.')
+      setTimeout(() => ui.setBuildStatus(''), 2000)
+    }
+    return
+  }
+
+  // Standard Pickaxe / Hand placement
   if (e.button === 0) {
-    // ── Left Click: Mine / Break pointed block ───────────────────────
+    // Left Click: Mine / Break pointed block
     const breakPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
     const bx = Math.floor(breakPos.x)
     const by = Math.floor(breakPos.y)
@@ -173,7 +206,7 @@ function onMouseUp(e: MouseEvent): void {
       BLOCK_COLORS[blockType] || 0x00ffff
     )
   } else if (e.button === 2) {
-    // ── Right Click: Place currently active block ─────────────────────
+    // Right Click: Place currently active block
     const placePos = rc.point.clone().add(rc.normal.clone().multiplyScalar(0.1))
     const bx = Math.floor(placePos.x)
     const by = Math.floor(placePos.y)
@@ -194,12 +227,19 @@ function onContextMenu(e: MouseEvent): void {
 function onKeyDown(e: KeyboardEvent): void {
   if (e.code === 'F1') ui.openSettings()
   if (e.code === 'F2') saveWorld()
+  if (e.code === 'F3') ui.openKeybinds()
+  if (e.code === 'F4') ui.openPhoto()
+  if (e.code === 'F5') ui.openAchievements()
+  if (e.code === 'F6') ui.openExport()
+  if (e.code === 'F7') ui.openSynth()
   
   if (ui.mode === 'game') {
-    // P Key -> Blueprints Modal
-    if (e.code === 'KeyP') {
-      ui.openBlueprints()
-    }
+    if (e.code === 'KeyT') ui.openTools()
+    if (e.code === 'KeyC') ui.openChain()
+    if (e.code === 'KeyE') ui.openInventory()
+    if (e.code === 'KeyP') ui.openBlueprints()
+    if (e.code === 'KeyM') ui.openSynth()
+    
     // B Key -> AI Build Prompt
     if (e.code === 'KeyB') {
       window.dispatchEvent(new CustomEvent('open-build', {
@@ -221,6 +261,14 @@ function onKeyDown(e: KeyboardEvent): void {
 
   if (e.code === 'Escape' && ui.mode !== 'game') {
     ui.closeOverlay()
+  }
+}
+
+function onUpdateFOV(e: Event): void {
+  const custom = e as CustomEvent
+  if (custom.detail && camera) {
+    camera.fov = custom.detail
+    camera.updateProjectionMatrix()
   }
 }
 
@@ -251,10 +299,10 @@ function onDirectBuild(e: Event): void {
 function undoBuild(): void {
   const success = world.undoLastBuild()
   if (success) {
-    ui.setBuildStatus('↩️ Reverted build operation')
+    ui.setBuildStatus('↩️ 成功還原上一步空間建造操作')
     setTimeout(() => ui.setBuildStatus(''), 2200)
   } else {
-    ui.setBuildStatus('ℹ️ No build history to undo')
+    ui.setBuildStatus('ℹ️ 目前沒有可還原的操作')
     setTimeout(() => ui.setBuildStatus(''), 1500)
   }
 }
@@ -262,7 +310,7 @@ function undoBuild(): void {
 function redoBuild(): void {
   const success = world.redoLastBuild()
   if (success) {
-    ui.setBuildStatus('🔁 Redone build operation')
+    ui.setBuildStatus('🔁 成功重做空間建造操作')
     setTimeout(() => ui.setBuildStatus(''), 2200)
   }
 }
@@ -270,7 +318,7 @@ function redoBuild(): void {
 function saveWorld(): void {
   localStorage.setItem('nw_world', JSON.stringify(world.toWorldData(settings.worldName)))
   sound.playBuildComplete()
-  ui.setBuildStatus('💾 World saved to local storage!')
+  ui.setBuildStatus('💾 世界已成功保存至本地存檔！')
   setTimeout(() => ui.setBuildStatus(''), 2500)
 }
 
@@ -295,7 +343,8 @@ function applyBuild(result: AIBuildResponse | BuildAction[]): void {
   if (actions.length > 0) {
     world.applyBuildActions(actions, desc)
     sound.playBuildComplete()
-    ui.setBuildStatus(`✨ Materialized ${actions.length} blocks!`)
+    achievements.trackProgress('ai_architect_prompt', 1)
+    ui.setBuildStatus(`✨ 成功具象化建構 ${actions.length} 個體素方塊！`)
     setTimeout(() => ui.setBuildStatus(''), 2500)
   }
 }
@@ -317,10 +366,10 @@ function importWorldJSON(jsonStr: string): void {
     world.loadWorldData(data)
     settings.setWorldName(data.name ?? 'Imported World')
     sound.playBuildComplete()
-    ui.setBuildStatus('✨ World imported successfully!')
+    ui.setBuildStatus('✨ 世界數據成功匯入！')
     setTimeout(() => ui.setBuildStatus(''), 2500)
   } catch {
-    alert('Invalid world JSON file.')
+    alert('無效的世界 JSON 檔案格式。')
   }
 }
 
@@ -328,7 +377,11 @@ function clearWorld(): void {
   world.clear()
 }
 
-defineExpose({ applyBuild, undoBuild, redoBuild, exportWorld, importWorldJSON, clearWorld, saveWorld })
+function getWorldBlocks(): Map<string, { type: BlockType; mesh: THREE.Mesh }> {
+  return world.getPlayerBlocks()
+}
+
+defineExpose({ applyBuild, undoBuild, redoBuild, exportWorld, importWorldJSON, clearWorld, saveWorld, getWorldBlocks })
 
 onMounted(() => { if (canvas.value) init() })
 onUnmounted(() => {
@@ -342,6 +395,8 @@ onUnmounted(() => {
   window.removeEventListener('time-of-day', onTimeOfDayChange)
   window.removeEventListener('undo-build', onUndoBuild)
   window.removeEventListener('direct-build', onDirectBuild)
+  window.removeEventListener('update-fov', onUpdateFOV)
+  npcManager.dispose()
   renderer?.dispose()
 })
 </script>

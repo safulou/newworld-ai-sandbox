@@ -13,6 +13,11 @@ export type UIMode =
   | 'inventory'
   | 'keybinds'
   | 'chain'
+  | 'photo'
+  | 'achievements'
+  | 'tools'
+  | 'export'
+  | 'synth'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -42,6 +47,11 @@ export const useUIStore = defineStore('ui', () => {
   function openInventory(): void { mode.value = 'inventory' }
   function openKeybinds(): void { mode.value = 'keybinds' }
   function openChain(): void { mode.value = 'chain' }
+  function openPhoto(): void { mode.value = 'photo' }
+  function openAchievements(): void { mode.value = 'achievements' }
+  function openTools(): void { mode.value = 'tools' }
+  function openExport(): void { mode.value = 'export' }
+  function openSynth(): void { mode.value = 'synth' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -60,7 +70,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay,
   }
 })

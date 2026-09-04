@@ -38,34 +38,31 @@ class SoundEngine {
     const gain = ctx.createGain()
     const now = ctx.currentTime
 
-    // Pitch by material
+    // Pitch & Timbre by material
     let baseFreq = 220
     let wave: OscillatorType = 'triangle'
 
-    switch (type) {
-      case 'glass':
-      case 'water':
-        baseFreq = 880
-        wave = 'sine'
-        break
-      case 'snow':
-      case 'leaves':
-        baseFreq = 440
-        wave = 'sine'
-        break
-      case 'wood':
-      case 'plank':
-        baseFreq = 260
-        wave = 'triangle'
-        break
-      case 'brick':
-      case 'stone':
-        baseFreq = 160
-        wave = 'square'
-        break
-      default:
-        baseFreq = 200
-        wave = 'triangle'
+    if (type.startsWith('neon_') || type === 'quantum_core' || type === 'diamond_block') {
+      baseFreq = 1200
+      wave = 'sine'
+    } else if (type === 'glass' || type === 'water' || type === 'hologram_glass' || type === 'ice') {
+      baseFreq = 880
+      wave = 'sine'
+    } else if (type === 'snow' || type === 'leaves' || type.startsWith('flower_')) {
+      baseFreq = 440
+      wave = 'sine'
+    } else if (type === 'wood' || type === 'plank' || type === 'bamboo') {
+      baseFreq = 260
+      wave = 'triangle'
+    } else if (type === 'brick' || type === 'stone' || type === 'concrete' || type === 'basalt') {
+      baseFreq = 160
+      wave = 'square'
+    } else if (type === 'iron_block' || type === 'copper' || type === 'cyber_plating') {
+      baseFreq = 520
+      wave = 'sawtooth'
+    } else {
+      baseFreq = 200
+      wave = 'triangle'
     }
 
     osc.type = wave
@@ -114,16 +111,17 @@ class SoundEngine {
     if (!ctx) return
 
     const now = ctx.currentTime
-    if (now - this.lastFootstepTime < 0.3) return // rate limit
+    if (now - this.lastFootstepTime < 0.28) return // rate limit
     this.lastFootstepTime = now
 
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
 
     let freq = 120
-    if (type === 'stone' || type === 'brick') freq = 180
+    if (type === 'stone' || type === 'brick' || type === 'concrete') freq = 180
     else if (type === 'wood' || type === 'plank') freq = 150
-    else if (type === 'water') freq = 300
+    else if (type === 'water' || type === 'ice') freq = 300
+    else if (type.startsWith('neon_')) freq = 400
 
     osc.type = 'triangle'
     osc.frequency.setValueAtTime(freq, now)
@@ -163,32 +161,109 @@ class SoundEngine {
     osc.stop(now + 0.15)
   }
 
-  // ── Build Complete Fanfare ───────────────────────────────────────────
-  playBuildComplete(): void {
+  // ── UI Click Sound ───────────────────────────────────────────────────
+  playUiClick(): void {
     if (this.isMuted) return
     const ctx = this.getContext()
     if (!ctx) return
 
-    const chords = [392.0, 523.25, 659.25, 783.99] // G4, C5, E5, G5
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+
+    osc.type = 'sine'
+    osc.frequency.setValueAtTime(600, now)
+    osc.frequency.exponentialRampToValueAtTime(800, now + 0.04)
+
+    gain.gain.setValueAtTime(0.06, now)
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05)
+
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+
+    osc.start(now)
+    osc.stop(now + 0.06)
+  }
+
+  // ── Quantum Teleport Sound ───────────────────────────────────────────
+  playTeleport(): void {
+    if (this.isMuted) return
+    const ctx = this.getContext()
+    if (!ctx) return
+
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+
+    osc.type = 'sawtooth'
+    osc.frequency.setValueAtTime(120, now)
+    osc.frequency.exponentialRampToValueAtTime(1400, now + 0.25)
+
+    gain.gain.setValueAtTime(0.12, now)
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3)
+
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+
+    osc.start(now)
+    osc.stop(now + 0.32)
+  }
+
+  // ── Explosion Blast Sound ────────────────────────────────────────────
+  playExplosion(): void {
+    if (this.isMuted) return
+    const ctx = this.getContext()
+    if (!ctx) return
+
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+
+    osc.type = 'sawtooth'
+    osc.frequency.setValueAtTime(100, now)
+    osc.frequency.exponentialRampToValueAtTime(20, now + 0.4)
+
+    gain.gain.setValueAtTime(0.3, now)
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45)
+
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+
+    osc.start(now)
+    osc.stop(now + 0.5)
+  }
+
+  // ── Fanfare / Achievement Sound ──────────────────────────────────────
+  playFanfare(): void {
+    if (this.isMuted) return
+    const ctx = this.getContext()
+    if (!ctx) return
+
+    const chords = [523.25, 659.25, 783.99, 1046.5] // C5, E5, G5, C6
     const now = ctx.currentTime
 
     chords.forEach((freq, idx) => {
       const osc = ctx.createOscillator()
       const gain = ctx.createGain()
-      const time = now + idx * 0.09
+      const time = now + idx * 0.08
 
       osc.type = 'sine'
       osc.frequency.setValueAtTime(freq, time)
 
-      gain.gain.setValueAtTime(0.1, time)
-      gain.gain.exponentialRampToValueAtTime(0.001, time + 0.4)
+      gain.gain.setValueAtTime(0.08, time)
+      gain.gain.exponentialRampToValueAtTime(0.001, time + 0.35)
 
       osc.connect(gain)
       gain.connect(ctx.destination)
 
       osc.start(time)
-      osc.stop(time + 0.45)
+      osc.stop(time + 0.4)
     })
+  }
+
+  // ── Build Complete Fanfare ───────────────────────────────────────────
+  playBuildComplete(): void {
+    this.playFanfare()
   }
 
   // ── Ambient Background Synthesizer ──────────────────────────────────

@@ -7,23 +7,41 @@
         <span class="plot-title">{{ currentPlot?.plotName || `Chunk [${currentChunk.cx}, ${currentChunk.cz}]` }}</span>
       </div>
       <div class="plot-owner">
-        Owner: <span :class="{ 'self-owned': isOwner, 'public-land': !currentPlot }">{{ ownerText }}</span>
+        領地擁有者: <span :class="{ 'self-owned': isOwner, 'public-land': !currentPlot }">{{ ownerText }}</span>
       </div>
       <button v-if="!currentPlot" class="btn-claim" @click="claimPlot">
-        ⚡ Claim Plot
+        ⚡ 認領此區塊領地
       </button>
     </div>
 
-    <!-- Top Right: Provider Badge, Audio Controls & Quick Undo -->
+    <!-- Top Right: Action Bar & Provider Badge -->
     <div class="top-right-bar">
-      <button class="hud-btn undo-btn" @click="triggerUndo" title="Undo Last Build (Ctrl+Z)">
-        ↩️ Undo (Ctrl+Z)
+      <button class="hud-btn" @click="ui.openTools" title="空間工具庫 (T)">
+        🛠️ 工具 (T)
       </button>
-      <button class="hud-btn audio-btn" :class="{ muted: isMuted }" @click="toggleAudio">
-        {{ isMuted ? '🔇 Audio Off' : '🔊 Audio On' }}
+      <button class="hud-btn" @click="ui.openPhoto" title="賽博拍照模式 (F4)">
+        📷 拍照 (F4)
+      </button>
+      <button class="hud-btn" @click="ui.openAchievements" title="成就殿堂 (F5)">
+        🏆 成就 (F5)
+      </button>
+      <button class="hud-btn" @click="ui.openExport" title="3D 模型匯出 (F6)">
+        📦 匯出 (F6)
+      </button>
+      <button class="hud-btn" @click="ui.openSynth" title="合成音樂工作室 (M / F7)">
+        🎵 音樂 (M)
+      </button>
+      <button class="hud-btn" @click="ui.openChain" title="區塊鏈瀏覽器 (C)">
+        ⛓️ 鏈上記帳 (C)
+      </button>
+      <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
+        ↩️ 還原 (Ctrl+Z)
+      </button>
+      <button class="hud-btn" @click="ui.openSettings" title="世界設定 (F1)">
+        ⚙️ 設定 (F1)
       </button>
       <div class="provider-badge" :class="settings.provider">
-        {{ settings.provider === 'local' ? '🧱 Local AI' : `⚡ ${settings.provider.toUpperCase()}` }}
+        {{ settings.provider === 'local' ? '🧱 本地 AI' : `⚡ ${settings.provider.toUpperCase()}` }}
       </div>
     </div>
 
@@ -32,7 +50,7 @@
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: Move &nbsp;|&nbsp; Left Click: Break &nbsp;|&nbsp; Right Click: Place &nbsp;|&nbsp; 1-9: Select &nbsp;|&nbsp; P: Blueprints &nbsp;|&nbsp; B: AI Build &nbsp;|&nbsp; Ctrl+Z: Undo &nbsp;|&nbsp; F1: Settings &nbsp;|&nbsp; F2: Save
+      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | 1-9: 快捷方塊 | E: 物品庫 | T: 工具庫 | B: AI 建造 | P: 藍圖庫 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
     </div>
   </div>
 </template>
@@ -42,11 +60,11 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import { useUIStore } from '@/stores/ui'
 import { sound } from '@/engine/audio'
+import { achievements } from '@/engine/achievements'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
 
-const isMuted = ref(false)
 const currentChunk = ref({ cx: 0, cz: 0 })
 const currentPlot = ref<any>(null)
 
@@ -55,15 +73,10 @@ const isOwner = computed(() => {
 })
 
 const ownerText = computed(() => {
-  if (!currentPlot.value) return 'Public Domain'
-  if (isOwner.value) return 'You (Owner)'
+  if (!currentPlot.value) return '公共拓荒領地 (Public Domain)'
+  if (isOwner.value) return '您本人 (擁有者)'
   return currentPlot.value.owner_id
 })
-
-function toggleAudio(): void {
-  isMuted.value = !isMuted.value
-  sound.setMuted(isMuted.value)
-}
 
 function triggerUndo(): void {
   window.dispatchEvent(new CustomEvent('undo-build'))
@@ -83,7 +96,7 @@ async function fetchPlotInfo(cx: number, cz: number): Promise<void> {
 
 async function claimPlot(): Promise<void> {
   try {
-    const plotName = prompt('Enter a name for this land plot:', `Cyber Estate [${currentChunk.value.cx}, ${currentChunk.value.cz}]`)
+    const plotName = prompt('請為此領地命名：', `賽博莊園 [${currentChunk.value.cx}, ${currentChunk.value.cz}]`)
     if (!plotName) return
 
     const res = await fetch('http://localhost:4000/api/plots/claim', {
@@ -99,7 +112,8 @@ async function claimPlot(): Promise<void> {
     if (res.ok) {
       const result = await res.json()
       currentPlot.value = result.plot
-      sound.playBuildComplete()
+      sound.playFanfare()
+      achievements.unlock('claim_land')
     }
   } catch (e) {
     console.error('Failed to claim plot', e)
@@ -157,36 +171,33 @@ onUnmounted(() => {
 
 .top-right-bar {
   position: absolute; top: 20px; right: 20px;
-  display: flex; align-items: center; gap: 10px;
-  pointer-events: auto;
+  display: flex; align-items: center; gap: 8px;
+  pointer-events: auto; flex-wrap: wrap; justify-content: flex-end; max-width: 75vw;
 }
 
 .hud-btn {
   background: rgba(12, 16, 28, 0.82);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff; padding: 7px 14px; border-radius: 8px;
+  color: #fff; padding: 6px 12px; border-radius: 8px;
   font-size: 12px; font-weight: 600; cursor: pointer;
   transition: all 0.2s;
 }
-.hud-btn:hover { border-color: #00ffff; color: #00ffff; box-shadow: 0 0 10px rgba(0,255,255,0.25); }
+.hud-btn:hover { border-color: #00ffff; color: #00ffff; box-shadow: 0 0 10px rgba(0,255,255,0.25); transform: translateY(-1px); }
 
 .undo-btn {
   border-color: rgba(0, 255, 255, 0.3);
   color: #00ffff;
 }
-.undo-btn:hover { background: rgba(0, 255, 255, 0.2); transform: translateY(-1px); }
-
-.audio-btn.muted { color: rgba(255,255,255,0.4); }
 
 .provider-badge {
   background: rgba(12, 16, 28, 0.82); backdrop-filter: blur(12px);
-  color: #fff; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700;
+  color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 700;
   border: 1px solid rgba(255,255,255,0.15);
 }
-.provider-badge.openai { color: #10a37f; border-color: rgba(16,163,127,0.4); text-shadow: 0 0 8px rgba(16,163,127,0.5); }
-.provider-badge.gemini { color: #4285f4; border-color: rgba(66,133,244,0.4); text-shadow: 0 0 8px rgba(66,133,244,0.5); }
-.provider-badge.claude { color: #f59e0b; border-color: rgba(245,158,11,0.4); text-shadow: 0 0 8px rgba(245,158,11,0.5); }
+.provider-badge.openai { color: #10a37f; border-color: rgba(16,163,127,0.4); }
+.provider-badge.gemini { color: #4285f4; border-color: rgba(66,133,244,0.4); }
+.provider-badge.claude { color: #f59e0b; border-color: rgba(245,158,11,0.4); }
 
 .hint {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);

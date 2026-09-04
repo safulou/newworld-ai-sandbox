@@ -1,4 +1,5 @@
 export type BlockType =
+  // Nature & Earth
   | 'air'
   | 'grass'
   | 'dirt'
@@ -7,10 +8,63 @@ export type BlockType =
   | 'leaves'
   | 'sand'
   | 'water'
+  | 'snow'
+  | 'ice'
+  | 'mud'
+  | 'clay'
+  | 'gravel'
+  | 'magma'
+  | 'obsidian'
+  | 'amethyst'
+  | 'emerald'
+  | 'ruby'
+  | 'gold_ore'
+  | 'diamond_block'
+  | 'flower_rose'
+  | 'flower_dandelion'
+  | 'mushroom_glow'
+  | 'bamboo'
+  | 'cactus'
+  | 'vine'
+  // Construction & Architecture
   | 'brick'
   | 'glass'
   | 'plank'
-  | 'snow'
+  | 'concrete'
+  | 'marble'
+  | 'basalt'
+  | 'iron_block'
+  | 'copper'
+  | 'cyber_plating'
+  | 'solar_panel'
+  | 'hologram_glass'
+  | 'mirror'
+  // Sci-Fi & Cyber Neon
+  | 'neon_cyan'
+  | 'neon_magenta'
+  | 'neon_yellow'
+  | 'neon_green'
+  | 'neon_orange'
+  | 'neon_purple'
+  | 'matrix_grid'
+  | 'quantum_core'
+  | 'plasma_containment'
+  | 'warp_conduit'
+  // Interactive & Logic Systems
+  | 'wire_off'
+  | 'wire_on'
+  | 'logic_gate_and'
+  | 'logic_gate_or'
+  | 'logic_gate_not'
+  | 'power_source'
+  | 'repeater'
+  | 'lever'
+  | 'pressure_plate'
+  | 'sensor_proximity'
+  | 'jump_pad'
+  | 'teleporter'
+  | 'tnt'
+  | 'light_emitter'
 
 export interface Block {
   type: BlockType
@@ -67,8 +121,11 @@ export interface NPCData {
   id: string
   name: string
   role: string
+  title: string
+  avatarColor: number
   position: Vec3
   systemPrompt: string
+  dialogueLines: string[]
 }
 
 export interface PlotData {
@@ -77,4 +134,36 @@ export interface PlotData {
   ownerId: string
   plotName: string
   claimedAt: string
+}
+
+export type ToolType =
+  | 'pickaxe'
+  | 'wand'
+  | 'gravity_gun'
+  | 'palette_brush'
+  | 'blaster'
+  | 'ruler'
+
+export type GameMode = 'creative' | 'survival' | 'parkour'
+
+export interface Achievement {
+  id: string
+  title: string
+  description: string
+  icon: string
+  unlocked: boolean
+  progress: number
+  maxProgress: number
+  category: 'building' | 'exploration' | 'scifi' | 'mastery'
+}
+
+export interface Quest {
+  id: string
+  title: string
+  giver: string
+  description: string
+  reward: string
+  progress: number
+  goal: number
+  completed: boolean
 }

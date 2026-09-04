@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { BlockPlacement, BlockType, BuildAction, Vec3, WorldData } from '@/types/world'
-import { BLOCK_COLORS, blockKey, isSolid } from './blocks'
+import { BLOCK_COLORS, BLOCK_REGISTRY, blockKey, isSolid } from './blocks'
 import { makePremiumMaterial } from './scene'
 import { generateChunk } from './terrain'
 import { io, Socket } from 'socket.io-client'
@@ -8,6 +8,10 @@ import { DecentralizedWorker } from './worker'
 import { useSettingsStore } from '@/stores/settings'
 import { sound } from './audio'
 import { history, HistoryEngine } from './history'
+import { buildChunkInstancedMeshes } from './chunkMesh'
+import { physics } from './physics'
+import { logicEngine } from './logic'
+import { achievements } from './achievements'
 
 export interface ClaimedPlot {
   cx: number
@@ -27,7 +31,7 @@ export class WorldEngine {
   // player-placed individual blocks (interactive, per-block meshes)
   private playerBlocks = new Map<string, { type: BlockType; mesh: THREE.Mesh }>()
 
-  // Chunks map string "cx,cz" to a set of meshes in that chunk
+  // Chunks map string "cx,cz" to a set of meshes or root group in that chunk
   private chunks = new Map<string, { meshes: THREE.Object3D[]; generated: boolean }>()
   
   // Track camera for chunk loading
@@ -52,7 +56,7 @@ export class WorldEngine {
     this.socket = io('http://localhost:4000')
     this.worker = new DecentralizedWorker(this.socket)
 
-    this.socket.on('set-block', (data: { x: number, y: number, z: number, type: string }) => {
+    this.socket.on('set-block', (data: { x: number; y: number; z: number; type: string }) => {
       this.applyBlockLocal(data.x, data.y, data.z, data.type as BlockType, false)
     })
 
@@ -60,7 +64,7 @@ export class WorldEngine {
       this.clear()
     })
 
-    this.socket.on('player-move', (data: { id: string, x: number, y: number, z: number }) => {
+    this.socket.on('player-move', (data: { id: string; x: number; y: number; z: number }) => {
       let avatar = this.otherPlayers.get(data.id)
       if (!avatar) {
         avatar = new THREE.Group()
@@ -89,7 +93,7 @@ export class WorldEngine {
       }
     })
 
-    this.socket.on('chat-message', (data: { role: string, content: string }) => {
+    this.socket.on('chat-message', (data: { role: string; content: string }) => {
       window.dispatchEvent(new CustomEvent('ai-chat', { detail: data }))
     })
 
@@ -132,6 +136,20 @@ export class WorldEngine {
     // Optimistic local update with sound
     this.applyBlockLocal(x, y, z, type, true)
     
+    // Register physics & logic
+    physics.registerBlockChange(x, y, z, type)
+    if (type.startsWith('wire_') || type === 'lever' || type === 'power_source') {
+      logicEngine.propagateSignals(this)
+    }
+
+    // Achievements tracking
+    if (type !== 'air') {
+      achievements.trackProgress('first_block', 1)
+      achievements.trackProgress('master_builder_10', 1)
+      achievements.trackProgress('master_builder_100', 1)
+      achievements.trackProgress('master_builder_1000', 1)
+    }
+
     // Emit to server
     const settings = useSettingsStore()
     this.socket.emit('set-block', { x, y, z, type, creatorId: settings.creatorId })
@@ -152,18 +170,19 @@ export class WorldEngine {
       sound.playBlockPlace(type)
     }
 
+    const prop = BLOCK_REGISTRY[type]
     let matType: 'standard' | 'glass' | 'emissive' = 'standard'
-    if (type === 'glass' || type === 'water') matType = 'glass'
-    if (type === 'snow' || type === 'leaves') matType = 'emissive'
+    if (prop?.renderType === 'glass') matType = 'glass'
+    else if (prop?.renderType === 'emissive' || type.startsWith('neon_') || type === 'quantum_core') matType = 'emissive'
 
-    const mat = makePremiumMaterial(BLOCK_COLORS[type], matType)
+    const mat = makePremiumMaterial(BLOCK_COLORS[type] || 0x888888, matType)
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), mat)
     
     mesh.scale.set(0.1, 0.1, 0.1)
     mesh.position.set(x, y + 8, z)
     mesh.userData = { blockType: type, bx: x, by: y, bz: z, targetY: y }
     
-    mesh.castShadow = true
+    mesh.castShadow = matType !== 'glass'
     mesh.receiveShadow = true
 
     this.scene.add(mesh)
@@ -172,6 +191,7 @@ export class WorldEngine {
   }
 
   animateBlocks(delta: number): void {
+    // 1. Drop & scale animation
     for (const { mesh } of this.playerBlocks.values()) {
       if (mesh.position.y > mesh.userData.targetY) {
         mesh.position.y -= 32 * delta
@@ -182,6 +202,9 @@ export class WorldEngine {
         mesh.scale.set(s, s, s)
       }
     }
+
+    // 2. Step Voxel Physics Simulation
+    physics.update(delta, this)
   }
 
   getBlock(x: number, y: number, z: number): BlockType {
@@ -195,6 +218,8 @@ export class WorldEngine {
     sound.playBlockBreak()
     this.setBlock(x, y, z, 'air')
     if (prevType !== 'air') {
+      achievements.trackProgress('mine_first', 1)
+      achievements.trackProgress('mine_100', 1)
       this.history.recordAction(`Break block (${prevType})`, [{ x, y, z, type: prevType }], [{ x, y, z, type: 'air' }])
     }
   }
@@ -225,6 +250,7 @@ export class WorldEngine {
   undoLastBuild(): boolean {
     const desc = this.history.undo(this)
     if (desc) {
+      achievements.trackProgress('undo_redo', 1)
       sound.playBlockBreak()
       return true
     }
@@ -234,6 +260,7 @@ export class WorldEngine {
   redoLastBuild(): boolean {
     const desc = this.history.redo(this)
     if (desc) {
+      achievements.trackProgress('undo_redo', 1)
       sound.playBlockPlace('stone')
       return true
     }
@@ -358,7 +385,7 @@ export class WorldEngine {
     return geo
   }
 
-  // ── Procedural Chunk Loading ─────────────────────────────────────────
+  // ── Procedural Chunk Loading with InstancedMesh Batching ─────────────
 
   updateChunks(cameraX: number, cameraZ: number): void {
     const cx = Math.floor(cameraX / 16)
@@ -422,30 +449,18 @@ export class WorldEngine {
       } catch { /* ignore */ }
     }
 
-    const meshes: THREE.Object3D[] = []
+    // High performance InstancedMesh creation
+    const chunkGroup = buildChunkInstancedMeshes(cx, cz, chunkBlocks)
+    this.scene.add(chunkGroup.rootGroup)
 
     for (const [key, type] of Object.entries(chunkBlocks)) {
-      const [x, y, z] = key.split(',').map(Number)
-      
-      let matType: 'standard' | 'glass' | 'emissive' = 'standard'
-      if (type === 'glass' || type === 'water') matType = 'glass'
-      if (type === 'snow' || type === 'leaves') matType = 'emissive'
-
-      const mat = makePremiumMaterial(BLOCK_COLORS[type], matType)
-      const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), mat)
-      mesh.position.set(x + 0.5, y + 0.5, z + 0.5)
-      
-      mesh.receiveShadow = true
-      
-      this.scene.add(mesh)
-      meshes.push(mesh)
-      
       if (isSolid(type)) {
+        const [x, y, z] = key.split(',').map(Number)
         this.collisionGrid.add(blockKey(Math.floor(x), Math.floor(y), Math.floor(z)))
       }
     }
     
-    this.chunks.set(ckey, { meshes, generated: true })
+    this.chunks.set(ckey, { meshes: [chunkGroup.rootGroup], generated: true })
   }
 
   // ── Serialization ────────────────────────────────────────────────────
@@ -479,6 +494,10 @@ export class WorldEngine {
         this.setBlock(x, y, z, type)
       }
     }
+  }
+
+  public getPlayerBlocks(): Map<string, { type: BlockType; mesh: THREE.Mesh }> {
+    return this.playerBlocks
   }
 
   private clearPlayerBlocks(): void {

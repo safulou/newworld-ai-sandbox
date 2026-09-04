@@ -32,6 +32,10 @@ export class AmbientSynth {
     return this.ctx
   }
 
+  public getIsPlaying(): boolean {
+    return this.isPlaying
+  }
+
   public start(): void {
     if (this.isPlaying) return
     const ctx = this.getContext()
@@ -109,3 +113,4 @@ export class AmbientSynth {
 }
 
 export const ambientSynth = new AmbientSynth()
+export const synth = ambientSynth

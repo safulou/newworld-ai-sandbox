@@ -2,51 +2,53 @@ import { BlockType, BlockPlacement } from '@/types/world'
 import { WorldEngine } from './world'
 import { history } from './history'
 import { sound } from './audio'
+import { achievements } from './achievements'
 
 export type ArchitecturalStyle = 'cyberpunk' | 'temple' | 'biosphere' | 'gold_palace' | 'winter_frost'
 
-export const STYLE_PALETTES: Record<ArchitecturalStyle, { name: string; icon: string; map: Record<BlockType, BlockType> }> = {
+export const STYLE_PALETTES: Record<ArchitecturalStyle, { name: string; icon: string; map: Partial<Record<BlockType, BlockType>> }> = {
   cyberpunk: {
-    name: 'Cyberpunk Neon Matrix',
+    name: 'Cyberpunk Neon Matrix (賽博霓虹矩陣)',
     icon: '⚡',
     map: {
-      air: 'air',
-      grass: 'leaves',
-      dirt: 'stone',
-      stone: 'stone',
-      wood: 'brick',
-      leaves: 'glass',
-      sand: 'stone',
-      water: 'water',
-      brick: 'brick',
-      glass: 'glass',
-      plank: 'stone',
-      snow: 'glass',
+      grass: 'matrix_grid',
+      dirt: 'basalt',
+      stone: 'cyber_plating',
+      wood: 'neon_cyan',
+      leaves: 'neon_magenta',
+      sand: 'basalt',
+      water: 'neon_cyan',
+      brick: 'neon_orange',
+      glass: 'hologram_glass',
+      plank: 'cyber_plating',
+      snow: 'neon_yellow',
+      concrete: 'cyber_plating',
+      marble: 'neon_cyan',
     }
   },
   temple: {
-    name: 'Ancient Oriental Temple',
+    name: 'Ancient Oriental Temple (東方古剎神龕)',
     icon: '⛩️',
     map: {
-      air: 'air',
       grass: 'grass',
       dirt: 'dirt',
-      stone: 'stone',
+      stone: 'basalt',
       wood: 'wood',
-      leaves: 'leaves',
+      leaves: 'bamboo',
       sand: 'sand',
       water: 'water',
       brick: 'brick',
       glass: 'wood',
       plank: 'wood',
-      snow: 'stone',
+      snow: 'marble',
+      concrete: 'stone',
+      cyber_plating: 'wood',
     }
   },
   biosphere: {
-    name: 'Crystal Glass Biosphere',
+    name: 'Crystal Glass Biosphere (晶瑩生態穹頂)',
     icon: '🌿',
     map: {
-      air: 'air',
       grass: 'leaves',
       dirt: 'grass',
       stone: 'glass',
@@ -57,43 +59,47 @@ export const STYLE_PALETTES: Record<ArchitecturalStyle, { name: string; icon: st
       brick: 'glass',
       glass: 'glass',
       plank: 'glass',
-      snow: 'glass',
+      snow: 'ice',
+      concrete: 'glass',
+      cyber_plating: 'glass',
     }
   },
   gold_palace: {
-    name: 'Solar Golden Citadel',
+    name: 'Solar Golden Citadel (輝煌太陽金殿)',
     icon: '👑',
     map: {
-      air: 'air',
-      grass: 'sand',
+      grass: 'gold_ore',
       dirt: 'sand',
-      stone: 'sand',
-      wood: 'brick',
-      leaves: 'glass',
+      stone: 'marble',
+      wood: 'gold_ore',
+      leaves: 'amethyst',
       sand: 'sand',
-      water: 'water',
-      brick: 'brick',
-      glass: 'glass',
-      plank: 'sand',
-      snow: 'sand',
+      water: 'diamond_block',
+      brick: 'ruby',
+      glass: 'hologram_glass',
+      plank: 'gold_ore',
+      snow: 'marble',
+      concrete: 'marble',
+      cyber_plating: 'gold_ore',
     }
   },
   winter_frost: {
-    name: 'Frozen Crystal Glacier',
+    name: 'Frozen Crystal Glacier (極光冰霜冰川)',
     icon: '❄️',
     map: {
-      air: 'air',
       grass: 'snow',
       dirt: 'stone',
-      stone: 'stone',
+      stone: 'ice',
       wood: 'glass',
       leaves: 'snow',
       sand: 'snow',
-      water: 'glass',
+      water: 'ice',
       brick: 'stone',
-      glass: 'glass',
-      plank: 'glass',
+      glass: 'ice',
+      plank: 'ice',
       snow: 'snow',
+      concrete: 'ice',
+      cyber_plating: 'ice',
     }
   }
 }
@@ -134,6 +140,7 @@ export function applyStyleTransfer(
   if (count > 0) {
     history.recordAction(`Style: ${palette.name} (${count} blocks)`, undoPlacements, redoPlacements)
     sound.playBuildComplete()
+    achievements.unlock('style_transfer')
   }
 
   return count

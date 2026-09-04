@@ -89,6 +89,15 @@ async function initDB() {
     )
   `)
 
+  await run(`
+    CREATE TABLE IF NOT EXISTS user_achievements (
+      user_id TEXT,
+      achievement_id TEXT,
+      unlocked_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (user_id, achievement_id)
+    )
+  `)
+
   const countRow = await get<{ count: number }>('SELECT COUNT(*) as count FROM world_chain')
   if (!countRow || countRow.count === 0) {
     const genesisPayload = JSON.stringify({ message: "Genesis Block of Neon Oasis Voxel Metaverse" })
@@ -235,6 +244,28 @@ app.post('/api/plots/claim', async (req, res) => {
     io.emit('chat-message', { role: 'ai', content: `🏛️ Plot [${cx}, ${cz}] has been claimed by "${owner_id}" as "${name}"!` })
 
     res.json({ success: true, plot: claimEvent })
+  } catch (e) {
+    res.status(500).json({ error: String(e) })
+  }
+})
+
+// ── Metaverse Stats & Telemetry ──
+
+app.get('/api/stats', async (_req, res) => {
+  try {
+    const chunkCount = await get<{ count: number }>('SELECT COUNT(*) as count FROM chunks')
+    const plotCount = await get<{ count: number }>('SELECT COUNT(*) as count FROM plots')
+    const chainHeight = await get<{ count: number }>('SELECT COUNT(*) as count FROM world_chain')
+    const chatMessages = await get<{ count: number }>('SELECT COUNT(*) as count FROM chat_history')
+
+    res.json({
+      totalChunks: chunkCount?.count ?? 0,
+      totalPlotsClaimed: plotCount?.count ?? 0,
+      blockchainHeight: chainHeight?.count ?? 0,
+      totalChatMessages: chatMessages?.count ?? 0,
+      activeTasks: taskPool.size,
+      serverTime: new Date().toISOString(),
+    })
   } catch (e) {
     res.status(500).json({ error: String(e) })
   }

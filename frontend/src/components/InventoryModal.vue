@@ -2,14 +2,14 @@
   <div class="overlay" @click.self="close">
     <div class="inventory-panel glass-panel">
       <div class="header">
-        <h2>🎒 Creative Block Catalog</h2>
+        <h2>🎒 全品類創造物品庫 (Creative Block Catalog)</h2>
         <button class="close-btn" @click="close">✕</button>
       </div>
 
       <div class="search-bar">
         <input
           v-model="search"
-          placeholder="Search materials (e.g. glass, neon, stone, wood)..."
+          placeholder="搜尋方塊材質 (例如：霓虹、玻璃、黑曜石、金礦、導線)..."
           ref="searchInput"
         />
       </div>
@@ -17,12 +17,12 @@
       <div class="category-tabs">
         <button
           v-for="cat in categories"
-          :key="cat"
+          :key="cat.id"
           class="cat-btn"
-          :class="{ active: activeCategory === cat }"
-          @click="activeCategory = cat"
+          :class="{ active: activeCategory === cat.id }"
+          @click="activeCategory = cat.id"
         >
-          {{ cat }}
+          {{ cat.name }}
         </button>
       </div>
 
@@ -36,16 +36,16 @@
         >
           <div
             class="swatch"
-            :style="{ backgroundColor: block.color, boxShadow: `0 0 12px ${block.color}` }"
+            :style="{ backgroundColor: block.colorHex, boxShadow: `0 0 12px ${block.colorHex}` }"
           ></div>
-          <div class="block-name">{{ block.name }}</div>
-          <div class="block-tag">{{ block.category }}</div>
+          <div class="block-name">{{ block.displayName }}</div>
+          <div class="block-tag">{{ block.type }}</div>
         </div>
       </div>
 
       <div class="footer">
-        <span class="hint">Click any block to set as active hand item. Press ESC or E to return.</span>
-        <button class="btn-done" @click="close">Done (E)</button>
+        <span class="hint">點選任意方塊即可裝備為手持方塊。按 ESC 或 E 鍵關閉。</span>
+        <button class="btn-done" @click="close">完成 (E)</button>
       </div>
     </div>
   </div>
@@ -55,41 +55,41 @@
 import { ref, computed, onMounted } from 'vue'
 import { useUIStore } from '@/stores/ui'
 import { BlockType } from '@/types/world'
+import { BLOCK_REGISTRY } from '@/engine/blocks'
 import { sound } from '@/engine/audio'
 
 const ui = useUIStore()
 const search = ref('')
-const activeCategory = ref('All')
+const activeCategory = ref('all')
 const searchInput = ref<HTMLInputElement>()
 
-interface CatalogItem {
-  type: BlockType
-  name: string
-  category: 'Building' | 'Nature' | 'Sci-Fi' | 'Elements'
-  color: string
-}
-
-const blocks: CatalogItem[] = [
-  { type: 'stone', name: 'Cyber Metal Stone', category: 'Building', color: '#1a1a24' },
-  { type: 'brick', name: 'Crimson Metal Brick', category: 'Building', color: '#4a1515' },
-  { type: 'plank', name: 'Dark Slate Plank', category: 'Building', color: '#1c2b36' },
-  { type: 'wood', name: 'Charred Timber Wood', category: 'Building', color: '#2d1711' },
-  { type: 'glass', name: 'Cyan Luminous Glass', category: 'Sci-Fi', color: '#00ffff' },
-  { type: 'leaves', name: 'Glowing Neon Flora', category: 'Sci-Fi', color: '#00ff88' },
-  { type: 'grass', name: 'Bio Moss Grass', category: 'Nature', color: '#0b3d1f' },
-  { type: 'dirt', name: 'Obsidian Soil Dirt', category: 'Nature', color: '#151110' },
-  { type: 'sand', name: 'Desert Bronze Sand', category: 'Nature', color: '#3d352b' },
-  { type: 'water', name: 'Aquamarine Fluid Water', category: 'Elements', color: '#00aaff' },
-  { type: 'snow', name: 'Glacial Crystal Snow', category: 'Elements', color: '#ffffff' },
+const categories = [
+  { id: 'all', name: '全部 (All)' },
+  { id: 'nature', name: '🌿 自然生態 (Nature)' },
+  { id: 'building', name: '🏛️ 建築結構 (Building)' },
+  { id: 'scifi', name: '⚡ 賽博霓虹 (Sci-Fi)' },
+  { id: 'logic', name: '🔌 邏輯機關 (Logic)' },
 ]
 
-const categories = ['All', 'Building', 'Nature', 'Sci-Fi', 'Elements']
+const allItems = computed(() => {
+  return Object.entries(BLOCK_REGISTRY)
+    .filter(([type]) => type !== 'air')
+    .map(([type, prop]) => {
+      const hex = '#' + prop.color.toString(16).padStart(6, '0')
+      return {
+        type: type as BlockType,
+        displayName: prop.displayName,
+        category: prop.category,
+        colorHex: hex,
+      }
+    })
+})
 
 const filteredBlocks = computed(() => {
-  return blocks.filter(b => {
-    const matchesCat = activeCategory.value === 'All' || b.category === activeCategory.value
+  return allItems.value.filter(b => {
+    const matchesCat = activeCategory.value === 'all' || b.category === activeCategory.value
     const matchesSearch =
-      b.name.toLowerCase().includes(search.value.toLowerCase()) ||
+      b.displayName.toLowerCase().includes(search.value.toLowerCase()) ||
       b.type.toLowerCase().includes(search.value.toLowerCase())
     return matchesCat && matchesSearch
   })
@@ -98,7 +98,7 @@ const filteredBlocks = computed(() => {
 function selectBlock(type: BlockType): void {
   ui.setSelectedBlock(type)
   sound.playBlockPlace(type)
-  ui.setBuildStatus(`Hand: ${type.toUpperCase()}`)
+  ui.setBuildStatus(`手持方塊：${BLOCK_REGISTRY[type]?.displayName || type}`)
   setTimeout(() => ui.setBuildStatus(''), 1500)
   close()
 }
@@ -115,12 +115,12 @@ onMounted(() => {
 <style scoped>
 .overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.7);
-  display: flex; align-items: center; justify-content: center; z-index: 100;
+  display: flex; align-items: center; justify-content: center; z-index: 1000;
   backdrop-filter: blur(8px);
 }
 
 .inventory-panel {
-  width: 640px; max-width: 95vw; padding: 24px;
+  width: 720px; max-width: 95vw; padding: 24px;
   background: rgba(14, 18, 32, 0.95);
   border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 14px; color: #fff;
@@ -139,7 +139,7 @@ h2 { font-size: 20px; font-weight: 700; color: #00ffff; }
 }
 .search-bar input:focus { border-color: #00ffff; box-shadow: 0 0 10px rgba(0,255,255,0.3); }
 
-.category-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.category-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .cat-btn {
   padding: 6px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
   color: rgba(255,255,255,0.8); border-radius: 8px; font-size: 12px; font-weight: 600;
@@ -150,7 +150,7 @@ h2 { font-size: 20px; font-weight: 700; color: #00ffff; }
 
 .block-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-  max-height: 320px; overflow-y: auto; padding-right: 4px;
+  max-height: 380px; overflow-y: auto; padding-right: 6px;
 }
 
 .block-card {

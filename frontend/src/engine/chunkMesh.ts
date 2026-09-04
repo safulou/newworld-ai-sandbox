@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { BlockType } from '@/types/world'
-import { BLOCK_COLORS, isSolid } from './blocks'
+import { BLOCK_COLORS, BLOCK_REGISTRY, isSolid } from './blocks'
 import { makePremiumMaterial } from './scene'
 
 export interface ChunkMeshGroup {
@@ -61,11 +61,12 @@ export function buildChunkInstancedMeshes(
   for (const [type, positions] of materialGroups.entries()) {
     if (positions.length === 0) continue
 
+    const prop = BLOCK_REGISTRY[type]
     let matType: 'standard' | 'glass' | 'emissive' = 'standard'
-    if (type === 'glass' || type === 'water') matType = 'glass'
-    if (type === 'snow' || type === 'leaves') matType = 'emissive'
+    if (prop?.renderType === 'glass') matType = 'glass'
+    else if (prop?.renderType === 'emissive' || type.startsWith('neon_') || type === 'quantum_core') matType = 'emissive'
 
-    const mat = makePremiumMaterial(BLOCK_COLORS[type], matType)
+    const mat = makePremiumMaterial(BLOCK_COLORS[type] || 0x888888, matType)
     const instancedMesh = new THREE.InstancedMesh(unitBoxGeo, mat, positions.length)
     instancedMesh.castShadow = matType !== 'glass'
     instancedMesh.receiveShadow = true
