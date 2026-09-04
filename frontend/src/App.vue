@@ -9,6 +9,9 @@
       <HUD v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
+      <Minimap v-if="ui.mode === 'game'" />
+    </Transition>
+    <Transition name="fade">
       <Hotbar v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
@@ -39,6 +42,7 @@
 import { ref, onMounted } from 'vue'
 import GameCanvas from '@/components/GameCanvas.vue'
 import HUD from '@/components/HUD.vue'
+import Minimap from '@/components/Minimap.vue'
 import Hotbar from '@/components/Hotbar.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

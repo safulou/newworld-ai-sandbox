@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { BlockType, Vec3, WorldData } from '@/types/world'
+import { BlockPlacement, BlockType, BuildAction, Vec3, WorldData } from '@/types/world'
 import { BLOCK_COLORS, blockKey, isSolid } from './blocks'
 import { makePremiumMaterial } from './scene'
 import { generateChunk } from './terrain'
@@ -7,6 +7,15 @@ import { io, Socket } from 'socket.io-client'
 import { DecentralizedWorker } from './worker'
 import { useSettingsStore } from '@/stores/settings'
 import { sound } from './audio'
+import { history, HistoryEngine } from './history'
+
+export interface ClaimedPlot {
+  cx: number
+  cz: number
+  owner_id: string
+  plot_name: string
+  claimed_at?: string
+}
 
 export class WorldEngine {
   private scene: THREE.Scene
@@ -28,8 +37,18 @@ export class WorldEngine {
   private socket: Socket
   private otherPlayers = new Map<string, THREE.Group>()
 
+  // Plot visual borders
+  private plotBordersGroup = new THREE.Group()
+  private claimedPlots: ClaimedPlot[] = []
+  private currentChunkCoords = { cx: 0, cz: 0 }
+
+  // History Engine
+  public history: HistoryEngine = history
+
   constructor(scene: THREE.Scene) {
     this.scene = scene
+    this.scene.add(this.plotBordersGroup)
+
     this.socket = io('http://localhost:4000')
     this.worker = new DecentralizedWorker(this.socket)
 
@@ -75,11 +94,23 @@ export class WorldEngine {
     })
 
     this.socket.on('build-progress', (data: any) => {
-      if (data.status === 'completed') {
+      if (data.status === 'completed' || data.status === 'done') {
         sound.playBuildComplete()
       }
       window.dispatchEvent(new CustomEvent('build-progress', { detail: data }))
     })
+
+    this.socket.on('plot-claimed', (plot: ClaimedPlot) => {
+      const idx = this.claimedPlots.findIndex(p => p.cx === plot.cx && p.cz === plot.cz)
+      if (idx >= 0) {
+        this.claimedPlots[idx] = plot
+      } else {
+        this.claimedPlots.push(plot)
+      }
+      this.renderPlotBorders()
+    })
+
+    this.fetchPlots()
   }
 
   getWorker(): DecentralizedWorker {
@@ -111,6 +142,7 @@ export class WorldEngine {
     const existing = this.playerBlocks.get(key)
     if (existing) {
       this.scene.remove(existing.mesh)
+      existing.mesh.geometry.dispose()
       this.playerBlocks.delete(key)
       this.collisionGrid.delete(key)
     }
@@ -142,11 +174,11 @@ export class WorldEngine {
   animateBlocks(delta: number): void {
     for (const { mesh } of this.playerBlocks.values()) {
       if (mesh.position.y > mesh.userData.targetY) {
-        mesh.position.y -= 30 * delta
+        mesh.position.y -= 32 * delta
         if (mesh.position.y < mesh.userData.targetY) mesh.position.y = mesh.userData.targetY
       }
       if (mesh.scale.x < 1) {
-        const s = Math.min(1, mesh.scale.x + 6 * delta)
+        const s = Math.min(1, mesh.scale.x + 7 * delta)
         mesh.scale.set(s, s, s)
       }
     }
@@ -159,8 +191,53 @@ export class WorldEngine {
   }
 
   removeBlock(x: number, y: number, z: number): void {
+    const prevType = this.getBlock(x, y, z)
     sound.playBlockBreak()
     this.setBlock(x, y, z, 'air')
+    if (prevType !== 'air') {
+      this.history.recordAction(`Break block (${prevType})`, [{ x, y, z, type: prevType }], [{ x, y, z, type: 'air' }])
+    }
+  }
+
+  recordSinglePlacement(x: number, y: number, z: number, prevType: BlockType, newType: BlockType): void {
+    this.history.recordAction(`Place block (${newType})`, [{ x, y, z, type: prevType }], [{ x, y, z, type: newType }])
+  }
+
+  // ── Batch Actions & Spatial Build History ────────────────────────────
+
+  applyBuildActions(actions: BuildAction[], description: string = 'Procedural Build'): void {
+    const undoPlacements: BlockPlacement[] = []
+    const redoPlacements: BlockPlacement[] = []
+
+    for (const act of actions) {
+      if (act.type === 'place_block') {
+        const [x, y, z] = act.position
+        const prevType = this.getBlock(x, y, z)
+        undoPlacements.push({ x, y, z, type: prevType })
+        redoPlacements.push({ x, y, z, type: act.material })
+        this.setBlock(x, y, z, act.material)
+      }
+    }
+
+    this.history.recordAction(description, undoPlacements, redoPlacements)
+  }
+
+  undoLastBuild(): boolean {
+    const desc = this.history.undo(this)
+    if (desc) {
+      sound.playBlockBreak()
+      return true
+    }
+    return false
+  }
+
+  redoLastBuild(): boolean {
+    const desc = this.history.redo(this)
+    if (desc) {
+      sound.playBlockPlace('stone')
+      return true
+    }
+    return false
   }
 
   // ── Collision ────────────────────────────────────────────────────────
@@ -169,12 +246,126 @@ export class WorldEngine {
     return this.collisionGrid.has(blockKey(Math.floor(x), Math.floor(y), Math.floor(z)))
   }
 
+  // ── Virtual Real Estate / Plot Visual Grid Borders ───────────────────
+
+  async fetchPlots(): Promise<void> {
+    try {
+      const res = await fetch('http://localhost:4000/api/plots')
+      if (res.ok) {
+        this.claimedPlots = await res.json()
+        this.renderPlotBorders()
+      }
+    } catch { /* ignore offline */ }
+  }
+
+  updateActiveChunk(cx: number, cz: number): void {
+    if (cx === this.currentChunkCoords.cx && cz === this.currentChunkCoords.cz) return
+    this.currentChunkCoords = { cx, cz }
+    this.renderPlotBorders()
+  }
+
+  private renderPlotBorders(): void {
+    // Clear old border meshes
+    while (this.plotBordersGroup.children.length > 0) {
+      const obj = this.plotBordersGroup.children[0]
+      if (obj) {
+        this.plotBordersGroup.remove(obj)
+        if (obj instanceof THREE.LineSegments || obj instanceof THREE.Mesh) {
+          obj.geometry.dispose()
+        }
+      }
+    }
+
+    const { cx: curCx, cz: curCz } = this.currentChunkCoords
+
+    // 1. Current chunk border (Glowing Cyan)
+    const curGeo = this.createChunkBorderGeometry(curCx, curCz, 0.08)
+    const curMat = new THREE.LineBasicMaterial({
+      color: 0x00ffff,
+      linewidth: 2,
+      transparent: true,
+      opacity: 0.85,
+    })
+    const curLine = new THREE.LineSegments(curGeo, curMat)
+    this.plotBordersGroup.add(curLine)
+
+    // 2. Claimed plots borders (Glowing Gold with corner beacons)
+    const pylonGeo = new THREE.CylinderGeometry(0.12, 0.12, 1.8, 8)
+    const pylonMat = new THREE.MeshStandardMaterial({
+      color: 0xffd700,
+      emissive: 0xffaa00,
+      emissiveIntensity: 2.5,
+      metalness: 0.4,
+      roughness: 0.2,
+    })
+
+    const claimedMat = new THREE.LineBasicMaterial({
+      color: 0xffd700,
+      linewidth: 2,
+      transparent: true,
+      opacity: 0.9,
+    })
+
+    for (const plot of this.claimedPlots) {
+      const geo = this.createChunkBorderGeometry(plot.cx, plot.cz, 0.1)
+      const line = new THREE.LineSegments(geo, claimedMat)
+      this.plotBordersGroup.add(line)
+
+      // Add 4 corner glowing beacons
+      const minX = plot.cx * 16
+      const maxX = (plot.cx + 1) * 16
+      const minZ = plot.cz * 16
+      const maxZ = (plot.cz + 1) * 16
+
+      const corners = [
+        [minX, minZ],
+        [maxX, minZ],
+        [maxX, maxZ],
+        [minX, maxZ],
+      ]
+
+      for (const [px, pz] of corners) {
+        const pylon = new THREE.Mesh(pylonGeo, pylonMat)
+        pylon.position.set(px, 0.9, pz)
+        this.plotBordersGroup.add(pylon)
+      }
+    }
+  }
+
+  private createChunkBorderGeometry(cx: number, cz: number, yOffset: number = 0.05): THREE.BufferGeometry {
+    const minX = cx * 16
+    const maxX = (cx + 1) * 16
+    const minZ = cz * 16
+    const maxZ = (cz + 1) * 16
+
+    const points: number[] = [
+      // Top Edge
+      minX, yOffset, minZ,
+      maxX, yOffset, minZ,
+      // Right Edge
+      maxX, yOffset, minZ,
+      maxX, yOffset, maxZ,
+      // Bottom Edge
+      maxX, yOffset, maxZ,
+      minX, yOffset, maxZ,
+      // Left Edge
+      minX, yOffset, maxZ,
+      minX, yOffset, minZ,
+    ]
+
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(points, 3))
+    return geo
+  }
+
   // ── Procedural Chunk Loading ─────────────────────────────────────────
 
   updateChunks(cameraX: number, cameraZ: number): void {
     const cx = Math.floor(cameraX / 16)
     const cz = Math.floor(cameraZ / 16)
     
+    this.updateActiveChunk(cx, cz)
+
     if (cx === this.lastChunkX && cz === this.lastChunkZ) return
     
     this.lastChunkX = cx
@@ -215,8 +406,8 @@ export class WorldEngine {
     try {
       const res = await fetch(`http://localhost:4000/api/chunks/${cx}/${cz}`)
       if (res.ok) chunkBlocks = await res.json()
-    } catch (e) {
-      console.warn('Backend not reachable, falling back to local generation')
+    } catch {
+      // Backend offline, proceed to procedural generation
     }
 
     if (!chunkBlocks) {
@@ -228,7 +419,7 @@ export class WorldEngine {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(chunkData)
         })
-      } catch (e) { /* ignore */ }
+      } catch { /* ignore */ }
     }
 
     const meshes: THREE.Object3D[] = []
@@ -293,6 +484,7 @@ export class WorldEngine {
   private clearPlayerBlocks(): void {
     for (const { mesh } of this.playerBlocks.values()) {
       this.scene.remove(mesh)
+      mesh.geometry.dispose()
     }
     this.playerBlocks.clear()
   }
@@ -313,6 +505,7 @@ export class WorldEngine {
   clear(): void {
     this.clearPlayerBlocks()
     this.clearWorldMeshes()
+    this.history.clear()
   }
 
   getSpawnPoint(): Vec3 {
