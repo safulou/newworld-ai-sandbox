@@ -9,16 +9,13 @@
       <HUD v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
-      <Minimap v-if="ui.mode === 'game'" />
-    </Transition>
-    <Transition name="fade">
       <Hotbar v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
       <BuildPrompt v-if="ui.mode === 'build-prompt'" @build="onBuild" />
     </Transition>
     <Transition name="fade">
-      <BlueprintsModal v-if="ui.mode === 'blueprints'" @deploy="onDeployBlueprint" />
+      <BlueprintsModal v-if="ui.mode === 'blueprints'" @deploy="onBuild" />
     </Transition>
     <Transition name="fade">
       <NPCChat v-if="ui.mode === 'npc-chat'" />
@@ -42,7 +39,6 @@
 import { ref, onMounted } from 'vue'
 import GameCanvas from '@/components/GameCanvas.vue'
 import HUD from '@/components/HUD.vue'
-import Minimap from '@/components/Minimap.vue'
 import Hotbar from '@/components/Hotbar.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'
@@ -61,7 +57,8 @@ onMounted(() => {
     const data = (e as CustomEvent).detail
     ui.setProgressData(data)
     
-    if (data.status !== 'done' && data.status !== 'error') {
+    // Auto-open modal when progress starts, unless it's already open or we manually closed it
+    if (data.status !== 'done' && data.status !== 'completed' && data.status !== 'error') {
       if (ui.mode !== 'build-progress') {
         ui.openBuildProgress()
       }
@@ -70,6 +67,7 @@ onMounted(() => {
 })
 
 function onWorldReady(world: WorldEngine): void {
+  // auto-load saved world
   const saved = localStorage.getItem('nw_world')
   if (saved) {
     try {
@@ -78,12 +76,8 @@ function onWorldReady(world: WorldEngine): void {
   }
 }
 
-function onBuild(result: AIBuildResponse): void {
+function onBuild(result: AIBuildResponse | BuildAction[]): void {
   gameCanvas.value?.applyBuild(result)
-}
-
-function onDeployBlueprint(actions: BuildAction[]): void {
-  gameCanvas.value?.applyBuild({ description: 'Blueprint Deployment', actions })
 }
 </script>
 
@@ -116,6 +110,6 @@ body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: scale(0.98);
+  transform: translateY(10px) scale(0.98);
 }
 </style>
