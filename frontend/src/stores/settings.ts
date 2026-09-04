@@ -9,6 +9,7 @@ export const useSettingsStore = defineStore('settings', () => {
   const provider = ref<AIProvider>((localStorage.getItem('nw_provider') as AIProvider) ?? 'local')
   const selectedBlock = ref<BlockType>('stone')
   const worldName = ref(localStorage.getItem('nw_world_name') ?? 'My World')
+  const creatorId = ref(localStorage.getItem('nw_creator_id') ?? 'anonymous_' + Math.random().toString(36).substring(2, 6))
 
   function setApiKey(key: string): void {
     apiKey.value = key
@@ -29,5 +30,10 @@ export const useSettingsStore = defineStore('settings', () => {
     localStorage.setItem('nw_world_name', name)
   }
 
-  return { apiKey, provider, selectedBlock, worldName, setApiKey, setProvider, setSelectedBlock, setWorldName }
+  function setCreatorId(id: string): void {
+    creatorId.value = id
+    localStorage.setItem('nw_creator_id', id)
+  }
+
+  return { apiKey, provider, selectedBlock, worldName, creatorId, setApiKey, setProvider, setSelectedBlock, setWorldName, setCreatorId }
 })

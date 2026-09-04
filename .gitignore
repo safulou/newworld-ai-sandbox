@@ -20,3 +20,9 @@ npm-debug.log*
 
 # Build cache
 .cache/
+
+# Databases
+*.sqlite
+*.sqlite3
+database.sqlite
+

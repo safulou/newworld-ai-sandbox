@@ -59,7 +59,16 @@ const NPC_SYSTEM = `You are ${ui.currentNPCName || 'a friendly NPC'} in a voxel 
 You help players explore, build, and understand the world. Keep responses short (2-3 sentences max), friendly and in-character.
 You know about: different block types, building techniques, the AI generation system, and lore of this world.`
 
-onMounted(() => inputEl.value?.focus())
+onMounted(() => {
+  inputEl.value?.focus()
+  window.addEventListener('ai-chat', (e: Event) => {
+    const custom = e as CustomEvent
+    messages.value.push({ role: custom.detail.role, content: custom.detail.content })
+    nextTick(() => {
+      msgContainer.value?.scrollTo(0, msgContainer.value.scrollHeight)
+    })
+  })
+})
 
 function close(): void { ui.closeOverlay() }
 
@@ -87,44 +96,54 @@ async function send(): Promise<void> {
 
 <style scoped>
 .overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  position: fixed; inset: 0; background: rgba(0,0,0,0.4);
   display: flex; align-items: flex-end; justify-content: center; padding-bottom: 100px; z-index: 100;
 }
 .chat-panel {
-  background: #1a1a2e; color: #eee; border-radius: 12px; width: 420px; max-width: 95vw;
-  font-family: monospace; display: flex; flex-direction: column; max-height: 400px;
+  width: 420px; max-width: 95vw;
+  display: flex; flex-direction: column; max-height: 400px;
+}
+.glass-panel {
+  background: rgba(15, 20, 30, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 .chat-header {
-  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
-  border-bottom: 1px solid #333;
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.npc-avatar { font-size: 28px; }
-.npc-name { font-weight: bold; font-size: 15px; }
-.npc-role { font-size: 11px; color: #888; }
-.close-btn { margin-left: auto; background: none; border: none; color: #888; font-size: 16px; cursor: pointer; }
+.npc-avatar { font-size: 28px; filter: drop-shadow(0 0 8px rgba(0,255,255,0.5)); }
+.npc-name { font-weight: 600; font-size: 15px; letter-spacing: 0.5px; }
+.npc-role { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
+.close-btn { margin-left: auto; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 18px; cursor: pointer; transition: color 0.2s; }
 .close-btn:hover { color: #fff; }
 
 .messages {
-  flex: 1; overflow-y: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 8px;
+  flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px;
 }
 .msg { display: flex; }
 .msg.user { justify-content: flex-end; }
 .bubble {
-  max-width: 80%; padding: 8px 12px; border-radius: 12px; font-size: 13px; line-height: 1.4;
-  background: #2a2a4a;
+  max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.5;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
 }
-.msg.user .bubble { background: #5555ff; }
+.msg.user .bubble { background: rgba(0,255,255,0.1); border-color: rgba(0,255,255,0.3); color: #00ffff; }
 .typing { animation: blink 0.8s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-.input-row { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid #333; }
+.input-row { display: flex; gap: 8px; padding: 14px 16px; border-top: 1px solid rgba(255,255,255,0.1); }
 .input-row input {
-  flex: 1; background: #111; color: #eee; border: 1px solid #444; border-radius: 6px;
-  padding: 8px 10px; font-family: monospace; font-size: 13px;
+  flex: 1; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+  padding: 10px 14px; font-family: inherit; font-size: 14px; transition: border-color 0.2s; outline: none;
 }
-.input-row input:focus { outline: none; border-color: #7c7cff; }
+.input-row input:focus { border-color: #00ffff; }
 .input-row button {
-  padding: 8px 14px; background: #5555ff; color: #fff; border: none; border-radius: 6px; cursor: pointer;
+  padding: 8px 16px; background: #00ffff; color: #000; border: none; border-radius: 8px; cursor: pointer;
+  font-weight: 600; font-family: inherit; transition: transform 0.1s, box-shadow 0.2s;
 }
-.input-row button:disabled { background: #333; color: #666; cursor: not-allowed; }
+.input-row button:disabled { opacity: 0.5; cursor: not-allowed; }
+.input-row button:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 0 10px rgba(0,255,255,0.4); }
 </style>

@@ -1,27 +1,52 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { BlockType } from '@/types/world'
 
-export type UIMode = 'game' | 'settings' | 'build-prompt' | 'npc-chat' | 'help'
+export type UIMode = 'game' | 'settings' | 'build-prompt' | 'npc-chat' | 'help' | 'build-progress' | 'blueprints'
+export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
+
+export interface BuildProgressData {
+  status: 'planning' | 'building' | 'done' | 'error'
+  prompt: string
+  tokens?: number
+  estimatedMs?: number
+  blocksTotal?: number
+  blocksPlaced?: number
+  description?: string
+  message?: string
+}
 
 export const useUIStore = defineStore('ui', () => {
   const mode = ref<UIMode>('game')
   const isLocked = ref(false)
   const buildStatus = ref('')
   const currentNPCName = ref('')
+  const progressData = ref<BuildProgressData | null>(null)
+  const selectedBlock = ref<BlockType>('stone')
+  const timeOfDay = ref<TimeOfDay>('night')
 
   function openSettings(): void { mode.value = 'settings' }
   function openBuildPrompt(): void { mode.value = 'build-prompt' }
+  function openBlueprints(): void { mode.value = 'blueprints' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
     mode.value = 'npc-chat'
   }
+  function openBuildProgress(): void { mode.value = 'build-progress' }
   function closeOverlay(): void { mode.value = 'game' }
   function setLocked(v: boolean): void { isLocked.value = v }
   function setBuildStatus(msg: string): void { buildStatus.value = msg }
+  function setProgressData(data: BuildProgressData | null): void { progressData.value = data }
+  function setSelectedBlock(b: BlockType): void { selectedBlock.value = b }
+  function setTimeOfDay(t: TimeOfDay): void {
+    timeOfDay.value = t
+    window.dispatchEvent(new CustomEvent('time-of-day', { detail: t }))
+  }
 
   return {
-    mode, isLocked, buildStatus, currentNPCName,
-    openSettings, openBuildPrompt, openHelp, openNPCChat, closeOverlay, setLocked, setBuildStatus,
+    mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay,
+    openSettings, openBuildPrompt, openBlueprints, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay,
   }
 })

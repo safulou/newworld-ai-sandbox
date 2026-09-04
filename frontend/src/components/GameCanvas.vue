@@ -5,14 +5,18 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as THREE from 'three'
-import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'
-import { createScene, createCamera, createRenderer, createLights, addBlockHighlight } from '@/engine/scene'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import {
+  createScene, createCamera, createRenderer, createAtmosphere, AtmosphereController,
+  addBlockHighlight, createPostProcessing, makePremiumMaterial,
+} from '@/engine/scene'
 import { WorldEngine } from '@/engine/world'
-import { Player } from '@/engine/player'
-import { raycastBlock } from '@/engine/raycast'
+import { raycastMouse } from '@/engine/raycast'
 import { useUIStore } from '@/stores/ui'
 import { useSettingsStore } from '@/stores/settings'
 import { AIBuildResponse } from '@/types/world'
+import { sound } from '@/engine/audio'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -24,46 +28,62 @@ const ui = useUIStore()
 const settings = useSettingsStore()
 
 let renderer: THREE.WebGLRenderer
+let composer: EffectComposer
 let scene: THREE.Scene
 let camera: THREE.PerspectiveCamera
-let controls: PointerLockControls
+let controls: OrbitControls
 let world: WorldEngine
-let player: Player
 let highlight: THREE.Mesh
+let atmosphere: AtmosphereController
 let animId: number
 let clock: THREE.Clock
+
+const mouse = new THREE.Vector2(-100, -100)
 
 function init(): void {
   scene = createScene()
   camera = createCamera()
   renderer = createRenderer(canvas.value!)
-  createLights(scene)
+  composer = createPostProcessing(renderer, scene, camera)
+  atmosphere = createAtmosphere(scene)
   highlight = addBlockHighlight(scene)
 
   world = new WorldEngine(scene)
-  world.generateFlatWorld()
-  player = new Player(camera)
 
-  // place a guide NPC marker
-  world.setBlock(4, 0, -4, 'glass')
-  const npcMarker = new THREE.Mesh(
-    new THREE.BoxGeometry(0.6, 1.8, 0.6),
-    new THREE.MeshLambertMaterial({ color: 0xff9900 })
+  camera.position.set(0, 20, 24)
+  
+  controls = new OrbitControls(camera, renderer.domElement)
+  controls.target.set(0, 0, 0)
+  controls.enableDamping = true
+  controls.dampingFactor = 0.08
+  controls.maxPolarAngle = Math.PI / 2 - 0.05
+  controls.update()
+
+  clock = new THREE.Clock()
+
+  // Holographic AI Guide / NPC
+  const npcGroup = new THREE.Group()
+  const body = new THREE.Mesh(
+    new THREE.BoxGeometry(0.7, 1.1, 0.4),
+    makePremiumMaterial(0x00ffff, 'emissive')
   )
-  npcMarker.position.set(4, 0.9, -4)
-  npcMarker.userData = { isNPC: true, name: 'World Guide' }
-  scene.add(npcMarker)
+  body.position.y = 0.55
+  const head = new THREE.Mesh(
+    new THREE.BoxGeometry(0.55, 0.55, 0.4),
+    makePremiumMaterial(0x00ffff, 'emissive')
+  )
+  head.position.y = 1.38
+  npcGroup.add(body, head)
+  npcGroup.position.set(0, 0, 4)
+  npcGroup.userData = { isNPC: true, name: 'Cyber Architect' }
+  scene.add(npcGroup)
 
-  controls = new PointerLockControls(camera, renderer.domElement)
-  controls.addEventListener('lock', () => ui.setLocked(true))
-  controls.addEventListener('unlock', () => ui.setLocked(false))
-
+  window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('click', onCanvasClick)
-  window.addEventListener('contextmenu', e => { e.preventDefault(); placeBlock() })
+  window.addEventListener('contextmenu', onContextMenu)
   window.addEventListener('keydown', onKeyDown)
   window.addEventListener('resize', onResize)
 
-  clock = new THREE.Clock()
   emit('ready', world)
   loop()
 }
@@ -71,101 +91,101 @@ function init(): void {
 function loop(): void {
   animId = requestAnimationFrame(loop)
   const delta = Math.min(clock.getDelta(), 0.1)
+  
+  controls.update()
+  atmosphere.update(delta)
+  world.animateBlocks(delta)
+  world.updateChunks(camera.position.x, camera.position.z)
+  
+  // Throttle player broadcast & HUD position update
+  if (Math.random() < 0.1) {
+    world.emitPlayerMove(camera.position.x, camera.position.y, camera.position.z)
+    window.dispatchEvent(new CustomEvent('player-position', {
+      detail: { x: camera.position.x, y: camera.position.y, z: camera.position.z }
+    }))
+  }
 
-  if (controls.isLocked) player.update(delta, world)
-
-  // update block highlight
-  const rc = raycastBlock(camera, world)
-  if (rc.hit) {
-    highlight.visible = true
-    highlight.position.set(rc.blockPos.x, rc.blockPos.y, rc.blockPos.z)
+  // Update hover highlight
+  if (ui.mode === 'game') {
+    const rc = raycastMouse(camera, mouse, world, scene)
+    highlight.visible = rc.hit && !rc.npcName
+    if (rc.hit && !rc.npcName) {
+      const p = rc.point.clone().add(rc.normal.clone().multiplyScalar(0.1))
+      highlight.position.set(Math.floor(p.x) + 0.5, Math.floor(p.y) + 0.5, Math.floor(p.z) + 0.5)
+    }
   } else {
     highlight.visible = false
   }
 
-  renderer.render(scene, camera)
+  composer.render()
 }
 
-function onCanvasClick(): void {
-  if (!controls.isLocked && ui.mode === 'game') {
-    controls.lock()
+function onMouseMove(e: MouseEvent): void {
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
+}
+
+function onCanvasClick(e: MouseEvent): void {
+  if (ui.mode !== 'game') return
+  if (e.button !== 0) return // left click only
+
+  const rc = raycastMouse(camera, mouse, world, scene)
+  if (!rc.hit) return
+
+  if (rc.npcName) {
+    emit('npc-interact', rc.npcName)
     return
   }
-  if (!controls.isLocked) return
 
-  const rc = raycastBlock(camera, world)
-  if (!rc.hit) return
-
-  // check NPC
-  const npcMeshes = scene.children.filter(c => c.userData?.isNPC)
-  for (const npc of npcMeshes) {
-    if (npc.position.distanceTo(camera.position) < 4) {
-      controls.unlock()
-      emit('npc-interact', npc.userData.name)
-      return
-    }
-  }
-
-  world.removeBlock(rc.blockPos.x, rc.blockPos.y, rc.blockPos.z)
+  // Click on block -> open build command center anchor
+  const p = rc.point.clone().add(rc.normal.clone().multiplyScalar(0.1))
+  const bx = Math.floor(p.x)
+  const by = Math.floor(p.y)
+  const bz = Math.floor(p.z)
+  
+  window.dispatchEvent(new CustomEvent('open-build', { detail: { x: bx, y: by, z: bz } }))
+  ui.openBuildPrompt()
 }
 
-function placeBlock(): void {
-  if (!controls.isLocked) return
-  const rc = raycastBlock(camera, world)
-  if (!rc.hit) return
-  const { normalPos } = rc
-  world.setBlock(normalPos.x, normalPos.y, normalPos.z, settings.selectedBlock)
+function onContextMenu(e: MouseEvent): void {
+  // Prevent browser context menu on right click
+  if (ui.mode === 'game') {
+    e.preventDefault()
+  }
 }
 
 function onKeyDown(e: KeyboardEvent): void {
-  if (e.code === 'KeyT' && controls.isLocked) {
-    controls.unlock()
+  if (e.code === 'F1') ui.openSettings()
+  if (e.code === 'F2') saveWorld()
+  if (e.code === 'KeyB' && ui.mode === 'game') {
+    window.dispatchEvent(new CustomEvent('open-build', {
+      detail: { x: Math.floor(camera.position.x), y: 0, z: Math.floor(camera.position.z) }
+    }))
     ui.openBuildPrompt()
   }
-  if (e.code === 'F1') {
-    if (controls.isLocked) controls.unlock()
-    ui.openSettings()
-  }
-  if (e.code === 'F2') {
-    saveWorld()
-  }
-  if (e.code === 'Escape' && ui.mode !== 'game') {
-    ui.closeOverlay()
-  }
-  if (e.code === 'KeyE' && controls.isLocked) {
-    // check nearby NPC
-    const npcMeshes = scene.children.filter(c => c.userData?.isNPC)
-    for (const npc of npcMeshes) {
-      if (npc.position.distanceTo(camera.position) < 4) {
-        controls.unlock()
-        emit('npc-interact', npc.userData.name)
-        return
-      }
-    }
-  }
+  if (e.code === 'Escape' && ui.mode !== 'game') ui.closeOverlay()
 }
 
 function saveWorld(): void {
-  const data = world.toWorldData(settings.worldName)
-  localStorage.setItem('nw_world', JSON.stringify(data))
-  ui.setBuildStatus('World saved!')
-  setTimeout(() => ui.setBuildStatus(''), 2000)
+  localStorage.setItem('nw_world', JSON.stringify(world.toWorldData(settings.worldName)))
+  sound.playBuildComplete()
+  ui.setBuildStatus('💾 World saved to local storage!')
+  setTimeout(() => ui.setBuildStatus(''), 2500)
 }
 
 function onResize(): void {
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
   renderer.setSize(window.innerWidth, window.innerHeight)
+  composer.setSize(window.innerWidth, window.innerHeight)
 }
 
-// called by parent after AI build
 function applyBuild(result: AIBuildResponse): void {
   for (const action of result.actions) {
     if (action.type === 'place_block') {
       world.setBlock(action.position[0], action.position[1], action.position[2], action.material)
     }
   }
-  if (controls.isLocked === false) controls.lock()
 }
 
 function exportWorld(): void {
@@ -184,8 +204,9 @@ function importWorldJSON(jsonStr: string): void {
     const data = JSON.parse(jsonStr)
     world.loadWorldData(data)
     settings.setWorldName(data.name ?? 'Imported World')
-    ui.setBuildStatus('World imported!')
-    setTimeout(() => ui.setBuildStatus(''), 2000)
+    sound.playBuildComplete()
+    ui.setBuildStatus('✨ World imported successfully!')
+    setTimeout(() => ui.setBuildStatus(''), 2500)
   } catch {
     alert('Invalid world JSON file.')
   }
@@ -193,7 +214,6 @@ function importWorldJSON(jsonStr: string): void {
 
 function clearWorld(): void {
   world.clear()
-  world.generateFlatWorld()
 }
 
 defineExpose({ applyBuild, exportWorld, importWorldJSON, clearWorld, saveWorld })
@@ -201,7 +221,9 @@ defineExpose({ applyBuild, exportWorld, importWorldJSON, clearWorld, saveWorld }
 onMounted(() => { if (canvas.value) init() })
 onUnmounted(() => {
   cancelAnimationFrame(animId)
+  window.removeEventListener('mousemove', onMouseMove)
   window.removeEventListener('click', onCanvasClick)
+  window.removeEventListener('contextmenu', onContextMenu)
   window.removeEventListener('keydown', onKeyDown)
   window.removeEventListener('resize', onResize)
   renderer?.dispose()
@@ -209,5 +231,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.game-canvas { display: block; width: 100vw; height: 100vh; }
+.game-canvas { display: block; width: 100vw; height: 100vh; cursor: crosshair; }
 </style>

@@ -1,51 +1,50 @@
 import * as THREE from 'three'
 import { WorldEngine } from './world'
-import { BlockType } from '@/types/world'
 
 export interface RaycastResult {
   hit: boolean
-  blockPos: THREE.Vector3
-  normalPos: THREE.Vector3
-  blockType: BlockType
+  point: THREE.Vector3
+  normal: THREE.Vector3
+  npcName?: string
 }
 
-export function raycastBlock(
+const raycaster = new THREE.Raycaster()
+
+export function raycastMouse(
   camera: THREE.PerspectiveCamera,
+  mouse: THREE.Vector2,
   world: WorldEngine,
-  maxDistance = 6
+  scene: THREE.Scene
 ): RaycastResult {
-  const dir = new THREE.Vector3()
-  camera.getWorldDirection(dir)
+  raycaster.setFromCamera(mouse, camera)
 
-  const pos = camera.position.clone()
-  const step = 0.05
-
-  let prev = pos.clone()
-  for (let d = 0; d < maxDistance; d += step) {
-    pos.addScaledVector(dir, step)
-    const bx = Math.floor(pos.x)
-    const by = Math.floor(pos.y)
-    const bz = Math.floor(pos.z)
-    const type = world.getBlock(bx, by, bz)
-    if (type !== 'air') {
-      const normalPos = new THREE.Vector3(
-        Math.floor(prev.x),
-        Math.floor(prev.y),
-        Math.floor(prev.z)
-      )
+  // 1. Check for NPCs first
+  const npcMeshes = scene.children.filter(c => c.userData?.isNPC)
+  const npcIntersects = raycaster.intersectObjects(npcMeshes, true)
+  if (npcIntersects.length > 0) {
+    // find root NPC group
+    let obj: THREE.Object3D | null = npcIntersects[0].object
+    while (obj && !obj.userData?.isNPC) obj = obj.parent
+    if (obj) {
       return {
         hit: true,
-        blockPos: new THREE.Vector3(bx, by, bz),
-        normalPos,
-        blockType: type,
+        point: npcIntersects[0].point,
+        normal: npcIntersects[0].face?.normal ?? new THREE.Vector3(0,1,0),
+        npcName: obj.userData.name
       }
     }
-    prev.copy(pos)
   }
-  return {
-    hit: false,
-    blockPos: new THREE.Vector3(),
-    normalPos: new THREE.Vector3(),
-    blockType: 'air',
+
+  // 2. Check for world blocks & terrain
+  const worldMeshes = world.getRaycastableMeshes()
+  const intersects = raycaster.intersectObjects(worldMeshes, false)
+  if (intersects.length > 0) {
+    return {
+      hit: true,
+      point: intersects[0].point,
+      normal: intersects[0].face?.normal ?? new THREE.Vector3(0,1,0),
+    }
   }
+
+  return { hit: false, point: new THREE.Vector3(), normal: new THREE.Vector3() }
 }
