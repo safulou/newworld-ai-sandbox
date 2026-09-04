@@ -9,13 +9,25 @@
       <HUD v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
+      <Minimap v-if="ui.mode === 'game'" />
+    </Transition>
+    <Transition name="fade">
       <Hotbar v-if="ui.mode === 'game'" />
+    </Transition>
+    <Transition name="fade">
+      <InventoryModal v-if="ui.mode === 'inventory'" />
+    </Transition>
+    <Transition name="fade">
+      <KeybindsModal v-if="ui.mode === 'keybinds'" />
+    </Transition>
+    <Transition name="fade">
+      <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
       <BuildPrompt v-if="ui.mode === 'build-prompt'" @build="onBuild" />
     </Transition>
     <Transition name="fade">
-      <BlueprintsModal v-if="ui.mode === 'blueprints'" @deploy="onBuild" />
+      <BlueprintsModal v-if="ui.mode === 'blueprints'" @deploy="onDeployBlueprint" />
     </Transition>
     <Transition name="fade">
       <NPCChat v-if="ui.mode === 'npc-chat'" />
@@ -39,7 +51,11 @@
 import { ref, onMounted } from 'vue'
 import GameCanvas from '@/components/GameCanvas.vue'
 import HUD from '@/components/HUD.vue'
+import Minimap from '@/components/Minimap.vue'
 import Hotbar from '@/components/Hotbar.vue'
+import InventoryModal from '@/components/InventoryModal.vue'
+import KeybindsModal from '@/components/KeybindsModal.vue'
+import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'
 import NPCChat from '@/components/NPCChat.vue'
@@ -57,7 +73,6 @@ onMounted(() => {
     const data = (e as CustomEvent).detail
     ui.setProgressData(data)
     
-    // Auto-open modal when progress starts, unless it's already open or we manually closed it
     if (data.status !== 'done' && data.status !== 'completed' && data.status !== 'error') {
       if (ui.mode !== 'build-progress') {
         ui.openBuildProgress()
@@ -67,7 +82,6 @@ onMounted(() => {
 })
 
 function onWorldReady(world: WorldEngine): void {
-  // auto-load saved world
   const saved = localStorage.getItem('nw_world')
   if (saved) {
     try {
@@ -76,8 +90,12 @@ function onWorldReady(world: WorldEngine): void {
   }
 }
 
-function onBuild(result: AIBuildResponse | BuildAction[]): void {
+function onBuild(result: AIBuildResponse): void {
   gameCanvas.value?.applyBuild(result)
+}
+
+function onDeployBlueprint(actions: BuildAction[]): void {
+  gameCanvas.value?.applyBuild({ description: 'Blueprint Deployment', actions })
 }
 </script>
 

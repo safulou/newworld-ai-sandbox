@@ -41,7 +41,6 @@ let clock: THREE.Clock
 
 const mouse = new THREE.Vector2(-100, -100)
 const pointerDownPos = { x: 0, y: 0 }
-let isDraggingCamera = false
 
 function init(): void {
   scene = createScene()
@@ -137,7 +136,6 @@ function onMouseMove(e: MouseEvent): void {
 function onMouseDown(e: MouseEvent): void {
   pointerDownPos.x = e.clientX
   pointerDownPos.y = e.clientY
-  isDraggingCamera = false
 }
 
 function onMouseUp(e: MouseEvent): void {

@@ -240,6 +240,17 @@ app.post('/api/plots/claim', async (req, res) => {
   }
 })
 
+// ── Blockchain Ledger Endpoints ──
+
+app.get('/api/chain', async (_req, res) => {
+  try {
+    const chain = await all('SELECT * FROM world_chain ORDER BY block_index DESC LIMIT 50')
+    res.json(chain)
+  } catch (e) {
+    res.status(500).json({ error: String(e) })
+  }
+})
+
 // ── Chat Endpoints ──
 
 app.get('/api/chat', async (_req, res) => {

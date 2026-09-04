@@ -2,7 +2,18 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { BlockType } from '@/types/world'
 
-export type UIMode = 'game' | 'settings' | 'build-prompt' | 'npc-chat' | 'help' | 'build-progress' | 'blueprints'
+export type UIMode =
+  | 'game'
+  | 'settings'
+  | 'build-prompt'
+  | 'npc-chat'
+  | 'help'
+  | 'build-progress'
+  | 'blueprints'
+  | 'inventory'
+  | 'keybinds'
+  | 'chain'
+
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
 export interface BuildProgressData {
@@ -28,6 +39,9 @@ export const useUIStore = defineStore('ui', () => {
   function openSettings(): void { mode.value = 'settings' }
   function openBuildPrompt(): void { mode.value = 'build-prompt' }
   function openBlueprints(): void { mode.value = 'blueprints' }
+  function openInventory(): void { mode.value = 'inventory' }
+  function openKeybinds(): void { mode.value = 'keybinds' }
+  function openChain(): void { mode.value = 'chain' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -46,7 +60,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay,
-    openSettings, openBuildPrompt, openBlueprints, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay,
   }
 })
