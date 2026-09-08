@@ -30,6 +30,12 @@
       <AchievementsModal v-if="ui.mode === 'achievements'" />
     </Transition>
     <Transition name="fade">
+      <QuestLogModal v-if="ui.mode === 'quests'" />
+    </Transition>
+    <Transition name="fade">
+      <ShadersModal v-if="ui.mode === 'shaders'" />
+    </Transition>
+    <Transition name="fade">
       <ExportModal
         v-if="ui.mode === 'export'"
         :player-blocks="gameCanvas?.getWorldBlocks()"
@@ -76,6 +82,8 @@ import KeybindsModal from '@/components/KeybindsModal.vue'
 import ToolsModal from '@/components/ToolsModal.vue'
 import PhotoModeModal from '@/components/PhotoModeModal.vue'
 import AchievementsModal from '@/components/AchievementsModal.vue'
+import QuestLogModal from '@/components/QuestLogModal.vue'
+import ShadersModal from '@/components/ShadersModal.vue'
 import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'

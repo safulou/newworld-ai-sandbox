@@ -40,36 +40,39 @@ interface KeyCategory {
 
 const keyCategories: KeyCategory[] = [
   {
-    name: '視角移動與物理',
+    name: '視角、移動與載具',
     keys: [
       { combo: 'W / A / S / D', desc: '前後左右平移' },
-      { combo: 'Space', desc: '跳躍 / 飛行模式上升' },
-      { combo: 'Shift', desc: '衝刺 / 飛行模式下降' },
+      { combo: 'Space', desc: '跳躍 / 飛行上升' },
+      { combo: 'Shift', desc: '衝刺 / 飛行下降' },
+      { combo: 'G', desc: '召喚 / 收起 賽博懸浮滑板 (Hoverboard)' },
       { combo: 'V', desc: '切換視角 (RTS / 第一人稱 / 第三人稱)' },
       { combo: 'F', desc: '切換創造飛行 vs 重力行走' },
     ]
   },
   {
-    name: '建造與空間交互',
+    name: '建造、工具與任務',
     keys: [
       { combo: '滑鼠右鍵', desc: '放置手持方塊 (附空間音效)' },
       { combo: '滑鼠左鍵', desc: '破壞挖掘方塊 (附粒子碎屑)' },
       { combo: '1 ~ 9', desc: '快速選取 Hotbar 材質' },
       { combo: 'E', desc: '開啟全品類創造物品庫' },
-      { combo: 'T', desc: '切換空間多功能工具庫 (Tools)' },
+      { combo: 'T', desc: '開啟空間多功能工具庫 (Tools)' },
+      { combo: 'J', desc: '開啟元宇宙任務手冊 (Quest Log)' },
       { combo: 'Ctrl + Z / Y', desc: '空間還原 (Undo) / 重做 (Redo)' },
     ]
   },
   {
-    name: 'AI、音樂與系統',
+    name: 'AI、光影與系統',
     keys: [
       { combo: 'B', desc: '開啟 AI Voxel Architect 自然語言建造' },
       { combo: 'P', desc: '開啟 3D 建築巨型藍圖庫' },
-      { combo: 'C', desc: '開啟 SHA-256 區塊鏈記帳簿瀏覽器' },
-      { combo: 'M / F7', desc: '開啟 Lo-Fi 合成音頻工作室' },
+      { combo: 'K', desc: '開啟 著色器與後製特效工作室 (Shaders)' },
       { combo: 'F4', desc: '開啟 賽博光影拍照相機 (Photo Mode)' },
       { combo: 'F5', desc: '開啟 元宇宙成就殿堂 (Achievements)' },
       { combo: 'F6', desc: '匯出 3D .OBJ 模型與 JSON 數據' },
+      { combo: 'M / F7', desc: '開啟 Lo-Fi 合成音頻工作室' },
+      { combo: 'C', desc: '開啟 SHA-256 區塊鏈記帳簿' },
       { combo: 'F1', desc: '元宇宙世界設定 (日夜光影/API Key)' },
       { combo: 'F2', desc: '快速存檔世界' },
       { combo: 'F3', desc: '開啟快捷鍵參照指南 (本視窗)' },

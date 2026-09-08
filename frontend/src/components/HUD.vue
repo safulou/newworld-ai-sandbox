@@ -16,8 +16,14 @@
 
     <!-- Top Right: Action Bar & Provider Badge -->
     <div class="top-right-bar">
+      <button class="hud-btn" @click="ui.openQuests" title="任務手冊 (J)">
+        📜 任務 (J)
+      </button>
       <button class="hud-btn" @click="ui.openTools" title="空間工具庫 (T)">
         🛠️ 工具 (T)
+      </button>
+      <button class="hud-btn" @click="ui.openShaders" title="光影著色器 (K)">
+        ✨ 著色器 (K)
       </button>
       <button class="hud-btn" @click="ui.openPhoto" title="賽博拍照模式 (F4)">
         📷 拍照 (F4)
@@ -32,10 +38,10 @@
         🎵 音樂 (M)
       </button>
       <button class="hud-btn" @click="ui.openChain" title="區塊鏈瀏覽器 (C)">
-        ⛓️ 鏈上記帳 (C)
+        ⛓️ 鏈上 (C)
       </button>
       <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
-        ↩️ 還原 (Ctrl+Z)
+        ↩️ 還原
       </button>
       <button class="hud-btn" @click="ui.openSettings" title="世界設定 (F1)">
         ⚙️ 設定 (F1)
@@ -50,7 +56,7 @@
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | 1-9: 快捷方塊 | E: 物品庫 | T: 工具庫 | B: AI 建造 | P: 藍圖庫 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
+      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 載具滑板 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
     </div>
   </div>
 </template>
@@ -172,7 +178,7 @@ onUnmounted(() => {
 .top-right-bar {
   position: absolute; top: 20px; right: 20px;
   display: flex; align-items: center; gap: 8px;
-  pointer-events: auto; flex-wrap: wrap; justify-content: flex-end; max-width: 75vw;
+  pointer-events: auto; flex-wrap: wrap; justify-content: flex-end; max-width: 78vw;
 }
 
 .hud-btn {

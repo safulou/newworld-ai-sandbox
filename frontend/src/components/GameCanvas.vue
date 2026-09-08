@@ -22,6 +22,8 @@ import { tools } from '@/engine/tools'
 import { physics } from '@/engine/physics'
 import { achievements } from '@/engine/achievements'
 import { npcManager } from '@/engine/npc'
+import { vehicles } from '@/engine/vehicles'
+import { questEngine } from '@/engine/quests'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -68,8 +70,9 @@ function init(): void {
 
   clock = new THREE.Clock()
 
-  // Initialize Autonomous AI NPC Roster
+  // Initialize Autonomous AI NPC Roster & Vehicles
   npcManager.init(scene, world, new THREE.Vector3(0, 0, 0))
+  vehicles.init(scene)
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
@@ -95,7 +98,14 @@ function loop(): void {
   world.animateBlocks(delta)
   world.updateChunks(camera.position.x, camera.position.z)
   npcManager.update(delta, camera.position)
+  vehicles.update(delta, camera.position, true)
   
+  // High altitude quest & achievement check
+  if (camera.position.y >= 35) {
+    questEngine.trackProgress('reach_y35', 1)
+    achievements.unlock('reach_sky')
+  }
+
   // Throttle player broadcast & HUD position update
   if (Math.random() < 0.1) {
     world.emitPlayerMove(camera.position.x, camera.position.y, camera.position.z)
@@ -155,7 +165,7 @@ function onMouseUp(e: MouseEvent): void {
     physics.triggerExplosion(target.x, target.y, target.z, 3.5, world)
     atmosphere.spawnBreakEffect(target.x, target.y, target.z, 0xff0055)
     achievements.unlock('tnt_blast')
-    ui.setBuildStatus('💥 Plasma Blaster Detonation!')
+    ui.setBuildStatus('💥 電漿爆破引爆！')
     setTimeout(() => ui.setBuildStatus(''), 1500)
     return
   }
@@ -180,10 +190,10 @@ function onMouseUp(e: MouseEvent): void {
       z: Math.floor(targetPos.z),
     })
     if (res) {
-      ui.setBuildStatus(`📐 Distance: ${res.distance.toFixed(2)}m (ΔX: ${res.dx}, ΔY: ${res.dy}, ΔZ: ${res.dz})`)
+      ui.setBuildStatus(`📐 距離: ${res.distance.toFixed(2)}m (ΔX: ${res.dx}, ΔY: ${res.dy}, ΔZ: ${res.dz})`)
       setTimeout(() => ui.setBuildStatus(''), 3500)
     } else {
-      ui.setBuildStatus('📐 Ruler Point 1 set! Click Point 2.')
+      ui.setBuildStatus('📐 已選取測量起點！請點擊終點。')
       setTimeout(() => ui.setBuildStatus(''), 2000)
     }
     return
@@ -215,6 +225,18 @@ function onMouseUp(e: MouseEvent): void {
     const prevType = world.getBlock(bx, by, bz)
     world.setBlock(bx, by, bz, ui.selectedBlock)
     world.recordSinglePlacement(bx, by, bz, prevType, ui.selectedBlock)
+
+    // Quest tracking
+    questEngine.trackProgress('place_5_blocks', 1)
+    if (ui.selectedBlock === 'light_emitter') {
+      questEngine.trackProgress('place_3_emitters', 1)
+    }
+    if (ui.selectedBlock === 'wire_off' || ui.selectedBlock === 'wire_on') {
+      questEngine.trackProgress('place_wires', 1)
+    }
+    if (ui.selectedBlock === 'power_source') {
+      questEngine.trackProgress('place_power', 1)
+    }
   }
 }
 
@@ -234,6 +256,13 @@ function onKeyDown(e: KeyboardEvent): void {
   if (e.code === 'F7') ui.openSynth()
   
   if (ui.mode === 'game') {
+    if (e.code === 'KeyG') {
+      const v = vehicles.toggleHoverboard(camera.position)
+      ui.setBuildStatus(v === 'hoverboard' ? '🛹 賽博懸浮滑板已就緒！' : '🛹 懸浮滑板已收起')
+      setTimeout(() => ui.setBuildStatus(''), 1500)
+    }
+    if (e.code === 'KeyJ') ui.openQuests()
+    if (e.code === 'KeyK') ui.openShaders()
     if (e.code === 'KeyT') ui.openTools()
     if (e.code === 'KeyC') ui.openChain()
     if (e.code === 'KeyE') ui.openInventory()
@@ -397,6 +426,7 @@ onUnmounted(() => {
   window.removeEventListener('direct-build', onDirectBuild)
   window.removeEventListener('update-fov', onUpdateFOV)
   npcManager.dispose()
+  vehicles.dispose()
   renderer?.dispose()
 })
 </script>
