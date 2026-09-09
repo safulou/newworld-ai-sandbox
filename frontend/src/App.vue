@@ -12,6 +12,9 @@
       <Minimap v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
+      <MultiplayerChat v-if="ui.mode === 'game'" />
+    </Transition>
+    <Transition name="fade">
       <Hotbar v-if="ui.mode === 'game'" />
     </Transition>
     <Transition name="fade">
@@ -34,6 +37,21 @@
     </Transition>
     <Transition name="fade">
       <ShadersModal v-if="ui.mode === 'shaders'" />
+    </Transition>
+    <Transition name="fade">
+      <SkinCustomizerModal v-if="ui.mode === 'skins'" />
+    </Transition>
+    <Transition name="fade">
+      <MinigamesModal
+        v-if="ui.mode === 'minigames'"
+        @launch-parkour="onLaunchParkour"
+      />
+    </Transition>
+    <Transition name="fade">
+      <BlueprintEditorModal
+        v-if="ui.mode === 'custom-blueprints'"
+        @deploy-blueprint="onDeployCustomBlueprint"
+      />
     </Transition>
     <Transition name="fade">
       <ExportModal
@@ -76,6 +94,7 @@ import { ref, onMounted } from 'vue'
 import GameCanvas from '@/components/GameCanvas.vue'
 import HUD from '@/components/HUD.vue'
 import Minimap from '@/components/Minimap.vue'
+import MultiplayerChat from '@/components/MultiplayerChat.vue'
 import Hotbar from '@/components/Hotbar.vue'
 import InventoryModal from '@/components/InventoryModal.vue'
 import KeybindsModal from '@/components/KeybindsModal.vue'
@@ -84,6 +103,9 @@ import PhotoModeModal from '@/components/PhotoModeModal.vue'
 import AchievementsModal from '@/components/AchievementsModal.vue'
 import QuestLogModal from '@/components/QuestLogModal.vue'
 import ShadersModal from '@/components/ShadersModal.vue'
+import SkinCustomizerModal from '@/components/SkinCustomizerModal.vue'
+import MinigamesModal from '@/components/MinigamesModal.vue'
+import BlueprintEditorModal from '@/components/BlueprintEditorModal.vue'
 import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
@@ -95,6 +117,8 @@ import BuildProgress from '@/components/BuildProgress.vue'
 import { useUIStore } from '@/stores/ui'
 import { WorldEngine } from '@/engine/world'
 import { AIBuildResponse, BuildAction } from '@/types/world'
+import { minigames } from '@/engine/minigames'
+import { CustomBlueprint } from '@/engine/schematic'
 
 const ui = useUIStore()
 const gameCanvas = ref<InstanceType<typeof GameCanvas>>()
@@ -127,6 +151,15 @@ function onBuild(result: AIBuildResponse): void {
 
 function onDeployBlueprint(actions: BuildAction[]): void {
   gameCanvas.value?.applyBuild({ description: 'Blueprint Deployment', actions })
+}
+
+function onDeployCustomBlueprint(bp: CustomBlueprint): void {
+  gameCanvas.value?.applyBuild({ description: bp.name, actions: bp.actions })
+}
+
+function onLaunchParkour(): void {
+  const actions = minigames.generateParkourCourse({ x: 0, y: 15, z: 0 })
+  gameCanvas.value?.applyBuild({ description: 'Neon Parkour Arena', actions })
 }
 </script>
 
