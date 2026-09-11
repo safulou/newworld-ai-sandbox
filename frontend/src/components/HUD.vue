@@ -16,6 +16,18 @@
 
     <!-- Top Right: Action Bar & Provider Badge -->
     <div class="top-right-bar">
+      <button class="hud-btn" @click="ui.openVoxImporter" title="MagicaVoxel 3D 體素資產 (U)">
+        📦 VOX (U)
+      </button>
+      <button class="hud-btn" @click="ui.openDrone" title="無人偵查機 (Y)">
+        🛸 無人機 (Y)
+      </button>
+      <button class="hud-btn" @click="ui.openSkins" title="化身換裝 (H)">
+        🥋 換裝 (H)
+      </button>
+      <button class="hud-btn" @click="ui.openMinigames" title="小遊戲競技場 (O)">
+        🎮 跑酷 (O)
+      </button>
       <button class="hud-btn" @click="ui.openQuests" title="任務手冊 (J)">
         📜 任務 (J)
       </button>
@@ -34,12 +46,6 @@
       <button class="hud-btn" @click="ui.openExport" title="3D 模型匯出 (F6)">
         📦 匯出 (F6)
       </button>
-      <button class="hud-btn" @click="ui.openSynth" title="合成音樂工作室 (M / F7)">
-        🎵 音樂 (M)
-      </button>
-      <button class="hud-btn" @click="ui.openChain" title="區塊鏈瀏覽器 (C)">
-        ⛓️ 鏈上 (C)
-      </button>
       <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
         ↩️ 還原
       </button>
@@ -56,7 +62,7 @@
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 載具滑板 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
+      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 懸浮滑板 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 跑酷 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
     </div>
   </div>
 </template>

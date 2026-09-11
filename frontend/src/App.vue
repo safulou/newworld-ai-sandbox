@@ -54,6 +54,19 @@
       />
     </Transition>
     <Transition name="fade">
+      <VoxImporterModal
+        v-if="ui.mode === 'vox-importer'"
+        @deploy-vox="onDeployVox"
+      />
+    </Transition>
+    <Transition name="fade">
+      <DroneControlModal
+        v-if="ui.mode === 'drone'"
+        @launch-drone="onLaunchDrone"
+        @recall-drone="onRecallDrone"
+      />
+    </Transition>
+    <Transition name="fade">
       <ExportModal
         v-if="ui.mode === 'export'"
         :player-blocks="gameCanvas?.getWorldBlocks()"
@@ -106,6 +119,8 @@ import ShadersModal from '@/components/ShadersModal.vue'
 import SkinCustomizerModal from '@/components/SkinCustomizerModal.vue'
 import MinigamesModal from '@/components/MinigamesModal.vue'
 import BlueprintEditorModal from '@/components/BlueprintEditorModal.vue'
+import VoxImporterModal from '@/components/VoxImporterModal.vue'
+import DroneControlModal from '@/components/DroneControlModal.vue'
 import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
@@ -116,9 +131,10 @@ import SettingsPanel from '@/components/SettingsPanel.vue'
 import BuildProgress from '@/components/BuildProgress.vue'
 import { useUIStore } from '@/stores/ui'
 import { WorldEngine } from '@/engine/world'
-import { AIBuildResponse, BuildAction } from '@/types/world'
+import { AIBuildResponse, BuildAction, BlockPlacement } from '@/types/world'
 import { minigames } from '@/engine/minigames'
 import { CustomBlueprint } from '@/engine/schematic'
+import { droneManager } from '@/engine/drone'
 
 const ui = useUIStore()
 const gameCanvas = ref<InstanceType<typeof GameCanvas>>()
@@ -155,6 +171,26 @@ function onDeployBlueprint(actions: BuildAction[]): void {
 
 function onDeployCustomBlueprint(bp: CustomBlueprint): void {
   gameCanvas.value?.applyBuild({ description: bp.name, actions: bp.actions })
+}
+
+function onDeployVox(blocks: BlockPlacement[]): void {
+  const actions: BuildAction[] = blocks.map(b => ({
+    type: 'place_block',
+    position: [b.x, b.y, b.z],
+    material: b.type,
+  }))
+  gameCanvas.value?.applyBuild({ description: 'MagicaVoxel Model', actions })
+}
+
+function onLaunchDrone(): void {
+  const pos = gameCanvas.value?.getPlayerPosition()
+  if (pos) {
+    droneManager.launch(pos)
+  }
+}
+
+function onRecallDrone(): void {
+  droneManager.recall()
 }
 
 function onLaunchParkour(): void {

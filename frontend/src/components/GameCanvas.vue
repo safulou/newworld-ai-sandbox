@@ -24,6 +24,8 @@ import { achievements } from '@/engine/achievements'
 import { npcManager } from '@/engine/npc'
 import { vehicles } from '@/engine/vehicles'
 import { questEngine } from '@/engine/quests'
+import { droneManager } from '@/engine/drone'
+import { spatialAudio } from '@/engine/spatialAudio'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -70,9 +72,11 @@ function init(): void {
 
   clock = new THREE.Clock()
 
-  // Initialize Autonomous AI NPC Roster & Vehicles
+  // Initialize Autonomous AI NPC Roster, Vehicles, Drone & Spatial Audio
   npcManager.init(scene, world, new THREE.Vector3(0, 0, 0))
   vehicles.init(scene)
+  droneManager.init(scene)
+  spatialAudio.init()
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
@@ -99,6 +103,8 @@ function loop(): void {
   world.updateChunks(camera.position.x, camera.position.z)
   npcManager.update(delta, camera.position)
   vehicles.update(delta, camera.position, true)
+  droneManager.update(delta, camera.position)
+  spatialAudio.updateListenerPosition(camera.position)
   
   // High altitude quest & achievement check
   if (camera.position.y >= 35) {
@@ -268,6 +274,11 @@ function onKeyDown(e: KeyboardEvent): void {
     if (e.code === 'KeyE') ui.openInventory()
     if (e.code === 'KeyP') ui.openBlueprints()
     if (e.code === 'KeyM') ui.openSynth()
+    if (e.code === 'KeyH') ui.openSkins()
+    if (e.code === 'KeyO') ui.openMinigames()
+    if (e.code === 'KeyN') ui.openCustomBlueprints()
+    if (e.code === 'KeyU') ui.openVoxImporter()
+    if (e.code === 'KeyY') ui.openDrone()
     
     // B Key -> AI Build Prompt
     if (e.code === 'KeyB') {
@@ -410,7 +421,11 @@ function getWorldBlocks(): Map<string, { type: BlockType; mesh: THREE.Mesh }> {
   return world.getPlayerBlocks()
 }
 
-defineExpose({ applyBuild, undoBuild, redoBuild, exportWorld, importWorldJSON, clearWorld, saveWorld, getWorldBlocks })
+function getPlayerPosition(): THREE.Vector3 {
+  return camera ? camera.position.clone() : new THREE.Vector3(0, 5, 0)
+}
+
+defineExpose({ applyBuild, undoBuild, redoBuild, exportWorld, importWorldJSON, clearWorld, saveWorld, getWorldBlocks, getPlayerPosition })
 
 onMounted(() => { if (canvas.value) init() })
 onUnmounted(() => {
