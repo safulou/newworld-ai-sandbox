@@ -12,6 +12,7 @@ import { buildChunkInstancedMeshes } from './chunkMesh'
 import { physics } from './physics'
 import { logicEngine } from './logic'
 import { achievements } from './achievements'
+import { spatialVoice } from './spatialVoice'
 
 export interface ClaimedPlot {
   cx: number
@@ -78,11 +79,23 @@ export class WorldEngine {
           makePremiumMaterial(0x00ffff, 'emissive')
         )
         head.position.y = 1.38
-        avatar.add(body, head)
+
+        // 3D Spatial Voice speech indicator ring above avatar
+        const voiceHalo = new THREE.Mesh(
+          new THREE.RingGeometry(0.22, 0.32, 16),
+          new THREE.MeshBasicMaterial({ color: 0x00ff88, side: THREE.DoubleSide, transparent: true, opacity: 0.85 })
+        )
+        voiceHalo.position.y = 1.95
+        voiceHalo.rotation.x = Math.PI / 2
+        voiceHalo.visible = false
+        voiceHalo.name = 'voiceHalo'
+
+        avatar.add(body, head, voiceHalo)
         this.scene.add(avatar)
         this.otherPlayers.set(data.id, avatar)
       }
       avatar.position.set(data.x, data.y, data.z)
+      spatialVoice.updatePeerPosition(data.id, data.x, data.y, data.z)
     })
 
     this.socket.on('player-leave', (data: { id: string }) => {
@@ -128,6 +141,27 @@ export class WorldEngine {
   emitPlayerMove(x: number, y: number, z: number): void {
     const settings = useSettingsStore()
     this.socket.emit('player-move', { x, y, z, creatorId: settings.creatorId })
+  }
+
+  setPlayerVoiceState(id: string, isSpeaking: boolean, isMuted: boolean): void {
+    const avatar = this.otherPlayers.get(id)
+    if (!avatar) return
+    const halo = avatar.getObjectByName('voiceHalo') as THREE.Mesh | undefined
+    if (halo) {
+      halo.visible = isSpeaking || isMuted
+      const mat = halo.material as THREE.MeshBasicMaterial
+      if (isSpeaking) {
+        mat.color.setHex(0x00ff88)
+        halo.scale.setScalar(1.0 + Math.sin(Date.now() * 0.015) * 0.2)
+      } else if (isMuted) {
+        mat.color.setHex(0xff3355)
+        halo.scale.setScalar(0.75)
+      }
+    }
+  }
+
+  getOtherPlayerAvatars(): Map<string, THREE.Group> {
+    return this.otherPlayers
   }
 
   // ── Player block interaction ─────────────────────────────────────────

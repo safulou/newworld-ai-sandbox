@@ -46,6 +46,9 @@
       <button class="hud-btn" @click="ui.openExport" title="3D 模型匯出 (F6)">
         📦 匯出 (F6)
       </button>
+      <button class="hud-btn voice-btn" :class="{ live: spatialVoice.isJoined && !spatialVoice.isMicMuted }" @click="ui.openSpatialVoice" title="3D 空間語音 (X / F8)">
+        🎙️ 語音 (X)
+      </button>
       <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
         ↩️ 還原
       </button>
@@ -57,12 +60,25 @@
       </div>
     </div>
 
+    <!-- Floating Voice Quick Bar -->
+    <div v-if="spatialVoice.isJoined" class="voice-floating-bar" @click="ui.openSpatialVoice" title="點擊設定 3D 空間語音 (X / F8)">
+      <span class="voice-mic-icon" :class="{ speaking: spatialVoice.isLocalSpeaking, muted: spatialVoice.isMicMuted }">
+        {{ spatialVoice.isMicMuted ? '🔇' : (spatialVoice.isLocalSpeaking ? '🔊' : '🎙️') }}
+      </span>
+      <span class="voice-text">
+        {{ spatialVoice.isMicMuted ? '麥克風靜音' : (spatialVoice.isLocalSpeaking ? '發話中...' : '3D 語音已連線') }}
+      </span>
+      <span class="voice-peers-count" v-if="peersCount > 0">
+        👥 {{ peersCount }}人
+      </span>
+    </div>
+
     <!-- Center: Build status notification -->
     <div v-if="ui.buildStatus" class="build-status">{{ ui.buildStatus }}</div>
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 懸浮滑板 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 跑酷 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
+      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 懸浮滑板 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 跑酷 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
     </div>
   </div>
 </template>
@@ -73,9 +89,12 @@ import { useSettingsStore } from '@/stores/settings'
 import { useUIStore } from '@/stores/ui'
 import { sound } from '@/engine/audio'
 import { achievements } from '@/engine/achievements'
+import { spatialVoice } from '@/engine/spatialVoice'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
+
+const peersCount = computed(() => spatialVoice.peers.size)
 
 const currentChunk = ref({ cx: 0, cz: 0 })
 const currentPlot = ref<any>(null)
@@ -196,6 +215,55 @@ onUnmounted(() => {
   transition: all 0.2s;
 }
 .hud-btn:hover { border-color: #00ffff; color: #00ffff; box-shadow: 0 0 10px rgba(0,255,255,0.25); transform: translateY(-1px); }
+
+.voice-btn.live {
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.voice-floating-bar {
+  position: absolute;
+  top: 75px;
+  right: 20px;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+
+.voice-floating-bar:hover {
+  border-color: #00ffff;
+  transform: translateY(-1px);
+}
+
+.voice-mic-icon.speaking {
+  animation: pulseSpeaking 0.5s infinite alternate;
+}
+
+.voice-peers-count {
+  background: rgba(0, 255, 255, 0.15);
+  color: #00ffff;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@keyframes pulseSpeaking {
+  from { transform: scale(1.0); text-shadow: 0 0 4px #00ff88; }
+  to { transform: scale(1.2); text-shadow: 0 0 12px #00ff88; }
+}
 
 .undo-btn {
   border-color: rgba(0, 255, 255, 0.3);

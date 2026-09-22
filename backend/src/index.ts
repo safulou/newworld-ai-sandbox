@@ -119,7 +119,18 @@ async function appendBlockToChain(creatorId: string, payload: any) {
   console.log(`[Blockchain] Block mined: ${hash.substring(0,8)}... by ${creatorId}`)
 }
 
-// ── Socket.IO Multiplayer ──
+// ── WebRTC Spatial Voice Chat Peer Registry ──
+interface VoicePeerInfo {
+  id: string
+  creatorId: string
+  position: { x: number; y: number; z: number }
+  isMuted: boolean
+  isDeafened: boolean
+}
+
+const voicePeers = new Map<string, VoicePeerInfo>()
+
+// ── Socket.IO Multiplayer & WebRTC Signaling ──
 io.on('connection', (socket) => {
   console.log('Player connected:', socket.id)
 
@@ -154,13 +165,70 @@ io.on('connection', (socket) => {
     }
   })
 
-  socket.on('player-move', (data: { x: number, y: number, z: number }) => {
+  socket.on('player-move', (data: { x: number, y: number, z: number, creatorId?: string }) => {
     socket.broadcast.emit('player-move', { id: socket.id, ...data })
+    const peer = voicePeers.get(socket.id)
+    if (peer) {
+      peer.position = { x: data.x, y: data.y, z: data.z }
+    }
+  })
+
+  // ── WebRTC Spatial Voice Signaling Handlers ──
+  socket.on('voice-join', (data: { creatorId?: string; position?: { x: number; y: number; z: number }; isMuted?: boolean }) => {
+    const peer: VoicePeerInfo = {
+      id: socket.id,
+      creatorId: data.creatorId || 'Pioneer',
+      position: data.position || { x: 0, y: 0, z: 0 },
+      isMuted: data.isMuted ?? false,
+      isDeafened: false
+    }
+    voicePeers.set(socket.id, peer)
+
+    // Send existing peers to newly joined client
+    const existingPeers = Array.from(voicePeers.values()).filter(p => p.id !== socket.id)
+    socket.emit('voice-peer-list', existingPeers)
+
+    // Broadcast new peer to other connected voice clients
+    socket.broadcast.emit('voice-peer-joined', peer)
+    console.log(`[SpatialVoice] Peer ${socket.id} (${peer.creatorId}) joined 3D voice chat`)
+  })
+
+  socket.on('voice-signal', (data: { targetId: string; signal: any }) => {
+    if (!data.targetId || !data.signal) return
+    io.to(data.targetId).emit('voice-signal', {
+      senderId: socket.id,
+      signal: data.signal
+    })
+  })
+
+  socket.on('voice-mute-toggle', (data: { isMuted: boolean; isDeafened: boolean }) => {
+    const peer = voicePeers.get(socket.id)
+    if (peer) {
+      peer.isMuted = data.isMuted
+      peer.isDeafened = data.isDeafened
+      socket.broadcast.emit('voice-peer-mute-change', {
+        peerId: socket.id,
+        isMuted: data.isMuted,
+        isDeafened: data.isDeafened
+      })
+    }
+  })
+
+  socket.on('voice-leave', () => {
+    if (voicePeers.has(socket.id)) {
+      voicePeers.delete(socket.id)
+      socket.broadcast.emit('voice-peer-left', { peerId: socket.id })
+      console.log(`[SpatialVoice] Peer ${socket.id} left voice chat`)
+    }
   })
 
   socket.on('disconnect', () => {
     console.log('Player disconnected:', socket.id)
     socket.broadcast.emit('player-leave', { id: socket.id })
+    if (voicePeers.has(socket.id)) {
+      voicePeers.delete(socket.id)
+      socket.broadcast.emit('voice-peer-left', { peerId: socket.id })
+    }
   })
 })
 
@@ -263,6 +331,7 @@ app.get('/api/stats', async (_req, res) => {
       totalPlotsClaimed: plotCount?.count ?? 0,
       blockchainHeight: chainHeight?.count ?? 0,
       totalChatMessages: chatMessages?.count ?? 0,
+      activeVoicePeers: voicePeers.size,
       activeTasks: taskPool.size,
       serverTime: new Date().toISOString(),
     })

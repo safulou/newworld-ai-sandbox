@@ -26,6 +26,7 @@ import { vehicles } from '@/engine/vehicles'
 import { questEngine } from '@/engine/quests'
 import { droneManager } from '@/engine/drone'
 import { spatialAudio } from '@/engine/spatialAudio'
+import { spatialVoice } from '@/engine/spatialVoice'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -72,11 +73,12 @@ function init(): void {
 
   clock = new THREE.Clock()
 
-  // Initialize Autonomous AI NPC Roster, Vehicles, Drone & Spatial Audio
+  // Initialize Autonomous AI NPC Roster, Vehicles, Drone, Spatial Audio & Voice
   npcManager.init(scene, world, new THREE.Vector3(0, 0, 0))
   vehicles.init(scene)
   droneManager.init(scene)
   spatialAudio.init()
+  spatialVoice.joinVoice(world.getSocket(), settings.creatorId, camera.position)
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
@@ -104,7 +106,14 @@ function loop(): void {
   npcManager.update(delta, camera.position)
   vehicles.update(delta, camera.position, true)
   droneManager.update(delta, camera.position)
-  spatialAudio.updateListenerPosition(camera.position)
+  
+  const camForward = new THREE.Vector3()
+  camera.getWorldDirection(camForward)
+  spatialVoice.update(camera.position, camForward, camera.up)
+
+  for (const peer of spatialVoice.peers.values()) {
+    world.setPlayerVoiceState(peer.id, peer.isSpeaking, peer.isMuted)
+  }
   
   // High altitude quest & achievement check
   if (camera.position.y >= 35) {
@@ -260,8 +269,10 @@ function onKeyDown(e: KeyboardEvent): void {
   if (e.code === 'F5') ui.openAchievements()
   if (e.code === 'F6') ui.openExport()
   if (e.code === 'F7') ui.openSynth()
+  if (e.code === 'F8') ui.openSpatialVoice()
   
   if (ui.mode === 'game') {
+    if (e.code === 'KeyX') ui.openSpatialVoice()
     if (e.code === 'KeyG') {
       const v = vehicles.toggleHoverboard(camera.position)
       ui.setBuildStatus(v === 'hoverboard' ? '🛹 賽博懸浮滑板已就緒！' : '🛹 懸浮滑板已收起')

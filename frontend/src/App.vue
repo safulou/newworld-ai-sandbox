@@ -67,6 +67,9 @@
       />
     </Transition>
     <Transition name="fade">
+      <SpatialVoiceModal v-if="ui.mode === 'spatial-voice'" />
+    </Transition>
+    <Transition name="fade">
       <ExportModal
         v-if="ui.mode === 'export'"
         :player-blocks="gameCanvas?.getWorldBlocks()"
@@ -121,6 +124,7 @@ import MinigamesModal from '@/components/MinigamesModal.vue'
 import BlueprintEditorModal from '@/components/BlueprintEditorModal.vue'
 import VoxImporterModal from '@/components/VoxImporterModal.vue'
 import DroneControlModal from '@/components/DroneControlModal.vue'
+import SpatialVoiceModal from '@/components/SpatialVoiceModal.vue'
 import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'

@@ -79,6 +79,7 @@ const keyCategories: KeyCategory[] = [
       { combo: 'M / F7', desc: '開啟 Lo-Fi 合成音頻工作室' },
       { combo: 'C', desc: '開啟 SHA-256 區塊鏈記帳簿' },
       { combo: 'Enter', desc: '聚焦 / 開啟多人即時聊天室' },
+      { combo: 'X / F8', desc: '開啟 3D WebRTC 空間語音通話 (Spatial Voice)' },
       { combo: 'F1', desc: '元宇宙世界設定 (日夜光影/API Key)' },
       { combo: 'F2', desc: '快速存檔世界' },
       { combo: 'F3', desc: '開啟快捷鍵參照指南 (本視窗)' },
