@@ -32,6 +32,8 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'tnt_blast', title: '定向爆破', description: '引爆一次高能聚合炸藥 (TNT)', icon: '💥', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'logic_circuit', title: '數位邏輯', description: '連接一條能量導線並點亮照明燈', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'spatial_voice_chat', title: '量子通訊網', description: '啟用 3D WebRTC 空間語音通話', icon: '🎙️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'laser_arena_ace', title: '賽博神射手', description: '在激光競技場中命中 5 架以上敵方戰鬥無人機', icon: '🔫', unlocked: false, progress: 0, maxProgress: 5, category: 'scifi' },
+  { id: 'voxel_snake_master', title: '量子貪食蛇', description: '體素貪吃蛇長度達到 12 節以上', icon: '🐍', unlocked: false, progress: 0, maxProgress: 12, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

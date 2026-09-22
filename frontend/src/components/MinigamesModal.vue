@@ -19,6 +19,28 @@
         </div>
 
         <div class="game-card">
+          <div class="game-icon">🔫</div>
+          <div class="game-info">
+            <h3>賽博 PvP 激光槍戰 (Cyber Laser PvP Arena)</h3>
+            <p>30x30 封閉力場戰場，配備 4 座狙擊高塔、引力彈跳墊與 5 架自主巡邏 AI 戰鬥無人機！60 秒極限射擊殲滅戰！</p>
+          </div>
+          <button class="launch-btn primary laser" @click="startLaserArena">
+            ⚡ 啟動激光戰場
+          </button>
+        </div>
+
+        <div class="game-card">
+          <div class="game-icon">🐍</div>
+          <div class="game-info">
+            <h3>3D 體素貪吃蛇 (3D Voxel Snake Arena)</h3>
+            <p>24x24 賽博網格邊界！玩家奔跑引導體素長蛇，吞噬量子能量果拉長尾身，切勿撞擊邊界力場或自身尾巴！</p>
+          </div>
+          <button class="launch-btn primary snake" @click="startVoxelSnake">
+            🟩 進入貪食賽道
+          </button>
+        </div>
+
+        <div class="game-card">
           <div class="game-icon">🎯</div>
           <div class="game-info">
             <h3>電漿定點靶場 (Plasma Target Range)</h3>
@@ -40,6 +62,8 @@ import { sound } from '@/engine/audio'
 
 const emit = defineEmits<{
   (e: 'launch-parkour'): void
+  (e: 'launch-laser'): void
+  (e: 'launch-snake'): void
 }>()
 
 const ui = useUIStore()
@@ -48,6 +72,23 @@ function startParkour(): void {
   emit('launch-parkour')
   sound.playFanfare()
   ui.setBuildStatus('🏃‍♂️ 霓虹跑酷關卡已生成！請跳上平台抵達終點！')
+  setTimeout(() => ui.setBuildStatus(''), 2500)
+  close()
+}
+
+function startLaserArena(): void {
+  emit('launch-laser')
+  tools.setTool('blaster')
+  sound.playFanfare()
+  ui.setBuildStatus('🔫 賽博激光戰場已生成！消滅巡邏戰鬥無人機！')
+  setTimeout(() => ui.setBuildStatus(''), 2500)
+  close()
+}
+
+function startVoxelSnake(): void {
+  emit('launch-snake')
+  sound.playFanfare()
+  ui.setBuildStatus('🐍 3D 體素貪吃蛇啟動！吞噬量子能量果，小心尾巴！')
   setTimeout(() => ui.setBuildStatus(''), 2500)
   close()
 }
@@ -160,6 +201,22 @@ function close(): void {
 .launch-btn.primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
+}
+
+.launch-btn.primary.laser {
+  background: linear-gradient(135deg, #ff007f, #ff0033);
+  color: #fff;
+}
+.launch-btn.primary.laser:hover {
+  box-shadow: 0 0 16px rgba(255, 0, 127, 0.6);
+}
+
+.launch-btn.primary.snake {
+  background: linear-gradient(135deg, #00ff88, #00bb44);
+  color: #000;
+}
+.launch-btn.primary.snake:hover {
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.6);
 }
 
 .launch-btn.secondary {

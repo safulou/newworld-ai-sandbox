@@ -71,6 +71,16 @@
       <span class="voice-peers-count" v-if="peersCount > 0">
         👥 {{ peersCount }}人
       </span>
+    <!-- Minigame Live Arena HUD -->
+    <div v-if="minigames.state.isActive" class="minigame-hud-bar glass-panel">
+      <div class="minigame-header">
+        <span class="minigame-badge" :class="minigames.state.type">
+          {{ minigameTitle }}
+        </span>
+        <span class="minigame-score">⭐ 得分: {{ minigames.state.score }}</span>
+        <button class="minigame-quit-btn" @click="quitMinigame">✕ 結束挑戰</button>
+      </div>
+      <div class="minigame-msg">{{ minigames.state.statusMessage }}</div>
     </div>
 
     <!-- Center: Build status notification -->
@@ -90,11 +100,26 @@ import { useUIStore } from '@/stores/ui'
 import { sound } from '@/engine/audio'
 import { achievements } from '@/engine/achievements'
 import { spatialVoice } from '@/engine/spatialVoice'
+import { minigames } from '@/engine/minigames'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
 
 const peersCount = computed(() => spatialVoice.peers.size)
+
+const minigameTitle = computed(() => {
+  switch (minigames.state.type) {
+    case 'laser_arena': return '🔫 賽博激光槍戰'
+    case 'voxel_snake': return '🐍 3D 體素貪吃蛇'
+    case 'parkour': return '🏃‍♂️ 霓虹極限跑酷'
+    default: return '🎮 競技場挑戰'
+  }
+})
+
+function quitMinigame(): void {
+  minigames.cleanupGameEntities()
+  sound.playUiClick()
+}
 
 const currentChunk = ref({ cx: 0, cz: 0 })
 const currentPlot = ref<any>(null)
@@ -263,6 +288,84 @@ onUnmounted(() => {
 @keyframes pulseSpeaking {
   from { transform: scale(1.0); text-shadow: 0 0 4px #00ff88; }
   to { transform: scale(1.2); text-shadow: 0 0 12px #00ff88; }
+}
+
+.minigame-hud-bar {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 26, 0.92);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  pointer-events: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 16px rgba(0, 255, 255, 0.2);
+  z-index: 60;
+  animation: fadeIn 0.25s ease;
+}
+
+.minigame-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.minigame-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: rgba(0, 255, 255, 0.15);
+  color: #00ffff;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.minigame-badge.laser_arena {
+  background: rgba(255, 0, 127, 0.2);
+  color: #ff007f;
+  border-color: rgba(255, 0, 127, 0.5);
+}
+
+.minigame-badge.voxel_snake {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  border-color: rgba(0, 255, 136, 0.5);
+}
+
+.minigame-score {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.minigame-quit-btn {
+  background: rgba(255, 70, 70, 0.2);
+  border: 1px solid rgba(255, 70, 70, 0.4);
+  color: #ff5555;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.minigame-quit-btn:hover {
+  background: rgba(255, 70, 70, 0.4);
+  color: #fff;
+}
+
+.minigame-msg {
+  font-size: 12px;
+  font-weight: 600;
+  color: #eee;
+  letter-spacing: 0.5px;
 }
 
 .undo-btn {

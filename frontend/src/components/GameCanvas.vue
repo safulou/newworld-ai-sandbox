@@ -27,6 +27,7 @@ import { questEngine } from '@/engine/quests'
 import { droneManager } from '@/engine/drone'
 import { spatialAudio } from '@/engine/spatialAudio'
 import { spatialVoice } from '@/engine/spatialVoice'
+import { minigames } from '@/engine/minigames'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -78,6 +79,7 @@ function init(): void {
   vehicles.init(scene)
   droneManager.init(scene)
   spatialAudio.init()
+  minigames.init(scene)
   spatialVoice.joinVoice(world.getSocket(), settings.creatorId, camera.position)
 
   window.addEventListener('mousemove', onMouseMove)
@@ -106,6 +108,7 @@ function loop(): void {
   npcManager.update(delta, camera.position)
   vehicles.update(delta, camera.position, true)
   droneManager.update(delta, camera.position)
+  minigames.update(delta, camera.position)
   
   const camForward = new THREE.Vector3()
   camera.getWorldDirection(camForward)
@@ -177,10 +180,15 @@ function onMouseUp(e: MouseEvent): void {
   if (activeTool === 'blaster') {
     // Plasma Blaster Tool
     const target = rc.point.clone()
-    physics.triggerExplosion(target.x, target.y, target.z, 3.5, world)
-    atmosphere.spawnBreakEffect(target.x, target.y, target.z, 0xff0055)
+    const hitDrone = minigames.checkLaserHit(target)
+    physics.triggerExplosion(target.x, target.y, target.z, hitDrone ? 4.5 : 3.5, world)
+    atmosphere.spawnBreakEffect(target.x, target.y, target.z, hitDrone ? 0x00ffff : 0xff0055)
     achievements.unlock('tnt_blast')
-    ui.setBuildStatus('💥 電漿爆破引爆！')
+    if (hitDrone) {
+      ui.setBuildStatus(`🎯 擊破敵方無人機！總分: ${minigames.state.score} (連擊 x${minigames.state.combo})`)
+    } else {
+      ui.setBuildStatus('💥 電漿爆破引爆！')
+    }
     setTimeout(() => ui.setBuildStatus(''), 1500)
     return
   }

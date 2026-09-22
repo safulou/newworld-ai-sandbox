@@ -45,6 +45,8 @@
       <MinigamesModal
         v-if="ui.mode === 'minigames'"
         @launch-parkour="onLaunchParkour"
+        @launch-laser="onLaunchLaser"
+        @launch-snake="onLaunchSnake"
       />
     </Transition>
     <Transition name="fade">
@@ -200,6 +202,18 @@ function onRecallDrone(): void {
 function onLaunchParkour(): void {
   const actions = minigames.generateParkourCourse({ x: 0, y: 15, z: 0 })
   gameCanvas.value?.applyBuild({ description: 'Neon Parkour Arena', actions })
+}
+
+function onLaunchLaser(): void {
+  const pos = gameCanvas.value?.getPlayerPosition() || { x: 0, y: 0, z: 0 }
+  const actions = minigames.generateLaserArena(pos)
+  gameCanvas.value?.applyBuild({ description: 'Cyber Laser PvP Arena', actions })
+}
+
+function onLaunchSnake(): void {
+  const pos = gameCanvas.value?.getPlayerPosition() || { x: 0, y: 0, z: 0 }
+  const actions = minigames.generateSnakeArena(pos)
+  gameCanvas.value?.applyBuild({ description: '3D Voxel Snake Arena', actions })
 }
 </script>
 
