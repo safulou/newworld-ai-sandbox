@@ -71,6 +71,8 @@
       <span class="voice-peers-count" v-if="peersCount > 0">
         👥 {{ peersCount }}人
       </span>
+    </div>
+
     <!-- Minigame Live Arena HUD -->
     <div v-if="minigames.state.isActive" class="minigame-hud-bar glass-panel">
       <div class="minigame-header">
