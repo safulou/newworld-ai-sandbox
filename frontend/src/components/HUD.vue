@@ -64,6 +64,9 @@
       <button class="hud-btn" @click="ui.openSettings" title="世界設定 (F1)">
         ⚙️ 設定 (F1)
       </button>
+      <div class="online-players-badge" title="即時協同在線玩家">
+        👥 {{ onlineCount }}人 在線
+      </div>
       <div class="provider-badge" :class="settings.provider">
         {{ settings.provider === 'local' ? '🧱 本地 AI' : `⚡ ${settings.provider.toUpperCase()}` }}
       </div>
@@ -99,7 +102,7 @@
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 切換載具 | ⛅: 氣象 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 競技場 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 偵錯 | F9: 快捷鍵
+      WASD: 移動 | 右鍵: 放置/開關 | 左鍵: 破壞 | G: 切換載具 | ⛅: 氣象 | ⚡: 量子電路 | 🌊: 流體 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 競技場 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 偵錯 | F9: 快捷鍵
     </div>
   </div>
 </template>
@@ -114,9 +117,12 @@ import { spatialVoice } from '@/engine/spatialVoice'
 import { minigames } from '@/engine/minigames'
 import { weather, WEATHER_ROSTER, WeatherType } from '@/engine/weather'
 import { vehicles, VEHICLE_CONFIGS, VehicleType } from '@/engine/vehicles'
+import { multiplayerSync } from '@/engine/multiplayerSync'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
+
+const onlineCount = computed(() => multiplayerSync.getOnlineCount())
 
 const currentWeatherType = ref<WeatherType>(weather.getWeather())
 const currentVehType = ref<VehicleType>(vehicles.getVehicle())
@@ -418,6 +424,18 @@ onUnmounted(() => {
 .undo-btn {
   border-color: rgba(0, 255, 255, 0.3);
   color: #00ffff;
+}
+
+.online-players-badge {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 .provider-badge {

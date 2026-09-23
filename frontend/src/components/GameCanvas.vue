@@ -29,6 +29,11 @@ import { droneManager } from '@/engine/drone'
 import { spatialAudio } from '@/engine/spatialAudio'
 import { spatialVoice } from '@/engine/spatialVoice'
 import { minigames } from '@/engine/minigames'
+import { circuits } from '@/engine/circuits'
+import { fluids } from '@/engine/fluids'
+import { explosives } from '@/engine/explosives'
+import { multiplayerSync } from '@/engine/multiplayerSync'
+import { npcSociety } from '@/engine/npcSociety'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -82,7 +87,20 @@ function init(): void {
   droneManager.init(scene)
   spatialAudio.init()
   minigames.init(scene)
+  explosives.init(scene)
+  multiplayerSync.init(world.getSocket(), scene, world)
   spatialVoice.joinVoice(world.getSocket(), settings.creatorId, camera.position)
+
+  circuits.setListener({
+    onJumpPadTriggered: (pos) => {
+      window.dispatchEvent(new CustomEvent('explosion-knockback', {
+        detail: { origin: { x: pos.x, y: pos.y - 1, z: pos.z }, force: 20 }
+      }))
+    },
+    onTeleportTriggered: (_from, target) => {
+      camera.position.copy(target)
+    }
+  })
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
@@ -113,6 +131,12 @@ function loop(): void {
   weather.update(delta, camera.position)
   droneManager.update(delta, camera.position)
   minigames.update(delta, camera.position)
+  circuits.update(delta, camera.position, world, npcManager.getNPCs())
+  fluids.update(delta, world)
+  explosives.update(delta)
+  multiplayerSync.update(delta)
+  npcSociety.update(delta, npcManager.getNPCs(), camera.position)
+  multiplayerSync.emitLocalState(camera.position, camera.rotation.y, settings.creatorId || 'Pioneer', vehicles.getVehicle(), spatialVoice.isLocalSpeaking)
   
   const camForward = new THREE.Vector3()
   camera.getWorldDirection(camForward)
@@ -263,6 +287,12 @@ function onMouseUp(e: MouseEvent): void {
 
     const blockType = world.getBlock(bx, by, bz)
     world.removeBlock(bx, by, bz)
+    multiplayerSync.broadcastBlockBreak(bx, by, bz, settings.creatorId)
+    if (blockType === 'water' || blockType === 'magma') {
+      fluids.removeSource(bx, by, bz)
+    }
+    circuits.simulateCircuits(world)
+
     atmosphere.spawnBreakEffect(
       bx + 0.5,
       by + 0.5,
@@ -270,7 +300,21 @@ function onMouseUp(e: MouseEvent): void {
       BLOCK_COLORS[blockType] || 0x00ffff
     )
   } else if (e.button === 2) {
-    // Right Click: Place currently active block
+    // Right Click: check if interacting with Switch / Lever first
+    const hitPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
+    const hx = Math.floor(hitPos.x)
+    const hy = Math.floor(hitPos.y)
+    const hz = Math.floor(hitPos.z)
+    const hitBlock = world.getBlock(hx, hy, hz)
+
+    if (hitBlock === 'lever') {
+      const active = circuits.toggleLever(hx, hy, hz, world)
+      ui.setBuildStatus(active ? '💡 機械開關已導通 (ON)' : '💡 機械開關已斷開 (OFF)')
+      setTimeout(() => ui.setBuildStatus(''), 1200)
+      return
+    }
+
+    // Place currently active block
     const placePos = rc.point.clone().add(rc.normal.clone().multiplyScalar(0.1))
     const bx = Math.floor(placePos.x)
     const by = Math.floor(placePos.y)
@@ -279,6 +323,20 @@ function onMouseUp(e: MouseEvent): void {
     const prevType = world.getBlock(bx, by, bz)
     world.setBlock(bx, by, bz, ui.selectedBlock)
     world.recordSinglePlacement(bx, by, bz, prevType, ui.selectedBlock)
+    multiplayerSync.broadcastBlockPlace(bx, by, bz, ui.selectedBlock, settings.creatorId)
+
+    if (ui.selectedBlock === 'water' || ui.selectedBlock === 'magma') {
+      fluids.addSource(bx, by, bz, ui.selectedBlock)
+    }
+    circuits.simulateCircuits(world)
+
+    // Build near NPC rewards Affinity
+    for (const npc of npcManager.getNPCs()) {
+      if (npc.getGroup().position.distanceTo(placePos) < 8.0) {
+        npcSociety.addAffinity(npc.def.id, 2)
+        break
+      }
+    }
 
     // Quest tracking
     questEngine.trackProgress('place_5_blocks', 1)
@@ -510,6 +568,9 @@ onUnmounted(() => {
   npcManager.dispose()
   vehicles.dispose()
   weather.dispose()
+  explosives.dispose()
+  multiplayerSync.dispose()
+  fluids.clear()
   renderer?.dispose()
 })
 </script>

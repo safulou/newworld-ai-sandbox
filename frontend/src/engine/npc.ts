@@ -328,6 +328,10 @@ export class NPCManager {
     return this.npcs.find(n => n.def.name.toLowerCase() === name.toLowerCase())
   }
 
+  public getNPCs(): NPCCompanion[] {
+    return this.npcs
+  }
+
   public getAllNPCGroups(): THREE.Group[] {
     return this.npcs.map(n => n.getGroup())
   }

@@ -81,7 +81,7 @@ class SoundEngine {
   }
 
   // ── Block Break Sound ────────────────────────────────────────────────
-  playBlockBreak(): void {
+  playBlockBreak(_type?: BlockType): void {
     if (this.isMuted) return
     const ctx = this.getContext()
     if (!ctx) return

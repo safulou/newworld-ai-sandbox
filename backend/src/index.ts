@@ -413,6 +413,52 @@ app.post('/api/generate', (req, res) => {
 })
 
 io.on('connection', (socket) => {
+  // Real-time Co-op Multiplayer: Block Sync & Player Avatar Sync
+  socket.on('client:block-place', async (data: { x: number; y: number; z: number; type: string; author?: string }) => {
+    socket.broadcast.emit('server:block-placed', data)
+    
+    // Persist to chunk in sqlite
+    const cx = Math.floor(data.x / 16)
+    const cz = Math.floor(data.z / 16)
+    try {
+      const row = await get<{ blocks: string }>('SELECT blocks FROM chunks WHERE cx = ? AND cz = ?', [cx, cz])
+      const blocks = row && row.blocks ? JSON.parse(row.blocks) : {}
+      blocks[`${data.x},${data.y},${data.z}`] = data.type
+      await run('INSERT INTO chunks (cx, cz, blocks) VALUES (?, ?, ?) ON CONFLICT(cx, cz) DO UPDATE SET blocks=excluded.blocks', [cx, cz, JSON.stringify(blocks)])
+    } catch (e) {
+      console.error('[Multiplayer] Failed to persist placed block:', e)
+    }
+  })
+
+  socket.on('client:block-break', async (data: { x: number; y: number; z: number; author?: string }) => {
+    socket.broadcast.emit('server:block-broken', data)
+
+    // Remove from chunk in sqlite
+    const cx = Math.floor(data.x / 16)
+    const cz = Math.floor(data.z / 16)
+    try {
+      const row = await get<{ blocks: string }>('SELECT blocks FROM chunks WHERE cx = ? AND cz = ?', [cx, cz])
+      if (row && row.blocks) {
+        const blocks = JSON.parse(row.blocks)
+        delete blocks[`${data.x},${data.y},${data.z}`]
+        await run('INSERT INTO chunks (cx, cz, blocks) VALUES (?, ?, ?) ON CONFLICT(cx, cz) DO UPDATE SET blocks=excluded.blocks', [cx, cz, JSON.stringify(blocks)])
+      }
+    } catch (e) {
+      console.error('[Multiplayer] Failed to persist broken block:', e)
+    }
+  })
+
+  socket.on('client:player-sync', (data: any) => {
+    socket.broadcast.emit('server:player-state', {
+      id: socket.id,
+      ...data
+    })
+  })
+
+  socket.on('client:circuit-toggle', (data: any) => {
+    socket.broadcast.emit('server:circuit-toggled', data)
+  })
+
   // Decentralized Worker task claim & submit
   socket.on('claim-task', (taskId: string, callback: (res: { success: boolean, task?: Task }) => void) => {
     const task = taskPool.get(taskId)
@@ -463,6 +509,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
+    socket.broadcast.emit('server:player-leave', { id: socket.id })
     for (const task of taskPool.values()) {
       if (task.workerId === socket.id) {
         task.status = 'pending'

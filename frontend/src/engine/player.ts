@@ -3,6 +3,7 @@ import { WorldEngine } from './world'
 import { sound } from './audio'
 import { BlockType } from '@/types/world'
 import { vehicles } from './vehicles'
+import { fluids } from './fluids'
 
 export type CameraViewMode = 'rts' | 'fpp' | 'tpp'
 
@@ -53,11 +54,22 @@ export class PlayerController {
     return this.avatarMesh
   }
 
+  public launchUpward(force: number = 18): void {
+    this.velocity.y = force
+    this.isGrounded = false
+  }
+
+  public setPosition(pos: THREE.Vector3): void {
+    this.position.copy(pos)
+    this.velocity.set(0, 0, 0)
+  }
+
   private bindEvents(): void {
     window.addEventListener('keydown', this.onKeyDown)
     window.addEventListener('keyup', this.onKeyUp)
     window.addEventListener('mousemove', this.onMouseMove)
     window.addEventListener('virtual-joystick-move', this.onJoystickMove)
+    window.addEventListener('explosion-knockback', this.onKnockback)
   }
 
   public dispose(): void {
@@ -65,6 +77,17 @@ export class PlayerController {
     window.removeEventListener('keyup', this.onKeyUp)
     window.removeEventListener('mousemove', this.onMouseMove)
     window.removeEventListener('virtual-joystick-move', this.onJoystickMove)
+    window.removeEventListener('explosion-knockback', this.onKnockback)
+  }
+
+  private onKnockback = (e: Event) => {
+    const detail = (e as CustomEvent).detail
+    if (detail && detail.origin) {
+      const dir = this.position.clone().sub(new THREE.Vector3(detail.origin.x, detail.origin.y, detail.origin.z)).normalize()
+      dir.y = Math.max(0.4, dir.y)
+      this.velocity.addScaledVector(dir, detail.force || 8)
+      this.isGrounded = false
+    }
   }
 
   private onJoystickMove = (e: Event) => {
@@ -173,14 +196,28 @@ export class PlayerController {
       else if (this.keys['KeyC'] || this.keys['ControlLeft']) this.velocity.y = -speed
       else this.velocity.y = 0
     } else {
-      // Gravity & Jumping
-      if (!this.isGrounded) {
-        this.velocity.y += this.gravity * delta
-      } else {
+      // Check immersion in fluid (water / magma)
+      const fluidState = fluids.checkFluidImmersion(this.position, this.world)
+      if (fluidState.inFluid) {
+        // Fluid buoyancy & viscous damping
+        this.velocity.y += 24 * delta
+        this.velocity.y = Math.min(this.velocity.y, 4.0)
+        this.velocity.x *= 0.85
+        this.velocity.z *= 0.85
+
         if (this.keys['Space']) {
-          this.velocity.y = this.jumpForce
-          this.isGrounded = false
-          sound.playJump()
+          this.velocity.y = 5.2
+        }
+      } else {
+        // Normal Gravity & Jumping
+        if (!this.isGrounded) {
+          this.velocity.y += this.gravity * delta
+        } else {
+          if (this.keys['Space']) {
+            this.velocity.y = this.jumpForce
+            this.isGrounded = false
+            sound.playJump()
+          }
         }
       }
     }

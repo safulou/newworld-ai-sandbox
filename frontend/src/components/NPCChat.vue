@@ -39,7 +39,38 @@
         </div>
       </div>
 
-      <div class="messages" ref="msgContainer">
+      <!-- NPC Affinity & Social Log Bar -->
+      <div class="affinity-bar-container">
+        <div class="affinity-info">
+          <span class="affinity-badge" :style="{ color: affinityRank.color }">
+            💖 好感度：{{ affinityPts }} / 100 [{{ affinityRank.title }}]
+          </span>
+          <button class="social-logs-btn" @click="showSocialLogs = !showSocialLogs">
+            {{ showSocialLogs ? '💬 返回對話' : `👥 社會紀實 (${npcSociety.recentLogs.length})` }}
+          </button>
+        </div>
+        <div class="affinity-progress-track">
+          <div class="affinity-progress-fill" :style="{ width: affinityPts + '%', backgroundColor: affinityRank.color }"></div>
+        </div>
+      </div>
+
+      <!-- Optional Social Logs View -->
+      <div v-if="showSocialLogs" class="social-logs-container">
+        <div class="social-logs-title">👥 AI NPC 自主社會交談紀錄 (Generative Multi-Agent Logs)</div>
+        <div v-if="npcSociety.recentLogs.length === 0" class="empty-social">
+          目前尚未監聽到 NPC 之間的鄰近交談，讓 NPC 們互相靠近或探索沙盒將自動觸發！
+        </div>
+        <div v-for="(log, idx) in npcSociety.recentLogs" :key="idx" class="social-log-card">
+          <div class="log-meta">
+            <span class="log-time">[{{ log.time }}]</span>
+            <span class="log-speakers">{{ log.from }} ➔ {{ log.to }}</span>
+          </div>
+          <div class="log-body">「{{ log.text }}」</div>
+        </div>
+      </div>
+
+      <!-- Normal Messages List -->
+      <div v-else class="messages" ref="msgContainer">
         <div
           v-for="(msg, i) in messages"
           :key="i"
@@ -86,6 +117,7 @@ import { chatWithNPC, localFallback } from '@/engine/ai'
 import { sound } from '@/engine/audio'
 import { tts, NPC_VOICE_PROFILES } from '@/engine/tts'
 import { npcManager } from '@/engine/npc'
+import { npcSociety } from '@/engine/npcSociety'
 
 interface ChatMessage {
   role: 'user' | 'assistant'
@@ -95,6 +127,20 @@ interface ChatMessage {
 
 const ui = useUIStore()
 const settings = useSettingsStore()
+
+const showSocialLogs = ref(false)
+
+const currentNpcId = computed(() => {
+  const name = (ui.currentNPCName || '').toLowerCase()
+  if (name.includes('sparky') || name.includes('drone')) return 'npc_drone'
+  if (name.includes('aegis') || name.includes('sentinel')) return 'npc_sentinel'
+  if (name.includes('chronos') || name.includes('lore')) return 'npc_lore'
+  if (name.includes('vex') || name.includes('merchant')) return 'npc_merchant'
+  return 'npc_architect'
+})
+
+const affinityPts = computed(() => npcSociety.getAffinity(currentNpcId.value))
+const affinityRank = computed(() => npcSociety.getAffinityRank(currentNpcId.value))
 
 const messages = ref<ChatMessage[]>([
   {
@@ -235,6 +281,7 @@ async function send(): Promise<void> {
   inputText.value = ''
   
   messages.value.push({ role: 'user', content: userMsg })
+  npcSociety.addAffinity(currentNpcId.value, 4)
   loading.value = true
   scrollToBottom()
 
@@ -257,6 +304,7 @@ async function send(): Promise<void> {
 
     if (companion) {
       const result = await companion.executeWorkerTask(task, playerPos.value)
+      npcSociety.addAffinity(currentNpcId.value, 10)
       messages.value.push({
         role: 'assistant',
         content: `🎉 ${result}`,
@@ -401,6 +449,93 @@ async function send(): Promise<void> {
 
 .close-btn { background: none; border: none; color: rgba(255,255,255,0.5); font-size: 18px; cursor: pointer; transition: color 0.2s; padding: 0 4px; }
 .close-btn:hover { color: #fff; }
+
+.affinity-bar-container {
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.affinity-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.affinity-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.social-logs-btn {
+  background: rgba(0, 255, 255, 0.12);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.social-logs-btn:hover {
+  background: rgba(0, 255, 255, 0.25);
+}
+.affinity-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.affinity-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.social-logs-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.social-logs-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 4px;
+}
+.social-log-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.log-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+.log-speakers {
+  color: #00ff88;
+  font-weight: 700;
+}
+.log-body {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #e2e8f0;
+}
+.empty-social {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  text-align: center;
+  padding: 40px 10px;
+  font-style: italic;
+}
 
 .messages {
   flex: 1; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;
