@@ -82,7 +82,8 @@ const keyCategories: KeyCategory[] = [
       { combo: 'X / F8', desc: '開啟 3D WebRTC 空間語音通話 (Spatial Voice)' },
       { combo: 'F1', desc: '元宇宙世界設定 (日夜光影/API Key)' },
       { combo: 'F2', desc: '快速存檔世界' },
-      { combo: 'F3', desc: '開啟快捷鍵參照指南 (本視窗)' },
+      { combo: 'F3', desc: '切換 賽博效能與空間偵錯面板 (Cyber Profiler)' },
+      { combo: 'F9', desc: '開啟快捷鍵參照指南 (本視窗)' },
     ]
   }
 ]

@@ -238,6 +238,38 @@ async function send(): Promise<void> {
   loading.value = true
   scrollToBottom()
 
+  const isWorkerCommand = /(鋪路|鋪一條路|pave|整地|鏟平|平整|flatten|採礦|開採|挖礦|mine)/i.test(userMsg)
+  if (isWorkerCommand) {
+    let task: 'pave' | 'flatten' | 'mine' = 'pave'
+    if (/(整地|鏟平|平整|flatten)/i.test(userMsg)) task = 'flatten'
+    else if (/(採礦|開採|挖礦|mine)/i.test(userMsg)) task = 'mine'
+
+    const companion = npcManager.getNPCByName(ui.currentNPCName)
+    const taskName = task === 'pave' ? '鋪設賽博路面' : (task === 'flatten' ? '清理整平目標區域' : '開鑿下行採礦坑道')
+    const startMsg = `收到指令！${ui.currentNPCName || 'Alex'} 正在為您「${taskName}」...`
+    messages.value.push({
+      role: 'assistant',
+      content: startMsg,
+      isBuilderNotice: true
+    })
+    scrollToBottom()
+    if (settings.ttsEnabled) playVoice(startMsg)
+
+    if (companion) {
+      const result = await companion.executeWorkerTask(task, playerPos.value)
+      messages.value.push({
+        role: 'assistant',
+        content: `🎉 ${result}`,
+        isBuilderNotice: true
+      })
+      scrollToBottom()
+      if (settings.ttsEnabled) playVoice(result)
+    }
+
+    loading.value = false
+    return
+  }
+
   const isBuildCommand = BUILD_COMMAND_REGEX.test(userMsg)
 
   if (isBuildCommand) {

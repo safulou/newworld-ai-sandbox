@@ -144,6 +144,72 @@ export class NPCCompanion {
     sound.playBuildComplete()
   }
 
+  public async executeWorkerTask(
+    task: 'pave' | 'flatten' | 'mine',
+    playerPos: { x: number; y: number; z: number },
+    playerDir?: { x: number; y: number; z: number }
+  ): Promise<string> {
+    if (this.isBuilding) return '正在執行前一項工程，請稍候...'
+    this.isBuilding = true
+
+    const px = Math.floor(playerPos.x)
+    const py = Math.floor(playerPos.y)
+    const pz = Math.floor(playerPos.z)
+    const dx = playerDir ? Math.round(playerDir.x) : 1
+    const dz = playerDir ? Math.round(playerDir.z) : 0
+
+    if (task === 'pave') {
+      const stepX = Math.abs(dx) >= Math.abs(dz) ? (Math.sign(dx) || 1) : 0
+      const stepZ = Math.abs(dz) > Math.abs(dx) ? (Math.sign(dz) || 1) : 0
+
+      for (let i = 1; i <= 8; i++) {
+        const bx = px + stepX * i
+        const bz = pz + stepZ * i
+        this.world.setBlock(bx, py - 1, bz, 'cyber_plating')
+        sound.playBlockPlace('cyber_plating')
+        this.group.lookAt(bx, this.group.position.y, bz)
+        await new Promise(r => setTimeout(r, 60))
+      }
+      this.isBuilding = false
+      sound.playBuildComplete()
+      return `報告架構師：已完成 8 格賽博路面鋪設！`
+    } else if (task === 'flatten') {
+      let count = 0
+      for (let ox = -2; ox <= 2; ox++) {
+        for (let oz = -2; oz <= 2; oz++) {
+          for (let oy = 0; oy <= 2; oy++) {
+            const bx = px + ox
+            const by = py + oy
+            const bz = pz + oz
+            const existing = this.world.getBlock(bx, by, bz)
+            if (existing && existing !== 'air') {
+              this.world.setBlock(bx, by, bz, 'air')
+              count++
+            }
+          }
+        }
+        sound.playBlockBreak()
+        await new Promise(r => setTimeout(r, 50))
+      }
+      this.isBuilding = false
+      sound.playBuildComplete()
+      return `報告架構師：5x5 區域整地完工（共清理 ${count} 個體素方塊）！`
+    } else { // mine
+      for (let i = 1; i <= 4; i++) {
+        const bx = px + i
+        const by = py - i
+        const bz = pz
+        this.world.setBlock(bx, by, bz, 'air')
+        this.world.setBlock(bx, by - 1, bz, 'stone')
+        sound.playBlockBreak()
+        await new Promise(r => setTimeout(r, 70))
+      }
+      this.isBuilding = false
+      sound.playBuildComplete()
+      return `報告架構師：4 階下行採礦坑道已開鑿就緒！`
+    }
+  }
+
   public update(delta: number, playerPos?: THREE.Vector3): void {
     this.walkTime += delta * 4
 

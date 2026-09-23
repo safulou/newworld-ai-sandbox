@@ -46,6 +46,15 @@
       <button class="hud-btn" @click="ui.openExport" title="3D 模型匯出 (F6)">
         📦 匯出 (F6)
       </button>
+      <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
+        {{ weatherIcon }} {{ weatherName }}
+      </button>
+      <button class="hud-btn vehicle-btn" @click="cycleVehicle" title="切換載具 (G)">
+        {{ vehicleIcon }} {{ vehicleName }}
+      </button>
+      <button class="hud-btn profiler-btn" @click="toggleProfiler" title="效能與空間偵錯面板 (F3)">
+        📊 偵錯 (F3)
+      </button>
       <button class="hud-btn voice-btn" :class="{ live: spatialVoice.isJoined && !spatialVoice.isMicMuted }" @click="ui.openSpatialVoice" title="3D 空間語音 (X / F8)">
         🎙️ 語音 (X)
       </button>
@@ -90,7 +99,7 @@
 
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 懸浮滑板 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 跑酷 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 快捷鍵
+      WASD: 移動 | 右鍵: 放置 | 左鍵: 破壞 | G: 切換載具 | ⛅: 氣象 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 競技場 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 偵錯 | F9: 快捷鍵
     </div>
   </div>
 </template>
@@ -103,9 +112,35 @@ import { sound } from '@/engine/audio'
 import { achievements } from '@/engine/achievements'
 import { spatialVoice } from '@/engine/spatialVoice'
 import { minigames } from '@/engine/minigames'
+import { weather, WEATHER_ROSTER, WeatherType } from '@/engine/weather'
+import { vehicles, VEHICLE_CONFIGS, VehicleType } from '@/engine/vehicles'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
+
+const currentWeatherType = ref<WeatherType>(weather.getWeather())
+const currentVehType = ref<VehicleType>(vehicles.getVehicle())
+
+const weatherName = computed(() => WEATHER_ROSTER[currentWeatherType.value]?.name || '晴朗')
+const weatherIcon = computed(() => WEATHER_ROSTER[currentWeatherType.value]?.icon || '☀️')
+
+const vehicleName = computed(() => VEHICLE_CONFIGS[currentVehType.value]?.name || '步巡')
+const vehicleIcon = computed(() => VEHICLE_CONFIGS[currentVehType.value]?.icon || '👟')
+
+function cycleWeather(): void {
+  currentWeatherType.value = weather.cycleWeather()
+  ui.setBuildStatus(`⛅ 天候已切換為：${weatherName.value}`)
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function cycleVehicle(): void {
+  window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyG', bubbles: true }))
+  currentVehType.value = vehicles.getVehicle()
+}
+
+function toggleProfiler(): void {
+  window.dispatchEvent(new KeyboardEvent('keydown', { code: 'F3', bubbles: true }))
+}
 
 const peersCount = computed(() => spatialVoice.peers.size)
 
@@ -190,14 +225,24 @@ function onPlayerMoved(e: Event): void {
   }
 }
 
+function onKey(e: KeyboardEvent): void {
+  if (e.code === 'KeyG') {
+    setTimeout(() => {
+      currentVehType.value = vehicles.getVehicle()
+    }, 50)
+  }
+}
+
 onMounted(() => {
   window.addEventListener('player-position', onPlayerMoved)
+  window.addEventListener('keydown', onKey)
   fetchPlotInfo(0, 0)
   sound.startAmbience()
 })
 
 onUnmounted(() => {
   window.removeEventListener('player-position', onPlayerMoved)
+  window.removeEventListener('keydown', onKey)
   sound.stopAmbience()
 })
 </script>

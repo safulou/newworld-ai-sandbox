@@ -22,7 +22,8 @@ import { tools } from '@/engine/tools'
 import { physics } from '@/engine/physics'
 import { achievements } from '@/engine/achievements'
 import { npcManager } from '@/engine/npc'
-import { vehicles } from '@/engine/vehicles'
+import { vehicles, VEHICLE_CONFIGS } from '@/engine/vehicles'
+import { weather } from '@/engine/weather'
 import { questEngine } from '@/engine/quests'
 import { droneManager } from '@/engine/drone'
 import { spatialAudio } from '@/engine/spatialAudio'
@@ -74,9 +75,10 @@ function init(): void {
 
   clock = new THREE.Clock()
 
-  // Initialize Autonomous AI NPC Roster, Vehicles, Drone, Spatial Audio & Voice
+  // Initialize Autonomous AI NPC Roster, Vehicles, Drone, Spatial Audio, Weather & Voice
   npcManager.init(scene, world, new THREE.Vector3(0, 0, 0))
   vehicles.init(scene)
+  weather.init(scene)
   droneManager.init(scene)
   spatialAudio.init()
   minigames.init(scene)
@@ -85,6 +87,7 @@ function init(): void {
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('mousedown', onMouseDown)
   window.addEventListener('mouseup', onMouseUp)
+  window.addEventListener('mobile-mouse-click', onMobileMouseClick)
   window.addEventListener('contextmenu', onContextMenu)
   window.addEventListener('keydown', onKeyDown)
   window.addEventListener('resize', onResize)
@@ -107,6 +110,7 @@ function loop(): void {
   world.updateChunks(camera.position.x, camera.position.z)
   npcManager.update(delta, camera.position)
   vehicles.update(delta, camera.position, true)
+  weather.update(delta, camera.position)
   droneManager.update(delta, camera.position)
   minigames.update(delta, camera.position)
   
@@ -124,11 +128,38 @@ function loop(): void {
     achievements.unlock('reach_sky')
   }
 
-  // Throttle player broadcast & HUD position update
+  // Throttle player broadcast & HUD position update & Profiler telemetry
   if (Math.random() < 0.1) {
     world.emitPlayerMove(camera.position.x, camera.position.y, camera.position.z)
     window.dispatchEvent(new CustomEvent('player-position', {
       detail: { x: camera.position.x, y: camera.position.y, z: camera.position.z }
+    }))
+
+    let facingStr = '北 (North)'
+    if (Math.abs(camForward.x) > Math.abs(camForward.z)) {
+      facingStr = camForward.x > 0 ? '東 (East +X)' : '西 (West -X)'
+    } else {
+      facingStr = camForward.z > 0 ? '南 (South +Z)' : '北 (North -Z)'
+    }
+
+    const cx = Math.floor(camera.position.x / 16)
+    const cz = Math.floor(camera.position.z / 16)
+
+    window.dispatchEvent(new CustomEvent('profiler-update', {
+      detail: {
+        coords: {
+          x: camera.position.x.toFixed(1),
+          y: camera.position.y.toFixed(1),
+          z: camera.position.z.toFixed(1),
+        },
+        chunk: { cx, cz },
+        facing: facingStr,
+        biome: 'Neon City Core',
+        drawCalls: renderer?.info?.render?.calls ?? 0,
+        triangles: renderer?.info?.render?.triangles ?? 0,
+        geometries: renderer?.info?.memory?.geometries ?? 0,
+        textures: renderer?.info?.memory?.textures ?? 0,
+      }
     }))
   }
 
@@ -272,7 +303,7 @@ function onContextMenu(e: MouseEvent): void {
 function onKeyDown(e: KeyboardEvent): void {
   if (e.code === 'F1') ui.openSettings()
   if (e.code === 'F2') saveWorld()
-  if (e.code === 'F3') ui.openKeybinds()
+  if (e.code === 'F9') ui.openKeybinds()
   if (e.code === 'F4') ui.openPhoto()
   if (e.code === 'F5') ui.openAchievements()
   if (e.code === 'F6') ui.openExport()
@@ -282,8 +313,9 @@ function onKeyDown(e: KeyboardEvent): void {
   if (ui.mode === 'game') {
     if (e.code === 'KeyX') ui.openSpatialVoice()
     if (e.code === 'KeyG') {
-      const v = vehicles.toggleHoverboard(camera.position)
-      ui.setBuildStatus(v === 'hoverboard' ? '🛹 賽博懸浮滑板已就緒！' : '🛹 懸浮滑板已收起')
+      const v = vehicles.cycleVehicle(camera.position)
+      const config = VEHICLE_CONFIGS[v]
+      ui.setBuildStatus(`${config.icon} ${config.name}已切換！（速度 ${config.speedMultiplier}x）`)
       setTimeout(() => ui.setBuildStatus(''), 1500)
     }
     if (e.code === 'KeyJ') ui.openQuests()
@@ -444,6 +476,21 @@ function getPlayerPosition(): THREE.Vector3 {
   return camera ? camera.position.clone() : new THREE.Vector3(0, 5, 0)
 }
 
+function onMobileMouseClick(e: Event): void {
+  const custom = e as CustomEvent
+  if (custom.detail) {
+    pointerDownPos.x = window.innerWidth / 2
+    pointerDownPos.y = window.innerHeight / 2
+    mouse.x = 0
+    mouse.y = 0
+    onMouseUp({
+      button: custom.detail.button ?? 0,
+      clientX: window.innerWidth / 2,
+      clientY: window.innerHeight / 2,
+    } as MouseEvent)
+  }
+}
+
 defineExpose({ applyBuild, undoBuild, redoBuild, exportWorld, importWorldJSON, clearWorld, saveWorld, getWorldBlocks, getPlayerPosition })
 
 onMounted(() => { if (canvas.value) init() })
@@ -452,6 +499,7 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', onMouseMove)
   window.removeEventListener('mousedown', onMouseDown)
   window.removeEventListener('mouseup', onMouseUp)
+  window.removeEventListener('mobile-mouse-click', onMobileMouseClick)
   window.removeEventListener('contextmenu', onContextMenu)
   window.removeEventListener('keydown', onKeyDown)
   window.removeEventListener('resize', onResize)
@@ -461,6 +509,7 @@ onUnmounted(() => {
   window.removeEventListener('update-fov', onUpdateFOV)
   npcManager.dispose()
   vehicles.dispose()
+  weather.dispose()
   renderer?.dispose()
 })
 </script>

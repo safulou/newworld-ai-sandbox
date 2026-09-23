@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { WorldEngine } from './world'
 import { sound } from './audio'
 import { BlockType } from '@/types/world'
+import { vehicles } from './vehicles'
 
 export type CameraViewMode = 'rts' | 'fpp' | 'tpp'
 
@@ -56,12 +57,24 @@ export class PlayerController {
     window.addEventListener('keydown', this.onKeyDown)
     window.addEventListener('keyup', this.onKeyUp)
     window.addEventListener('mousemove', this.onMouseMove)
+    window.addEventListener('virtual-joystick-move', this.onJoystickMove)
   }
 
   public dispose(): void {
     window.removeEventListener('keydown', this.onKeyDown)
     window.removeEventListener('keyup', this.onKeyUp)
     window.removeEventListener('mousemove', this.onMouseMove)
+    window.removeEventListener('virtual-joystick-move', this.onJoystickMove)
+  }
+
+  private onJoystickMove = (e: Event) => {
+    const detail = (e as CustomEvent).detail
+    if (detail) {
+      this.keys['KeyW'] = !!detail.w
+      this.keys['KeyS'] = !!detail.s
+      this.keys['KeyA'] = !!detail.a
+      this.keys['KeyD'] = !!detail.d
+    }
   }
 
   private onKeyDown = (e: KeyboardEvent) => {
@@ -125,7 +138,7 @@ export class PlayerController {
   public update(delta: number): void {
     if (this.viewMode === 'rts') return // RTS camera managed by OrbitControls
 
-    const speed = this.moveSpeed * (this.keys['ShiftLeft'] || this.keys['ShiftRight'] ? this.sprintMultiplier : 1)
+    const speed = this.moveSpeed * (this.keys['ShiftLeft'] || this.keys['ShiftRight'] ? this.sprintMultiplier : 1) * vehicles.getSpeedMultiplier()
 
     // Calculate forward & right vectors based on yaw
     const forward = new THREE.Vector3(0, 0, -1).applyAxisAngle(new THREE.Vector3(0, 1, 0), this.rotation.y)
@@ -178,6 +191,9 @@ export class PlayerController {
     // Update Avatar Position & Camera
     this.avatarMesh.position.copy(this.position)
     this.avatarMesh.rotation.y = this.rotation.y
+
+    const isMoving = this.velocity.lengthSq() > 0.1
+    vehicles.update(delta, this.position, isMoving, this.rotation.y)
 
     if (this.viewMode === 'fpp') {
       this.camera.position.set(this.position.x, this.position.y + this.eyeHeight, this.position.z)

@@ -25,6 +25,7 @@ export class SpatialAudioEngine {
 
   public init(): void {
     if (this.audioCtx) return
+    if (typeof window === 'undefined') return
     const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext
     if (!AudioContextClass) return
 

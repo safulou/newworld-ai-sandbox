@@ -104,6 +104,8 @@
     <Transition name="fade">
       <BuildProgress v-if="ui.mode === 'build-progress'" />
     </Transition>
+    <ProfilerHUD />
+    <MobileControls />
   </div>
 </template>
 
@@ -111,6 +113,8 @@
 import { ref, onMounted } from 'vue'
 import GameCanvas from '@/components/GameCanvas.vue'
 import HUD from '@/components/HUD.vue'
+import ProfilerHUD from '@/components/ProfilerHUD.vue'
+import MobileControls from '@/components/MobileControls.vue'
 import Minimap from '@/components/Minimap.vue'
 import MultiplayerChat from '@/components/MultiplayerChat.vue'
 import Hotbar from '@/components/Hotbar.vue'
