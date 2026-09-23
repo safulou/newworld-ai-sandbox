@@ -34,6 +34,7 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'spatial_voice_chat', title: '量子通訊網', description: '啟用 3D WebRTC 空間語音通話', icon: '🎙️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'laser_arena_ace', title: '賽博神射手', description: '在激光競技場中命中 5 架以上敵方戰鬥無人機', icon: '🔫', unlocked: false, progress: 0, maxProgress: 5, category: 'scifi' },
   { id: 'voxel_snake_master', title: '量子貪食蛇', description: '體素貪吃蛇長度達到 12 節以上', icon: '🐍', unlocked: false, progress: 0, maxProgress: 12, category: 'scifi' },
+  { id: 'npc_voice_hearer', title: '賽博同音', description: '聆聽智慧 AI NPC 的語音朗讀對話', icon: '🗣️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
@@ -48,24 +49,25 @@ export class AchievementSystem {
   }
 
   private load(): void {
-    const saved = localStorage.getItem('nw_achievements')
     const initialMap = new Map(INITIAL_ACHIEVEMENTS.map(a => [a.id, { ...a }]))
-
-    if (saved) {
-      try {
-        const parsed: Achievement[] = JSON.parse(saved)
-        for (const a of parsed) {
-          if (initialMap.has(a.id)) {
-            initialMap.set(a.id, a)
+    if (typeof localStorage !== 'undefined') {
+      const saved = localStorage.getItem('nw_achievements')
+      if (saved) {
+        try {
+          const parsed: Achievement[] = JSON.parse(saved)
+          for (const a of parsed) {
+            if (initialMap.has(a.id)) {
+              initialMap.set(a.id, a)
+            }
           }
-        }
-      } catch { /* ignore */ }
+        } catch { /* ignore */ }
+      }
     }
-
     this.achievements = initialMap
   }
 
   public save(): void {
+    if (typeof localStorage === 'undefined') return
     const list = Array.from(this.achievements.values())
     localStorage.setItem('nw_achievements', JSON.stringify(list))
   }
@@ -99,16 +101,18 @@ export class AchievementSystem {
 
   private notifyUnlock(ach: Achievement): void {
     sound.playFanfare()
-    window.dispatchEvent(
-      new CustomEvent('achievement-unlocked', {
-        detail: {
-          id: ach.id,
-          title: ach.title,
-          description: ach.description,
-          icon: ach.icon,
-        },
-      })
-    )
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(
+        new CustomEvent('achievement-unlocked', {
+          detail: {
+            id: ach.id,
+            title: ach.title,
+            description: ach.description,
+            icon: ach.icon,
+          },
+        })
+      )
+    }
   }
 }
 

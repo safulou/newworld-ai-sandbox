@@ -2,12 +2,41 @@
   <div class="overlay" @click.self="close">
     <div class="chat-panel glass-panel">
       <div class="chat-header">
-        <span class="npc-avatar">🧙</span>
+        <span class="npc-avatar">{{ npcAvatar }}</span>
         <div>
-          <div class="npc-name">{{ ui.currentNPCName || 'Cyber Architect' }}</div>
-          <div class="npc-role">Autonomous AI NPC</div>
+          <div class="npc-name">{{ currentTitle }} ({{ ui.currentNPCName || 'Cyber Architect' }})</div>
+          <div class="npc-role">
+            <span class="role-badge">AI NPC COMPANION</span>
+            <span v-if="tts.isSpeaking.value" class="voice-wave-indicator">
+              <span class="bar b1"></span>
+              <span class="bar b2"></span>
+              <span class="bar b3"></span>
+              <span class="bar b4"></span>
+              <span class="speaking-label">發話中...</span>
+            </span>
+          </div>
         </div>
-        <button class="close-btn" @click="close">✕</button>
+
+        <div class="header-actions">
+          <!-- TTS Voice Toggle & Rate -->
+          <button
+            class="header-btn"
+            :class="{ active: settings.ttsEnabled }"
+            @click="toggleTts"
+            :title="settings.ttsEnabled ? '語音朗讀開啟 (點擊關閉)' : '語音朗讀關閉 (點擊開啟)'"
+          >
+            {{ settings.ttsEnabled ? '🔊 語音' : '🔇 靜音' }}
+          </button>
+          <button
+            v-if="settings.ttsEnabled"
+            class="header-btn rate-btn"
+            @click="cycleRate"
+            title="調整 NPC 說話語速"
+          >
+            {{ settings.ttsRate }}x
+          </button>
+          <button class="close-btn" @click="close" title="關閉 (ESC)">✕</button>
+        </div>
       </div>
 
       <div class="messages" ref="msgContainer">
@@ -19,34 +48,44 @@
         >
           <div class="bubble">
             <span v-if="msg.isBuilderNotice" class="badge-builder">🏗️ AI BUILDER</span>
-            <span>{{ msg.content }}</span>
+            <span class="msg-text">{{ msg.content }}</span>
+            <button
+              v-if="msg.role === 'assistant' && !msg.isBuilderNotice"
+              class="replay-btn"
+              @click="playVoice(msg.content)"
+              title="重新朗讀此段語音"
+            >
+              🔊
+            </button>
           </div>
         </div>
         <div v-if="loading" class="msg assistant">
-          <span class="bubble typing">▌ Generating response...</span>
+          <span class="bubble typing">▌ 正在思考中...</span>
         </div>
       </div>
 
       <div class="input-row">
         <input
           v-model="inputText"
-          placeholder="Ask anything or command: 'Build a cyber tower here'..."
+          placeholder="詢問任何問題或下達建造指令（例：蓋一座發光高塔）..."
           @keydown.enter="send"
           :disabled="loading"
           ref="inputEl"
         />
-        <button @click="send" :disabled="loading || !inputText.trim()">Send</button>
+        <button @click="send" :disabled="loading || !inputText.trim()">發送</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick, onMounted, onUnmounted } from 'vue'
+import { ref, computed, nextTick, onMounted, onUnmounted } from 'vue'
 import { useUIStore } from '@/stores/ui'
 import { useSettingsStore } from '@/stores/settings'
 import { chatWithNPC, localFallback } from '@/engine/ai'
 import { sound } from '@/engine/audio'
+import { tts, NPC_VOICE_PROFILES } from '@/engine/tts'
+import { npcManager } from '@/engine/npc'
 
 interface ChatMessage {
   role: 'user' | 'assistant'
@@ -60,7 +99,7 @@ const settings = useSettingsStore()
 const messages = ref<ChatMessage[]>([
   {
     role: 'assistant',
-    content: `Greetings, architect! I'm ${ui.currentNPCName || 'the Cyber Architect'}. You can converse with me or command me to construct any structure at your location (e.g. "Build a glowing cyber tower" or "蓋一座城堡")!`
+    content: `你好，我是 ${ui.currentNPCName || 'Alex'}！你可以隨時與我對話交流，或向我下達建造指令（例如「蓋一座賽博塔」或「建造城堡」）！`
   }
 ])
 const inputText = ref('')
@@ -70,9 +109,31 @@ const inputEl = ref<HTMLInputElement>()
 
 const playerPos = ref({ x: 0, y: 0, z: 0 })
 
-const NPC_SYSTEM = `You are ${ui.currentNPCName || 'Cyber Architect'}, a sentient AI Guide & Master Architect in the Neon Oasis Voxel Metaverse.
-You help players explore, understand coordinates, and build procedural architectures.
+const npcAvatar = computed(() => {
+  const name = (ui.currentNPCName || '').toLowerCase()
+  if (name.includes('sparky') || name.includes('drone')) return '🛸'
+  if (name.includes('aegis') || name.includes('sentinel')) return '🛡️'
+  if (name.includes('chronos') || name.includes('lore')) return '⏳'
+  if (name.includes('vex') || name.includes('merchant')) return '💎'
+  if (name.includes('alex') || name.includes('architect')) return '👨‍🚀'
+  return '🧙'
+})
+
+const currentTitle = computed(() => {
+  const name = (ui.currentNPCName || '').toLowerCase()
+  for (const prof of Object.values(NPC_VOICE_PROFILES)) {
+    if (prof.name.toLowerCase() === name || prof.id.toLowerCase() === name) {
+      return prof.title
+    }
+  }
+  return '賽博伴侶'
+})
+
+const NPC_SYSTEM = computed(() => {
+  return `You are ${ui.currentNPCName || 'Alex'}, a sentient AI companion in the NewWorld Voxel Metaverse.
+You help players explore, understand 3D coordinates, and build procedural architectures.
 Keep responses concise (2-3 sentences max), inspiring, and cyberpunk-themed.`
+})
 
 const BUILD_COMMAND_REGEX = /(build|create|construct|make|tower|castle|house|fort|pyramid|skyscraper|structure|portal|spire|shrine|biome|forest|tree|plaza|bridge|temple|gate|dome|cottage|arch|蓋|建|做一個|造|建造|設計)/i
 
@@ -104,11 +165,36 @@ function onBuildProgress(e: Event): void {
   if (custom.detail && custom.detail.status === 'completed') {
     messages.value.push({
       role: 'assistant',
-      content: `🎉 Construction completed! ${custom.detail.blocksTotal || ''} blocks placed on your plot.`,
+      content: `🎉 建造完成！共放置了 ${custom.detail.blocksTotal || ''} 個方塊至當前領地。`,
       isBuilderNotice: true
     })
     scrollToBottom()
   }
+}
+
+function toggleTts(): void {
+  settings.setTtsEnabled(!settings.ttsEnabled)
+  tts.state.enabled = settings.ttsEnabled
+  if (!settings.ttsEnabled) {
+    tts.stop()
+  } else {
+    // Play greeting sample
+    playVoice(`語音系統已啟動。`)
+  }
+}
+
+function cycleRate(): void {
+  const rates = [0.8, 1.0, 1.2, 1.5]
+  const idx = rates.indexOf(settings.ttsRate)
+  const next = rates[(idx + 1) % rates.length]
+  settings.setTtsRate(next)
+  tts.state.rateMultiplier = next
+}
+
+function playVoice(text: string): void {
+  const companion = npcManager.getNPCByName(ui.currentNPCName)
+  const npcPos = companion ? companion.getPosition() : undefined
+  tts.speak(ui.currentNPCName, text, npcPos, playerPos.value, settings.apiKey)
 }
 
 onMounted(() => {
@@ -116,15 +202,24 @@ onMounted(() => {
   window.addEventListener('player-position', onPlayerPosition)
   window.addEventListener('ai-chat', onAiChatMessage)
   window.addEventListener('build-progress', onBuildProgress)
+
+  // Greet player on opening chat
+  if (settings.ttsEnabled && messages.value.length > 0) {
+    playVoice(messages.value[0].content)
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('player-position', onPlayerPosition)
   window.removeEventListener('ai-chat', onAiChatMessage)
   window.removeEventListener('build-progress', onBuildProgress)
+  tts.stop()
 })
 
-function close(): void { ui.closeOverlay() }
+function close(): void {
+  tts.stop()
+  ui.closeOverlay()
+}
 
 function scrollToBottom(): void {
   nextTick(() => {
@@ -150,12 +245,17 @@ async function send(): Promise<void> {
     const px = playerPos.value.x
     const pz = playerPos.value.z
     
+    const buildMsg = `⚡ 正在座標 [${px}, ${pz}] 初始化「${userMsg}」的體素建築矩陣！`
     messages.value.push({
       role: 'assistant',
-      content: `⚡ Initializing voxel construction matrix for "${userMsg}" at [${px}, ${pz}]! Deploying procedural architecture...`,
+      content: buildMsg,
       isBuilderNotice: true
     })
     scrollToBottom()
+
+    if (settings.ttsEnabled) {
+      playVoice(buildMsg)
+    }
 
     try {
       if (settings.provider === 'local') {
@@ -195,7 +295,7 @@ async function send(): Promise<void> {
     messages.value
       .filter(m => !m.isBuilderNotice)
       .map(m => ({ role: m.role, content: m.content })),
-    NPC_SYSTEM,
+    NPC_SYSTEM.value,
     settings.apiKey,
     settings.provider
   )
@@ -203,6 +303,10 @@ async function send(): Promise<void> {
   messages.value.push({ role: 'assistant', content: reply })
   loading.value = false
   scrollToBottom()
+
+  if (settings.ttsEnabled) {
+    playVoice(reply)
+  }
 }
 </script>
 
@@ -214,13 +318,13 @@ async function send(): Promise<void> {
 }
 
 .chat-panel {
-  width: 480px; max-width: 95vw;
-  display: flex; flex-direction: column; max-height: 440px;
-  background: rgba(14, 18, 30, 0.92);
-  border: 1px solid rgba(0, 255, 255, 0.25);
+  width: 520px; max-width: 95vw;
+  display: flex; flex-direction: column; max-height: 480px;
+  background: rgba(14, 18, 30, 0.94);
+  border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 14px;
   color: #fff;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 255, 0.15);
 }
 
 .chat-header {
@@ -228,10 +332,42 @@ async function send(): Promise<void> {
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.npc-avatar { font-size: 26px; filter: drop-shadow(0 0 8px rgba(0,255,255,0.6)); }
+.npc-avatar { font-size: 28px; filter: drop-shadow(0 0 8px rgba(0,255,255,0.6)); }
 .npc-name { font-weight: 700; font-size: 15px; color: #00ffff; letter-spacing: 0.5px; }
-.npc-role { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
-.close-btn { margin-left: auto; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 18px; cursor: pointer; transition: color 0.2s; }
+.npc-role { font-size: 10px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; margin-top: 2px; }
+.role-badge { text-transform: uppercase; letter-spacing: 1px; }
+
+.voice-wave-indicator {
+  display: inline-flex; align-items: center; gap: 3px;
+  color: #00ff88; font-size: 10px; font-weight: 700;
+}
+.voice-wave-indicator .bar {
+  display: inline-block; width: 2px; height: 10px; background: #00ff88;
+  border-radius: 1px; animation: soundWave 0.8s ease-in-out infinite alternate;
+}
+.voice-wave-indicator .b1 { animation-delay: 0.1s; }
+.voice-wave-indicator .b2 { animation-delay: 0.3s; }
+.voice-wave-indicator .b3 { animation-delay: 0.5s; }
+.voice-wave-indicator .b4 { animation-delay: 0.2s; }
+
+@keyframes soundWave {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+.header-actions {
+  margin-left: auto; display: flex; align-items: center; gap: 6px;
+}
+.header-btn {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600; padding: 4px 8px;
+  border-radius: 6px; cursor: pointer; transition: all 0.2s;
+}
+.header-btn:hover { background: rgba(0,255,255,0.2); color: #00ffff; border-color: rgba(0,255,255,0.4); }
+.header-btn.active { background: rgba(0,255,255,0.2); color: #00ffff; border-color: #00ffff; }
+.rate-btn { font-family: monospace; }
+
+.close-btn { background: none; border: none; color: rgba(255,255,255,0.5); font-size: 18px; cursor: pointer; transition: color 0.2s; padding: 0 4px; }
 .close-btn:hover { color: #fff; }
 
 .messages {
@@ -242,6 +378,7 @@ async function send(): Promise<void> {
 .bubble {
   max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.5;
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  position: relative; word-break: break-word;
 }
 .msg.user .bubble { background: rgba(0,255,255,0.12); border-color: rgba(0,255,255,0.35); color: #00ffff; }
 
@@ -256,6 +393,13 @@ async function send(): Promise<void> {
   display: block; font-size: 9px; font-weight: 800; color: #00ffff;
   letter-spacing: 1px; margin-bottom: 4px; text-transform: uppercase;
 }
+
+.replay-btn {
+  margin-left: 8px; background: none; border: none; cursor: pointer;
+  font-size: 12px; opacity: 0.6; transition: opacity 0.2s, transform 0.1s;
+  vertical-align: middle;
+}
+.replay-btn:hover { opacity: 1.0; transform: scale(1.2); }
 
 .typing { animation: blink 0.8s steps(1) infinite; color: #00ffff; }
 @keyframes blink { 50% { opacity: 0; } }

@@ -43,6 +43,43 @@
         </p>
       </template>
 
+      <!-- 🗣️ AI NPC Voice Synthesis Settings -->
+      <label>🗣️ AI NPC 語音合成 (TTS)</label>
+      <div class="tts-row">
+        <label class="checkbox-label">
+          <input type="checkbox" v-model="ttsEnabled" @change="onTtsToggle" />
+          啟用 NPC 語音朗讀
+        </label>
+        <button class="test-voice-btn" @click="testVoice" :disabled="!ttsEnabled">
+          🔊 測試語音
+        </button>
+      </div>
+
+      <div v-if="ttsEnabled" class="tts-sliders">
+        <div class="slider-row">
+          <span>語速: {{ ttsRate }}x</span>
+          <input
+            type="range"
+            min="0.7"
+            max="1.5"
+            step="0.1"
+            v-model.number="ttsRate"
+            @input="onTtsRateChange"
+          />
+        </div>
+        <div class="slider-row">
+          <span>音調: {{ ttsPitch }}x</span>
+          <input
+            type="range"
+            min="0.7"
+            max="1.4"
+            step="0.1"
+            v-model.number="ttsPitch"
+            @input="onTtsPitchChange"
+          />
+        </div>
+      </div>
+
       <div class="world-actions">
         <button @click="saveWorld">💾 Save (F2)</button>
         <button @click="exportWorld">📤 Export JSON</button>
@@ -62,6 +99,7 @@
 import { ref } from 'vue'
 import { useUIStore, TimeOfDay } from '@/stores/ui'
 import { useSettingsStore, AIProvider } from '@/stores/settings'
+import { tts } from '@/engine/tts'
 
 const emit = defineEmits<{
   (e: 'save'): void
@@ -77,6 +115,29 @@ const worldName = ref(settings.worldName)
 const creatorId = ref(settings.creatorId)
 const provider = ref<AIProvider>(settings.provider)
 const apiKey = ref(settings.apiKey)
+
+const ttsEnabled = ref(settings.ttsEnabled)
+const ttsRate = ref(settings.ttsRate)
+const ttsPitch = ref(settings.ttsPitch)
+
+function onTtsToggle(): void {
+  settings.setTtsEnabled(ttsEnabled.value)
+  tts.state.enabled = ttsEnabled.value
+}
+
+function onTtsRateChange(): void {
+  settings.setTtsRate(ttsRate.value)
+  tts.state.rateMultiplier = ttsRate.value
+}
+
+function onTtsPitchChange(): void {
+  settings.setTtsPitch(ttsPitch.value)
+  tts.state.pitchMultiplier = ttsPitch.value
+}
+
+function testVoice(): void {
+  tts.speak('npc_architect', '你好！我是首席架構師 Alex，神經網絡語音合成系統運作正常！', undefined, undefined, settings.apiKey)
+}
 
 const times: { id: TimeOfDay; label: string }[] = [
   { id: 'dawn', label: '🌅 Dawn' },
@@ -145,6 +206,31 @@ input:focus, select:focus { outline: none; border-color: #00ffff; box-shadow: 0 
 .world-actions button:hover, .import-btn:hover { border-color: #00ffff; color: #00ffff; }
 .world-actions .danger { color: #ff6b6b; border-color: rgba(255,100,100,0.3); }
 .world-actions .danger:hover { background: rgba(255,50,50,0.15); border-color: #ff5555; }
+
+.tts-row {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+}
+.checkbox-label {
+  display: flex; align-items: center; gap: 8px; font-size: 13px; color: #fff; cursor: pointer; margin: 0;
+}
+.checkbox-label input[type="checkbox"] { width: auto; margin: 0; cursor: pointer; }
+.test-voice-btn {
+  background: rgba(0,255,255,0.15); border: 1px solid rgba(0,255,255,0.4); color: #00ffff;
+  padding: 5px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+.test-voice-btn:hover:not(:disabled) { background: rgba(0,255,255,0.3); box-shadow: 0 0 10px rgba(0,255,255,0.4); }
+.test-voice-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.tts-sliders {
+  display: flex; flex-direction: column; gap: 6px; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 8px;
+}
+.slider-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: #bbb;
+}
+.slider-row input[type="range"] {
+  flex: 1; accent-color: #00ffff; cursor: pointer;
+}
 
 .btn-close {
   padding: 11px; background: #00ffff; color: #000; border: none; border-radius: 8px;

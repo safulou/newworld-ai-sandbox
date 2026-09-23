@@ -35,5 +35,57 @@ export const useSettingsStore = defineStore('settings', () => {
     localStorage.setItem('nw_creator_id', id)
   }
 
-  return { apiKey, provider, selectedBlock, worldName, creatorId, setApiKey, setProvider, setSelectedBlock, setWorldName, setCreatorId }
+  const ttsEnabled = ref(localStorage.getItem('nw_tts_enabled') !== 'false')
+  const ttsVolume = ref(Number(localStorage.getItem('nw_tts_volume') ?? '100'))
+  const ttsRate = ref(Number(localStorage.getItem('nw_tts_rate') ?? '1.0'))
+  const ttsPitch = ref(Number(localStorage.getItem('nw_tts_pitch') ?? '1.0'))
+  const ttsProvider = ref<'browser' | 'openai'>((localStorage.getItem('nw_tts_provider') as any) ?? 'browser')
+
+  function setTtsEnabled(enabled: boolean): void {
+    ttsEnabled.value = enabled
+    localStorage.setItem('nw_tts_enabled', String(enabled))
+  }
+
+  function setTtsVolume(vol: number): void {
+    ttsVolume.value = vol
+    localStorage.setItem('nw_tts_volume', String(vol))
+  }
+
+  function setTtsRate(rate: number): void {
+    ttsRate.value = rate
+    localStorage.setItem('nw_tts_rate', String(rate))
+  }
+
+  function setTtsPitch(pitch: number): void {
+    ttsPitch.value = pitch
+    localStorage.setItem('nw_tts_pitch', String(pitch))
+  }
+
+  function setTtsProvider(p: 'browser' | 'openai'): void {
+    ttsProvider.value = p
+    localStorage.setItem('nw_tts_provider', p)
+  }
+
+  return {
+    apiKey,
+    provider,
+    selectedBlock,
+    worldName,
+    creatorId,
+    ttsEnabled,
+    ttsVolume,
+    ttsRate,
+    ttsPitch,
+    ttsProvider,
+    setApiKey,
+    setProvider,
+    setSelectedBlock,
+    setWorldName,
+    setCreatorId,
+    setTtsEnabled,
+    setTtsVolume,
+    setTtsRate,
+    setTtsPitch,
+    setTtsProvider,
+  }
 })
