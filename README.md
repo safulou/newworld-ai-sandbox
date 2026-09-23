@@ -54,14 +54,24 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 
 | Key | Action |
 |---|---|
-| `Click` | Lock cursor / Break block |
+| `Click` | Lock cursor / Break block / Shoot blaster |
 | `Right Click` | Place block |
 | `WASD` | Move |
 | `Space` | Jump |
-| `T` | Open AI builder |
-| `E` | Talk to nearby NPC |
-| `F1` | Settings (API key, world name) |
-| `F2` | Save world |
+| `Shift` | Cyber Sprint |
+| `G` | Cyber Hoverboard |
+| `O` | Arena Minigames (PvP Laser Tag, Voxel Snake, Parkour) |
+| `X` / `F8` | 3D Spatial Voice Chat (WebRTC HRTF) |
+| `U` | MagicaVoxel VOX 3D Asset Center |
+| `Y` | Sparky Autonomous Drone Recon |
+| `H` | Avatar Skin Customizer |
+| `J` | Quest Log |
+| `T` | Spatial Tool Palette |
+| `K` | Visual Shaders Studio |
+| `F4` | Cyber Photo Camera |
+| `F5` | Achievements Hall |
+| `F6` | 3D Model OBJ/MTL Exporter |
+| `F1` | World Settings & AI Provider |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
@@ -81,27 +91,29 @@ Press **F1** to open Settings and choose your AI provider:
 
 ```
 newworld-ai-sandbox/
+├── backend/               # Express, Socket.IO WebRTC signaling, SQLite blockchain
 ├── frontend/
 │   ├── src/
-│   │   ├── engine/        # Three.js scene, world, player, raycast, AI
-│   │   ├── components/    # Vue components (GameCanvas, HUD, panels)
+│   │   ├── engine/        # Three.js scene, spatialAudio, spatialVoice, minigames, AI
+│   │   ├── components/    # Vue components (GameCanvas, HUD, SpatialVoiceModal, Minigames)
 │   │   ├── stores/        # Pinia state (settings, ui)
 │   │   └── types/         # TypeScript types
 │   ├── index.html
 │   └── vite.config.ts
+├── logs/                  # Devlogs & session trajectory
 ├── LICENSE
 └── README.md
 ```
 
 ## Roadmap
 
-- [ ] GitHub Pages auto-deploy (GitHub Actions)
-- [ ] More block types and textures
-- [ ] Multiple world templates (harbor, forest, desert)
-- [ ] NPC with custom knowledge base (RAG)
-- [ ] World sharing via URL
+- [x] Multi-player (WebSocket & WebRTC 3D Spatial Voice Chat)
+- [x] Arena Minigames (PvP Laser Tag, 3D Voxel Snake, Parkour)
+- [x] 60+ Voxel block types and procedural biomes
+- [x] MagicaVoxel .VOX 3D assets import & OBJ/MTL export
+- [ ] NPC with custom knowledge base (RAG & Web Speech Synthesis)
 - [ ] Mobile touch controls
-- [ ] Multi-player (WebSocket)
+- [ ] GitHub Pages auto-deploy (GitHub Actions)
 
 ## Contributing
 
