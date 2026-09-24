@@ -4,6 +4,7 @@ import { sound } from './audio'
 import { BlockType } from '@/types/world'
 import { vehicles } from './vehicles'
 import { fluids } from './fluids'
+import { survivalCombat } from './survivalCombat'
 
 export type CameraViewMode = 'rts' | 'fpp' | 'tpp'
 
@@ -87,6 +88,9 @@ export class PlayerController {
       dir.y = Math.max(0.4, dir.y)
       this.velocity.addScaledVector(dir, detail.force || 8)
       this.isGrounded = false
+      if (detail.damage) {
+        survivalCombat.takeDamage(detail.damage)
+      }
     }
   }
 
@@ -222,6 +226,13 @@ export class PlayerController {
       }
     }
 
+    // Magma environmental hazard check
+    const footBlock = this.world.getBlock(Math.floor(this.position.x), Math.floor(this.position.y), Math.floor(this.position.z))
+    const belowBlock = this.world.getBlock(Math.floor(this.position.x), Math.floor(this.position.y - 0.5), Math.floor(this.position.z))
+    if (footBlock === 'magma' || belowBlock === 'magma') {
+      survivalCombat.takeDamage(16 * delta)
+    }
+
     // Apply movement with simple voxel collision
     this.moveWithCollision(delta)
 
@@ -279,6 +290,9 @@ export class PlayerController {
     if (this.velocity.y < 0) {
       // Falling
       if (this.world.isSolidAt(this.position.x, nextY, this.position.z)) {
+        if (this.velocity.y < -16) {
+          survivalCombat.takeDamage(Math.floor((Math.abs(this.velocity.y) - 16) * 3))
+        }
         this.position.y = Math.floor(nextY) + 1.0
         this.velocity.y = 0
         this.isGrounded = true

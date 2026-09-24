@@ -35,6 +35,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'laser_arena_ace', title: '賽博神射手', description: '在激光競技場中命中 5 架以上敵方戰鬥無人機', icon: '🔫', unlocked: false, progress: 0, maxProgress: 5, category: 'scifi' },
   { id: 'voxel_snake_master', title: '量子貪食蛇', description: '體素貪吃蛇長度達到 12 節以上', icon: '🐍', unlocked: false, progress: 0, maxProgress: 12, category: 'scifi' },
   { id: 'npc_voice_hearer', title: '賽博同音', description: '聆聽智慧 AI NPC 的語音朗讀對話', icon: '🗣️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'note_sequencer', title: '電子樂大師', description: '觸發一次音符方塊發聲或電路自動音序', icon: '🎹', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'hologram_architect', title: '全息造物主', description: '透過全息投影藍圖建造一座建築', icon: '🏛️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'cyber_tamer', title: '機械馴獸師', description: '馴服一隻賽博機械犬作為忠實伴隨寵物', icon: '🐾', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'dungeon_slayer', title: '核心征服者', description: '闖關賽博地下城挑戰並擊敗核心守衛', icon: '⚔️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

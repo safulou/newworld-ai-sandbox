@@ -53,8 +53,9 @@ const keyCategories: KeyCategory[] = [
   {
     name: '建造、工具與任務',
     keys: [
-      { combo: '滑鼠右鍵', desc: '放置手持方塊 (附空間音效)' },
-      { combo: '滑鼠左鍵', desc: '破壞挖掘方塊 (附粒子碎屑)' },
+      { combo: '滑鼠右鍵', desc: '放置方塊 / 開關撥桿 / 音符調音 / 馴養機械犬' },
+      { combo: '滑鼠左鍵', desc: '開採方塊 / 光劍揮砍攻擊' },
+      { combo: 'R', desc: '裝備 / 收起 賽博光劍 (Cyber Beam Saber)' },
       { combo: '1 ~ 9', desc: '快速選取 Hotbar 材質' },
       { combo: 'E', desc: '開啟全品類創造物品庫' },
       { combo: 'T', desc: '開啟空間多功能工具庫 (Tools)' },
@@ -71,7 +72,7 @@ const keyCategories: KeyCategory[] = [
     name: 'AI、光影與系統',
     keys: [
       { combo: 'B', desc: '開啟 AI Voxel Architect 自然語言建造' },
-      { combo: 'P', desc: '開啟 3D 建築巨型藍圖庫' },
+      { combo: 'P', desc: '開啟 3D 全息建築巨型藍圖庫 (Hologram Blueprint)' },
       { combo: 'K', desc: '開啟 著色器與後製特效工作室 (Shaders)' },
       { combo: 'F4', desc: '開啟 賽博光影拍照相機 (Photo Mode)' },
       { combo: 'F5', desc: '開啟 元宇宙成就殿堂 (Achievements)' },

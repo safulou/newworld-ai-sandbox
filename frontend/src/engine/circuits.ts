@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { BlockType } from '@/types/world'
 import { sound } from './audio'
 import { explosives } from './explosives'
+import { noteBlocks } from './noteBlocks'
 
 export interface CircuitSignal {
   x: number
@@ -20,6 +21,7 @@ export class CircuitEngine {
   private activeSwitches: Set<string> = new Set()
   private activeSensors: Set<string> = new Set()
   private activePressurePlates: Set<string> = new Set()
+  private poweredNoteBlocks: Set<string> = new Set()
 
   private listeners: CircuitListener = {}
   private tickTimer: number = 0
@@ -222,15 +224,29 @@ export class CircuitEngine {
           queue.push({ x: nx, y: ny, z: nz, signal: 15 })
         }
         // Actuators
-        else if (nBlock === 'jump_pad' || nBlock === 'light_emitter' || nBlock === 'tnt' || nBlock === 'teleporter') {
+        else if (nBlock === 'jump_pad' || nBlock === 'light_emitter' || nBlock === 'tnt' || nBlock === 'teleporter' || nBlock === 'note_block') {
           poweredCoords.add(nKey)
           // If TNT receives power -> trigger detonation!
           if (nBlock === 'tnt') {
             explosives.detonate(nx, ny, nz, world)
+          } else if (nBlock === 'note_block') {
+            if (!this.poweredNoteBlocks.has(nKey)) {
+              noteBlocks.trigger(nx, ny, nz, world)
+            }
           }
         }
       }
     }
+
+    // Update active powered note blocks set
+    const currentPoweredNotes = new Set<string>()
+    for (const key of poweredCoords) {
+      const [x, y, z] = key.split(',').map(Number)
+      if (world.getBlock(x, y, z) === 'note_block') {
+        currentPoweredNotes.add(key)
+      }
+    }
+    this.poweredNoteBlocks = currentPoweredNotes
 
     // 3. Update wire meshes visually (wire_off <-> wire_on)
     for (const [key, block] of playerBlocks.entries()) {

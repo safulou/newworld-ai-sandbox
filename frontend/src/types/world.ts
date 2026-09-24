@@ -65,6 +65,7 @@ export type BlockType =
   | 'teleporter'
   | 'tnt'
   | 'light_emitter'
+  | 'note_block'
 
 export interface Block {
   type: BlockType

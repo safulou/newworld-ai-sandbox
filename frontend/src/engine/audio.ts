@@ -266,6 +266,14 @@ class SoundEngine {
     this.playFanfare()
   }
 
+  playLevelUp(): void {
+    this.playFanfare()
+  }
+
+  playGameOver(): void {
+    this.playExplosion()
+  }
+
   // ── Ambient Background Synthesizer ──────────────────────────────────
   startAmbience(): void {
     if (this.ambientNode) return

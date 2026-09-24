@@ -58,6 +58,15 @@
       <button class="hud-btn voice-btn" :class="{ live: spatialVoice.isJoined && !spatialVoice.isMicMuted }" @click="ui.openSpatialVoice" title="3D 空間語音 (X / F8)">
         🎙️ 語音 (X)
       </button>
+      <button class="hud-btn blueprint-btn" @click="ui.openBlueprints" title="全息建築藍圖庫 (B)">
+        🏛️ 藍圖 (B)
+      </button>
+      <button class="hud-btn combat-btn" @click="toggleGameMode" :title="combatStats.mode === 'survival' ? '切換為創造模式' : '切換為生存冒險模式'">
+        {{ combatStats.mode === 'survival' ? '❤️ 生存' : '🛡️ 創造' }}
+      </button>
+      <button class="hud-btn saber-btn" :class="{ live: combatStats.saberActive }" @click="toggleSaber" title="裝備/收起賽博光劍 (R)">
+        🗡️ 光劍 (R)
+      </button>
       <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
         ↩️ 還原
       </button>
@@ -100,9 +109,38 @@
     <!-- Center: Build status notification -->
     <div v-if="ui.buildStatus" class="build-status">{{ ui.buildStatus }}</div>
 
+    <!-- Survival Mode Health & Shield Bars -->
+    <div v-if="combatStats.mode === 'survival'" class="survival-status-hud glass-panel">
+      <div class="status-row">
+        <span class="status-label">🛡️ 護盾</span>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill shield-fill" :style="{ width: `${(combatStats.shield / combatStats.maxShield) * 100}%` }"></div>
+        </div>
+        <span class="status-val">{{ Math.round(combatStats.shield) }}</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">❤️ 生命</span>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill hp-fill" :style="{ width: `${(combatStats.health / combatStats.maxHealth) * 100}%` }"></div>
+        </div>
+        <span class="status-val">{{ Math.round(combatStats.health) }}</span>
+      </div>
+    </div>
+
+    <!-- Dungeon Boss Health Bar -->
+    <div v-if="combatStats.bossActive" class="boss-health-bar glass-panel">
+      <div class="boss-header">
+        <span class="boss-title">👾 核心守衛者 (Core Guardian)</span>
+        <span class="boss-hp-text">{{ Math.round(combatStats.bossHealth) }} / {{ combatStats.bossMaxHealth }}</span>
+      </div>
+      <div class="boss-bar-bg">
+        <div class="boss-bar-fill" :style="{ width: `${(combatStats.bossHealth / combatStats.bossMaxHealth) * 100}%` }"></div>
+      </div>
+    </div>
+
     <!-- Bottom: Controls hint -->
     <div class="hint">
-      WASD: 移動 | 右鍵: 放置/開關 | 左鍵: 破壞 | G: 切換載具 | ⛅: 氣象 | ⚡: 量子電路 | 🌊: 流體 | X: 空間語音 | U: VOX 資產 | Y: 無人機 | H: 換裝 | O: 競技場 | J: 任務 | T: 工具 | K: 著色器 | E: 物品庫 | B: AI 建造 | P: 藍圖 | F4: 拍照 | F5: 成就 | F3: 偵錯 | F9: 快捷鍵
+      WASD: 移動 | 右鍵: 放置/開關/調音/馴服 | 左鍵: 破壞/揮砍 | R: 光劍 | B: 全息藍圖 | G: 載具 | ⛅: 氣候 | ⚡: 電路 | 🌊: 流體 | 🐾: 機械伴侶 | X: 語音 | F3: 偵錯 | F9: 快捷鍵
     </div>
   </div>
 </template>
@@ -118,11 +156,13 @@ import { minigames } from '@/engine/minigames'
 import { weather, WEATHER_ROSTER, WeatherType } from '@/engine/weather'
 import { vehicles, VEHICLE_CONFIGS, VehicleType } from '@/engine/vehicles'
 import { multiplayerSync } from '@/engine/multiplayerSync'
+import { survivalCombat } from '@/engine/survivalCombat'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
 
 const onlineCount = computed(() => multiplayerSync.getOnlineCount())
+const combatStats = ref({ ...survivalCombat.stats })
 
 const currentWeatherType = ref<WeatherType>(weather.getWeather())
 const currentVehType = ref<VehicleType>(vehicles.getVehicle())
@@ -239,9 +279,26 @@ function onKey(e: KeyboardEvent): void {
   }
 }
 
+function toggleGameMode(): void {
+  const next = survivalCombat.toggleGameMode()
+  ui.setBuildStatus(`模式已切換為：${next === 'survival' ? '❤️ 生存冒險模式' : '🛡️ 創造模式'}`)
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function toggleSaber(): void {
+  const active = survivalCombat.toggleSaber()
+  ui.setBuildStatus(active ? '🗡️ 賽博光劍已裝備 (左鍵揮砍)' : '🗡️ 賽博光劍已收起')
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function onCombatStatsUpdate(e: Event): void {
+  combatStats.value = { ...(e as CustomEvent).detail }
+}
+
 onMounted(() => {
   window.addEventListener('player-position', onPlayerMoved)
   window.addEventListener('keydown', onKey)
+  window.addEventListener('combat-stats-update', onCombatStatsUpdate)
   fetchPlotInfo(0, 0)
   sound.startAmbience()
 })
@@ -249,6 +306,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('player-position', onPlayerMoved)
   window.removeEventListener('keydown', onKey)
+  window.removeEventListener('combat-stats-update', onCombatStatsUpdate)
   sound.stopAmbience()
 })
 </script>
@@ -468,5 +526,125 @@ onUnmounted(() => {
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -10px); }
   to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Survival Status HUD */
+.survival-status-hud {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(10, 16, 32, 0.85);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  width: 220px;
+  pointer-events: auto;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-label {
+  font-size: 11px;
+  font-weight: 700;
+  width: 50px;
+  color: #eee;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shield-fill {
+  background: linear-gradient(90deg, #0088ff, #00ffff);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.hp-fill {
+  background: linear-gradient(90deg, #ff0055, #ff4466);
+  box-shadow: 0 0 8px rgba(255, 0, 85, 0.5);
+}
+
+.status-val {
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 700;
+  color: #fff;
+  width: 26px;
+  text-align: right;
+}
+
+/* Boss Health Bar */
+.boss-health-bar {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  max-width: 90vw;
+  background: rgba(15, 10, 25, 0.9);
+  border: 1.5px solid #ff007f;
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+}
+
+.boss-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff007f;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.boss-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 0, 127, 0.3);
+}
+
+.boss-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff0055, #ff00aa, #aa00ff);
+  box-shadow: 0 0 10px rgba(255, 0, 170, 0.8);
+  transition: width 0.15s ease-out;
+}
+
+.combat-btn {
+  border-color: rgba(255, 0, 85, 0.4);
+  color: #ff3377;
+}
+
+.saber-btn {
+  border-color: rgba(0, 255, 255, 0.4);
+  color: #00ffff;
+}
+.saber-btn.live {
+  background: rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
 }
 </style>

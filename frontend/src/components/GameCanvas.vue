@@ -34,6 +34,10 @@ import { fluids } from '@/engine/fluids'
 import { explosives } from '@/engine/explosives'
 import { multiplayerSync } from '@/engine/multiplayerSync'
 import { npcSociety } from '@/engine/npcSociety'
+import { noteBlocks } from '@/engine/noteBlocks'
+import { blueprintHologram } from '@/engine/blueprintHologram'
+import { cyberFauna } from '@/engine/cyberFauna'
+import { survivalCombat } from '@/engine/survivalCombat'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -90,6 +94,10 @@ function init(): void {
   explosives.init(scene)
   multiplayerSync.init(world.getSocket(), scene, world)
   spatialVoice.joinVoice(world.getSocket(), settings.creatorId, camera.position)
+  noteBlocks.init(scene)
+  blueprintHologram.init(scene)
+  cyberFauna.init(scene, camera.position)
+  survivalCombat.init(scene, camera)
 
   circuits.setListener({
     onJumpPadTriggered: (pos) => {
@@ -136,6 +144,10 @@ function loop(): void {
   explosives.update(delta)
   multiplayerSync.update(delta)
   npcSociety.update(delta, npcManager.getNPCs(), camera.position)
+  noteBlocks.update(delta)
+  blueprintHologram.update(delta)
+  cyberFauna.update(delta, camera.position)
+  survivalCombat.update(delta, camera.position)
   multiplayerSync.emitLocalState(camera.position, camera.rotation.y, settings.creatorId || 'Pioneer', vehicles.getVehicle(), spatialVoice.isLocalSpeaking)
   
   const camForward = new THREE.Vector3()
@@ -279,6 +291,13 @@ function onMouseUp(e: MouseEvent): void {
 
   // Standard Pickaxe / Hand placement
   if (e.button === 0) {
+    // If Saber equipped -> swing attack!
+    if (survivalCombat.stats.saberActive) {
+      const camDir = new THREE.Vector3()
+      camera.getWorldDirection(camDir)
+      survivalCombat.attackSwing(camera.position, camDir)
+    }
+
     // Left Click: Mine / Break pointed block
     const breakPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
     const bx = Math.floor(breakPos.x)
@@ -300,12 +319,24 @@ function onMouseUp(e: MouseEvent): void {
       BLOCK_COLORS[blockType] || 0x00ffff
     )
   } else if (e.button === 2) {
-    // Right Click: check if interacting with Switch / Lever first
+    // Check if interacting with Cyber Fauna (taming or sitting)
+    if (cyberFauna.interactWithFauna(camera.position, ui.selectedBlock)) {
+      return
+    }
+
+    // Right Click: check if interacting with Switch / Lever / Note block first
     const hitPos = rc.point.clone().sub(rc.normal.clone().multiplyScalar(0.1))
     const hx = Math.floor(hitPos.x)
     const hy = Math.floor(hitPos.y)
     const hz = Math.floor(hitPos.z)
     const hitBlock = world.getBlock(hx, hy, hz)
+
+    if (hitBlock === 'note_block') {
+      const newPitch = noteBlocks.tune(hx, hy, hz, world, scene)
+      ui.setBuildStatus(`🎵 音符方塊音高已調節至: [${newPitch}/24] (半音階)`)
+      setTimeout(() => ui.setBuildStatus(''), 1200)
+      return
+    }
 
     if (hitBlock === 'lever') {
       const active = circuits.toggleLever(hx, hy, hz, world)
@@ -388,6 +419,7 @@ function onKeyDown(e: KeyboardEvent): void {
     if (e.code === 'KeyN') ui.openCustomBlueprints()
     if (e.code === 'KeyU') ui.openVoxImporter()
     if (e.code === 'KeyY') ui.openDrone()
+    if (e.code === 'KeyR' && !e.ctrlKey && !e.metaKey) survivalCombat.toggleSaber()
     
     // B Key -> AI Build Prompt
     if (e.code === 'KeyB') {
@@ -571,6 +603,10 @@ onUnmounted(() => {
   explosives.dispose()
   multiplayerSync.dispose()
   fluids.clear()
+  noteBlocks.dispose()
+  blueprintHologram.dispose()
+  cyberFauna.dispose()
+  survivalCombat.dispose()
   renderer?.dispose()
 })
 </script>

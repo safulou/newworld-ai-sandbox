@@ -90,6 +90,7 @@ export const BLOCK_REGISTRY: Record<BlockType, BlockProperties> = {
   teleporter: { color: 0xaa00ff, emissiveColor: 0xcc44ff, emissiveIntensity: 3.0, lightLevel: 15, renderType: 'emissive', solid: false, category: 'logic', displayName: '量子傳送門' },
   tnt: { color: 0xdd2200, emissiveColor: 0xff3300, emissiveIntensity: 0.8, renderType: 'emissive', solid: true, category: 'logic', displayName: '高能聚合炸藥' },
   light_emitter: { color: 0xffffff, emissiveColor: 0xffffff, emissiveIntensity: 3.0, lightLevel: 15, renderType: 'emissive', solid: true, category: 'logic', displayName: '全光譜照明燈' },
+  note_block: { color: 0x995522, emissiveColor: 0xffaa44, emissiveIntensity: 1.5, lightLevel: 10, renderType: 'emissive', solid: true, category: 'logic', displayName: '賽博音符方塊' },
 }
 
 export const BLOCK_COLORS: Record<BlockType, number> = Object.fromEntries(

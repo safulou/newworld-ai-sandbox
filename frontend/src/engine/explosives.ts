@@ -84,7 +84,8 @@ export class ExplosivesEngine {
         window.dispatchEvent(new CustomEvent('explosion-knockback', {
           detail: {
             origin: { x, y, z },
-            force: Math.max(5, (6.0 - dist) * 4)
+            force: Math.max(5, (6.0 - dist) * 4),
+            damage: Math.round(Math.max(10, (6.0 - dist) * 10))
           }
         }))
       }

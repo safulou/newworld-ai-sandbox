@@ -67,3 +67,13 @@ export function generateDungeonChunk(
 
   return blocks
 }
+
+import { survivalCombat } from './survivalCombat'
+
+/**
+ * Builds an instanced 3-chamber procedural challenge dungeon with Boss Guardian
+ */
+export function buildCyberDungeonInstance(origin: { x: number; y: number; z: number }, world: any): void {
+  survivalCombat.generateDungeonChambers(origin as any, world)
+}
+

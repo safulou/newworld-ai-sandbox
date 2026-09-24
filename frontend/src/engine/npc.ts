@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { makePremiumMaterial } from './scene'
 import { WorldEngine } from './world'
-import { BlockPlacement, Vec3 } from '@/types/world'
+import { BlockPlacement, Vec3, BlockType } from '@/types/world'
 import { sound } from './audio'
 import { tts } from './tts'
 
@@ -208,6 +208,33 @@ export class NPCCompanion {
       sound.playBuildComplete()
       return `報告架構師：4 階下行採礦坑道已開鑿就緒！`
     }
+  }
+
+  /**
+   * Sequentially places blocks for an entire blueprint with construction animations and sound
+   */
+  public async executeBlueprintConstruction(blocks: { x: number; y: number; z: number; type: BlockType }[]): Promise<string> {
+    this.isBuilding = true
+    this.startSpeaking(`收到全息藍圖！我即刻前往現場進行施工（共 ${blocks.length} 個體素元件）...`, 5)
+
+    let placed = 0
+    // Sort blocks from bottom to top for realistic construction
+    const sorted = [...blocks].sort((a, b) => a.y - b.y)
+
+    for (const b of sorted) {
+      this.world.setBlock(b.x, b.y, b.z, b.type)
+      placed++
+      if (placed % 4 === 0) {
+        sound.playBlockBreak('concrete')
+      }
+      await new Promise(r => setTimeout(r, 40))
+    }
+
+    this.isBuilding = false
+    sound.playBuildComplete()
+    const finishMsg = `報告架構師！全息藍圖建築已全數完工（共 ${placed} 個方塊）！`
+    this.startSpeaking(finishMsg, 6)
+    return finishMsg
   }
 
   public update(delta: number, playerPos?: THREE.Vector3): void {
