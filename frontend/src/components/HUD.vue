@@ -73,6 +73,24 @@
       <button class="hud-btn midi-btn" @click="exportTrackMIDI" title="匯出標準 MIDI 檔案 (.mid)">
         💾 MIDI
       </button>
+      <button class="hud-btn piano-btn" @click="ui.openPianoRoll" title="鋼琴卷軸工作室 (N)">
+        🎹 鋼琴 (N)
+      </button>
+      <button class="hud-btn schem-btn" @click="ui.openSchematic" title="體素藍圖工作室 (L)">
+        🏗️ 藍圖 (L)
+      </button>
+      <button class="hud-btn radar-btn" @click="ui.toggleMinimap" title="戰術雷達顯示開關 (M)">
+        🗺️ 雷達 (M)
+      </button>
+      <button v-if="currentVehType !== 'none'" class="hud-btn stunt-btn" @click="triggerRollLeft" title="特技左側翻滾 (Q)">
+        🌀 翻滾 (Q)
+      </button>
+      <button v-if="currentVehType !== 'none'" class="hud-btn stunt-btn" @click="triggerRollRight" title="特技右側翻滾">
+        🌀 翻滾 (右)
+      </button>
+      <button v-if="currentVehType !== 'none'" class="hud-btn warp-btn" @click="triggerWarpBurst" title="音速曲率衝刺">
+        🚀 衝刺
+      </button>
       <button class="hud-btn turbo-btn" @click="cycleTurboColor" title="自訂渦輪等離子色彩">
         🎨 渦輪: {{ currentTurbo }}
       </button>
@@ -175,6 +193,7 @@ import { survivalCombat } from '@/engine/survivalCombat'
 import { noteSequencer } from '@/engine/noteSequencer'
 import { vehicleMod, TurboColor } from '@/engine/vehicleMod'
 import { cyberFauna } from '@/engine/cyberFauna'
+import { vehicleStunts } from '@/engine/vehicleStunts'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
@@ -294,6 +313,38 @@ function onKey(e: KeyboardEvent): void {
     setTimeout(() => {
       currentVehType.value = vehicles.getVehicle()
     }, 50)
+  } else if (e.code === 'KeyN') {
+    ui.openPianoRoll()
+  } else if (e.code === 'KeyL') {
+    ui.openSchematic()
+  } else if (e.code === 'KeyM') {
+    ui.toggleMinimap()
+  } else if (e.code === 'KeyQ' && currentVehType.value !== 'none') {
+    triggerRollLeft()
+  }
+}
+
+function triggerRollLeft(): void {
+  const success = vehicleStunts.triggerBarrelRoll('left')
+  if (success) {
+    ui.setBuildStatus('🌀 執行左側 360° 特技翻滾！')
+    setTimeout(() => ui.setBuildStatus(''), 1500)
+  }
+}
+
+function triggerRollRight(): void {
+  const success = vehicleStunts.triggerBarrelRoll('right')
+  if (success) {
+    ui.setBuildStatus('🌀 執行右側 360° 特技翻滾！')
+    setTimeout(() => ui.setBuildStatus(''), 1500)
+  }
+}
+
+function triggerWarpBurst(): void {
+  const success = vehicleStunts.triggerWarpBurst()
+  if (success) {
+    ui.setBuildStatus('🚀 啟動音速曲率推進！速度短暫爆發 +75%')
+    setTimeout(() => ui.setBuildStatus(''), 1500)
   }
 }
 

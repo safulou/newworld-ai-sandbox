@@ -81,6 +81,12 @@
       <SynthStudioModal v-if="ui.mode === 'synth'" />
     </Transition>
     <Transition name="fade">
+      <PianoRollModal v-if="ui.mode === 'piano-roll'" />
+    </Transition>
+    <Transition name="fade">
+      <SchematicModal v-if="ui.mode === 'schematic'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -133,6 +139,8 @@ import DroneControlModal from '@/components/DroneControlModal.vue'
 import SpatialVoiceModal from '@/components/SpatialVoiceModal.vue'
 import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
+import PianoRollModal from '@/components/PianoRollModal.vue'
+import SchematicModal from '@/components/SchematicModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

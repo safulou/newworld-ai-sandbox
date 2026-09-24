@@ -26,6 +26,8 @@ export type UIMode =
   | 'vox-importer'
   | 'drone'
   | 'spatial-voice'
+  | 'piano-roll'
+  | 'schematic'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -49,6 +51,8 @@ export const useUIStore = defineStore('ui', () => {
   const selectedBlock = ref<BlockType>('stone')
   const timeOfDay = ref<TimeOfDay>('night')
 
+  const isMinimapVisible = ref(true)
+
   function openSettings(): void { mode.value = 'settings' }
   function openBuildPrompt(): void { mode.value = 'build-prompt' }
   function openBlueprints(): void { mode.value = 'blueprints' }
@@ -60,6 +64,8 @@ export const useUIStore = defineStore('ui', () => {
   function openTools(): void { mode.value = 'tools' }
   function openExport(): void { mode.value = 'export' }
   function openSynth(): void { mode.value = 'synth' }
+  function openPianoRoll(): void { mode.value = 'piano-roll' }
+  function openSchematic(): void { mode.value = 'schematic' }
   function openQuests(): void { mode.value = 'quests' }
   function openShaders(): void { mode.value = 'shaders' }
   function openSkins(): void { mode.value = 'skins' }
@@ -86,10 +92,14 @@ export const useUIStore = defineStore('ui', () => {
     timeOfDay.value = t
     window.dispatchEvent(new CustomEvent('time-of-day', { detail: t }))
   }
+  function toggleMinimap(): boolean {
+    isMinimapVisible.value = !isMinimapVisible.value
+    return isMinimapVisible.value
+  }
 
   return {
-    mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
-    setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay,
+    mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

@@ -233,6 +233,30 @@ class SoundEngine {
     osc.stop(now + 0.5)
   }
 
+  // ── Aerodynamic Whoosh / Roll Sound ──────────────────────────────────
+  playWhoosh(): void {
+    if (this.isMuted) return
+    const ctx = this.getContext()
+    if (!ctx) return
+
+    const now = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+
+    osc.type = 'sine'
+    osc.frequency.setValueAtTime(320, now)
+    osc.frequency.exponentialRampToValueAtTime(80, now + 0.3)
+
+    gain.gain.setValueAtTime(0.15, now)
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.32)
+
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+
+    osc.start(now)
+    osc.stop(now + 0.33)
+  }
+
   // ── Fanfare / Achievement Sound ──────────────────────────────────────
   playFanfare(): void {
     if (this.isMuted) return

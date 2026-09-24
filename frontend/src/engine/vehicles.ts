@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { sound } from './audio'
 import { vehicleMod } from './vehicleMod'
+import { vehicleStunts } from './vehicleStunts'
 
 export type VehicleType = 'none' | 'hoverboard' | 'speeder' | 'cruiser'
 
@@ -166,7 +167,8 @@ export class VehicleManager {
   public getSpeedMultiplier(isSprinting: boolean = false): number {
     const base = VEHICLE_CONFIGS[this.currentVehicle].speedMultiplier
     if (this.currentVehicle === 'none') return base
-    return vehicleMod.getEffectiveSpeedMultiplier(base, isSprinting)
+    const stuntBonus = vehicleStunts.getStuntSpeedBonus()
+    return vehicleMod.getEffectiveSpeedMultiplier(base, isSprinting) * stuntBonus
   }
 
   public toggleHoverboard(playerPos: THREE.Vector3): VehicleType {
@@ -205,6 +207,7 @@ export class VehicleManager {
       return
     }
 
+    const stuntRollAngle = vehicleStunts.update(delta)
     this.hoverTime += delta * 6
     const config = VEHICLE_CONFIGS[this.currentVehicle]
     const hoverBob = Math.sin(this.hoverTime) * 0.08
@@ -219,14 +222,10 @@ export class VehicleManager {
       activeMesh.position.set(playerPos.x, vehicleY, playerPos.z)
       activeMesh.rotation.y = playerYaw
 
-      // Dynamic Banking & Sway
-      if (isMoving) {
-        activeMesh.rotation.z = Math.sin(this.hoverTime * 1.5) * 0.06
-        activeMesh.rotation.x = -0.05 // Slight pitch forward on acceleration
-      } else {
-        activeMesh.rotation.z = 0
-        activeMesh.rotation.x = 0
-      }
+      // Dynamic Banking & Sway + Acrobatic Barrel Roll
+      const baseRoll = isMoving ? Math.sin(this.hoverTime * 1.5) * 0.06 : 0
+      activeMesh.rotation.z = baseRoll + stuntRollAngle
+      activeMesh.rotation.x = isMoving ? -0.05 : 0 // Slight pitch forward on acceleration
     }
 
     // Update exhaust particles behind the vehicle

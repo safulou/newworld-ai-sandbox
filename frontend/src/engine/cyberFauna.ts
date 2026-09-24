@@ -100,6 +100,7 @@ export class CyberJellyfish {
 // 2. Cyber Hound (賽博機械犬)
 // -------------------------------------------------------------
 export class CyberHound {
+  public id: string = 'hound-' + Math.random().toString(36).substring(2, 7)
   public group: THREE.Group = new THREE.Group()
   public state: HoundState = 'wild'
   public name: string = 'Volt-01'

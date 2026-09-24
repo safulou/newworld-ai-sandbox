@@ -184,7 +184,12 @@ function loop(): void {
   if (Math.random() < 0.1) {
     world.emitPlayerMove(camera.position.x, camera.position.y, camera.position.z)
     window.dispatchEvent(new CustomEvent('player-position', {
-      detail: { x: camera.position.x, y: camera.position.y, z: camera.position.z }
+      detail: {
+        x: camera.position.x,
+        y: camera.position.y,
+        z: camera.position.z,
+        yaw: Math.atan2(camForward.x, camForward.z),
+      }
     }))
 
     let facingStr = '北 (North)'
