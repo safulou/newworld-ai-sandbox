@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { sound } from './audio'
 import { achievements } from './achievements'
+import { multiplayerCombat } from './multiplayerCombat'
 
 export type GameMode = 'creative' | 'survival'
 
@@ -132,6 +133,19 @@ export class SurvivalCombatEngine {
 
   constructor() {
     this.initSaberMesh()
+    if (typeof window !== 'undefined') {
+      window.addEventListener('remote-boss-sync', ((e: CustomEvent) => {
+        if (this.boss && e.detail) {
+          this.boss.health = e.detail.health
+          this.stats.bossHealth = e.detail.health
+          if (e.detail.isDefeated && !this.boss.isDefeated) {
+            this.boss.isDefeated = true
+            this.onBossDefeated()
+          }
+          this.dispatchUpdate()
+        }
+      }) as EventListener)
+    }
   }
 
   public init(scene: THREE.Scene, camera: THREE.Camera): void {
@@ -199,20 +213,39 @@ export class SurvivalCombatEngine {
     this.swingProgress = 0
     this.playSaberSlashSound()
 
+    // Broadcast slash wave to other players
+    multiplayerCombat.broadcastSlash(playerPos, this.camera ? this.camera.rotation.y : 0)
+
     // Hit detection against Boss or nearby monsters
     if (this.boss && !this.boss.isDefeated) {
       const dist = this.boss.mesh.position.distanceTo(playerPos)
       if (dist < 4.5) {
-        const defeated = this.boss.takeDamage(35)
-        this.stats.bossHealth = this.boss.health
-        sound.playBlockBreak('diamond_block')
-        if (defeated) {
-          this.onBossDefeated()
-        }
+        this.damageBoss(35, this.boss.mesh.position)
       }
     }
 
     this.dispatchUpdate()
+  }
+
+  public getBoss(): BossGuardian | null {
+    return this.boss
+  }
+
+  public damageBoss(amount: number, hitPos?: THREE.Vector3): boolean {
+    if (!this.boss || this.boss.isDefeated) return false
+    const defeated = this.boss.takeDamage(amount)
+    this.stats.bossHealth = this.boss.health
+    sound.playBlockBreak('diamond_block')
+
+    const pos = hitPos || this.boss.mesh.position
+    multiplayerCombat.broadcastDamage('boss', amount, pos)
+    multiplayerCombat.broadcastBossSync(this.boss.health, this.boss.maxHealth, defeated, pos)
+
+    if (defeated) {
+      this.onBossDefeated()
+    }
+    this.dispatchUpdate()
+    return defeated
   }
 
   public takeDamage(amount: number): void {
@@ -231,6 +264,9 @@ export class SurvivalCombatEngine {
       this.stats.health = Math.max(0, this.stats.health - amount)
       sound.playBlockBreak('mud')
     }
+
+    // Broadcast updated health/shield to other players
+    multiplayerCombat.broadcastHealth(this.stats.health, this.stats.maxHealth, this.stats.shield, this.stats.maxShield)
 
     if (this.stats.health <= 0) {
       this.handleDeath()

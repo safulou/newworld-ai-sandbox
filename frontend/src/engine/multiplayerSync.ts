@@ -12,6 +12,8 @@ export interface RemotePlayer {
   rotationY: number
   vehicle: VehicleType
   isSpeaking: boolean
+  health?: number
+  shield?: number
   group: THREE.Group
   nametagSprite?: THREE.Sprite
   vehicleMesh?: THREE.Mesh
@@ -59,6 +61,15 @@ export class MultiplayerSyncEngine {
         const prev = this.world.getBlock(data.x, data.y, data.z)
         this.world.removeBlock(data.x, data.y, data.z, false)
         if (prev) sound.playBlockBreak(prev)
+      }
+    })
+
+    this.socket.on('server:player-health', (data: { id: string; health: number; maxHealth: number; shield: number; maxShield: number }) => {
+      const player = this.remotePlayers.get(data.id)
+      if (player) {
+        player.health = data.health
+        player.shield = data.shield
+        this.updateNametag(player)
       }
     })
   }
@@ -167,40 +178,63 @@ export class MultiplayerSyncEngine {
     }
   }
 
-  private createNametagSprite(name: string, isSpeaking: boolean): THREE.Sprite {
+  private createNametagSprite(name: string, isSpeaking: boolean, health: number = 100, shield: number = 100): THREE.Sprite {
+    if (typeof document === 'undefined') {
+      return new THREE.Sprite()
+    }
     const canvas = document.createElement('canvas')
     canvas.width = 256
-    canvas.height = 64
+    canvas.height = 80
     const ctx = canvas.getContext('2d')
     if (ctx) {
-      ctx.fillStyle = isSpeaking ? 'rgba(0, 255, 200, 0.75)' : 'rgba(10, 15, 30, 0.65)'
-      ctx.roundRect(10, 8, 236, 48, 8)
+      ctx.fillStyle = isSpeaking ? 'rgba(0, 255, 200, 0.85)' : 'rgba(10, 15, 30, 0.75)'
+      ctx.roundRect(10, 6, 236, 68, 8)
       ctx.fill()
       ctx.strokeStyle = isSpeaking ? '#00ffff' : '#38bdf8'
       ctx.lineWidth = 3
-      ctx.roundRect(10, 8, 236, 48, 8)
+      ctx.roundRect(10, 6, 236, 68, 8)
       ctx.stroke()
 
       ctx.fillStyle = '#ffffff'
-      ctx.font = 'bold 24px monospace'
+      ctx.font = 'bold 22px monospace'
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
       const label = isSpeaking ? `🔊 ${name}` : name
-      ctx.fillText(label, 128, 32)
+      ctx.fillText(label, 128, 28)
+
+      // Dual HP & Shield Mini-Bars
+      const barX = 24
+      const barWidth = 208
+      const barHeight = 6
+
+      // Background
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.2)'
+      ctx.fillRect(barX, 48, barWidth, barHeight)
+      ctx.fillRect(barX, 58, barWidth, barHeight)
+
+      // Shield bar (Cyan)
+      const sW = Math.max(0, Math.min(barWidth, (shield / 100) * barWidth))
+      ctx.fillStyle = '#00ffff'
+      ctx.fillRect(barX, 48, sW, barHeight)
+
+      // HP bar (Emerald Green)
+      const hW = Math.max(0, Math.min(barWidth, (health / 100) * barWidth))
+      ctx.fillStyle = '#00ff88'
+      ctx.fillRect(barX, 58, hW, barHeight)
     }
 
     const texture = new THREE.CanvasTexture(canvas)
     const spriteMat = new THREE.SpriteMaterial({ map: texture, transparent: true })
     const sprite = new THREE.Sprite(spriteMat)
-    sprite.scale.set(2.2, 0.55, 1)
+    sprite.scale.set(2.4, 0.75, 1)
     return sprite
   }
 
   private updateNametag(player: RemotePlayer): void {
     if (!player.nametagSprite) return
     player.group.remove(player.nametagSprite)
-    player.nametagSprite = this.createNametagSprite(player.name, player.isSpeaking)
-    player.nametagSprite.position.set(0, 1.85, 0)
+    player.nametagSprite = this.createNametagSprite(player.name, player.isSpeaking, player.health ?? 100, player.shield ?? 100)
+    player.nametagSprite.position.set(0, 1.95, 0)
     player.group.add(player.nametagSprite)
   }
 

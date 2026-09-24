@@ -459,6 +459,23 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('server:circuit-toggled', data)
   })
 
+  // Multiplayer Combat & Boss Synchronization
+  socket.on('client:combat-damage', (data: { targetId?: string; targetType: 'player' | 'boss'; damage: number; attackerId?: string; attackerName?: string; position?: { x: number; y: number; z: number } }) => {
+    socket.broadcast.emit('server:combat-damage', { ...data, attackerId: socket.id })
+  })
+
+  socket.on('client:boss-sync', (data: { health: number; maxHealth: number; isDefeated: boolean; position?: { x: number; y: number; z: number } }) => {
+    socket.broadcast.emit('server:boss-sync', data)
+  })
+
+  socket.on('client:combat-slash', (data: { position: { x: number; y: number; z: number }; rotY: number; saberColor?: number }) => {
+    socket.broadcast.emit('server:combat-slash', { ...data, authorId: socket.id })
+  })
+
+  socket.on('client:player-health', (data: { health: number; maxHealth: number; shield: number; maxShield: number }) => {
+    socket.broadcast.emit('server:player-health', { ...data, id: socket.id })
+  })
+
   // Decentralized Worker task claim & submit
   socket.on('claim-task', (taskId: string, callback: (res: { success: boolean, task?: Task }) => void) => {
     const task = taskPool.get(taskId)

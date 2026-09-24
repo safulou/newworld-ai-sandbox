@@ -38,6 +38,8 @@ import { noteBlocks } from '@/engine/noteBlocks'
 import { blueprintHologram } from '@/engine/blueprintHologram'
 import { cyberFauna } from '@/engine/cyberFauna'
 import { survivalCombat } from '@/engine/survivalCombat'
+import { faunaGear } from '@/engine/faunaGear'
+import { multiplayerCombat } from '@/engine/multiplayerCombat'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -98,6 +100,8 @@ function init(): void {
   blueprintHologram.init(scene)
   cyberFauna.init(scene, camera.position)
   survivalCombat.init(scene, camera)
+  faunaGear.init(scene)
+  multiplayerCombat.init(world.getSocket(), scene)
 
   circuits.setListener({
     onJumpPadTriggered: (pos) => {
@@ -148,6 +152,18 @@ function loop(): void {
   blueprintHologram.update(delta)
   cyberFauna.update(delta, camera.position)
   survivalCombat.update(delta, camera.position)
+  faunaGear.update(delta)
+  multiplayerCombat.update(delta)
+
+  // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
+  const activeBoss = survivalCombat.getBoss()
+  if (survivalCombat.stats.bossActive && activeBoss && !activeBoss.isDefeated) {
+    cyberFauna.updateCombatHounds(delta, activeBoss.mesh.position, (from, to) => {
+      faunaGear.spawnLaserBeam(from, to, 0x00ffff)
+      survivalCombat.damageBoss(20, to)
+    })
+  }
+
   multiplayerSync.emitLocalState(camera.position, camera.rotation.y, settings.creatorId || 'Pioneer', vehicles.getVehicle(), spatialVoice.isLocalSpeaking)
   
   const camForward = new THREE.Vector3()
@@ -607,6 +623,8 @@ onUnmounted(() => {
   blueprintHologram.dispose()
   cyberFauna.dispose()
   survivalCombat.dispose()
+  faunaGear.dispose()
+  multiplayerCombat.dispose()
   renderer?.dispose()
 })
 </script>

@@ -120,6 +120,8 @@ export class NoteBlockEngine {
     return next
   }
 
+  public onNoteTriggered?: (pitch: number, instrument: InstrumentType) => void
+
   /**
    * Plays the procedural note and spawns 3D floating neon note particles
    */
@@ -128,6 +130,10 @@ export class NoteBlockEngine {
     const instrument = this.getInstrument(x, y, z, world)
     this.playTone(pitch, instrument)
     this.spawnParticle(x, y, z, pitch, scene || this.scene)
+
+    if (this.onNoteTriggered) {
+      this.onNoteTriggered(pitch, instrument)
+    }
 
     achievements.unlock('note_sequencer')
   }

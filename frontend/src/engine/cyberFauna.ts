@@ -198,6 +198,76 @@ export class CyberHound {
     }
   }
 
+  public isCannonEquipped: boolean = false
+  private cannonMesh: THREE.Group | null = null
+  private fireCooldown: number = 0
+
+  public equipCannon(colorHex: number = 0x00ffff): void {
+    if (this.cannonMesh) {
+      this.torsoMesh.remove(this.cannonMesh)
+    }
+
+    const cannonGroup = new THREE.Group()
+    const baseMat = new THREE.MeshStandardMaterial({ color: 0x1a2638, metalness: 0.9, roughness: 0.2 })
+    const muzzleMat = new THREE.MeshStandardMaterial({ color: colorHex, emissive: colorHex, emissiveIntensity: 2.2 })
+
+    // Left cannon
+    const leftBarrel = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.35, 8), baseMat)
+    leftBarrel.rotation.x = Math.PI / 2
+    leftBarrel.position.set(-0.2, 0.22, 0.05)
+
+    const leftMuzzle = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.08, 8), muzzleMat)
+    leftMuzzle.rotation.x = Math.PI / 2
+    leftMuzzle.position.set(-0.2, 0.22, 0.22)
+
+    // Right cannon
+    const rightBarrel = leftBarrel.clone()
+    rightBarrel.position.x = 0.2
+    const rightMuzzle = leftMuzzle.clone()
+    rightMuzzle.position.x = 0.2
+
+    cannonGroup.add(leftBarrel, leftMuzzle, rightBarrel, rightMuzzle)
+    this.torsoMesh.add(cannonGroup)
+    this.cannonMesh = cannonGroup
+    this.isCannonEquipped = true
+    sound.playUiClick()
+  }
+
+  public unequipCannon(): void {
+    if (this.cannonMesh) {
+      this.torsoMesh.remove(this.cannonMesh)
+      this.cannonMesh = null
+    }
+    this.isCannonEquipped = false
+    sound.playUiClick()
+  }
+
+  /**
+   * Fires laser bolts at target if cannon is equipped and in range
+   */
+  public updateCombat(
+    delta: number,
+    targetPos: THREE.Vector3,
+    onFireLaser?: (from: THREE.Vector3, to: THREE.Vector3) => void
+  ): boolean {
+    if (!this.isCannonEquipped || this.state === 'wild') return false
+    this.fireCooldown -= delta
+
+    const muzzleWorldPos = new THREE.Vector3()
+    this.headMesh.getWorldPosition(muzzleWorldPos)
+    muzzleWorldPos.y += 0.15
+
+    const dist = muzzleWorldPos.distanceTo(targetPos)
+    if (dist <= 20.0 && this.fireCooldown <= 0) {
+      this.fireCooldown = 1.8 // Fire every 1.8s
+      if (onFireLaser) {
+        onFireLaser(muzzleWorldPos, targetPos)
+      }
+      return true
+    }
+    return false
+  }
+
   public update(delta: number, playerPos: THREE.Vector3): void {
     this.walkTime += delta * 6
     this.barkTimer -= delta
@@ -575,6 +645,34 @@ export class CyberFaunaManager {
 
   public getHounds(): CyberHound[] {
     return this.hounds
+  }
+
+  public equipTamedHoundsCannon(colorHex: number = 0x00ffff): void {
+    for (const h of this.hounds) {
+      if (h.state !== 'wild') {
+        h.equipCannon(colorHex)
+      }
+    }
+  }
+
+  public unequipTamedHoundsCannon(): void {
+    for (const h of this.hounds) {
+      h.unequipCannon()
+    }
+  }
+
+  public updateCombatHounds(
+    delta: number,
+    targetPos: THREE.Vector3,
+    onFireLaser?: (from: THREE.Vector3, to: THREE.Vector3) => void
+  ): number {
+    let shotsFired = 0
+    for (const h of this.hounds) {
+      if (h.updateCombat(delta, targetPos, onFireLaser)) {
+        shotsFired++
+      }
+    }
+    return shotsFired
   }
 
   public dispose(): void {

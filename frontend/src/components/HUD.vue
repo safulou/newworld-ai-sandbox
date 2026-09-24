@@ -67,6 +67,21 @@
       <button class="hud-btn saber-btn" :class="{ live: combatStats.saberActive }" @click="toggleSaber" title="裝備/收起賽博光劍 (R)">
         🗡️ 光劍 (R)
       </button>
+      <button class="hud-btn sequencer-btn" :class="{ recording: isRecording }" @click="toggleSequencerRecording" title="賽博音序錄製器">
+        {{ isRecording ? '🔴 錄製中...' : '🎵 音序錄音' }}
+      </button>
+      <button class="hud-btn midi-btn" @click="exportTrackMIDI" title="匯出標準 MIDI 檔案 (.mid)">
+        💾 MIDI
+      </button>
+      <button class="hud-btn turbo-btn" @click="cycleTurboColor" title="自訂渦輪等離子色彩">
+        🎨 渦輪: {{ currentTurbo }}
+      </button>
+      <button class="hud-btn overdrive-btn" :class="{ live: overdriveActive }" @click="toggleOverdrive" title="超頻增壓渦輪 (+50% 極速)">
+        ⚡ 超頻
+      </button>
+      <button class="hud-btn pet-cannon-btn" :class="{ live: houndCannonActive }" @click="toggleHoundCannon" title="裝備/卸載機械犬雷射砲">
+        {{ houndCannonActive ? '🔫 獵犬雷射 (ON)' : '🐾 獵犬雷射 (OFF)' }}
+      </button>
       <button class="hud-btn undo-btn" @click="triggerUndo" title="還原上一步 (Ctrl+Z)">
         ↩️ 還原
       </button>
@@ -157,6 +172,9 @@ import { weather, WEATHER_ROSTER, WeatherType } from '@/engine/weather'
 import { vehicles, VEHICLE_CONFIGS, VehicleType } from '@/engine/vehicles'
 import { multiplayerSync } from '@/engine/multiplayerSync'
 import { survivalCombat } from '@/engine/survivalCombat'
+import { noteSequencer } from '@/engine/noteSequencer'
+import { vehicleMod, TurboColor } from '@/engine/vehicleMod'
+import { cyberFauna } from '@/engine/cyberFauna'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
@@ -295,10 +313,76 @@ function onCombatStatsUpdate(e: Event): void {
   combatStats.value = { ...(e as CustomEvent).detail }
 }
 
+const isRecording = ref(noteSequencer.isRecording)
+const notesCount = ref(noteSequencer.currentSong.notes.length)
+const currentTurbo = ref<TurboColor>(vehicleMod.config.turboColor)
+const overdriveActive = ref(vehicleMod.config.overdriveBooster)
+const houndCannonActive = ref(false)
+
+function toggleSequencerRecording(): void {
+  if (noteSequencer.isRecording) {
+    const song = noteSequencer.stopRecording()
+    isRecording.value = false
+    notesCount.value = song.notes.length
+    ui.setBuildStatus(`⏹️ 音序錄製完成！共錄製 ${song.notes.length} 個音符`)
+  } else {
+    noteSequencer.startRecording()
+    isRecording.value = true
+    ui.setBuildStatus('🔴 音序錄製開始！敲擊或激發音符方塊即可記錄旋律')
+  }
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function exportTrackMIDI(): void {
+  if (noteSequencer.currentSong.notes.length === 0) {
+    noteSequencer.loadPreset('cyber_arp')
+  }
+  noteSequencer.downloadMIDI()
+  ui.setBuildStatus('💾 已成功匯出標準 MIDI 音軌檔 (.mid)！')
+  setTimeout(() => ui.setBuildStatus(''), 2500)
+}
+
+function cycleTurboColor(): void {
+  const colors: TurboColor[] = ['cyan', 'magenta', 'gold', 'lime', 'violet']
+  const next = colors[(colors.indexOf(currentTurbo.value) + 1) % colors.length]
+  vehicleMod.setTurboColor(next)
+  currentTurbo.value = next
+  ui.setBuildStatus(`🎨 載具等離子色彩：${next.toUpperCase()}`)
+  setTimeout(() => ui.setBuildStatus(''), 1500)
+}
+
+function toggleOverdrive(): void {
+  const active = vehicleMod.toggleMod('overdriveBooster')
+  overdriveActive.value = active
+  ui.setBuildStatus(active ? '⚡ 超頻增壓模組已啟動 (速度加乘 +50%)' : '⚡ 超頻增壓模組已關閉')
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function toggleHoundCannon(): void {
+  houndCannonActive.value = !houndCannonActive.value
+  if (houndCannonActive.value) {
+    cyberFauna.equipTamedHoundsCannon(vehicleMod.getTurboHex())
+    ui.setBuildStatus('🔫 機械獵犬已裝備肩扛式微型能量雷射砲！(戰鬥警戒模式)')
+  } else {
+    cyberFauna.unequipTamedHoundsCannon()
+    ui.setBuildStatus('🐾 機械獵犬雷射砲已卸載 (悠閒伴侶模式)')
+  }
+  setTimeout(() => ui.setBuildStatus(''), 2500)
+}
+
+function onSequencerUpdate(e: Event): void {
+  const custom = e as CustomEvent
+  if (custom.detail) {
+    isRecording.value = custom.detail.isRecording
+    notesCount.value = custom.detail.song?.notes?.length ?? 0
+  }
+}
+
 onMounted(() => {
   window.addEventListener('player-position', onPlayerMoved)
   window.addEventListener('keydown', onKey)
   window.addEventListener('combat-stats-update', onCombatStatsUpdate)
+  window.addEventListener('sequencer-update', onSequencerUpdate)
   fetchPlotInfo(0, 0)
   sound.startAmbience()
 })
@@ -307,6 +391,7 @@ onUnmounted(() => {
   window.removeEventListener('player-position', onPlayerMoved)
   window.removeEventListener('keydown', onKey)
   window.removeEventListener('combat-stats-update', onCombatStatsUpdate)
+  window.removeEventListener('sequencer-update', onSequencerUpdate)
   sound.stopAmbience()
 })
 </script>
@@ -356,6 +441,24 @@ onUnmounted(() => {
   border-color: #00ff88;
   color: #00ff88;
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.sequencer-btn.recording {
+  border-color: #ff0055;
+  color: #ff0055;
+  box-shadow: 0 0 12px rgba(255, 0, 85, 0.45);
+  animation: pulse-rec 1s infinite alternate;
+}
+@keyframes pulse-rec {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.overdrive-btn.live,
+.pet-cannon-btn.live {
+  border-color: #ffd700;
+  color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 .voice-floating-bar {

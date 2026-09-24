@@ -111,9 +111,9 @@ newworld-ai-sandbox/
 - [x] Arena Minigames (PvP Laser Tag, 3D Voxel Snake, Parkour)
 - [x] 60+ Voxel block types and procedural biomes
 - [x] MagicaVoxel .VOX 3D assets import & OBJ/MTL export
-- [ ] NPC with custom knowledge base (RAG & Web Speech Synthesis)
-- [ ] Mobile touch controls
-- [ ] GitHub Pages auto-deploy (GitHub Actions)
+- [x] NPC with custom knowledge base (RAG & Web Speech Synthesis)
+- [x] Mobile touch controls
+- [x] GitHub Pages auto-deploy (GitHub Actions)
 
 ## Contributing
 

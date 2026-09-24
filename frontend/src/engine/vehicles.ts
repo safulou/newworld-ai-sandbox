@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { sound } from './audio'
+import { vehicleMod } from './vehicleMod'
 
 export type VehicleType = 'none' | 'hoverboard' | 'speeder' | 'cruiser'
 
@@ -162,8 +163,10 @@ export class VehicleManager {
     return this.currentVehicle
   }
 
-  public getSpeedMultiplier(): number {
-    return VEHICLE_CONFIGS[this.currentVehicle].speedMultiplier
+  public getSpeedMultiplier(isSprinting: boolean = false): number {
+    const base = VEHICLE_CONFIGS[this.currentVehicle].speedMultiplier
+    if (this.currentVehicle === 'none') return base
+    return vehicleMod.getEffectiveSpeedMultiplier(base, isSprinting)
   }
 
   public toggleHoverboard(playerPos: THREE.Vector3): VehicleType {
