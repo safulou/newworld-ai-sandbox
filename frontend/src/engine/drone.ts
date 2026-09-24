@@ -127,6 +127,10 @@ export class DroneManager {
     return this.droneMesh ? this.droneMesh.position.clone() : new THREE.Vector3()
   }
 
+  public getDroneMesh(): THREE.Group | null {
+    return this.droneMesh
+  }
+
   public update(delta: number, playerPos: THREE.Vector3): void {
     if (!this.state.isActive || !this.droneMesh) return
 

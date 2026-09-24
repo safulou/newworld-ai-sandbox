@@ -90,6 +90,12 @@
       <NPCCustomizerModal v-if="ui.mode === 'npc-customizer'" />
     </Transition>
     <Transition name="fade">
+      <DimensionModal v-if="ui.mode === 'dimension'" />
+    </Transition>
+    <Transition name="fade">
+      <FishingModal v-if="ui.mode === 'fishing'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -145,6 +151,8 @@ import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import PianoRollModal from '@/components/PianoRollModal.vue'
 import SchematicModal from '@/components/SchematicModal.vue'
 import NPCCustomizerModal from '@/components/NPCCustomizerModal.vue'
+import DimensionModal from '@/components/DimensionModal.vue'
+import FishingModal from '@/components/FishingModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

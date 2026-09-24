@@ -29,6 +29,8 @@ export type UIMode =
   | 'piano-roll'
   | 'schematic'
   | 'npc-customizer'
+  | 'dimension'
+  | 'fishing'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -76,9 +78,13 @@ export const useUIStore = defineStore('ui', () => {
   function openVoxImporter(): void { mode.value = 'vox-importer' }
   function openDrone(): void { mode.value = 'drone' }
   function openSpatialVoice(): void { mode.value = 'spatial-voice' }
+  function openDimension(): void { mode.value = 'dimension' }
+  function openFishing(): void { mode.value = 'fishing' }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
   function setSpatialVoiceModal(open: boolean): void { mode.value = open ? 'spatial-voice' : 'game' }
+  function setDimensionModal(open: boolean): void { mode.value = open ? 'dimension' : 'game' }
+  function setFishingModal(open: boolean): void { mode.value = open ? 'fishing' : 'game' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -101,7 +107,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

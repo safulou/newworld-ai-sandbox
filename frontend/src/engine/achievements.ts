@@ -38,7 +38,9 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'note_sequencer', title: '電子樂大師', description: '觸發一次音符方塊發聲或電路自動音序', icon: '🎹', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'hologram_architect', title: '全息造物主', description: '透過全息投影藍圖建造一座建築', icon: '🏛️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'cyber_tamer', title: '機械馴獸師', description: '馴服一隻賽博機械犬作為忠實伴隨寵物', icon: '🐾', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
-  { id: 'dungeon_slayer', title: '核心征服者', description: '闖關賽博地下城挑戰並擊敗核心守衛', icon: '⚔️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'dimension_voyager', title: '次元穿梭者', description: '完成一次量子次元躍遷 (前往深空浮島或晶核深淵)', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'cyber_angler', title: '等離子釣手', description: '成功垂釣獲取第一條賽博水棲生物', icon: '🎣', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'airdrop_commander', title: '空投物流官', description: '部署無人機投送一次空投補給物資', icon: '📦', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

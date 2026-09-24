@@ -46,6 +46,12 @@
       <button class="hud-btn" @click="ui.openExport" title="3D 模型匯出 (F6)">
         📦 匯出 (F6)
       </button>
+      <button class="hud-btn dimension-btn" @click="ui.openDimension" title="量子次元躍遷 (F7)">
+        🌌 次元 (F7)
+      </button>
+      <button class="hud-btn fishing-btn" @click="ui.openFishing" title="賽博等離子垂釣 (P)">
+        🎣 垂釣 (P)
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -329,6 +335,11 @@ function onKey(e: KeyboardEvent): void {
     ui.toggleMinimap()
   } else if (e.code === 'KeyC') {
     ui.openNpcCustomizer()
+  } else if (e.code === 'KeyP') {
+    ui.openFishing()
+  } else if (e.code === 'F7') {
+    e.preventDefault()
+    ui.openDimension()
   } else if (e.code === 'KeyQ' && currentVehType.value !== 'none') {
     triggerRollLeft()
   }

@@ -43,6 +43,8 @@ import { multiplayerCombat } from '@/engine/multiplayerCombat'
 import { vehicleCombat } from '@/engine/vehicleCombat'
 import { atmosphericAudio } from '@/engine/atmosphericAudio'
 import { atmosphericParticles } from '@/engine/atmosphericParticles'
+import { droneLogistics } from '@/engine/droneLogistics'
+import { dimensionWarp } from '@/engine/dimensionWarp'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -128,10 +130,13 @@ function init(): void {
   window.addEventListener('undo-build', onUndoBuild)
   window.addEventListener('direct-build', onDirectBuild)
   window.addEventListener('update-fov', onUpdateFOV)
+  window.addEventListener('dimension-warp', onDimensionWarp)
+  window.addEventListener('airdrop-landed', onAirdropLanded)
 
   vehicleCombat.init(scene)
   atmosphericParticles.init(scene)
   atmosphericAudio.transitionToTimeOfDay(ui.timeOfDay)
+  droneLogistics.init(scene)
 
   emit('ready', world)
   loop()
@@ -163,6 +168,7 @@ function loop(): void {
   multiplayerCombat.update(delta)
   vehicleCombat.update(delta, world)
   atmosphericParticles.update(delta, camera.position)
+  droneLogistics.update(delta, world, droneManager.getDroneMesh() || undefined)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
@@ -596,6 +602,36 @@ function importWorldJSON(jsonStr: string): void {
   }
 }
 
+function onDimensionWarp(e: Event): void {
+  const detail = (e as CustomEvent).detail
+  if (detail && detail.info && scene) {
+    if (scene.fog) {
+      scene.fog.color.setHex(detail.info.skyColor)
+    }
+    renderer.setClearColor(detail.info.skyColor)
+    dimensionWarp.generateDimensionTerrain(detail.to, world)
+    if (camera) {
+      if (detail.to === 'neon_void') {
+        camera.position.set(0, 45, 0)
+      } else if (detail.to === 'crystal_subcore') {
+        camera.position.set(0, 15, 0)
+      } else {
+        camera.position.set(0, 10, 0)
+      }
+    }
+    ui.setBuildStatus(`🌀 已跨越次元躍遷至：${detail.info.name} (重力: ${detail.gravity}x)`)
+    setTimeout(() => ui.setBuildStatus(''), 3000)
+  }
+}
+
+function onAirdropLanded(e: Event): void {
+  const detail = (e as CustomEvent).detail
+  if (detail) {
+    ui.setBuildStatus(`📦 空投補給箱已降落於座標 [${Math.round(detail.position.x)}, ${Math.round(detail.position.y)}, ${Math.round(detail.position.z)}]！`)
+    setTimeout(() => ui.setBuildStatus(''), 3000)
+  }
+}
+
 function clearWorld(): void {
   world.clear()
 }
@@ -639,6 +675,8 @@ onUnmounted(() => {
   window.removeEventListener('undo-build', onUndoBuild)
   window.removeEventListener('direct-build', onDirectBuild)
   window.removeEventListener('update-fov', onUpdateFOV)
+  window.removeEventListener('dimension-warp', onDimensionWarp)
+  window.removeEventListener('airdrop-landed', onAirdropLanded)
   npcManager.dispose()
   vehicles.dispose()
   weather.dispose()

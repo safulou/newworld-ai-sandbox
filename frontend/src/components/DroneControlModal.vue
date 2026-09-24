@@ -61,6 +61,29 @@
         </div>
       </div>
 
+      <!-- Logistics & Waypoint Patrol Section -->
+      <div class="logistics-section">
+        <h3>📍 自主巡航與空投物流 (Logistics & Patrol)</h3>
+        <div class="logistics-status">
+          <span>巡航航點: <strong>{{ waypointsCount }} 處</strong></span>
+          <span :class="{ 'patrol-active': isPatrolling }">
+            {{ isPatrolling ? '🛸 巡航導航中' : '⚪ 巡航待命' }}
+          </span>
+        </div>
+        <div class="logistics-actions">
+          <button class="log-btn" @click="addWaypoint">➕ 記錄當前座標航點</button>
+          <button class="log-btn" :disabled="waypointsCount === 0" @click="togglePatrol">
+            {{ isPatrolling ? '⏸️ 暫停巡航' : '▶️ 開始巡航' }}
+          </button>
+          <button class="log-btn clear" :disabled="waypointsCount === 0" @click="clearWaypoints">
+            🗑️ 清空
+          </button>
+        </div>
+        <button class="airdrop-btn" @click="requestAirdrop">
+          📦 請求空投物資箱 (Call Tactical Airdrop)
+        </button>
+      </div>
+
       <!-- Drone Actions -->
       <div class="drone-actions">
         <button class="action-btn" @click="toggleThermal">
@@ -80,6 +103,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { droneManager, DroneState } from '@/engine/drone'
+import { droneLogistics } from '@/engine/droneLogistics'
 import { useUIStore } from '@/stores/ui'
 
 const emit = defineEmits<{
@@ -89,11 +113,15 @@ const emit = defineEmits<{
 
 const ui = useUIStore()
 const droneState = ref<DroneState>(droneManager.getState())
+const waypointsCount = ref(droneLogistics.waypoints.length)
+const isPatrolling = ref(droneLogistics.isPatrolling)
 let timer: number | null = null
 
 onMounted(() => {
   timer = window.setInterval(() => {
     droneState.value = droneManager.getState()
+    waypointsCount.value = droneLogistics.waypoints.length
+    isPatrolling.value = droneLogistics.isPatrolling
   }, 200)
 })
 
@@ -119,6 +147,37 @@ function toggleThermal(): void {
 function setMode(mode: 'manual' | 'orbit' | 'survey'): void {
   droneManager.setMode(mode)
   droneState.value = droneManager.getState()
+}
+
+function addWaypoint(): void {
+  const pos = droneManager.getDronePosition()
+  droneLogistics.addWaypoint(pos)
+  waypointsCount.value = droneLogistics.waypoints.length
+  ui.setBuildStatus(`📍 已記錄航點 [${Math.round(pos.x)}, ${Math.round(pos.y)}, ${Math.round(pos.z)}]`)
+  setTimeout(() => ui.setBuildStatus(''), 2000)
+}
+
+function togglePatrol(): void {
+  if (droneLogistics.isPatrolling) {
+    droneLogistics.stopPatrol()
+  } else {
+    droneLogistics.startPatrol()
+  }
+  isPatrolling.value = droneLogistics.isPatrolling
+}
+
+function clearWaypoints(): void {
+  droneLogistics.clearWaypoints()
+  waypointsCount.value = 0
+  isPatrolling.value = false
+}
+
+function requestAirdrop(): void {
+  const pos = droneManager.getDronePosition()
+  droneLogistics.spawnAirdrop(pos, 10)
+  ui.setBuildStatus('📦 戰術空投已呼叫！物資箱正以減速降落傘投送中...')
+  setTimeout(() => ui.setBuildStatus(''), 2500)
+  close()
 }
 
 function close(): void {
@@ -237,6 +296,83 @@ function close(): void {
   border-color: #00ffff;
   color: #00ffff;
   font-weight: bold;
+}
+
+.logistics-section {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 14px;
+}
+
+.logistics-section h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: #00ffff;
+}
+
+.logistics-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.patrol-active {
+  color: #39ff14;
+  font-weight: bold;
+}
+
+.logistics-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.log-btn {
+  flex: 1;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.log-btn:hover:not(:disabled) {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: #00ffff;
+}
+
+.log-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.log-btn.clear {
+  flex: 0 0 auto;
+}
+
+.airdrop-btn {
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(168, 85, 247, 0.3));
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.airdrop-btn:hover {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(168, 85, 247, 0.5));
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 .drone-actions {
