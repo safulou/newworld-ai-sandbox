@@ -4,6 +4,7 @@ import { WorldEngine } from './world'
 import { BlockPlacement, Vec3, BlockType } from '@/types/world'
 import { sound } from './audio'
 import { tts } from './tts'
+import { npcCustomizer } from './npcCustomizer'
 
 export interface NPCDefinition {
   id: string
@@ -97,6 +98,9 @@ export class NPCCompanion {
     this.speechWaveMesh.position.y = this.isFlying ? 0.65 : 1.95
     this.speechWaveMesh.rotation.x = Math.PI / 2
     this.group.add(this.speechWaveMesh)
+
+    // Apply customized accessories (wings, headgear, aura)
+    npcCustomizer.applyToNPCGroup(def.id, this.group, this.isFlying)
 
     this.group.position.set(
       spawnPos.x + def.startOffset.x,

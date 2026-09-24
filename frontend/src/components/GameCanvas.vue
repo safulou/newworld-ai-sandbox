@@ -40,6 +40,9 @@ import { cyberFauna } from '@/engine/cyberFauna'
 import { survivalCombat } from '@/engine/survivalCombat'
 import { faunaGear } from '@/engine/faunaGear'
 import { multiplayerCombat } from '@/engine/multiplayerCombat'
+import { vehicleCombat } from '@/engine/vehicleCombat'
+import { atmosphericAudio } from '@/engine/atmosphericAudio'
+import { atmosphericParticles } from '@/engine/atmosphericParticles'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -126,6 +129,10 @@ function init(): void {
   window.addEventListener('direct-build', onDirectBuild)
   window.addEventListener('update-fov', onUpdateFOV)
 
+  vehicleCombat.init(scene)
+  atmosphericParticles.init(scene)
+  atmosphericAudio.transitionToTimeOfDay(ui.timeOfDay)
+
   emit('ready', world)
   loop()
 }
@@ -154,6 +161,8 @@ function loop(): void {
   survivalCombat.update(delta, camera.position)
   faunaGear.update(delta)
   multiplayerCombat.update(delta)
+  vehicleCombat.update(delta, world)
+  atmosphericParticles.update(delta, camera.position)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
@@ -250,6 +259,14 @@ function onMouseUp(e: MouseEvent): void {
 
   const dist = Math.hypot(e.clientX - pointerDownPos.x, e.clientY - pointerDownPos.y)
   if (dist > 5) {
+    return
+  }
+
+  // Vehicle Combat: Left click fires vehicle plasma cannons
+  if (vehicles.getVehicle() !== 'none' && e.button === 0) {
+    const camDir = new THREE.Vector3()
+    camera.getWorldDirection(camDir)
+    vehicleCombat.fire(camera.position, camDir, vehicles.getVehicle())
     return
   }
 
@@ -476,14 +493,18 @@ function onUpdateFOV(e: Event): void {
 
 function onTimeOfDayChange(e: Event): void {
   const custom = e as CustomEvent
-  if (custom.detail && atmosphere) {
-    atmosphere.setTimeOfDay(custom.detail)
+  if (custom.detail) {
+    if (atmosphere) atmosphere.setTimeOfDay(custom.detail)
+    atmosphericAudio.transitionToTimeOfDay(custom.detail)
+    atmosphericParticles.setTimeOfDay(custom.detail)
   }
 }
 
 watch(() => ui.timeOfDay, (newVal) => {
-  if (atmosphere && newVal) {
-    atmosphere.setTimeOfDay(newVal)
+  if (newVal) {
+    if (atmosphere) atmosphere.setTimeOfDay(newVal)
+    atmosphericAudio.transitionToTimeOfDay(newVal)
+    atmosphericParticles.setTimeOfDay(newVal)
   }
 })
 
@@ -630,6 +651,9 @@ onUnmounted(() => {
   survivalCombat.dispose()
   faunaGear.dispose()
   multiplayerCombat.dispose()
+  vehicleCombat.dispose()
+  atmosphericAudio.dispose()
+  atmosphericParticles.dispose()
   renderer?.dispose()
 })
 </script>

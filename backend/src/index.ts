@@ -476,6 +476,15 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('server:player-health', { ...data, id: socket.id })
   })
 
+  // Multiplayer Vehicle Combat & Dogfight
+  socket.on('client:vehicle-fire', (data: { from: { x: number; y: number; z: number }; velocity: { x: number; y: number; z: number }; color: number; vehicleType: string }) => {
+    socket.broadcast.emit('server:vehicle-fire', { ...data, authorId: socket.id })
+  })
+
+  socket.on('client:vehicle-damage', (data: { targetVehicleId?: string; damage: number; hitPos?: { x: number; y: number; z: number } }) => {
+    socket.broadcast.emit('server:vehicle-damage', { ...data, attackerId: socket.id })
+  })
+
   // Decentralized Worker task claim & submit
   socket.on('claim-task', (taskId: string, callback: (res: { success: boolean, task?: Task }) => void) => {
     const task = taskPool.get(taskId)

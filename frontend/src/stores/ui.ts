@@ -28,6 +28,7 @@ export type UIMode =
   | 'spatial-voice'
   | 'piano-roll'
   | 'schematic'
+  | 'npc-customizer'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -66,6 +67,7 @@ export const useUIStore = defineStore('ui', () => {
   function openSynth(): void { mode.value = 'synth' }
   function openPianoRoll(): void { mode.value = 'piano-roll' }
   function openSchematic(): void { mode.value = 'schematic' }
+  function openNpcCustomizer(): void { mode.value = 'npc-customizer' }
   function openQuests(): void { mode.value = 'quests' }
   function openShaders(): void { mode.value = 'shaders' }
   function openSkins(): void { mode.value = 'skins' }
@@ -99,7 +101,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

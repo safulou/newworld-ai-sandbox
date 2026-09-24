@@ -87,6 +87,9 @@
       <SchematicModal v-if="ui.mode === 'schematic'" />
     </Transition>
     <Transition name="fade">
+      <NPCCustomizerModal v-if="ui.mode === 'npc-customizer'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -141,6 +144,7 @@ import ExportModal from '@/components/ExportModal.vue'
 import SynthStudioModal from '@/components/SynthStudioModal.vue'
 import PianoRollModal from '@/components/PianoRollModal.vue'
 import SchematicModal from '@/components/SchematicModal.vue'
+import NPCCustomizerModal from '@/components/NPCCustomizerModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

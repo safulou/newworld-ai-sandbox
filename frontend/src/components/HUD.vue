@@ -82,6 +82,9 @@
       <button class="hud-btn radar-btn" @click="ui.toggleMinimap" title="戰術雷達顯示開關 (M)">
         🗺️ 雷達 (M)
       </button>
+      <button class="hud-btn npc-custom-btn" @click="ui.openNpcCustomizer" title="AI 伴侶換裝與性格自訂 (C)">
+        🤖 伴侶 (C)
+      </button>
       <button v-if="currentVehType !== 'none'" class="hud-btn stunt-btn" @click="triggerRollLeft" title="特技左側翻滾 (Q)">
         🌀 翻滾 (Q)
       </button>
@@ -90,6 +93,9 @@
       </button>
       <button v-if="currentVehType !== 'none'" class="hud-btn warp-btn" @click="triggerWarpBurst" title="音速曲率衝刺">
         🚀 衝刺
+      </button>
+      <button v-if="currentVehType !== 'none'" class="hud-btn cannon-btn" @click="triggerVehicleFire" title="發射車載等離子雙聯脈衝砲 (左鍵點擊)">
+        🔫 主砲 ({{ Math.floor(vehicleStats.energy) }}%)
       </button>
       <button class="hud-btn turbo-btn" @click="cycleTurboColor" title="自訂渦輪等離子色彩">
         🎨 渦輪: {{ currentTurbo }}
@@ -194,12 +200,14 @@ import { noteSequencer } from '@/engine/noteSequencer'
 import { vehicleMod, TurboColor } from '@/engine/vehicleMod'
 import { cyberFauna } from '@/engine/cyberFauna'
 import { vehicleStunts } from '@/engine/vehicleStunts'
+import { vehicleCombat } from '@/engine/vehicleCombat'
 
 const settings = useSettingsStore()
 const ui = useUIStore()
 
 const onlineCount = computed(() => multiplayerSync.getOnlineCount())
 const combatStats = ref({ ...survivalCombat.stats })
+const vehicleStats = ref({ ...vehicleCombat.stats })
 
 const currentWeatherType = ref<WeatherType>(weather.getWeather())
 const currentVehType = ref<VehicleType>(vehicles.getVehicle())
@@ -319,9 +327,16 @@ function onKey(e: KeyboardEvent): void {
     ui.openSchematic()
   } else if (e.code === 'KeyM') {
     ui.toggleMinimap()
+  } else if (e.code === 'KeyC') {
+    ui.openNpcCustomizer()
   } else if (e.code === 'KeyQ' && currentVehType.value !== 'none') {
     triggerRollLeft()
   }
+}
+
+function triggerVehicleFire(): void {
+  const custom = new CustomEvent('mobile-mouse-click', { detail: { button: 0 } })
+  window.dispatchEvent(custom)
 }
 
 function triggerRollLeft(): void {
@@ -429,11 +444,19 @@ function onSequencerUpdate(e: Event): void {
   }
 }
 
+function onVehicleCombatUpdate(e: Event): void {
+  const custom = e as CustomEvent
+  if (custom.detail) {
+    vehicleStats.value = { ...custom.detail }
+  }
+}
+
 onMounted(() => {
   window.addEventListener('player-position', onPlayerMoved)
   window.addEventListener('keydown', onKey)
   window.addEventListener('combat-stats-update', onCombatStatsUpdate)
   window.addEventListener('sequencer-update', onSequencerUpdate)
+  window.addEventListener('vehicle-combat-update', onVehicleCombatUpdate)
   fetchPlotInfo(0, 0)
   sound.startAmbience()
 })
@@ -443,6 +466,7 @@ onUnmounted(() => {
   window.removeEventListener('keydown', onKey)
   window.removeEventListener('combat-stats-update', onCombatStatsUpdate)
   window.removeEventListener('sequencer-update', onSequencerUpdate)
+  window.removeEventListener('vehicle-combat-update', onVehicleCombatUpdate)
   sound.stopAmbience()
 })
 </script>
