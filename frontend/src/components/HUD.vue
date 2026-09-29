@@ -52,6 +52,18 @@
       <button class="hud-btn fishing-btn" @click="ui.openFishing" title="賽博等離子垂釣 (P)">
         🎣 垂釣 (P)
       </button>
+      <button class="hud-btn rail-btn" @click="ui.openRail" title="磁浮超迴路列車 (F10)">
+        🚄 磁浮 (F10)
+      </button>
+      <button class="hud-btn kinetics-btn" @click="ui.openKinetics" title="體素動力學與升降電梯 (Kinetics)">
+        ⚙️ 機巧
+      </button>
+      <button class="hud-btn hydro-btn" @click="ui.openHydroponics" title="賽博水耕溫室與基因合成 (Hydroponics)">
+        🧪 水耕
+      </button>
+      <button class="hud-btn logic-btn" @click="ui.openVisualLogic" title="全息節點式視覺邏輯編輯器 (Visual Logic)">
+        ⚡ 邏輯
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -340,6 +352,9 @@ function onKey(e: KeyboardEvent): void {
   } else if (e.code === 'F7') {
     e.preventDefault()
     ui.openDimension()
+  } else if (e.code === 'F10') {
+    e.preventDefault()
+    ui.openRail()
   } else if (e.code === 'KeyQ' && currentVehType.value !== 'none') {
     triggerRollLeft()
   }

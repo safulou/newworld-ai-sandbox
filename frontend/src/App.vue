@@ -96,6 +96,18 @@
       <FishingModal v-if="ui.mode === 'fishing'" />
     </Transition>
     <Transition name="fade">
+      <RailTransitModal v-if="ui.mode === 'rail'" />
+    </Transition>
+    <Transition name="fade">
+      <KineticsModal v-if="ui.mode === 'kinetics'" />
+    </Transition>
+    <Transition name="fade">
+      <HydroponicsModal v-if="ui.mode === 'hydroponics'" />
+    </Transition>
+    <Transition name="fade">
+      <VisualLogicModal v-if="ui.mode === 'visual-logic'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -153,6 +165,10 @@ import SchematicModal from '@/components/SchematicModal.vue'
 import NPCCustomizerModal from '@/components/NPCCustomizerModal.vue'
 import DimensionModal from '@/components/DimensionModal.vue'
 import FishingModal from '@/components/FishingModal.vue'
+import RailTransitModal from '@/components/RailTransitModal.vue'
+import KineticsModal from '@/components/KineticsModal.vue'
+import HydroponicsModal from '@/components/HydroponicsModal.vue'
+import VisualLogicModal from '@/components/VisualLogicModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

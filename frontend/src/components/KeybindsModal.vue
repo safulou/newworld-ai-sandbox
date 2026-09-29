@@ -88,6 +88,7 @@ const keyCategories: KeyCategory[] = [
       { combo: 'F2', desc: '快速存檔世界' },
       { combo: 'F3', desc: '切換 賽博效能與空間偵錯面板 (Cyber Profiler)' },
       { combo: 'F9', desc: '開啟快捷鍵參照指南 (本視窗)' },
+      { combo: 'F10', desc: '開啟 磁浮超迴路列車調度台 (Hyperloop Transit)' },
     ]
   }
 ]

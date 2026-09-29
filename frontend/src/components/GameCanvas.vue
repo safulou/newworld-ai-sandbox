@@ -45,6 +45,9 @@ import { atmosphericAudio } from '@/engine/atmosphericAudio'
 import { atmosphericParticles } from '@/engine/atmosphericParticles'
 import { droneLogistics } from '@/engine/droneLogistics'
 import { dimensionWarp } from '@/engine/dimensionWarp'
+import { cyberRail } from '@/engine/cyberRail'
+import { voxelKinetics } from '@/engine/voxelKinetics'
+import { cyberHydroponics } from '@/engine/cyberHydroponics'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -137,6 +140,8 @@ function init(): void {
   atmosphericParticles.init(scene)
   atmosphericAudio.transitionToTimeOfDay(ui.timeOfDay)
   droneLogistics.init(scene)
+  cyberRail.init(scene)
+  voxelKinetics.init(scene)
 
   emit('ready', world)
   loop()
@@ -169,6 +174,9 @@ function loop(): void {
   vehicleCombat.update(delta, world)
   atmosphericParticles.update(delta, camera.position)
   droneLogistics.update(delta, world, droneManager.getDroneMesh() || undefined)
+  cyberRail.update(delta, camera)
+  voxelKinetics.update(delta, camera.position, camera)
+  cyberHydroponics.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

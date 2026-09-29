@@ -41,6 +41,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'dimension_voyager', title: '次元穿梭者', description: '完成一次量子次元躍遷 (前往深空浮島或晶核深淵)', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'cyber_angler', title: '等離子釣手', description: '成功垂釣獲取第一條賽博水棲生物', icon: '🎣', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'airdrop_commander', title: '空投物流官', description: '部署無人機投送一次空投補給物資', icon: '📦', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'rail_master', title: '超迴路領航員', description: '搭乘磁浮列車以超過 100km/h 速度穿梭', icon: '🚄', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'kinetic_engineer', title: '動態機巧大師', description: '成功部署一座自動化垂直升降電梯或氣密滑門', icon: '⚙️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'cyber_botanist', title: '賽博植物學家', description: '在水耕溫室中培育並收穫第一批基因發光作物', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'logic_architect', title: '可視化邏輯宗師', description: '建立並執行一條自訂節點邏輯連線規則', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
