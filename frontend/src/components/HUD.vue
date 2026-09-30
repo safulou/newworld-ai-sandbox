@@ -64,6 +64,18 @@
       <button class="hud-btn logic-btn" @click="ui.openVisualLogic" title="全息節點式視覺邏輯編輯器 (Visual Logic)">
         ⚡ 邏輯
       </button>
+      <button class="hud-btn factory-btn" @click="ui.openFactory" title="自動化工業物流調度 (Factory)">
+        🏭 工業
+      </button>
+      <button class="hud-btn acoustics-btn" @click="ui.openAcoustics" title="真實空間聲學物理與濾波器 (Acoustics)">
+        🎧 聲學
+      </button>
+      <button class="hud-btn holo-btn" @click="ui.openSculptor" title="微體素全息雕刻儀與投影台 (F11)">
+        🔮 雕刻 (F11)
+      </button>
+      <button class="hud-btn parkour-btn" @click="ui.openParkour" title="定向重力異常與極限跑酷 (F12)">
+        🌀 跑酷 (F12)
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -355,6 +367,12 @@ function onKey(e: KeyboardEvent): void {
   } else if (e.code === 'F10') {
     e.preventDefault()
     ui.openRail()
+  } else if (e.code === 'F11') {
+    e.preventDefault()
+    ui.openSculptor()
+  } else if (e.code === 'F12') {
+    e.preventDefault()
+    ui.openParkour()
   } else if (e.code === 'KeyQ' && currentVehType.value !== 'none') {
     triggerRollLeft()
   }

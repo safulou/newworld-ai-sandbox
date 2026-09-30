@@ -89,6 +89,8 @@ const keyCategories: KeyCategory[] = [
       { combo: 'F3', desc: '切換 賽博效能與空間偵錯面板 (Cyber Profiler)' },
       { combo: 'F9', desc: '開啟快捷鍵參照指南 (本視窗)' },
       { combo: 'F10', desc: '開啟 磁浮超迴路列車調度台 (Hyperloop Transit)' },
+      { combo: 'F11', desc: '開啟 微體素全息雕刻儀與投影台 (Micro-Voxel Sculptor)' },
+      { combo: 'F12', desc: '開啟 定向重力異常與極限跑酷 (Gravity & Parkour)' },
     ]
   }
 ]

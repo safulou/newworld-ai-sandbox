@@ -35,6 +35,10 @@ export type UIMode =
   | 'kinetics'
   | 'hydroponics'
   | 'visual-logic'
+  | 'factory'
+  | 'acoustics'
+  | 'sculptor'
+  | 'parkour'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -88,6 +92,10 @@ export const useUIStore = defineStore('ui', () => {
   function openKinetics(): void { mode.value = 'kinetics' }
   function openHydroponics(): void { mode.value = 'hydroponics' }
   function openVisualLogic(): void { mode.value = 'visual-logic' }
+  function openFactory(): void { mode.value = 'factory' }
+  function openAcoustics(): void { mode.value = 'acoustics' }
+  function openSculptor(): void { mode.value = 'sculptor' }
+  function openParkour(): void { mode.value = 'parkour' }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
   function setSpatialVoiceModal(open: boolean): void { mode.value = open ? 'spatial-voice' : 'game' }
@@ -97,6 +105,10 @@ export const useUIStore = defineStore('ui', () => {
   function setKineticsModal(open: boolean): void { mode.value = open ? 'kinetics' : 'game' }
   function setHydroponicsModal(open: boolean): void { mode.value = open ? 'hydroponics' : 'game' }
   function setVisualLogicModal(open: boolean): void { mode.value = open ? 'visual-logic' : 'game' }
+  function setFactoryModal(open: boolean): void { mode.value = open ? 'factory' : 'game' }
+  function setAcousticsModal(open: boolean): void { mode.value = open ? 'acoustics' : 'game' }
+  function setSculptorModal(open: boolean): void { mode.value = open ? 'sculptor' : 'game' }
+  function setParkourModal(open: boolean): void { mode.value = open ? 'parkour' : 'game' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -119,7 +131,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

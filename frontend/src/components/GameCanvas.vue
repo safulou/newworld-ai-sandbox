@@ -48,6 +48,10 @@ import { dimensionWarp } from '@/engine/dimensionWarp'
 import { cyberRail } from '@/engine/cyberRail'
 import { voxelKinetics } from '@/engine/voxelKinetics'
 import { cyberHydroponics } from '@/engine/cyberHydroponics'
+import { factoryLogistics } from '@/engine/factoryLogistics'
+import { acousticEnvironment } from '@/engine/acousticEnvironment'
+import { voxelSculptor } from '@/engine/voxelSculptor'
+import { gravityAnomalies } from '@/engine/gravityAnomalies'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -142,6 +146,8 @@ function init(): void {
   droneLogistics.init(scene)
   cyberRail.init(scene)
   voxelKinetics.init(scene)
+  factoryLogistics.init(scene)
+  voxelSculptor.init(scene)
 
   emit('ready', world)
   loop()
@@ -177,6 +183,10 @@ function loop(): void {
   cyberRail.update(delta, camera)
   voxelKinetics.update(delta, camera.position, camera)
   cyberHydroponics.update(delta)
+  factoryLogistics.update(delta)
+  acousticEnvironment.update(delta, camera, camera.position)
+  voxelSculptor.update(delta)
+  gravityAnomalies.update(delta, camera.position)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

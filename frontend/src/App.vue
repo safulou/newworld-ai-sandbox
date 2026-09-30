@@ -108,6 +108,18 @@
       <VisualLogicModal v-if="ui.mode === 'visual-logic'" />
     </Transition>
     <Transition name="fade">
+      <FactoryModal v-if="ui.mode === 'factory'" />
+    </Transition>
+    <Transition name="fade">
+      <AcousticsModal v-if="ui.mode === 'acoustics'" />
+    </Transition>
+    <Transition name="fade">
+      <HoloProjectorModal v-if="ui.mode === 'sculptor'" />
+    </Transition>
+    <Transition name="fade">
+      <ParkourModal v-if="ui.mode === 'parkour'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -169,6 +181,10 @@ import RailTransitModal from '@/components/RailTransitModal.vue'
 import KineticsModal from '@/components/KineticsModal.vue'
 import HydroponicsModal from '@/components/HydroponicsModal.vue'
 import VisualLogicModal from '@/components/VisualLogicModal.vue'
+import FactoryModal from '@/components/FactoryModal.vue'
+import AcousticsModal from '@/components/AcousticsModal.vue'
+import HoloProjectorModal from '@/components/HoloProjectorModal.vue'
+import ParkourModal from '@/components/ParkourModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

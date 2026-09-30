@@ -45,6 +45,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'kinetic_engineer', title: '動態機巧大師', description: '成功部署一座自動化垂直升降電梯或氣密滑門', icon: '⚙️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'cyber_botanist', title: '賽博植物學家', description: '在水耕溫室中培育並收穫第一批基因發光作物', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'logic_architect', title: '可視化邏輯宗師', description: '建立並執行一條自訂節點邏輯連線規則', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'factory_tycoon', title: '工業大亨', description: '在自動化工廠中運轉傳送帶並透過光電分揀器分流物料', icon: '🏭', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'sound_sculptor', title: '空間聲學大師', description: '體驗水下低通聲學濾波或密封座艙空間音場', icon: '🎧', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'holo_artist', title: '全息雕刻家', description: '使用微體素雕刻儀創作並在世界中投射全息光束', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'gravity_defier', title: '引力掌控者', description: '啟用反重力力場或踩上動能彈射踏板完成高空滑翔', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

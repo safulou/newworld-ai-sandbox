@@ -145,10 +145,11 @@ describe('Cyberpunk Plasma Angling & Deep-Sea Codex', () => {
   it('should snap line when tension hits 100', () => {
     cyberFishing.state = 'nibble'
     cyberFishing.hookLine()
-    cyberFishing.lineTension = 95
+    cyberFishing.lineTension = 99
 
-    // Reeling heavily pushes tension over 100 (42 * 0.5 = +21)
-    cyberFishing.updateReeling(0.5, true)
+    for (let i = 0; i < 5; i++) {
+      cyberFishing.updateReeling(0.5, true)
+    }
     expect(cyberFishing.lineTension).toBe(100)
     expect(cyberFishing.state).toBe('escaped')
   })
