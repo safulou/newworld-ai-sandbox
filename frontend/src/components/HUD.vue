@@ -76,6 +76,18 @@
       <button class="hud-btn parkour-btn" @click="ui.openParkour" title="定向重力異常與極限跑酷 (F12)">
         🌀 跑酷 (F12)
       </button>
+      <button class="hud-btn observatory-btn" @click="ui.openObservatory" title="全息星空天文台 (Observatory)">
+        🔭 天文
+      </button>
+      <button class="hud-btn reactor-btn" @click="ui.openReactor" title="等離子核聚變反應堆 (Reactor)">
+        ☢️ 聚變
+      </button>
+      <button class="hud-btn leaderboard-btn" @click="ui.openLeaderboard" title="幽靈競速電競天梯榜 (Leaderboard)">
+        🏆 天梯
+      </button>
+      <button class="hud-btn rangers-btn" @click="ui.openRangers" title="AI 生態巡護與機械獸繁育 (Rangers)">
+        🐾 巡護
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

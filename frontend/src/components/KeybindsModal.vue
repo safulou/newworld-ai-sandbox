@@ -91,6 +91,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'F10', desc: '開啟 磁浮超迴路列車調度台 (Hyperloop Transit)' },
       { combo: 'F11', desc: '開啟 微體素全息雕刻儀與投影台 (Micro-Voxel Sculptor)' },
       { combo: 'F12', desc: '開啟 定向重力異常與極限跑酷 (Gravity & Parkour)' },
+      { combo: 'HUD 🔭', desc: '開啟 全息星空天文台 (Celestial Observatory)' },
+      { combo: 'HUD ☢️', desc: '開啟 等離子核聚變反應堆 (Plasma Fusion Reactor)' },
+      { combo: 'HUD 🏆', desc: '開啟 幽靈競速電競天梯榜 (Ghost Replay & Leaderboard)' },
+      { combo: 'HUD 🐾', desc: '開啟 AI 生態巡護與機械獸繁育 (Cyber Rangers & Eco-Wardens)' },
     ]
   }
 ]

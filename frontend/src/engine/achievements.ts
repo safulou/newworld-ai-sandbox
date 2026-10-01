@@ -49,6 +49,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'sound_sculptor', title: '空間聲學大師', description: '體驗水下低通聲學濾波或密封座艙空間音場', icon: '🎧', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'holo_artist', title: '全息雕刻家', description: '使用微體素雕刻儀創作並在世界中投射全息光束', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'gravity_defier', title: '引力掌控者', description: '啟用反重力力場或踩上動能彈射踏板完成高空滑翔', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'stargazer_astronomer', title: '星空觀測大師', description: '在全息天文台中觀測天體軌道、採集墜落星塵或發現系外行星', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'fusion_engineer', title: '聚變工程大師', description: '點火等離子聚變反應堆核心並穩定運行輸出百萬瓦功率', icon: '☢️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'ghost_racer', title: '全息競速之王', description: '錄製個人最佳跑酷遙測幽靈並在天梯榜上完成非同步競速', icon: '🏁', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'ecosystem_guardian', title: '生態圈守護者', description: '自律生態無人機巡邏育苗且元宇宙生態健康指數達到 80% 以上', icon: '🐾', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

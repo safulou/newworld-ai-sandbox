@@ -120,6 +120,18 @@
       <ParkourModal v-if="ui.mode === 'parkour'" />
     </Transition>
     <Transition name="fade">
+      <ObservatoryModal v-if="ui.mode === 'observatory'" />
+    </Transition>
+    <Transition name="fade">
+      <ReactorModal v-if="ui.mode === 'reactor'" />
+    </Transition>
+    <Transition name="fade">
+      <LeaderboardModal v-if="ui.mode === 'leaderboard'" />
+    </Transition>
+    <Transition name="fade">
+      <RangerModal v-if="ui.mode === 'rangers'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -185,6 +197,10 @@ import FactoryModal from '@/components/FactoryModal.vue'
 import AcousticsModal from '@/components/AcousticsModal.vue'
 import HoloProjectorModal from '@/components/HoloProjectorModal.vue'
 import ParkourModal from '@/components/ParkourModal.vue'
+import ObservatoryModal from '@/components/ObservatoryModal.vue'
+import ReactorModal from '@/components/ReactorModal.vue'
+import LeaderboardModal from '@/components/LeaderboardModal.vue'
+import RangerModal from '@/components/RangerModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'
