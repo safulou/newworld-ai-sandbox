@@ -95,6 +95,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ☢️', desc: '開啟 等離子核聚變反應堆 (Plasma Fusion Reactor)' },
       { combo: 'HUD 🏆', desc: '開啟 幽靈競速電競天梯榜 (Ghost Replay & Leaderboard)' },
       { combo: 'HUD 🐾', desc: '開啟 AI 生態巡護與機械獸繁育 (Cyber Rangers & Eco-Wardens)' },
+      { combo: 'HUD 🚀', desc: '開啟 軌道空間站與模組化星艦造船塢 (Orbital Drydock)' },
+      { combo: 'HUD 🌊', desc: '開啟 深海深淵海溝與電漿深潛艇 (Abyssal Submersible)' },
+      { combo: 'HUD 🧠', desc: '開啟 全息 AI 神經行為樹編輯器 (Holo Behavior Tree)' },
+      { combo: 'HUD 💻', desc: '開啟 賽博甲板終端與網絡入侵協定 (Cyberdeck Netrunner)' },
     ]
   }
 ]

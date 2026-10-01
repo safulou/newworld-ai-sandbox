@@ -88,6 +88,18 @@
       <button class="hud-btn rangers-btn" @click="ui.openRangers" title="AI 生態巡護與機械獸繁育 (Rangers)">
         🐾 巡護
       </button>
+      <button class="hud-btn drydock-btn" @click="ui.openDrydock" title="軌道空間站與模組化星艦造船塢 (Drydock)">
+        🚀 船塢
+      </button>
+      <button class="hud-btn abyssal-btn" @click="ui.openAbyssal" title="深海深淵海溝與電漿深潛艇 (Abyssal)">
+        🌊 深潛
+      </button>
+      <button class="hud-btn bt-btn" @click="ui.openBehaviorTree" title="全息 AI 神經行為樹編輯器 (Behavior Tree)">
+        🧠 腦圖
+      </button>
+      <button class="hud-btn cyberdeck-btn" @click="ui.openCyberdeck" title="賽博甲板終端與網絡入侵協定 (Cyberdeck)">
+        💻 甲板
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

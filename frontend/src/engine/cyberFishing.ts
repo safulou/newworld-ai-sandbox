@@ -355,6 +355,7 @@ export class CyberFishingEngine {
 
     // Check line break
     if (this.lineTension >= 100) {
+      this.lineTension = 100
       this.state = 'escaped'
       this.playLineSnap()
       return

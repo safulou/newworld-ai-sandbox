@@ -53,6 +53,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'fusion_engineer', title: '聚變工程大師', description: '點火等離子聚變反應堆核心並穩定運行輸出百萬瓦功率', icon: '☢️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'ghost_racer', title: '全息競速之王', description: '錄製個人最佳跑酷遙測幽靈並在天梯榜上完成非同步競速', icon: '🏁', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'ecosystem_guardian', title: '生態圈守護者', description: '自律生態無人機巡邏育苗且元宇宙生態健康指數達到 80% 以上', icon: '🐾', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'orbital_pioneer', title: '軌道星艦先驅', description: '在軌道造船塢裝配模組化星艦並進行軌道微重力試航', icon: '🚀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'abyssal_diver', title: '深海深淵潛航員', description: '搭乘深潛艇潛入水下極限海溝並發射主動聲納探測', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'neural_architect', title: '神經架構工程師', description: '編排全息 AI 神經行為樹並將大腦成功注入實體夥伴', icon: '🧠', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'netrunner_elite', title: '矩陣賽博黑客', description: '操作賽博甲板終端成功攻破代碼矩陣防火牆節點', icon: '💻', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

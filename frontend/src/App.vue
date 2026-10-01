@@ -132,6 +132,18 @@
       <RangerModal v-if="ui.mode === 'rangers'" />
     </Transition>
     <Transition name="fade">
+      <DrydockModal v-if="ui.mode === 'drydock'" />
+    </Transition>
+    <Transition name="fade">
+      <AbyssalModal v-if="ui.mode === 'abyssal'" />
+    </Transition>
+    <Transition name="fade">
+      <BehaviorTreeModal v-if="ui.mode === 'behaviorTree'" />
+    </Transition>
+    <Transition name="fade">
+      <CyberdeckModal v-if="ui.mode === 'cyberdeck'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -201,6 +213,10 @@ import ObservatoryModal from '@/components/ObservatoryModal.vue'
 import ReactorModal from '@/components/ReactorModal.vue'
 import LeaderboardModal from '@/components/LeaderboardModal.vue'
 import RangerModal from '@/components/RangerModal.vue'
+import DrydockModal from '@/components/DrydockModal.vue'
+import AbyssalModal from '@/components/AbyssalModal.vue'
+import BehaviorTreeModal from '@/components/BehaviorTreeModal.vue'
+import CyberdeckModal from '@/components/CyberdeckModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

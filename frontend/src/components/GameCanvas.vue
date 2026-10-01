@@ -56,6 +56,9 @@ import { celestialObservatory } from '@/engine/celestialObservatory'
 import { fluidThermodynamics } from '@/engine/fluidThermodynamics'
 import { ghostReplay } from '@/engine/ghostReplay'
 import { cyberRangers } from '@/engine/cyberRangers'
+import { orbitalDrydock } from '@/engine/orbitalDrydock'
+import { abyssalTrench } from '@/engine/abyssalTrench'
+import { behaviorTree } from '@/engine/behaviorTree'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -196,6 +199,9 @@ function loop(): void {
   fluidThermodynamics.update(delta)
   ghostReplay.update(delta, camera.position, camera.rotation.y, gravityAnomalies.isGliding)
   cyberRangers.update(delta)
+  orbitalDrydock.update(delta, camera.position)
+  abyssalTrench.update(delta, camera.position)
+  behaviorTree.tick()
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
