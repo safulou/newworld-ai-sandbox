@@ -57,6 +57,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'abyssal_diver', title: '深海深淵潛航員', description: '搭乘深潛艇潛入水下極限海溝並發射主動聲納探測', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'neural_architect', title: '神經架構工程師', description: '編排全息 AI 神經行為樹並將大腦成功注入實體夥伴', icon: '🧠', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'netrunner_elite', title: '矩陣賽博黑客', description: '操作賽博甲板終端成功攻破代碼矩陣防火牆節點', icon: '💻', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'hyperjump_voyager', title: '曲率躍遷拓荒者', description: '啟動星艦曲率驅動核心完成跨星系深空蟲洞躍遷', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'ice_sentinel', title: '矩陣防火牆哨兵', description: '部署高級 ICE 矩陣防衛領地子網或破解企業級核心節點', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'leviathan_slayer', title: '深海利維坦征服者', description: '搭乘深潛艇在極限深淵海溝討伐擊潰機械利維坦 Boss', icon: '🐉', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'supergrid_overlord', title: '超導電網霸主', description: '達成全服多基地超導電網同調並在能源交易所獲利', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

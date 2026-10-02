@@ -47,6 +47,10 @@ export type UIMode =
   | 'abyssal'
   | 'behaviorTree'
   | 'cyberdeck'
+  | 'hyperjump'
+  | 'netrunner-warfare'
+  | 'leviathan'
+  | 'supergrid'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -112,6 +116,10 @@ export const useUIStore = defineStore('ui', () => {
   function openAbyssal(): void { mode.value = 'abyssal' }
   function openBehaviorTree(): void { mode.value = 'behaviorTree' }
   function openCyberdeck(): void { mode.value = 'cyberdeck' }
+  function openHyperjump(): void { mode.value = 'hyperjump' }
+  function openNetrunnerWarfare(): void { mode.value = 'netrunner-warfare' }
+  function openLeviathan(): void { mode.value = 'leviathan' }
+  function openSupergrid(): void { mode.value = 'supergrid' }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
   function setSpatialVoiceModal(open: boolean): void { mode.value = open ? 'spatial-voice' : 'game' }
@@ -133,6 +141,10 @@ export const useUIStore = defineStore('ui', () => {
   function setAbyssalModal(open: boolean): void { mode.value = open ? 'abyssal' : 'game' }
   function setBehaviorTreeModal(open: boolean): void { mode.value = open ? 'behaviorTree' : 'game' }
   function setCyberdeckModal(open: boolean): void { mode.value = open ? 'cyberdeck' : 'game' }
+  function setHyperjumpModal(open: boolean): void { mode.value = open ? 'hyperjump' : 'game' }
+  function setNetrunnerWarfareModal(open: boolean): void { mode.value = open ? 'netrunner-warfare' : 'game' }
+  function setLeviathanModal(open: boolean): void { mode.value = open ? 'leviathan' : 'game' }
+  function setSupergridModal(open: boolean): void { mode.value = open ? 'supergrid' : 'game' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -155,7 +167,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

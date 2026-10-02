@@ -100,6 +100,18 @@
       <button class="hud-btn cyberdeck-btn" @click="ui.openCyberdeck" title="賽博甲板終端與網絡入侵協定 (Cyberdeck)">
         💻 甲板
       </button>
+      <button class="hud-btn hyperjump-btn" @click="ui.openHyperjump" title="星艦超空間曲率躍遷驅動 (Hyperjump)">
+        🌌 躍遷
+      </button>
+      <button class="hud-btn netwar-btn" @click="ui.openNetrunnerWarfare" title="賽博黑客領地防衛與網絡潛入 (Netrunner Warfare)">
+        🛡️ 攻防
+      </button>
+      <button class="hud-btn leviathan-btn" @click="ui.openLeviathan" title="深海深淵機械利維坦 Boss 討伐戰 (Leviathan)">
+        🐉 巨獸
+      </button>
+      <button class="hud-btn supergrid-btn" @click="ui.openSupergrid" title="全服多基地超導電網同調與能源交易 (Supergrid)">
+        ⚡ 電網
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

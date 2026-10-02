@@ -144,6 +144,18 @@
       <CyberdeckModal v-if="ui.mode === 'cyberdeck'" />
     </Transition>
     <Transition name="fade">
+      <HyperjumpModal v-if="ui.mode === 'hyperjump'" />
+    </Transition>
+    <Transition name="fade">
+      <NetrunnerWarfareModal v-if="ui.mode === 'netrunner-warfare'" />
+    </Transition>
+    <Transition name="fade">
+      <LeviathanModal v-if="ui.mode === 'leviathan'" />
+    </Transition>
+    <Transition name="fade">
+      <SupergridModal v-if="ui.mode === 'supergrid'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -217,6 +229,10 @@ import DrydockModal from '@/components/DrydockModal.vue'
 import AbyssalModal from '@/components/AbyssalModal.vue'
 import BehaviorTreeModal from '@/components/BehaviorTreeModal.vue'
 import CyberdeckModal from '@/components/CyberdeckModal.vue'
+import HyperjumpModal from '@/components/HyperjumpModal.vue'
+import NetrunnerWarfareModal from '@/components/NetrunnerWarfareModal.vue'
+import LeviathanModal from '@/components/LeviathanModal.vue'
+import SupergridModal from '@/components/SupergridModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

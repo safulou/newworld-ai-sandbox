@@ -59,6 +59,10 @@ import { cyberRangers } from '@/engine/cyberRangers'
 import { orbitalDrydock } from '@/engine/orbitalDrydock'
 import { abyssalTrench } from '@/engine/abyssalTrench'
 import { behaviorTree } from '@/engine/behaviorTree'
+import { hyperjumpDrive } from '@/engine/hyperjumpDrive'
+import { netrunnerWarfare } from '@/engine/netrunnerWarfare'
+import { leviathanBoss } from '@/engine/leviathanBoss'
+import { supergridPower } from '@/engine/supergridPower'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -202,6 +206,10 @@ function loop(): void {
   orbitalDrydock.update(delta, camera.position)
   abyssalTrench.update(delta, camera.position)
   behaviorTree.tick()
+  hyperjumpDrive.update(delta)
+  netrunnerWarfare.update(delta)
+  leviathanBoss.update(delta)
+  supergridPower.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

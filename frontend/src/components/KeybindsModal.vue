@@ -99,6 +99,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌊', desc: '開啟 深海深淵海溝與電漿深潛艇 (Abyssal Submersible)' },
       { combo: 'HUD 🧠', desc: '開啟 全息 AI 神經行為樹編輯器 (Holo Behavior Tree)' },
       { combo: 'HUD 💻', desc: '開啟 賽博甲板終端與網絡入侵協定 (Cyberdeck Netrunner)' },
+      { combo: 'HUD 🌌', desc: '開啟 星艦超空間曲率躍遷驅動 (Hyperjump Drive)' },
+      { combo: 'HUD 🛡️', desc: '開啟 賽博黑客領地防衛與網絡潛入 (Netrunner Subnet Warfare)' },
+      { combo: 'HUD 🐉', desc: '開啟 深海深淵機械利維坦 Boss 討伐戰 (Deep-Sea Leviathan)' },
+      { combo: 'HUD ⚡', desc: '開啟 全服多基地超導電網同調與能源交易 (Supergrid Power & Market)' },
     ]
   }
 ]
