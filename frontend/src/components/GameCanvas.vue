@@ -63,6 +63,10 @@ import { hyperjumpDrive } from '@/engine/hyperjumpDrive'
 import { netrunnerWarfare } from '@/engine/netrunnerWarfare'
 import { leviathanBoss } from '@/engine/leviathanBoss'
 import { supergridPower } from '@/engine/supergridPower'
+import { colonyArk } from '@/engine/colonyArk'
+import { syndicateWarfare } from '@/engine/syndicateWarfare'
+import { mechExosuit } from '@/engine/mechExosuit'
+import { stellarBeacons } from '@/engine/stellarBeacons'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -210,6 +214,10 @@ function loop(): void {
   netrunnerWarfare.update(delta)
   leviathanBoss.update(delta)
   supergridPower.update(delta)
+  colonyArk.update(delta)
+  syndicateWarfare.update(delta)
+  mechExosuit.update(delta)
+  stellarBeacons.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

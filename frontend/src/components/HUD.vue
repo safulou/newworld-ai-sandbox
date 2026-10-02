@@ -112,6 +112,18 @@
       <button class="hud-btn supergrid-btn" @click="ui.openSupergrid" title="全服多基地超導電網同調與能源交易 (Supergrid)">
         ⚡ 電網
       </button>
+      <button class="hud-btn ark-btn" @click="ui.openColonyArk" title="星際殖民地母艦生態圈 (Colony Ark)">
+        🛸 母艦
+      </button>
+      <button class="hud-btn syndicate-btn" @click="ui.openSyndicate" title="賽博公會聯盟領地戰 (Syndicate)">
+        🏴‍☠️ 公會
+      </button>
+      <button class="hud-btn exosuit-btn" @click="ui.openExosuit" title="利維坦生物機械外骨骼裝配鍛造 (Exosuit)">
+        🦾 機甲
+      </button>
+      <button class="hud-btn beacon-btn" @click="ui.openStellarBeacon" title="全息星圖量子跨次元躍遷信標 (Stellar Beacon)">
+        📡 信標
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

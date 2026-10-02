@@ -61,6 +61,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'ice_sentinel', title: '矩陣防火牆哨兵', description: '部署高級 ICE 矩陣防衛領地子網或破解企業級核心節點', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'leviathan_slayer', title: '深海利維坦征服者', description: '搭乘深潛艇在極限深淵海溝討伐擊潰機械利維坦 Boss', icon: '🐉', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'supergrid_overlord', title: '超導電網霸主', description: '達成全服多基地超導電網同調並在能源交易所獲利', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'colony_ark_commander', title: '母艦殖民最高指揮官', description: '擴建星際殖民地母艦生態圈且居民人口突破 300 人', icon: '🛸', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'syndicate_warlord', title: '辛迪加領地霸主', description: '統率公會陣營佔領戰略據點並領取累計破 5000 點領地分紅', icon: '🏴‍☠️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'exosuit_titan', title: '泰坦機甲外骨骼工程師', description: '鍛造升級生化機械外骨骼套裝並啟動超載推進', icon: '🦾', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'quantum_cartographer', title: '量子星網測繪宗師', description: '部署量子信標並完成 5 次跨維度波函數坍縮折躍', icon: '📡', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

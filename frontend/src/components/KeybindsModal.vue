@@ -103,6 +103,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🛡️', desc: '開啟 賽博黑客領地防衛與網絡潛入 (Netrunner Subnet Warfare)' },
       { combo: 'HUD 🐉', desc: '開啟 深海深淵機械利維坦 Boss 討伐戰 (Deep-Sea Leviathan)' },
       { combo: 'HUD ⚡', desc: '開啟 全服多基地超導電網同調與能源交易 (Supergrid Power & Market)' },
+      { combo: 'HUD 🛸', desc: '開啟 星際殖民地母艦生態圈 (Colony Ark & Biosphere)' },
+      { combo: 'HUD 🏴‍☠️', desc: '開啟 賽博公會聯盟領地戰 (Syndicate Corporate Wars)' },
+      { combo: 'HUD 🦾', desc: '開啟 利維坦生物機械外骨骼裝配鍛造 (Exosuit Forge)' },
+      { combo: 'HUD 📡', desc: '開啟 全息星圖量子跨次元躍遷信標 (Stellar Beacon Network)' },
     ]
   }
 ]

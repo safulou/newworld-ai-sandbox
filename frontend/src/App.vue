@@ -156,6 +156,18 @@
       <SupergridModal v-if="ui.mode === 'supergrid'" />
     </Transition>
     <Transition name="fade">
+      <ColonyArkModal v-if="ui.mode === 'colony-ark'" />
+    </Transition>
+    <Transition name="fade">
+      <SyndicateModal v-if="ui.mode === 'syndicate'" />
+    </Transition>
+    <Transition name="fade">
+      <ExosuitModal v-if="ui.mode === 'exosuit'" />
+    </Transition>
+    <Transition name="fade">
+      <BeaconModal v-if="ui.mode === 'stellar-beacon'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -233,6 +245,10 @@ import HyperjumpModal from '@/components/HyperjumpModal.vue'
 import NetrunnerWarfareModal from '@/components/NetrunnerWarfareModal.vue'
 import LeviathanModal from '@/components/LeviathanModal.vue'
 import SupergridModal from '@/components/SupergridModal.vue'
+import ColonyArkModal from '@/components/ColonyArkModal.vue'
+import SyndicateModal from '@/components/SyndicateModal.vue'
+import ExosuitModal from '@/components/ExosuitModal.vue'
+import BeaconModal from '@/components/BeaconModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'
