@@ -119,6 +119,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 超空間星門躍遷航道與引力樞紐 (Stargate Network)' },
       { combo: 'HUD 🏛️', desc: '開啟 星際外交聯盟與銀河議會 (Galactic Council)' },
       { combo: 'HUD 🧪', desc: '開啟 異星基因工坊與生物誘變培育 (Genome Forge)' },
+      { combo: 'HUD 🌌', desc: '開啟 卡爾達肖夫文明等級評定與奇點超越儀 (Kardashev Metric)' },
+      { combo: 'HUD 🛰️', desc: '開啟 戴森雲反射群集拓撲網絡 (Dyson Swarm Mesh)' },
+      { combo: 'HUD 🌋', desc: '開啟 全球地熱超深鑽井與行星地核引擎 (Planetary Core Dynamo)' },
+      { combo: 'HUD ⏳', desc: '開啟 時間因果律校準儀與微型時空閉環 (Chrono Stabilizer)' },
     ]
   }
 ]

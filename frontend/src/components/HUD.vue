@@ -160,6 +160,18 @@
       <button class="hud-btn genome-btn" @click="ui.openGenomeForge" title="異星基因工坊與生物誘變培育 (Genome Forge)">
         🧪 基因
       </button>
+      <button class="hud-btn kardashev-btn" @click="ui.openKardashev" title="卡爾達肖夫文明等級評定與奇點超越儀 (Kardashev Metric)">
+        🌌 文明
+      </button>
+      <button class="hud-btn dyson-swarm-btn" @click="ui.openDysonSwarm" title="戴森雲反射群集拓撲網絡 (Dyson Swarm)">
+        🛰️ 戴森雲
+      </button>
+      <button class="hud-btn planetary-core-btn" @click="ui.openPlanetaryCore" title="全球地熱超深鑽井與行星地核引擎 (Planetary Core)">
+        🌋 地核
+      </button>
+      <button class="hud-btn chrono-btn" @click="ui.openChrono" title="時間因果律校準儀與微型時空閉環 (Chrono Stabilizer)">
+        ⏳ 因果
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

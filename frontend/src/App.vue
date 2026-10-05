@@ -204,6 +204,18 @@
       <GenomeForgeModal v-if="ui.mode === 'genome-forge'" />
     </Transition>
     <Transition name="fade">
+      <KardashevModal v-if="ui.mode === 'kardashev'" />
+    </Transition>
+    <Transition name="fade">
+      <DysonSwarmModal v-if="ui.mode === 'dyson-swarm'" />
+    </Transition>
+    <Transition name="fade">
+      <PlanetaryCoreModal v-if="ui.mode === 'planetary-core'" />
+    </Transition>
+    <Transition name="fade">
+      <ChronoModal v-if="ui.mode === 'chrono'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -297,6 +309,10 @@ import SingularityModal from '@/components/SingularityModal.vue'
 import StargateModal from '@/components/StargateModal.vue'
 import CouncilModal from '@/components/CouncilModal.vue'
 import GenomeForgeModal from '@/components/GenomeForgeModal.vue'
+import KardashevModal from '@/components/KardashevModal.vue'
+import DysonSwarmModal from '@/components/DysonSwarmModal.vue'
+import PlanetaryCoreModal from '@/components/PlanetaryCoreModal.vue'
+import ChronoModal from '@/components/ChronoModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

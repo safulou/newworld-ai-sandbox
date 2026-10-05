@@ -77,6 +77,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'stargate_dialer', title: '星門終端校準師', description: '完成 7 楔形鎖符文撥號並成功穿梭超空間事件視界星門', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'council_speaker', title: '銀河議會領袖', description: '在星際議會投下關鍵決策票並成功通過一項全銀河法案章程', icon: '🏛️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'genome_architect', title: '異星基因工程師', description: '在全息基因工坊中成功重組外星 DNA 並培育出合成生物伴侶', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'kardashev_ascendant', title: '卡爾達肖夫超驗者', description: '文明能階突破 Type II 恆星級或啟動奇點超越飛升', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'dyson_swarm_architect', title: '戴森雲群集領航員', description: '在恆星軌道成功部署超過 500 面微波集能反光鏡', icon: '🛰️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'core_dynamo_master', title: '行星地核地磁宗師', description: '地熱超深鑽井深入外地核熔岩層並啟動地磁發電機屏障', icon: '🌋', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'chrono_navigator', title: '時空因果校準大師', description: '成功穩定時空閉環並化解因果債務避免時空反衝', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

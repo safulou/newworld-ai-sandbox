@@ -74,6 +74,10 @@ import { dysonSphereMegastructure } from '@/engine/dysonSphereMegastructure'
 import { wormholeSlingshot } from '@/engine/wormholeSlingshot'
 import { worldTitanInvasion } from '@/engine/worldTitanInvasion'
 import { singularityExtractor } from '@/engine/singularityExtractor'
+import { kardashevEngine } from '@/engine/kardashevTranscendence'
+import { dysonSwarmEngine } from '@/engine/dysonSwarmMesh'
+import { planetaryCoreEngine } from '@/engine/planetaryCoreEngine'
+import { chronoStabilizer } from '@/engine/chronoStabilizer'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -232,6 +236,10 @@ function loop(): void {
   wormholeSlingshot.update(delta)
   worldTitanInvasion.update(delta)
   singularityExtractor.update(delta)
+  dysonSwarmEngine.update(delta)
+  planetaryCoreEngine.update(delta)
+  chronoStabilizer.update(delta)
+  kardashevEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

@@ -67,6 +67,10 @@ export type UIMode =
   | 'stargate'
   | 'council'
   | 'genome-forge'
+  | 'kardashev'
+  | 'dyson-swarm'
+  | 'planetary-core'
+  | 'chrono'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -152,6 +156,10 @@ export const useUIStore = defineStore('ui', () => {
   function openStargate(): void { mode.value = 'stargate' }
   function openCouncil(): void { mode.value = 'council' }
   function openGenomeForge(): void { mode.value = 'genome-forge' }
+  function openKardashev(): void { mode.value = 'kardashev' }
+  function openDysonSwarm(): void { mode.value = 'dyson-swarm' }
+  function openPlanetaryCore(): void { mode.value = 'planetary-core' }
+  function openChrono(): void { mode.value = 'chrono' }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
   function setSpatialVoiceModal(open: boolean): void { mode.value = open ? 'spatial-voice' : 'game' }
@@ -193,6 +201,10 @@ export const useUIStore = defineStore('ui', () => {
   function setStargateModal(open: boolean): void { mode.value = open ? 'stargate' : 'game' }
   function setCouncilModal(open: boolean): void { mode.value = open ? 'council' : 'game' }
   function setGenomeForgeModal(open: boolean): void { mode.value = open ? 'genome-forge' : 'game' }
+  function setKardashevModal(open: boolean): void { mode.value = open ? 'kardashev' : 'game' }
+  function setDysonSwarmModal(open: boolean): void { mode.value = open ? 'dyson-swarm' : 'game' }
+  function setPlanetaryCoreModal(open: boolean): void { mode.value = open ? 'planetary-core' : 'game' }
+  function setChronoModal(open: boolean): void { mode.value = open ? 'chrono' : 'game' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -215,7 +227,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, openArkExpedition, openFlagshipRaid, openDarkMatterRift, openDysonSphere, openWormholeSlingshot, openWorldTitan, openNeuralMind, openQuantumBroadcast, openSingularity, openStargate, openCouncil, openGenomeForge, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, setArkExpeditionModal, setFlagshipRaidModal, setDarkMatterRiftModal, setDysonSphereModal, setWormholeSlingshotModal, setWorldTitanModal, setNeuralMindModal, setQuantumBroadcastModal, setSingularityModal, setStargateModal, setCouncilModal, setGenomeForgeModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, openArkExpedition, openFlagshipRaid, openDarkMatterRift, openDysonSphere, openWormholeSlingshot, openWorldTitan, openNeuralMind, openQuantumBroadcast, openSingularity, openStargate, openCouncil, openGenomeForge, openKardashev, openDysonSwarm, openPlanetaryCore, openChrono, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, setArkExpeditionModal, setFlagshipRaidModal, setDarkMatterRiftModal, setDysonSphereModal, setWormholeSlingshotModal, setWorldTitanModal, setNeuralMindModal, setQuantumBroadcastModal, setSingularityModal, setStargateModal, setCouncilModal, setGenomeForgeModal, setKardashevModal, setDysonSwarmModal, setPlanetaryCoreModal, setChronoModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })
