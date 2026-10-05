@@ -180,6 +180,18 @@
       <DysonSphereModal v-if="ui.mode === 'dyson-sphere'" />
     </Transition>
     <Transition name="fade">
+      <SlingshotModal v-if="ui.mode === 'wormhole-slingshot'" />
+    </Transition>
+    <Transition name="fade">
+      <TitanInvasionModal v-if="ui.mode === 'world-titan'" />
+    </Transition>
+    <Transition name="fade">
+      <ConsciousnessModal v-if="ui.mode === 'neural-mind'" />
+    </Transition>
+    <Transition name="fade">
+      <BroadcastModal v-if="ui.mode === 'quantum-broadcast'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -265,6 +277,10 @@ import FleetExpeditionModal from '@/components/FleetExpeditionModal.vue'
 import FlagshipRaidModal from '@/components/FlagshipRaidModal.vue'
 import DarkMatterRiftModal from '@/components/DarkMatterRiftModal.vue'
 import DysonSphereModal from '@/components/DysonSphereModal.vue'
+import SlingshotModal from '@/components/SlingshotModal.vue'
+import TitanInvasionModal from '@/components/TitanInvasionModal.vue'
+import ConsciousnessModal from '@/components/ConsciousnessModal.vue'
+import BroadcastModal from '@/components/BroadcastModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

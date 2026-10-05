@@ -111,6 +111,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 💥', desc: '開啟 公會空天旗艦突襲戰 (Syndicate Flagship Raids)' },
       { combo: 'HUD 🕳️', desc: '開啟 量子暗物質時空裂隙探索 (Quantum Dark Matter Rifts)' },
       { combo: 'HUD ☀️', desc: '開啟 遠古戴森球環形世界宏工程 (Dyson Sphere Megastructure)' },
+      { combo: 'HUD 🪐', desc: '開啟 跨星系蟲洞引力彈弓軌道網絡 (Wormhole Slingshot)' },
+      { combo: 'HUD 👑', desc: '開啟 全服世界首領宇宙泰坦浩劫 (World Titan Invasion)' },
+      { combo: 'HUD 🧬', desc: '開啟 量子神經意識克隆與移魂網絡 (Neural Mind Transfer)' },
+      { combo: 'HUD 📻', desc: '開啟 超空間量子通訊廣播與星網 (Quantum BBS)' },
     ]
   }
 ]

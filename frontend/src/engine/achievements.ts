@@ -69,6 +69,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'flagship_corsair', title: '旗艦突襲掠奪者', description: '參與並成功攻破敵對巨企之超級空天旗艦', icon: '💥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'rift_walker', title: '暗物質裂隙穿梭者', description: '深入暗物質時空裂隙並採集稀世時間晶石與暗物質核心', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'dyson_architect', title: '戴森球宏工程建築師', description: '參與建造遠古戴森球並完成赤道超導集能環', icon: '☀️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'slingshot_navigator', title: '引力彈弓領航大師', description: '利用恆星重力井與戴森球完成超光速引力彈弓軌道穿越', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'titan_vanquisher', title: '宇宙泰坦終結者', description: '在全服世界事件中擊退主權級巨神克洛諾斯', icon: '👑', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'mind_transcendent', title: '超驗意識克隆大師', description: '完成意識數位化上傳並解鎖全套神經技能樹', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'quantum_broadcaster', title: '星際量子通訊員', description: '透過超空間量子星網發布廣播電文並獲得全服讚譽', icon: '📻', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
@@ -108,6 +112,10 @@ export class AchievementSystem {
 
   public getAll(): Achievement[] {
     return Array.from(this.achievements.values())
+  }
+
+  public isUnlocked(id: string): boolean {
+    return this.achievements.get(id)?.unlocked ?? false
   }
 
   public trackProgress(id: string, amount: number = 1): void {

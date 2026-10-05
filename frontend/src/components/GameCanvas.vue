@@ -71,6 +71,8 @@ import { arkFleetExpeditions } from '@/engine/arkFleetExpeditions'
 import { syndicateFlagshipRaids } from '@/engine/syndicateFlagshipRaids'
 import { darkMatterRifts } from '@/engine/darkMatterRifts'
 import { dysonSphereMegastructure } from '@/engine/dysonSphereMegastructure'
+import { wormholeSlingshot } from '@/engine/wormholeSlingshot'
+import { worldTitanInvasion } from '@/engine/worldTitanInvasion'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -226,6 +228,8 @@ function loop(): void {
   syndicateFlagshipRaids.update(delta)
   darkMatterRifts.update(delta)
   dysonSphereMegastructure.update(delta)
+  wormholeSlingshot.update(delta)
+  worldTitanInvasion.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

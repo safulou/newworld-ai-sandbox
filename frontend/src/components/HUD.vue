@@ -136,6 +136,18 @@
       <button class="hud-btn dyson-btn" @click="ui.openDysonSphere" title="遠古戴森球環形世界宏工程 (Dyson Sphere)">
         ☀️ 戴森
       </button>
+      <button class="hud-btn slingshot-btn" @click="ui.openWormholeSlingshot" title="跨星系蟲洞引力彈弓軌道網絡 (Wormhole Slingshot)">
+        🪐 彈弓
+      </button>
+      <button class="hud-btn titan-btn" @click="ui.openWorldTitan" title="全服世界首領宇宙泰坦浩劫 (World Titan Invasion)">
+        👑 泰坦
+      </button>
+      <button class="hud-btn mind-btn" @click="ui.openNeuralMind" title="量子神經意識克隆與移魂網絡 (Neural Mind Transfer)">
+        🧬 移魂
+      </button>
+      <button class="hud-btn broadcast-btn" @click="ui.openQuantumBroadcast" title="超空間量子通訊廣播與星網 (Quantum BBS)">
+        📻 廣播
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
