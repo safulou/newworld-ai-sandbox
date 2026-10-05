@@ -73,6 +73,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'titan_vanquisher', title: '宇宙泰坦終結者', description: '在全服世界事件中擊退主權級巨神克洛諾斯', icon: '👑', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'mind_transcendent', title: '超驗意識克隆大師', description: '完成意識數位化上傳並解鎖全套神經技能樹', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'quantum_broadcaster', title: '星際量子通訊員', description: '透過超空間量子星網發布廣播電文並獲得全服讚譽', icon: '📻', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'singularity_harvester', title: '奇點萃取宗師', description: '操作黑洞視界能層彭羅斯萃取站達到 100,000 MW 輸出功率', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'stargate_dialer', title: '星門終端校準師', description: '完成 7 楔形鎖符文撥號並成功穿梭超空間事件視界星門', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'council_speaker', title: '銀河議會領袖', description: '在星際議會投下關鍵決策票並成功通過一項全銀河法案章程', icon: '🏛️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'genome_architect', title: '異星基因工程師', description: '在全息基因工坊中成功重組外星 DNA 並培育出合成生物伴侶', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

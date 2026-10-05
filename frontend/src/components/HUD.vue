@@ -148,6 +148,18 @@
       <button class="hud-btn broadcast-btn" @click="ui.openQuantumBroadcast" title="超空間量子通訊廣播與星網 (Quantum BBS)">
         📻 廣播
       </button>
+      <button class="hud-btn singularity-btn" @click="ui.openSingularity" title="黑洞視界能層與奇點萃取站 (Singularity Extractor)">
+        🕳️ 奇點
+      </button>
+      <button class="hud-btn stargate-btn" @click="ui.openStargate" title="超空間星門躍遷航道與引力樞紐 (Stargate Network)">
+        🌀 星門
+      </button>
+      <button class="hud-btn council-btn" @click="ui.openCouncil" title="星際外交聯盟與銀河議會 (Galactic Council)">
+        🏛️ 議會
+      </button>
+      <button class="hud-btn genome-btn" @click="ui.openGenomeForge" title="異星基因工坊與生物誘變培育 (Genome Forge)">
+        🧪 基因
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

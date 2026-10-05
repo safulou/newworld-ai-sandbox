@@ -73,6 +73,7 @@ import { darkMatterRifts } from '@/engine/darkMatterRifts'
 import { dysonSphereMegastructure } from '@/engine/dysonSphereMegastructure'
 import { wormholeSlingshot } from '@/engine/wormholeSlingshot'
 import { worldTitanInvasion } from '@/engine/worldTitanInvasion'
+import { singularityExtractor } from '@/engine/singularityExtractor'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -230,6 +231,7 @@ function loop(): void {
   dysonSphereMegastructure.update(delta)
   wormholeSlingshot.update(delta)
   worldTitanInvasion.update(delta)
+  singularityExtractor.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

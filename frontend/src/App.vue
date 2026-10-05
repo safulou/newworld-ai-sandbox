@@ -192,6 +192,18 @@
       <BroadcastModal v-if="ui.mode === 'quantum-broadcast'" />
     </Transition>
     <Transition name="fade">
+      <SingularityModal v-if="ui.mode === 'singularity'" />
+    </Transition>
+    <Transition name="fade">
+      <StargateModal v-if="ui.mode === 'stargate'" />
+    </Transition>
+    <Transition name="fade">
+      <CouncilModal v-if="ui.mode === 'council'" />
+    </Transition>
+    <Transition name="fade">
+      <GenomeForgeModal v-if="ui.mode === 'genome-forge'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -281,6 +293,10 @@ import SlingshotModal from '@/components/SlingshotModal.vue'
 import TitanInvasionModal from '@/components/TitanInvasionModal.vue'
 import ConsciousnessModal from '@/components/ConsciousnessModal.vue'
 import BroadcastModal from '@/components/BroadcastModal.vue'
+import SingularityModal from '@/components/SingularityModal.vue'
+import StargateModal from '@/components/StargateModal.vue'
+import CouncilModal from '@/components/CouncilModal.vue'
+import GenomeForgeModal from '@/components/GenomeForgeModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

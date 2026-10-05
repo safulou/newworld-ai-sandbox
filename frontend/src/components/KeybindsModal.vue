@@ -115,6 +115,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 👑', desc: '開啟 全服世界首領宇宙泰坦浩劫 (World Titan Invasion)' },
       { combo: 'HUD 🧬', desc: '開啟 量子神經意識克隆與移魂網絡 (Neural Mind Transfer)' },
       { combo: 'HUD 📻', desc: '開啟 超空間量子通訊廣播與星網 (Quantum BBS)' },
+      { combo: 'HUD 🕳️', desc: '開啟 黑洞視界能層與奇點萃取站 (Singularity Extractor)' },
+      { combo: 'HUD 🌀', desc: '開啟 超空間星門躍遷航道與引力樞紐 (Stargate Network)' },
+      { combo: 'HUD 🏛️', desc: '開啟 星際外交聯盟與銀河議會 (Galactic Council)' },
+      { combo: 'HUD 🧪', desc: '開啟 異星基因工坊與生物誘變培育 (Genome Forge)' },
     ]
   }
 ]
