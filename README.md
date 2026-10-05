@@ -72,6 +72,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `F5` | Achievements Hall |
 | `F6` | 3D Model OBJ/MTL Exporter |
 | `F1` | World Settings & AI Provider |
+| `HUD 🌌` | Kardashev Civilizational Metric & Transcendence Core |
+| `HUD 🛰️` | Dyson Swarm Mesh Collector & Solar Laser Relay Array |
+| `HUD 🌋` | Planetary Core Dynamo & Super-Deep Geothermal Borehole |
+| `HUD ⏳` | Chrono-Paradox Stabilizer & Closed Timelike Curves |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
