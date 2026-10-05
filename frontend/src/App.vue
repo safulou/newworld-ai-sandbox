@@ -168,6 +168,18 @@
       <BeaconModal v-if="ui.mode === 'stellar-beacon'" />
     </Transition>
     <Transition name="fade">
+      <FleetExpeditionModal v-if="ui.mode === 'ark-expedition'" />
+    </Transition>
+    <Transition name="fade">
+      <FlagshipRaidModal v-if="ui.mode === 'flagship-raid'" />
+    </Transition>
+    <Transition name="fade">
+      <DarkMatterRiftModal v-if="ui.mode === 'dark-matter-rift'" />
+    </Transition>
+    <Transition name="fade">
+      <DysonSphereModal v-if="ui.mode === 'dyson-sphere'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -249,6 +261,10 @@ import ColonyArkModal from '@/components/ColonyArkModal.vue'
 import SyndicateModal from '@/components/SyndicateModal.vue'
 import ExosuitModal from '@/components/ExosuitModal.vue'
 import BeaconModal from '@/components/BeaconModal.vue'
+import FleetExpeditionModal from '@/components/FleetExpeditionModal.vue'
+import FlagshipRaidModal from '@/components/FlagshipRaidModal.vue'
+import DarkMatterRiftModal from '@/components/DarkMatterRiftModal.vue'
+import DysonSphereModal from '@/components/DysonSphereModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

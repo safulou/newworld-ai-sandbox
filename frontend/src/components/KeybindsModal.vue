@@ -107,6 +107,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🏴‍☠️', desc: '開啟 賽博公會聯盟領地戰 (Syndicate Corporate Wars)' },
       { combo: 'HUD 🦾', desc: '開啟 利維坦生物機械外骨骼裝配鍛造 (Exosuit Forge)' },
       { combo: 'HUD 📡', desc: '開啟 全息星圖量子跨次元躍遷信標 (Stellar Beacon Network)' },
+      { combo: 'HUD 🚀', desc: '開啟 多母艦軌道編隊與深空遠征艦隊 (Ark Fleet Expeditions)' },
+      { combo: 'HUD 💥', desc: '開啟 公會空天旗艦突襲戰 (Syndicate Flagship Raids)' },
+      { combo: 'HUD 🕳️', desc: '開啟 量子暗物質時空裂隙探索 (Quantum Dark Matter Rifts)' },
+      { combo: 'HUD ☀️', desc: '開啟 遠古戴森球環形世界宏工程 (Dyson Sphere Megastructure)' },
     ]
   }
 ]

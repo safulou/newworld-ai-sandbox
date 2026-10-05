@@ -124,6 +124,18 @@
       <button class="hud-btn beacon-btn" @click="ui.openStellarBeacon" title="全息星圖量子跨次元躍遷信標 (Stellar Beacon)">
         📡 信標
       </button>
+      <button class="hud-btn fleet-btn" @click="ui.openArkExpedition" title="多母艦軌道編隊與深空遠征艦隊 (Fleet Expeditions)">
+        🚀 艦隊
+      </button>
+      <button class="hud-btn flagship-btn" @click="ui.openFlagshipRaid" title="公會空天旗艦突襲戰 (Flagship Raids)">
+        💥 突襲
+      </button>
+      <button class="hud-btn rift-btn" @click="ui.openDarkMatterRift" title="量子暗物質時空裂隙探索 (Dark Matter Rifts)">
+        🕳️ 裂隙
+      </button>
+      <button class="hud-btn dyson-btn" @click="ui.openDysonSphere" title="遠古戴森球環形世界宏工程 (Dyson Sphere)">
+        ☀️ 戴森
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

@@ -55,6 +55,10 @@ export type UIMode =
   | 'syndicate'
   | 'exosuit'
   | 'stellar-beacon'
+  | 'ark-expedition'
+  | 'flagship-raid'
+  | 'dark-matter-rift'
+  | 'dyson-sphere'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -128,6 +132,10 @@ export const useUIStore = defineStore('ui', () => {
   function openSyndicate(): void { mode.value = 'syndicate' }
   function openExosuit(): void { mode.value = 'exosuit' }
   function openStellarBeacon(): void { mode.value = 'stellar-beacon' }
+  function openArkExpedition(): void { mode.value = 'ark-expedition' }
+  function openFlagshipRaid(): void { mode.value = 'flagship-raid' }
+  function openDarkMatterRift(): void { mode.value = 'dark-matter-rift' }
+  function openDysonSphere(): void { mode.value = 'dyson-sphere' }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
   function setSpatialVoiceModal(open: boolean): void { mode.value = open ? 'spatial-voice' : 'game' }
@@ -157,6 +165,10 @@ export const useUIStore = defineStore('ui', () => {
   function setSyndicateModal(open: boolean): void { mode.value = open ? 'syndicate' : 'game' }
   function setExosuitModal(open: boolean): void { mode.value = open ? 'exosuit' : 'game' }
   function setStellarBeaconModal(open: boolean): void { mode.value = open ? 'stellar-beacon' : 'game' }
+  function setArkExpeditionModal(open: boolean): void { mode.value = open ? 'ark-expedition' : 'game' }
+  function setFlagshipRaidModal(open: boolean): void { mode.value = open ? 'flagship-raid' : 'game' }
+  function setDarkMatterRiftModal(open: boolean): void { mode.value = open ? 'dark-matter-rift' : 'game' }
+  function setDysonSphereModal(open: boolean): void { mode.value = open ? 'dyson-sphere' : 'game' }
   function openHelp(): void { mode.value = 'help' }
   function openNPCChat(name: string): void {
     currentNPCName.value = name
@@ -179,7 +191,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, openArkExpedition, openFlagshipRaid, openDarkMatterRift, openDysonSphere, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, setArkExpeditionModal, setFlagshipRaidModal, setDarkMatterRiftModal, setDysonSphereModal, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

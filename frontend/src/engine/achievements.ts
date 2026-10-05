@@ -65,6 +65,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'syndicate_warlord', title: '辛迪加領地霸主', description: '統率公會陣營佔領戰略據點並領取累計破 5000 點領地分紅', icon: '🏴‍☠️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'exosuit_titan', title: '泰坦機甲外骨骼工程師', description: '鍛造升級生化機械外骨骼套裝並啟動超載推進', icon: '🦾', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'quantum_cartographer', title: '量子星網測繪宗師', description: '部署量子信標並完成 5 次跨維度波函數坍縮折躍', icon: '📡', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'fleet_admiral', title: '深空遠征艦隊司令', description: '組織多母艦艦隊完成深空遠征探索任務', icon: '🚀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'flagship_corsair', title: '旗艦突襲掠奪者', description: '參與並成功攻破敵對巨企之超級空天旗艦', icon: '💥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'rift_walker', title: '暗物質裂隙穿梭者', description: '深入暗物質時空裂隙並採集稀世時間晶石與暗物質核心', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'dyson_architect', title: '戴森球宏工程建築師', description: '參與建造遠古戴森球並完成赤道超導集能環', icon: '☀️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

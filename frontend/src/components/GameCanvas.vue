@@ -67,6 +67,10 @@ import { colonyArk } from '@/engine/colonyArk'
 import { syndicateWarfare } from '@/engine/syndicateWarfare'
 import { mechExosuit } from '@/engine/mechExosuit'
 import { stellarBeacons } from '@/engine/stellarBeacons'
+import { arkFleetExpeditions } from '@/engine/arkFleetExpeditions'
+import { syndicateFlagshipRaids } from '@/engine/syndicateFlagshipRaids'
+import { darkMatterRifts } from '@/engine/darkMatterRifts'
+import { dysonSphereMegastructure } from '@/engine/dysonSphereMegastructure'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -218,6 +222,10 @@ function loop(): void {
   syndicateWarfare.update(delta)
   mechExosuit.update(delta)
   stellarBeacons.update(delta)
+  arkFleetExpeditions.update(delta)
+  syndicateFlagshipRaids.update(delta)
+  darkMatterRifts.update(delta)
+  dysonSphereMegastructure.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
