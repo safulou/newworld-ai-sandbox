@@ -80,6 +80,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🪐` | Ringworld Orbital Megastructure Fabricator |
 | `HUD 📜` | Cosmic Constants Tuning & Sacred Genesis Decrees |
 | `HUD 🎻` | String Fold Matrix & Calabi-Yau 6D Manifold Folding |
+| `HUD 🛡️` | Vacuum Decay Ward & Supersymmetric Phase Screen |
+| `HUD 🕳️` | Primordial Black Hole Nebula & Hawking Radiation Dynamo |
+| `HUD 🗺️` | Quantum Entangled Holo-Starchart & Cosmic Filaments |
+| `HUD ⚡` | Tachyonic Causality Mesh & Precognitive Antitelephone |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
