@@ -127,6 +127,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🪐', desc: '開啟 星際巨構環形世界建造船塢 (Ringworld Fabricator)' },
       { combo: 'HUD 📜', desc: '開啟 量子宏觀創世神諭樹與宇宙常數微調 (Genesis Oracle)' },
       { combo: 'HUD 🎻', desc: '開啟 超弦維度空間折疊傳輸矩陣 (String Fold Matrix)' },
+      { combo: 'HUD 🛡️', desc: '開啟 暗能量真空衰變抵禦力場 (Vacuum Decay Ward)' },
+      { combo: 'HUD 🕳️', desc: '開啟 太初原初黑洞星雲發電機 (Primordial Black Hole)' },
+      { combo: 'HUD 🗺️', desc: '開啟 量子糾纏全息星圖沙盤 (Quantum Holo-Starchart)' },
+      { combo: 'HUD ⚡', desc: '開啟 超光速因果律超弦通訊網 (Tachyonic Causality Mesh)' },
     ]
   }
 ]

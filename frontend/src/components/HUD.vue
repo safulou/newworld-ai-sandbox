@@ -184,6 +184,18 @@
       <button class="hud-btn string-fold-btn" @click="ui.openStringFold" title="超弦維度空間折疊傳輸矩陣 (String Fold Matrix)">
         🎻 超弦
       </button>
+      <button class="hud-btn vacuum-ward-btn" @click="ui.openVacuumWard" title="暗能量真空衰變抵禦力場 (Vacuum Decay Ward)">
+        🛡️ 真空
+      </button>
+      <button class="hud-btn pbh-nebula-btn" @click="ui.openPrimordialNebula" title="太初原初黑洞星雲發電機 (Primordial Black Hole)">
+        🕳️ 太初
+      </button>
+      <button class="hud-btn starchart-btn" @click="ui.openStarchart" title="量子糾纏全息星圖沙盤 (Quantum Holo-Starchart)">
+        🗺️ 星圖
+      </button>
+      <button class="hud-btn tachyonic-btn" @click="ui.openTachyonic" title="超光速因果律超弦通訊網 (Tachyonic Causality Mesh)">
+        ⚡ 快子
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

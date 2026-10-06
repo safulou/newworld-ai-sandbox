@@ -85,6 +85,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'ringworld_architect', title: '環形世界工程師', description: '圍繞母恆星建造 1 AU 巨大宜居環形世界並完成首期板塊', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'genesis_oracle', title: '創世法則編織者', description: '成功微調宇宙基本物理常數並啟動創世神諭法令', icon: '📜', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'string_weaver', title: '超弦維度折疊宗師', description: '操作卡拉比-丘流形達成 1:100,000 超空間弦膜折疊', icon: '🎻', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'vacuum_warden', title: '真空中流砥柱', description: '成功展開超對稱防護天幕抵禦真空衰變相變泡泡', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'pbh_harvester', title: '太初黑洞牧星者', description: '成功建立磁約束籠並捕獲太初黑洞霍金爆發輻射', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'cosmic_cartographer', title: '宇宙纖維星圖宗師', description: '全維度觀測宇宙纖維網並同步量子糾纏全息星圖', icon: '🗺️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'tachyonic_prophet', title: '超光速先知', description: '透過快子逆因果通信接收來自未來的電報並化解時序悖論', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
@@ -171,3 +175,4 @@ export class AchievementSystem {
 }
 
 export const achievements = new AchievementSystem()
+export const achievementsManager = achievements

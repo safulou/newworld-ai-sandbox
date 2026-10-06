@@ -228,6 +228,18 @@
       <StringFoldModal v-if="ui.mode === 'string-fold'" />
     </Transition>
     <Transition name="fade">
+      <VacuumWardModal v-if="ui.mode === 'vacuum-ward'" />
+    </Transition>
+    <Transition name="fade">
+      <PrimordialNebulaModal v-if="ui.mode === 'primordial-nebula'" />
+    </Transition>
+    <Transition name="fade">
+      <StarchartModal v-if="ui.mode === 'starchart'" />
+    </Transition>
+    <Transition name="fade">
+      <TachyonicModal v-if="ui.mode === 'tachyonic'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -329,6 +341,10 @@ import MultiverseModal from '@/components/MultiverseModal.vue'
 import RingworldModal from '@/components/RingworldModal.vue'
 import GenesisOracleModal from '@/components/GenesisOracleModal.vue'
 import StringFoldModal from '@/components/StringFoldModal.vue'
+import VacuumWardModal from '@/components/VacuumWardModal.vue'
+import PrimordialNebulaModal from '@/components/PrimordialNebulaModal.vue'
+import StarchartModal from '@/components/StarchartModal.vue'
+import TachyonicModal from '@/components/TachyonicModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

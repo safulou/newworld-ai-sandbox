@@ -82,6 +82,10 @@ import { multiverseBubbleEngine } from '@/engine/multiverseBubble'
 import { ringworldFabricator } from '@/engine/ringworldFabricator'
 import { cosmicConstantsEngine } from '@/engine/cosmicConstantsTuning'
 import { stringFoldMatrixEngine } from '@/engine/stringFoldMatrix'
+import { vacuumDecayWard } from '@/engine/vacuumDecayWard'
+import { primordialBlackHole } from '@/engine/primordialBlackHole'
+import { cosmicHoloStarchart } from '@/engine/cosmicHoloStarchart'
+import { tachyonicCausalityMesh } from '@/engine/tachyonicCausalityMesh'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -248,6 +252,10 @@ function loop(): void {
   ringworldFabricator.update(delta)
   cosmicConstantsEngine.update(delta)
   stringFoldMatrixEngine.update(delta)
+  vacuumDecayWard.update(delta)
+  primordialBlackHole.update(delta)
+  cosmicHoloStarchart.update(delta)
+  tachyonicCausalityMesh.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
