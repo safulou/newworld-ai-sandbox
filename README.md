@@ -76,6 +76,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🛰️` | Dyson Swarm Mesh Collector & Solar Laser Relay Array |
 | `HUD 🌋` | Planetary Core Dynamo & Super-Deep Geothermal Borehole |
 | `HUD ⏳` | Chrono-Paradox Stabilizer & Closed Timelike Curves |
+| `HUD 🫧` | Multiverse Bubble Topology & Inflationary Foam Probe |
+| `HUD 🪐` | Ringworld Orbital Megastructure Fabricator |
+| `HUD 📜` | Cosmic Constants Tuning & Sacred Genesis Decrees |
+| `HUD 🎻` | String Fold Matrix & Calabi-Yau 6D Manifold Folding |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
