@@ -81,6 +81,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'dyson_swarm_architect', title: '戴森雲群集領航員', description: '在恆星軌道成功部署超過 500 面微波集能反光鏡', icon: '🛰️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'core_dynamo_master', title: '行星地核地磁宗師', description: '地熱超深鑽井深入外地核熔岩層並啟動地磁發電機屏障', icon: '🌋', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'chrono_navigator', title: '時空因果校準大師', description: '成功穩定時空閉環並化解因果債務避免時空反衝', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'multiverse_traveler', title: '多元宇宙觀測者', description: '鎖定平行宇宙泡泡共振頻率並完成跨維度探測', icon: '🫧', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'ringworld_architect', title: '環形世界工程師', description: '圍繞母恆星建造 1 AU 巨大宜居環形世界並完成首期板塊', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'genesis_oracle', title: '創世法則編織者', description: '成功微調宇宙基本物理常數並啟動創世神諭法令', icon: '📜', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'string_weaver', title: '超弦維度折疊宗師', description: '操作卡拉比-丘流形達成 1:100,000 超空間弦膜折疊', icon: '🎻', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

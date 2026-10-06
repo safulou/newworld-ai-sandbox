@@ -78,6 +78,10 @@ import { kardashevEngine } from '@/engine/kardashevTranscendence'
 import { dysonSwarmEngine } from '@/engine/dysonSwarmMesh'
 import { planetaryCoreEngine } from '@/engine/planetaryCoreEngine'
 import { chronoStabilizer } from '@/engine/chronoStabilizer'
+import { multiverseBubbleEngine } from '@/engine/multiverseBubble'
+import { ringworldFabricator } from '@/engine/ringworldFabricator'
+import { cosmicConstantsEngine } from '@/engine/cosmicConstantsTuning'
+import { stringFoldMatrixEngine } from '@/engine/stringFoldMatrix'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -240,6 +244,10 @@ function loop(): void {
   planetaryCoreEngine.update(delta)
   chronoStabilizer.update(delta)
   kardashevEngine.update(delta)
+  multiverseBubbleEngine.update(delta)
+  ringworldFabricator.update(delta)
+  cosmicConstantsEngine.update(delta)
+  stringFoldMatrixEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

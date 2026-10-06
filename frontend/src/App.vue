@@ -216,6 +216,18 @@
       <ChronoModal v-if="ui.mode === 'chrono'" />
     </Transition>
     <Transition name="fade">
+      <MultiverseModal v-if="ui.mode === 'multiverse'" />
+    </Transition>
+    <Transition name="fade">
+      <RingworldModal v-if="ui.mode === 'ringworld'" />
+    </Transition>
+    <Transition name="fade">
+      <GenesisOracleModal v-if="ui.mode === 'genesis-oracle'" />
+    </Transition>
+    <Transition name="fade">
+      <StringFoldModal v-if="ui.mode === 'string-fold'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -313,6 +325,10 @@ import KardashevModal from '@/components/KardashevModal.vue'
 import DysonSwarmModal from '@/components/DysonSwarmModal.vue'
 import PlanetaryCoreModal from '@/components/PlanetaryCoreModal.vue'
 import ChronoModal from '@/components/ChronoModal.vue'
+import MultiverseModal from '@/components/MultiverseModal.vue'
+import RingworldModal from '@/components/RingworldModal.vue'
+import GenesisOracleModal from '@/components/GenesisOracleModal.vue'
+import StringFoldModal from '@/components/StringFoldModal.vue'
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

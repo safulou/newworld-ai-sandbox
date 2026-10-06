@@ -172,6 +172,18 @@
       <button class="hud-btn chrono-btn" @click="ui.openChrono" title="時間因果律校準儀與微型時空閉環 (Chrono Stabilizer)">
         ⏳ 因果
       </button>
+      <button class="hud-btn multiverse-btn" @click="ui.openMultiverse" title="平行宇宙泡泡世界拓撲觀測儀 (Multiverse Bubble)">
+        🫧 泡泡
+      </button>
+      <button class="hud-btn ringworld-btn" @click="ui.openRingworld" title="星際巨構環形世界建造船塢 (Ringworld Fabricator)">
+        🪐 環形
+      </button>
+      <button class="hud-btn genesis-oracle-btn" @click="ui.openGenesisOracle" title="量子宏觀創世神諭樹與宇宙常數微調 (Genesis Oracle)">
+        📜 創世
+      </button>
+      <button class="hud-btn string-fold-btn" @click="ui.openStringFold" title="超弦維度空間折疊傳輸矩陣 (String Fold Matrix)">
+        🎻 超弦
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

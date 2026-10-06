@@ -123,6 +123,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🛰️', desc: '開啟 戴森雲反射群集拓撲網絡 (Dyson Swarm Mesh)' },
       { combo: 'HUD 🌋', desc: '開啟 全球地熱超深鑽井與行星地核引擎 (Planetary Core Dynamo)' },
       { combo: 'HUD ⏳', desc: '開啟 時間因果律校準儀與微型時空閉環 (Chrono Stabilizer)' },
+      { combo: 'HUD 🫧', desc: '開啟 平行宇宙泡泡世界拓撲觀測儀 (Multiverse Bubble)' },
+      { combo: 'HUD 🪐', desc: '開啟 星際巨構環形世界建造船塢 (Ringworld Fabricator)' },
+      { combo: 'HUD 📜', desc: '開啟 量子宏觀創世神諭樹與宇宙常數微調 (Genesis Oracle)' },
+      { combo: 'HUD 🎻', desc: '開啟 超弦維度空間折疊傳輸矩陣 (String Fold Matrix)' },
     ]
   }
 ]
