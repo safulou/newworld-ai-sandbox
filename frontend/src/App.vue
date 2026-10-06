@@ -252,6 +252,18 @@
       <HolographicHorizonModal v-if="ui.mode === 'holographic-horizon'" />
     </Transition>
     <Transition name="fade">
+      <WormholeBridgeModal v-if="ui.mode === 'wormhole-bridge'" />
+    </Transition>
+    <Transition name="fade">
+      <GutColliderModal v-if="ui.mode === 'gut-collider'" />
+    </Transition>
+    <Transition name="fade">
+      <TopologicalChernModal v-if="ui.mode === 'topological-chern'" />
+    </Transition>
+    <Transition name="fade">
+      <CosmicStringModal v-if="ui.mode === 'cosmic-string'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -361,6 +373,10 @@ import NeutrinoDetectorModal from '@/components/NeutrinoDetectorModal.vue'
 import QuarkPlasmaModal from '@/components/QuarkPlasmaModal.vue'
 import SpinfoamModal from '@/components/SpinfoamModal.vue'
 import HolographicHorizonModal from '@/components/HolographicHorizonModal.vue'
+import WormholeBridgeModal from '@/components/WormholeBridgeModal.vue'
+import GutColliderModal from '@/components/GutColliderModal.vue'
+import TopologicalChernModal from '@/components/TopologicalChernModal.vue'
+import CosmicStringModal from '@/components/CosmicStringModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

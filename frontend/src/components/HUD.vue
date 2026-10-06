@@ -208,6 +208,18 @@
       <button class="hud-btn holographic-horizon-btn" @click="ui.openHolographicHorizon" title="全息宇宙事件視界編碼矩陣 (Holographic Horizon)">
         🌐 全息
       </button>
+      <button class="hud-btn wormhole-bridge-btn" @click="ui.openWormholeBridge" title="量子引力蟲洞橋與愛因斯坦-羅森橋 (Wormhole Bridge)">
+        🌉 蟲洞
+      </button>
+      <button class="hud-btn gut-collider-btn" @click="ui.openGutCollider" title="大統一理論規範玻色子對撞核心 (GUT Collider)">
+        ⚛️ 大統一
+      </button>
+      <button class="hud-btn topological-chern-btn" @click="ui.openTopologicalChern" title="拓撲量子幾何陳類數纖維叢 (Topological Chern)">
+        🌀 拓撲
+      </button>
+      <button class="hud-btn cosmic-string-btn" @click="ui.openCosmicString" title="宇宙弦微波背景輻射透鏡測繪儀 (Cosmic String)">
+        〰️ 宇宙弦
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

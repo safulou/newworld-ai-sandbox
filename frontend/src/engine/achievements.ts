@@ -93,6 +93,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'quark_alchemist', title: '夸克鍊金術士', description: '在兆度高溫等離子體中激發強子相變並人工合成奇異重子塊', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'spinfoam_weaver', title: '自旋泡沫編織宗師', description: '操作圈量子引力自旋網絡躍遷並激發離散時空曲率量子', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_architect', title: '全息宇宙架構師', description: '同步事件視界 AdS/CFT 共形場對偶並投影全息邊界位元', icon: '🌐', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'wormhole_navigator', title: '蟲洞引力橋領航員', description: '穩定 ER=EPR 愛因斯坦-羅森橋喉部並實現跨時空量子傳態', icon: '🌉', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'gut_grand_unifier', title: '大統一理論先驅', description: '在 10^16 GeV 激發 X/Y 規範玻色子並驗證大統一相變', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'topological_braider', title: '拓撲編織宗師', description: '調諧陳類數拓撲不變量並引導無耗散手性邊緣流', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'cosmic_string_hunter', title: '宇宙弦捕手', description: '觀測 CMB 錐形空間透鏡並捕獲宇宙弦引力波脈衝', icon: '〰️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

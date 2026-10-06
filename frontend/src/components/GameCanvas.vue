@@ -90,6 +90,10 @@ import { neutrinoDetector } from '@/engine/neutrinoDetector'
 import { quarkGluonPlasma } from '@/engine/quarkGluonPlasma'
 import { spinfoamGeometry } from '@/engine/spinfoamGeometry'
 import { holographicHorizon } from '@/engine/holographicHorizon'
+import { wormholeBridge } from '@/engine/wormholeBridge'
+import { gutCollider } from '@/engine/gutCollider'
+import { topologicalChern } from '@/engine/topologicalChern'
+import { cosmicStringCartographer } from '@/engine/cosmicStringCartographer'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -264,6 +268,10 @@ function loop(): void {
   quarkGluonPlasma.update(delta)
   spinfoamGeometry.update(delta)
   holographicHorizon.update(delta)
+  wormholeBridge.update(delta)
+  gutCollider.update(delta)
+  topologicalChern.update(delta)
+  cosmicStringCartographer.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

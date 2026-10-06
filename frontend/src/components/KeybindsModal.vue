@@ -135,6 +135,11 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔥', desc: '開啟 夸克膠子等離子體原始重子重組爐 (Quark Plasma Forge)' },
       { combo: 'HUD 🕸️', desc: '開啟 時空量子幾何自旋泡沫網絡 (Spinfoam Lattice)' },
       { combo: 'HUD 🌐', desc: '開啟 全息宇宙事件視界編碼矩陣 (Holographic Horizon)' },
+      { combo: 'HUD 🌉', desc: '開啟 量子引力蟲洞橋與愛因斯坦-羅森橋 (Wormhole Bridge)' },
+      { combo: 'HUD ⚛️', desc: '開啟 大統一理論規範玻色子對撞核心 (GUT Collider)' },
+      { combo: 'HUD 🌀', desc: '開啟 拓撲量子幾何陳類數纖維叢 (Topological Chern)' },
+      { combo: 'HUD 〰️', desc: '開啟 宇宙弦微波背景輻射透鏡測繪儀 (Cosmic String)' },
+
 
     ]
   }
