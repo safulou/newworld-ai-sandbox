@@ -89,6 +89,11 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'pbh_harvester', title: '太初黑洞牧星者', description: '成功建立磁約束籠並捕獲太初黑洞霍金爆發輻射', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
   { id: 'cosmic_cartographer', title: '宇宙纖維星圖宗師', description: '全維度觀測宇宙纖維網並同步量子糾纏全息星圖', icon: '🗺️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'tachyonic_prophet', title: '超光速先知', description: '透過快子逆因果通信接收來自未來的電報並化解時序悖論', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'neutrino_whisperer', title: '中微子低語者', description: '在超流體氦稀釋制冷陣列中成功捕獲聲子閃光能量', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'quark_alchemist', title: '夸克鍊金術士', description: '在兆度高溫等離子體中激發強子相變並人工合成奇異重子塊', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'spinfoam_weaver', title: '自旋泡沫編織宗師', description: '操作圈量子引力自旋網絡躍遷並激發離散時空曲率量子', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_architect', title: '全息宇宙架構師', description: '同步事件視界 AdS/CFT 共形場對偶並投影全息邊界位元', icon: '🌐', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+
 
   // Mastery
   { id: 'claim_land', title: '領地拓荒者', description: '在元宇宙中認領一塊專屬 Chunk 領地', icon: '🚩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },

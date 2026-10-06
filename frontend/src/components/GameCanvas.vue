@@ -86,6 +86,10 @@ import { vacuumDecayWard } from '@/engine/vacuumDecayWard'
 import { primordialBlackHole } from '@/engine/primordialBlackHole'
 import { cosmicHoloStarchart } from '@/engine/cosmicHoloStarchart'
 import { tachyonicCausalityMesh } from '@/engine/tachyonicCausalityMesh'
+import { neutrinoDetector } from '@/engine/neutrinoDetector'
+import { quarkGluonPlasma } from '@/engine/quarkGluonPlasma'
+import { spinfoamGeometry } from '@/engine/spinfoamGeometry'
+import { holographicHorizon } from '@/engine/holographicHorizon'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -256,6 +260,10 @@ function loop(): void {
   primordialBlackHole.update(delta)
   cosmicHoloStarchart.update(delta)
   tachyonicCausalityMesh.update(delta)
+  neutrinoDetector.update(delta)
+  quarkGluonPlasma.update(delta)
+  spinfoamGeometry.update(delta)
+  holographicHorizon.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

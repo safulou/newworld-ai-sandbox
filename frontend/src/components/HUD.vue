@@ -196,6 +196,18 @@
       <button class="hud-btn tachyonic-btn" @click="ui.openTachyonic" title="超光速因果律超弦通訊網 (Tachyonic Causality Mesh)">
         ⚡ 快子
       </button>
+      <button class="hud-btn neutrino-btn" @click="ui.openNeutrinoDetector" title="中微子超流體暗物質探測陣列 (Neutrino Detector)">
+        ❄️ 中微子
+      </button>
+      <button class="hud-btn quark-plasma-btn" @click="ui.openQuarkPlasma" title="夸克膠子等離子體原始重子重組爐 (Quark Plasma Forge)">
+        🔥 夸克
+      </button>
+      <button class="hud-btn spinfoam-btn" @click="ui.openSpinfoam" title="時空量子幾何自旋泡沫網絡 (Spinfoam Lattice)">
+        🕸️ 自旋
+      </button>
+      <button class="hud-btn holographic-horizon-btn" @click="ui.openHolographicHorizon" title="全息宇宙事件視界編碼矩陣 (Holographic Horizon)">
+        🌐 全息
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

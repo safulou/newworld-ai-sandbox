@@ -240,6 +240,18 @@
       <TachyonicModal v-if="ui.mode === 'tachyonic'" />
     </Transition>
     <Transition name="fade">
+      <NeutrinoDetectorModal v-if="ui.mode === 'neutrino-detector'" />
+    </Transition>
+    <Transition name="fade">
+      <QuarkPlasmaModal v-if="ui.mode === 'quark-plasma'" />
+    </Transition>
+    <Transition name="fade">
+      <SpinfoamModal v-if="ui.mode === 'spinfoam'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicHorizonModal v-if="ui.mode === 'holographic-horizon'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -345,6 +357,11 @@ import VacuumWardModal from '@/components/VacuumWardModal.vue'
 import PrimordialNebulaModal from '@/components/PrimordialNebulaModal.vue'
 import StarchartModal from '@/components/StarchartModal.vue'
 import TachyonicModal from '@/components/TachyonicModal.vue'
+import NeutrinoDetectorModal from '@/components/NeutrinoDetectorModal.vue'
+import QuarkPlasmaModal from '@/components/QuarkPlasmaModal.vue'
+import SpinfoamModal from '@/components/SpinfoamModal.vue'
+import HolographicHorizonModal from '@/components/HolographicHorizonModal.vue'
+
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
 import BlueprintsModal from '@/components/BlueprintsModal.vue'

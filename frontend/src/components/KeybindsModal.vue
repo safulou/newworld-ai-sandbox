@@ -131,6 +131,11 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕳️', desc: '開啟 太初原初黑洞星雲發電機 (Primordial Black Hole)' },
       { combo: 'HUD 🗺️', desc: '開啟 量子糾纏全息星圖沙盤 (Quantum Holo-Starchart)' },
       { combo: 'HUD ⚡', desc: '開啟 超光速因果律超弦通訊網 (Tachyonic Causality Mesh)' },
+      { combo: 'HUD ❄️', desc: '開啟 中微子超流體暗物質探測陣列 (Neutrino Detector)' },
+      { combo: 'HUD 🔥', desc: '開啟 夸克膠子等離子體原始重子重組爐 (Quark Plasma Forge)' },
+      { combo: 'HUD 🕸️', desc: '開啟 時空量子幾何自旋泡沫網絡 (Spinfoam Lattice)' },
+      { combo: 'HUD 🌐', desc: '開啟 全息宇宙事件視界編碼矩陣 (Holographic Horizon)' },
+
     ]
   }
 ]
