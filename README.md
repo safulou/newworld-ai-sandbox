@@ -96,6 +96,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🧲` | Sikivie Axion Haloscope Microwave Cavity & Dark Matter Halo |
 | `HUD ⏰` | Quantum Entangled Time-Reversal Radar & Phase-Conjugate Tracking |
 | `HUD 🕸️` | CFT String-Net Condensate Engine & Emergent Photons/Fermions |
+| `HUD 🌀` | Supergravity Spinor Propulsion & N=8 Maximal SUGRA Inertia Vanishing |
+| `HUD ⏳` | Penrose CCC Detector & Previous Aeon Hawking Points Gravitons |
+| `HUD 💻` | Quantum Anomalous Hall Superfluid Microchip & Zero-Dissipation QAHE |
+| `HUD 🔭` | Fermionic Dark Matter Quantum Squeezer & Dark Dwarf Fermi Surface |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
