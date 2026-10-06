@@ -92,6 +92,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⚛️` | Grand Unified Theory (GUT) Gauge Boson Collider & X/Y Bosons |
 | `HUD 🌀` | Topological Chern Number Fiber Bundle & Chiral Currents |
 | `HUD 〰️` | Cosmic String CMB Lensing Cartographer & Double Images |
+| `HUD 🚀` | Relativistic Antimatter & Dark Energy Annihilation Propulsion Matrix |
+| `HUD 🧲` | Sikivie Axion Haloscope Microwave Cavity & Dark Matter Halo |
+| `HUD ⏰` | Quantum Entangled Time-Reversal Radar & Phase-Conjugate Tracking |
+| `HUD 🕸️` | CFT String-Net Condensate Engine & Emergent Photons/Fermions |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
