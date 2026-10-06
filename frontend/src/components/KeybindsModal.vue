@@ -139,6 +139,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⚛️', desc: '開啟 大統一理論規範玻色子對撞核心 (GUT Collider)' },
       { combo: 'HUD 🌀', desc: '開啟 拓撲量子幾何陳類數纖維叢 (Topological Chern)' },
       { combo: 'HUD 〰️', desc: '開啟 宇宙弦微波背景輻射透鏡測繪儀 (Cosmic String)' },
+      { combo: 'HUD 🚀', desc: '開啟 反物質暗能量湮滅推進矩陣 (Antimatter Propulsion)' },
+      { combo: 'HUD 🧲', desc: '開啟 軸子暗物質暈微波共振腔 (Axion Haloscope)' },
+      { combo: 'HUD ⏰', desc: '開啟 量子糾纏時間鏡像拓撲雷達 (Time-Reversal Radar)' },
+      { combo: 'HUD 🕸️', desc: '開啟 全息共形場宇宙弦網冷凝 (String-Net Condensate)' },
 
 
     ]

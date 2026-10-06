@@ -264,6 +264,18 @@
       <CosmicStringModal v-if="ui.mode === 'cosmic-string'" />
     </Transition>
     <Transition name="fade">
+      <AntimatterPropulsionModal v-if="ui.mode === 'antimatter-propulsion'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionHaloscopeModal v-if="ui.mode === 'axion-haloscope'" />
+    </Transition>
+    <Transition name="fade">
+      <TimeReversalRadarModal v-if="ui.mode === 'time-reversal-radar'" />
+    </Transition>
+    <Transition name="fade">
+      <StringNetModal v-if="ui.mode === 'string-net'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -377,6 +389,10 @@ import WormholeBridgeModal from '@/components/WormholeBridgeModal.vue'
 import GutColliderModal from '@/components/GutColliderModal.vue'
 import TopologicalChernModal from '@/components/TopologicalChernModal.vue'
 import CosmicStringModal from '@/components/CosmicStringModal.vue'
+import AntimatterPropulsionModal from '@/components/AntimatterPropulsionModal.vue'
+import AxionHaloscopeModal from '@/components/AxionHaloscopeModal.vue'
+import TimeReversalRadarModal from '@/components/TimeReversalRadarModal.vue'
+import StringNetModal from '@/components/StringNetModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

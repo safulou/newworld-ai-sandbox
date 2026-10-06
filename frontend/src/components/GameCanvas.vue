@@ -94,6 +94,10 @@ import { wormholeBridge } from '@/engine/wormholeBridge'
 import { gutCollider } from '@/engine/gutCollider'
 import { topologicalChern } from '@/engine/topologicalChern'
 import { cosmicStringCartographer } from '@/engine/cosmicStringCartographer'
+import { antimatterPropulsion } from '@/engine/antimatterPropulsion'
+import { axionHaloscope } from '@/engine/axionHaloscope'
+import { timeReversalRadar } from '@/engine/timeReversalRadar'
+import { stringNetCondensate } from '@/engine/stringNetCondensate'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -272,6 +276,10 @@ function loop(): void {
   gutCollider.update(delta)
   topologicalChern.update(delta)
   cosmicStringCartographer.update(delta)
+  antimatterPropulsion.update(delta)
+  axionHaloscope.update(delta)
+  timeReversalRadar.update(delta)
+  stringNetCondensate.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

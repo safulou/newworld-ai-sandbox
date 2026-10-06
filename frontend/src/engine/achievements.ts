@@ -97,6 +97,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'gut_grand_unifier', title: '大統一理論先驅', description: '在 10^16 GeV 激發 X/Y 規範玻色子並驗證大統一相變', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'topological_braider', title: '拓撲編織宗師', description: '調諧陳類數拓撲不變量並引導無耗散手性邊緣流', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'cosmic_string_hunter', title: '宇宙弦捕手', description: '觀測 CMB 錐形空間透鏡並捕獲宇宙弦引力波脈衝', icon: '〰️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'antimatter_admiral', title: '反物質星艦提督', description: '達到 0.99c 相對論性航速並啟動暗能量湮滅推進', icon: '🚀', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'axion_primakov_pioneer', title: '軸子普里馬科夫先驅', description: '在 12T 超導微波共振腔中捕獲暗物質軸子轉化單光子', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'timereversal_specter', title: '時間鏡像破隱幽靈', description: '運用量子糾纏時間反演雷達穿透相干隱形偽裝', icon: '⏰', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'stringnet_demiurge', title: '弦網創世主', description: '於真空基態誘導弦網冷凝湧現光子與費米子', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
 
 
   // Mastery

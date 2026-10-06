@@ -220,6 +220,18 @@
       <button class="hud-btn cosmic-string-btn" @click="ui.openCosmicString" title="宇宙弦微波背景輻射透鏡測繪儀 (Cosmic String)">
         〰️ 宇宙弦
       </button>
+      <button class="hud-btn antimatter-btn" @click="ui.openAntimatterPropulsion" title="反物質暗能量湮滅推進矩陣 (Antimatter Propulsion)">
+        🚀 反物質
+      </button>
+      <button class="hud-btn axion-btn" @click="ui.openAxionHaloscope" title="軸子暗物質暈微波共振腔 (Axion Haloscope)">
+        🧲 軸子腔
+      </button>
+      <button class="hud-btn radar-btn" @click="ui.openTimeReversalRadar" title="量子糾纏時間鏡像拓撲雷達 (Time-Reversal Radar)">
+        ⏰ 鏡像雷達
+      </button>
+      <button class="hud-btn string-net-btn" @click="ui.openStringNet" title="全息共形場宇宙弦網冷凝 (String-Net Condensate)">
+        🕸️ 弦網
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
