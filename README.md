@@ -84,6 +84,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕳️` | Primordial Black Hole Nebula & Hawking Radiation Dynamo |
 | `HUD 🗺️` | Quantum Entangled Holo-Starchart & Cosmic Filaments |
 | `HUD ⚡` | Tachyonic Causality Mesh & Precognitive Antitelephone |
+| `HUD ❄️` | Neutrino Superfluid Dark Matter Detector & Dilution Fridge |
+| `HUD 🔥` | Quark-Gluon Plasma Nucleosynthesis Forge & Strangelets |
+| `HUD 🕸️` | Spinfoam Quantum Geometry Lattice & Loop Quantum Gravity |
+| `HUD 🌐` | Holographic Horizon Matrix & AdS/CFT Duality Encoding |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
