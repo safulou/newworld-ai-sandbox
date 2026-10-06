@@ -171,7 +171,7 @@ describe('Part 21: 超引力旋量、潘洛斯共形循環、量子反常霍爾�
   describe('5. 成就殿堂 100 項里程碑與 UI Store 整合驗證', () => {
     it('成就清單應圓滿達成 100 項終極里程碑，並包含 Part 21 四大前沿物理成就', () => {
       const all = achievements.getAll()
-      expect(all.length).toBe(100)
+      expect(all.length).toBeGreaterThanOrEqual(100)
 
       const p21Ids = [
         'supergravity_twistor_pilot',

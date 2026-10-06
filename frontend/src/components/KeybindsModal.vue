@@ -147,6 +147,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⏳', desc: '開啟 潘洛斯宇宙循環相干引力波測量儀 (Penrose CCC Detector)' },
       { combo: 'HUD 💻', desc: '開啟 量子霍爾反常邊緣態超流體晶片 (QAH Superfluid Microchip)' },
       { combo: 'HUD 🔭', desc: '開啟 費米子暗物質費米面量子壓縮透鏡 (Fermionic Dark Matter)' },
+      { combo: 'HUD 🌈', desc: '開啟 宇宙弦重力子彩虹度規探測網 (Rainbow Graviton Mesh)' },
+      { combo: 'HUD 🔊', desc: '開啟 超流真空聲學事件視界發電機 (Acoustic Black Hole)' },
+      { combo: 'HUD ⌛', desc: '開啟 量子多體疤痕時間晶體調諧器 (Scarred Time Crystal)' },
+      { combo: 'HUD 📐', desc: '開啟 拓撲超導高階角態量子中繼陣列 (Corner State Relay)' },
 
 
     ]

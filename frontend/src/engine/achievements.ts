@@ -105,6 +105,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'penrose_ccc_chronicler', title: '潘洛斯共形循環記錄官', description: '在 CMB 微波背景中捕獲前一宇宙紀元霍金點引力波環', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'topological_superfluid_architect', title: '拓撲超流架構師', description: '在量子反常霍爾晶片上引導手性零耗散超流體量子運算', icon: '💻', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'dark_fermi_squeezer', title: '費米暗面量子壓縮大師', description: '穿透泡利簡併壓力透鏡觀測太初暗矮星費米球', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'rainbow_graviton_prism', title: '彩虹度規重力稜鏡', description: '探測普朗克尺度彩虹度規色散並捕獲宇宙弦重力子暴', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'acoustic_hawking_harvester', title: '聲學霍金輻射採集者', description: '突破超音速聲學黑洞視界並提取熱聲子能量', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'scarred_time_crystal_chronos', title: '多體疤痕時間晶體之神', description: '激發離散時間晶體 2T 亞諧波破缺非熱化振盪', icon: '⌛', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'higher_order_corner_braider', title: '高階角態編織大師', description: '在四極矩拓撲超導體上完成零能馬約拉納非阿貝爾編織', icon: '📐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

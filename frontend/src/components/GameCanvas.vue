@@ -102,6 +102,10 @@ import { supergravitySpinor } from '@/engine/supergravitySpinor'
 import { penroseCCCDetector } from '@/engine/penroseCCCDetector'
 import { quantumAnomalousHall } from '@/engine/quantumAnomalousHall'
 import { fermionicDarkMatter } from '@/engine/fermionicDarkMatter'
+import { rainbowGravitonEngine } from '@/engine/rainbowGravitonMesh'
+import { acousticBlackHoleEngine } from '@/engine/acousticBlackHole'
+import { manyBodyScarredEngine } from '@/engine/manyBodyScarredTimeCrystal'
+import { higherOrderTopoEngine } from '@/engine/higherOrderTopoSuperconductor'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -288,6 +292,10 @@ function loop(): void {
   penroseCCCDetector.update(delta)
   quantumAnomalousHall.update(delta)
   fermionicDarkMatter.update(delta)
+  rainbowGravitonEngine.update(delta)
+  acousticBlackHoleEngine.update(delta)
+  manyBodyScarredEngine.update(delta)
+  higherOrderTopoEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

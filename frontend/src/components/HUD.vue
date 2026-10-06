@@ -244,6 +244,18 @@
       <button class="hud-btn dark-fermi-btn" @click="ui.openFermionicDarkMatter" title="費米子暗物質費米面量子壓縮透鏡 (Fermionic Dark Matter)">
         🔭 費米暗暈
       </button>
+      <button class="hud-btn rainbow-btn" @click="ui.openRainbowGraviton" title="宇宙弦重力子彩虹度規探測網 (Rainbow Graviton Mesh)">
+        🌈 彩虹度規
+      </button>
+      <button class="hud-btn acoustic-btn" @click="ui.openAcousticBlackHole" title="超流真空聲學事件視界發電機 (Acoustic Black Hole)">
+        🔊 聲學黑洞
+      </button>
+      <button class="hud-btn scar-btn" @click="ui.openScarredTimeCrystal" title="量子多體疤痕時間晶體調諧器 (Scarred Time Crystal)">
+        ⌛ 疤痕晶體
+      </button>
+      <button class="hud-btn corner-btn" @click="ui.openCornerState" title="拓撲超導高階角態量子中繼陣列 (Corner State Relay)">
+        📐 角態超導
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

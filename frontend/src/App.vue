@@ -288,6 +288,18 @@
       <FermionicDarkMatterModal v-if="ui.mode === 'fermionic-dark-matter'" />
     </Transition>
     <Transition name="fade">
+      <RainbowGravitonModal v-if="ui.mode === 'rainbow-graviton'" />
+    </Transition>
+    <Transition name="fade">
+      <AcousticBlackHoleModal v-if="ui.mode === 'acoustic-black-hole'" />
+    </Transition>
+    <Transition name="fade">
+      <ScarredTimeCrystalModal v-if="ui.mode === 'scarred-time-crystal'" />
+    </Transition>
+    <Transition name="fade">
+      <CornerStateModal v-if="ui.mode === 'corner-state'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -409,6 +421,10 @@ import SupergravitySpinorModal from '@/components/SupergravitySpinorModal.vue'
 import PenroseCCCModal from '@/components/PenroseCCCModal.vue'
 import QuantumAnomalousHallModal from '@/components/QuantumAnomalousHallModal.vue'
 import FermionicDarkMatterModal from '@/components/FermionicDarkMatterModal.vue'
+import RainbowGravitonModal from '@/components/RainbowGravitonModal.vue'
+import AcousticBlackHoleModal from '@/components/AcousticBlackHoleModal.vue'
+import ScarredTimeCrystalModal from '@/components/ScarredTimeCrystalModal.vue'
+import CornerStateModal from '@/components/CornerStateModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
