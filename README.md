@@ -88,6 +88,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔥` | Quark-Gluon Plasma Nucleosynthesis Forge & Strangelets |
 | `HUD 🕸️` | Spinfoam Quantum Geometry Lattice & Loop Quantum Gravity |
 | `HUD 🌐` | Holographic Horizon Matrix & AdS/CFT Duality Encoding |
+| `HUD 🌉` | ER=EPR Quantum Wormhole Bridge & Casimir Throat Flux |
+| `HUD ⚛️` | Grand Unified Theory (GUT) Gauge Boson Collider & X/Y Bosons |
+| `HUD 🌀` | Topological Chern Number Fiber Bundle & Chiral Currents |
+| `HUD 〰️` | Cosmic String CMB Lensing Cartographer & Double Images |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
