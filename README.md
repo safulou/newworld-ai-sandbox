@@ -100,6 +100,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⏳` | Penrose CCC Detector & Previous Aeon Hawking Points Gravitons |
 | `HUD 💻` | Quantum Anomalous Hall Superfluid Microchip & Zero-Dissipation QAHE |
 | `HUD 🔭` | Fermionic Dark Matter Quantum Squeezer & Dark Dwarf Fermi Surface |
+| `HUD 🌈` | Rainbow Metric Graviton Mesh & Doubly Special Relativity Dispersion |
+| `HUD 🔊` | Acoustic Black Hole BEC Dynamo & Sonic Hawking Radiation Generator |
+| `HUD ⌛` | Many-Body Scarred Time Crystal & Subharmonic Period-Doubling DTC |
+| `HUD 📐` | Higher-Order Topological Superconductor Relay & Corner Majorana Braiding |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
