@@ -101,6 +101,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'axion_primakov_pioneer', title: '軸子普里馬科夫先驅', description: '在 12T 超導微波共振腔中捕獲暗物質軸子轉化單光子', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'timereversal_specter', title: '時間鏡像破隱幽靈', description: '運用量子糾纏時間反演雷達穿透相干隱形偽裝', icon: '⏰', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'stringnet_demiurge', title: '弦網創世主', description: '於真空基態誘導弦網冷凝湧現光子與費米子', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'building' },
+  { id: 'supergravity_twistor_pilot', title: '超引力扭量飛行員', description: '啟動 N=8 超引力旋量推進並實現 100% 慣性質量消除', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'penrose_ccc_chronicler', title: '潘洛斯共形循環記錄官', description: '在 CMB 微波背景中捕獲前一宇宙紀元霍金點引力波環', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'topological_superfluid_architect', title: '拓撲超流架構師', description: '在量子反常霍爾晶片上引導手性零耗散超流體量子運算', icon: '💻', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'dark_fermi_squeezer', title: '費米暗面量子壓縮大師', description: '穿透泡利簡併壓力透鏡觀測太初暗矮星費米球', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

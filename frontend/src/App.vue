@@ -276,6 +276,18 @@
       <StringNetModal v-if="ui.mode === 'string-net'" />
     </Transition>
     <Transition name="fade">
+      <SupergravitySpinorModal v-if="ui.mode === 'supergravity-spinor'" />
+    </Transition>
+    <Transition name="fade">
+      <PenroseCCCModal v-if="ui.mode === 'penrose-ccc'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumAnomalousHallModal v-if="ui.mode === 'quantum-anomalous-hall'" />
+    </Transition>
+    <Transition name="fade">
+      <FermionicDarkMatterModal v-if="ui.mode === 'fermionic-dark-matter'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -393,6 +405,10 @@ import AntimatterPropulsionModal from '@/components/AntimatterPropulsionModal.vu
 import AxionHaloscopeModal from '@/components/AxionHaloscopeModal.vue'
 import TimeReversalRadarModal from '@/components/TimeReversalRadarModal.vue'
 import StringNetModal from '@/components/StringNetModal.vue'
+import SupergravitySpinorModal from '@/components/SupergravitySpinorModal.vue'
+import PenroseCCCModal from '@/components/PenroseCCCModal.vue'
+import QuantumAnomalousHallModal from '@/components/QuantumAnomalousHallModal.vue'
+import FermionicDarkMatterModal from '@/components/FermionicDarkMatterModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

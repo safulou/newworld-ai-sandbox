@@ -91,6 +91,10 @@ export type UIMode =
   | 'axion-haloscope'
   | 'time-reversal-radar'
   | 'string-net'
+  | 'supergravity-spinor'
+  | 'penrose-ccc'
+  | 'quantum-anomalous-hall'
+  | 'fermionic-dark-matter'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -204,6 +208,10 @@ export const useUIStore = defineStore('ui', () => {
   function openAxionHaloscope(): void { mode.value = 'axion-haloscope' }
   function openTimeReversalRadar(): void { mode.value = 'time-reversal-radar' }
   function openStringNet(): void { mode.value = 'string-net' }
+  function openSupergravitySpinor(): void { mode.value = 'supergravity-spinor' }
+  function openPenroseCCC(): void { mode.value = 'penrose-ccc' }
+  function openQuantumAnomalousHall(): void { mode.value = 'quantum-anomalous-hall' }
+  function openFermionicDarkMatter(): void { mode.value = 'fermionic-dark-matter' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -212,6 +220,10 @@ export const useUIStore = defineStore('ui', () => {
   function setAxionHaloscopeModal(open: boolean): void { mode.value = open ? 'axion-haloscope' : 'game' }
   function setTimeReversalRadarModal(open: boolean): void { mode.value = open ? 'time-reversal-radar' : 'game' }
   function setStringNetModal(open: boolean): void { mode.value = open ? 'string-net' : 'game' }
+  function setSupergravitySpinorModal(open: boolean): void { mode.value = open ? 'supergravity-spinor' : 'game' }
+  function setPenroseCCCModal(open: boolean): void { mode.value = open ? 'penrose-ccc' : 'game' }
+  function setQuantumAnomalousHallModal(open: boolean): void { mode.value = open ? 'quantum-anomalous-hall' : 'game' }
+  function setFermionicDarkMatterModal(open: boolean): void { mode.value = open ? 'fermionic-dark-matter' : 'game' }
   function setMode(m: UIMode): void { mode.value = m }
   function setVoxImporterModal(open: boolean): void { mode.value = open ? 'vox-importer' : 'game' }
   function setDroneModal(open: boolean): void { mode.value = open ? 'drone' : 'game' }
@@ -288,7 +300,7 @@ export const useUIStore = defineStore('ui', () => {
 
   return {
     mode, isLocked, buildStatus, currentNPCName, progressData, selectedBlock, timeOfDay, isMinimapVisible,
-    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, openArkExpedition, openFlagshipRaid, openDarkMatterRift, openDysonSphere, openWormholeSlingshot, openWorldTitan, openNeuralMind, openQuantumBroadcast, openSingularity, openStargate, openCouncil, openGenomeForge, openKardashev, openDysonSwarm, openPlanetaryCore, openChrono, openMultiverse, openRingworld, openGenesisOracle, openStringFold, openVacuumWard, openPrimordialNebula, openStarchart, openTachyonic, openNeutrinoDetector, openQuarkPlasma, openSpinfoam, openHolographicHorizon, openWormholeBridge, openGutCollider, openTopologicalChern, openCosmicString, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, setArkExpeditionModal, setFlagshipRaidModal, setDarkMatterRiftModal, setDysonSphereModal, setWormholeSlingshotModal, setWorldTitanModal, setNeuralMindModal, setQuantumBroadcastModal, setSingularityModal, setStargateModal, setCouncilModal, setGenomeForgeModal, setKardashevModal, setDysonSwarmModal, setPlanetaryCoreModal, setChronoModal, setMultiverseModal, setRingworldModal, setGenesisOracleModal, setStringFoldModal, setVacuumWardModal, setPrimordialNebulaModal, setStarchartModal, setTachyonicModal, setNeutrinoDetectorModal, setQuarkPlasmaModal, setSpinfoamModal, setHolographicHorizonModal, setWormholeBridgeModal, setGutColliderModal, setTopologicalChernModal, setCosmicStringModal, setAntimatterPropulsionModal, setAxionHaloscopeModal, setTimeReversalRadarModal, setStringNetModal, openAntimatterPropulsion, openAxionHaloscope, openTimeReversalRadar, openStringNet, setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openSettings, openBuildPrompt, openBlueprints, openInventory, openKeybinds, openChain, openPhoto, openAchievements, openTools, openExport, openSynth, openPianoRoll, openSchematic, openNpcCustomizer, openQuests, openShaders, openSkins, openMinigames, openCustomBlueprints, openVoxImporter, openDrone, openSpatialVoice, openDimension, openFishing, openRail, openKinetics, openHydroponics, openVisualLogic, openFactory, openAcoustics, openSculptor, openParkour, openObservatory, openReactor, openLeaderboard, openRangers, openDrydock, openAbyssal, openBehaviorTree, openCyberdeck, openHyperjump, openNetrunnerWarfare, openLeviathan, openSupergrid, openColonyArk, openSyndicate, openExosuit, openStellarBeacon, openArkExpedition, openFlagshipRaid, openDarkMatterRift, openDysonSphere, openWormholeSlingshot, openWorldTitan, openNeuralMind, openQuantumBroadcast, openSingularity, openStargate, openCouncil, openGenomeForge, openKardashev, openDysonSwarm, openPlanetaryCore, openChrono, openMultiverse, openRingworld, openGenesisOracle, openStringFold, openVacuumWard, openPrimordialNebula, openStarchart, openTachyonic, openNeutrinoDetector, openQuarkPlasma, openSpinfoam, openHolographicHorizon, openWormholeBridge, openGutCollider, openTopologicalChern, openCosmicString, setVoxImporterModal, setDroneModal, setSpatialVoiceModal, setDimensionModal, setFishingModal, setRailModal, setKineticsModal, setHydroponicsModal, setVisualLogicModal, setFactoryModal, setAcousticsModal, setSculptorModal, setParkourModal, setObservatoryModal, setReactorModal, setLeaderboardModal, setRangersModal, setDrydockModal, setAbyssalModal, setBehaviorTreeModal, setCyberdeckModal, setHyperjumpModal, setNetrunnerWarfareModal, setLeviathanModal, setSupergridModal, setColonyArkModal, setSyndicateModal, setExosuitModal, setStellarBeaconModal, setArkExpeditionModal, setFlagshipRaidModal, setDarkMatterRiftModal, setDysonSphereModal, setWormholeSlingshotModal, setWorldTitanModal, setNeuralMindModal, setQuantumBroadcastModal, setSingularityModal, setStargateModal, setCouncilModal, setGenomeForgeModal, setKardashevModal, setDysonSwarmModal, setPlanetaryCoreModal, setChronoModal, setMultiverseModal, setRingworldModal, setGenesisOracleModal, setStringFoldModal, setVacuumWardModal, setPrimordialNebulaModal, setStarchartModal, setTachyonicModal, setNeutrinoDetectorModal, setQuarkPlasmaModal, setSpinfoamModal, setHolographicHorizonModal, setWormholeBridgeModal, setGutColliderModal, setTopologicalChernModal, setCosmicStringModal, setAntimatterPropulsionModal, setAxionHaloscopeModal, setTimeReversalRadarModal, setStringNetModal, openAntimatterPropulsion, openAxionHaloscope, openTimeReversalRadar, openStringNet, setSupergravitySpinorModal, setPenroseCCCModal, setQuantumAnomalousHallModal, setFermionicDarkMatterModal, openSupergravitySpinor, openPenroseCCC, openQuantumAnomalousHall, openFermionicDarkMatter, setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })

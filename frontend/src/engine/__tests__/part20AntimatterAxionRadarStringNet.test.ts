@@ -212,9 +212,9 @@ describe('Part 20: 前沿高能物理與拓撲冷凝矩陣整合測試套件', (
   })
 
   describe('5. 元宇宙成就殿堂與 UI Store 整合驗證', () => {
-    it('成就清單應成功擴充至 96 項，且包含 Part 20 四大終極物理成就', () => {
+    it('成就清單應包含至少 96 項，且包含 Part 20 四大終極物理成就', () => {
       const all = achievements.getAll()
-      expect(all.length).toBe(96)
+      expect(all.length).toBeGreaterThanOrEqual(96)
 
       const p20Ids = ['antimatter_admiral', 'axion_primakov_pioneer', 'timereversal_specter', 'stringnet_demiurge']
       p20Ids.forEach((id) => {

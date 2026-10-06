@@ -143,6 +143,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🧲', desc: '開啟 軸子暗物質暈微波共振腔 (Axion Haloscope)' },
       { combo: 'HUD ⏰', desc: '開啟 量子糾纏時間鏡像拓撲雷達 (Time-Reversal Radar)' },
       { combo: 'HUD 🕸️', desc: '開啟 全息共形場宇宙弦網冷凝 (String-Net Condensate)' },
+      { combo: 'HUD 🌀', desc: '開啟 旋量網絡超引力旋轉推進 (Supergravity Spinor)' },
+      { combo: 'HUD ⏳', desc: '開啟 潘洛斯宇宙循環相干引力波測量儀 (Penrose CCC Detector)' },
+      { combo: 'HUD 💻', desc: '開啟 量子霍爾反常邊緣態超流體晶片 (QAH Superfluid Microchip)' },
+      { combo: 'HUD 🔭', desc: '開啟 費米子暗物質費米面量子壓縮透鏡 (Fermionic Dark Matter)' },
 
 
     ]

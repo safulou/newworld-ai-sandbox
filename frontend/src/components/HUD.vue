@@ -232,6 +232,18 @@
       <button class="hud-btn string-net-btn" @click="ui.openStringNet" title="全息共形場宇宙弦網冷凝 (String-Net Condensate)">
         🕸️ 弦網
       </button>
+      <button class="hud-btn sugra-btn" @click="ui.openSupergravitySpinor" title="旋量網絡超引力旋轉推進 (Supergravity Spinor)">
+        🌀 超引力
+      </button>
+      <button class="hud-btn ccc-btn" @click="ui.openPenroseCCC" title="潘洛斯宇宙循環相干引力波測量儀 (Penrose CCC Detector)">
+        ⏳ 潘洛斯
+      </button>
+      <button class="hud-btn qah-btn" @click="ui.openQuantumAnomalousHall" title="量子霍爾反常邊緣態超流體晶片 (QAH Superfluid Microchip)">
+        💻 量子晶片
+      </button>
+      <button class="hud-btn dark-fermi-btn" @click="ui.openFermionicDarkMatter" title="費米子暗物質費米面量子壓縮透鏡 (Fermionic Dark Matter)">
+        🔭 費米暗暈
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

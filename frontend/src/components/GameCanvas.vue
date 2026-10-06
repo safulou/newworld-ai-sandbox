@@ -98,6 +98,10 @@ import { antimatterPropulsion } from '@/engine/antimatterPropulsion'
 import { axionHaloscope } from '@/engine/axionHaloscope'
 import { timeReversalRadar } from '@/engine/timeReversalRadar'
 import { stringNetCondensate } from '@/engine/stringNetCondensate'
+import { supergravitySpinor } from '@/engine/supergravitySpinor'
+import { penroseCCCDetector } from '@/engine/penroseCCCDetector'
+import { quantumAnomalousHall } from '@/engine/quantumAnomalousHall'
+import { fermionicDarkMatter } from '@/engine/fermionicDarkMatter'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -280,6 +284,10 @@ function loop(): void {
   axionHaloscope.update(delta)
   timeReversalRadar.update(delta)
   stringNetCondensate.update(delta)
+  supergravitySpinor.update(delta)
+  penroseCCCDetector.update(delta)
+  quantumAnomalousHall.update(delta)
+  fermionicDarkMatter.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
