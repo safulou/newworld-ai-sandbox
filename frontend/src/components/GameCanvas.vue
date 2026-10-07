@@ -110,6 +110,10 @@ import { casimirTorqueEngine } from '@/engine/casimirTorqueMotor'
 import { anyonHolographicEngine } from '@/engine/anyonHolographicCode'
 import { relativisticTeleportEngine } from '@/engine/relativisticTeleportation'
 import { planckVacuumEngine } from '@/engine/planckVacuumCavity'
+import { topologicalSupersolidEngine } from '@/engine/topologicalSupersolid'
+import { primordialGWEngine } from '@/engine/primordialGravitationalWave'
+import { aharonovBohmEngine } from '@/engine/aharonovBohmRing'
+import { weylChiralEngine } from '@/engine/weylChiralAnomaly'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -304,6 +308,10 @@ function loop(): void {
   anyonHolographicEngine.update(delta)
   relativisticTeleportEngine.update(delta)
   planckVacuumEngine.update(delta)
+  topologicalSupersolidEngine.update(delta)
+  primordialGWEngine.update(delta)
+  aharonovBohmEngine.update(delta)
+  weylChiralEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

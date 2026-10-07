@@ -155,6 +155,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔮', desc: '開啟 非阿貝爾任意子全息量子糾錯編碼室 (Anyon Holographic Code)' },
       { combo: 'HUD 💫', desc: '開啟 相對論性量子資訊穿梭超流波導 (Relativistic Teleportation)' },
       { combo: 'HUD ⚡', desc: '開啟 極限普朗克常數真空相變臨界諧振腔 (Planck Vacuum Cavity)' },
+      { combo: 'HUD ❄️', desc: '開啟 拓撲超固體量子渦旋流動反應堆 (Topological Supersolid)' },
+      { combo: 'HUD 🌌', desc: '開啟 太初原初引力波隨機背景干涉儀 (Primordial SGWB)' },
+      { combo: 'HUD 🧲', desc: '開啟 阿哈羅諾夫-玻姆幾何相位超導環陣列 (Aharonov-Bohm Ring)' },
+      { combo: 'HUD ⚛️', desc: '開啟 超對稱外爾費米子手性反常能源核 (Weyl Chiral Anomaly)' },
 
 
     ]

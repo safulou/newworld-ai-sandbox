@@ -312,6 +312,18 @@
       <PlanckVacuumCavityModal v-if="ui.mode === 'planck-vacuum'" />
     </Transition>
     <Transition name="fade">
+      <TopologicalSupersolidModal v-if="ui.mode === 'topological-supersolid'" />
+    </Transition>
+    <Transition name="fade">
+      <PrimordialGWModal v-if="ui.mode === 'primordial-gw'" />
+    </Transition>
+    <Transition name="fade">
+      <AharonovBohmModal v-if="ui.mode === 'aharonov-bohm'" />
+    </Transition>
+    <Transition name="fade">
+      <WeylChiralAnomalyModal v-if="ui.mode === 'weyl-chiral'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -441,6 +453,10 @@ import CasimirTorqueModal from '@/components/CasimirTorqueModal.vue'
 import AnyonHolographicModal from '@/components/AnyonHolographicModal.vue'
 import RelativisticTeleportModal from '@/components/RelativisticTeleportModal.vue'
 import PlanckVacuumCavityModal from '@/components/PlanckVacuumCavityModal.vue'
+import TopologicalSupersolidModal from '@/components/TopologicalSupersolidModal.vue'
+import PrimordialGWModal from '@/components/PrimordialGWModal.vue'
+import AharonovBohmModal from '@/components/AharonovBohmModal.vue'
+import WeylChiralAnomalyModal from '@/components/WeylChiralAnomalyModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

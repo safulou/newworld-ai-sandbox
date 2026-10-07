@@ -268,6 +268,18 @@
       <button class="hud-btn planck-cavity-btn" @click="ui.openPlanckVacuum" title="極限普朗克常數真空相變臨界諧振腔 (Planck Vacuum Cavity)">
         ⚡ 普朗克腔
       </button>
+      <button class="hud-btn supersolid-btn" @click="ui.openTopologicalSupersolid" title="拓撲超固體量子渦旋流動反應堆 (Topological Supersolid)">
+        ❄️ 拓撲超固
+      </button>
+      <button class="hud-btn primordial-gw-btn" @click="ui.openPrimordialGW" title="太初原初引力波隨機背景干涉儀 (Primordial SGWB)">
+        🌌 原初引力
+      </button>
+      <button class="hud-btn aharonov-bohm-btn" @click="ui.openAharonovBohm" title="阿哈羅諾夫-玻姆幾何相位超導環陣列 (Aharonov-Bohm Ring)">
+        🧲 AB 超導環
+      </button>
+      <button class="hud-btn weyl-chiral-btn" @click="ui.openWeylChiral" title="超對稱外爾費米子手性反常能源核 (Weyl Chiral Anomaly)">
+        ⚛️ 外爾反常
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

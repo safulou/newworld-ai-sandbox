@@ -113,6 +113,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'holographic_anyon_coder', title: '全息任意子編碼宗師', description: '在龐加萊雙曲五邊形全息碼中完成斐波那契任意子融合', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'relativistic_teleport_runner', title: '相對論性穿梭行者', description: '在 500g 加速度下透過超流聲子波導完成跨視界量子隱形傳態', icon: '💫', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'planck_vacuum_dynamist', title: '普朗克真空動態大師', description: '透過 SQUID 超導反射鏡光速抖動激發動態卡西米爾微波光子對', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'supersolid_vortex_conductor', title: '超固體渦旋導體', description: '在偶極超固體液滴晶格中激發阿布里科索夫量子化渦旋並達成非經典轉動慣量異常', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'primordial_gw_astronomer', title: '原初引力波天文學者', description: '透過三臂激光干涉陣列觀測暴脹張量微擾原初引力波隨機背景', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'aharonov_bohm_interferometer', title: '阿哈羅諾夫-玻姆幾何干涉官', description: '調控穿透超導環的磁通量子並實現持續無耗散量子相干電流', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'weyl_chiral_anomaly_harnesser', title: '外爾手性反常調諧師', description: '在平行電磁場下觸發外爾半金屬節點軸向電荷泵浦並引發手性磁效應', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery
