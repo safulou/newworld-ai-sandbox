@@ -108,6 +108,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔮` | Non-Abelian Anyon Holographic Quantum Error-Correction Code (HaPPY) |
 | `HUD 💫` | Relativistic Quantum Teleportation Superfluid Waveguide & Unruh Suppression |
 | `HUD ⚡` | Planck Vacuum Cavity & Dynamical Casimir Effect SQUID Microwave Pairs |
+| `HUD ❄️` | Topological Supersolid Quantum Vortex Reactor & Dual Symmetry Breaking NCRI |
+| `HUD 🌌` | Primordial Gravitational Wave SGWB Interferometer & Hellings-Downs Curve |
+| `HUD 🧲` | Aharonov-Bohm Geometric Phase Ring Array & Mesoscopic Persistent Current |
+| `HUD ⚛️` | Supersymmetric Weyl Semimetal Chiral Anomaly Core & CME Axial Current |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
