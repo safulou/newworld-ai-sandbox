@@ -112,6 +112,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌌` | Primordial Gravitational Wave SGWB Interferometer & Hellings-Downs Curve |
 | `HUD 🧲` | Aharonov-Bohm Geometric Phase Ring Array & Mesoscopic Persistent Current |
 | `HUD ⚛️` | Supersymmetric Weyl Semimetal Chiral Anomaly Core & CME Axial Current |
+| `HUD ✨` | Topological Exciton-Polariton Condensate & Superfluid Edge Soliton Reactor |
+| `HUD ⏳` | Floquet Prethermal Topological Time Crystal & Subharmonic 2T DTTSB |
+| `HUD 🌌` | Hawking-Unruh Holographic Microwave Detector & TMSV Squeezed Vacuum |
+| `HUD 🧲` | Aharonov-Casher Neutral Spin Interferometer & Electromagnetic Duality Gate |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
