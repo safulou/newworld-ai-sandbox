@@ -104,6 +104,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔊` | Acoustic Black Hole BEC Dynamo & Sonic Hawking Radiation Generator |
 | `HUD ⌛` | Many-Body Scarred Time Crystal & Subharmonic Period-Doubling DTC |
 | `HUD 📐` | Higher-Order Topological Superconductor Relay & Corner Majorana Braiding |
+| `HUD ⚙️` | Casimir Vacuum Torque Motor & Anisotropic Dielectric Metamaterial Drive |
+| `HUD 🔮` | Non-Abelian Anyon Holographic Quantum Error-Correction Code (HaPPY) |
+| `HUD 💫` | Relativistic Quantum Teleportation Superfluid Waveguide & Unruh Suppression |
+| `HUD ⚡` | Planck Vacuum Cavity & Dynamical Casimir Effect SQUID Microwave Pairs |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
