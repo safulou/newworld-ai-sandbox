@@ -117,6 +117,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'primordial_gw_astronomer', title: '原初引力波天文學者', description: '透過三臂激光干涉陣列觀測暴脹張量微擾原初引力波隨機背景', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'aharonov_bohm_interferometer', title: '阿哈羅諾夫-玻姆幾何干涉官', description: '調控穿透超導環的磁通量子並實現持續無耗散量子相干電流', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
   { id: 'weyl_chiral_anomaly_harnesser', title: '外爾手性反常調諧師', description: '在平行電磁場下觸發外爾半金屬節點軸向電荷泵浦並引發手性磁效應', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'exciton_polariton_condensate', title: '極化激元凝聚領航者', description: '激發半導體微腔中極化激元玻色-愛因斯坦凝聚與拓撲超流孤子流', icon: '✨', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'floquet_time_crystal', title: 'Floquet 離散時間晶體主宰', description: '鎖定週期驅動非平衡態 Floquet 預熱高原與 2T 亞諧波對稱破缺振盪', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'hawking_unruh_detector', title: '霍金-安魯全息探測特使', description: '利用模擬加速視界超導量子電路探測雙模壓縮真空態霍金輻射微波光子對', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'aharonov_casher_interferometer', title: '阿哈羅諾夫-卡舍爾自旋幾何師', description: '調諧線電荷電場幾何力矩引發中性自旋幾何相位相消干涉與無耗散自旋流', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

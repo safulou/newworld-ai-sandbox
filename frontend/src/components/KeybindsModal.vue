@@ -159,6 +159,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌌', desc: '開啟 太初原初引力波隨機背景干涉儀 (Primordial SGWB)' },
       { combo: 'HUD 🧲', desc: '開啟 阿哈羅諾夫-玻姆幾何相位超導環陣列 (Aharonov-Bohm Ring)' },
       { combo: 'HUD ⚛️', desc: '開啟 超對稱外爾費米子手性反常能源核 (Weyl Chiral Anomaly)' },
+      { combo: 'HUD ✨', desc: '開啟 拓撲激子極化激元量子流體反應堆 (Exciton-Polariton Condensate)' },
+      { combo: 'HUD ⏳', desc: '開啟 非平衡態 Floquet 預熱拓撲時間晶體 (Floquet Prethermal Time Crystal)' },
+      { combo: 'HUD 🌌', desc: '開啟 霍金-安魯效應全息引力對偶量子微波探測器 (Hawking-Unruh Detector)' },
+      { combo: 'HUD 🧲', desc: '開啟 阿哈羅諾夫-卡舍爾中性費米子自旋拓撲干涉儀 (Aharonov-Casher Interferometer)' },
 
 
     ]

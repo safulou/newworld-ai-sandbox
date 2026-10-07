@@ -280,6 +280,18 @@
       <button class="hud-btn weyl-chiral-btn" @click="ui.openWeylChiral" title="超對稱外爾費米子手性反常能源核 (Weyl Chiral Anomaly)">
         ⚛️ 外爾反常
       </button>
+      <button class="hud-btn exciton-polariton-btn" @click="ui.openExcitonPolariton" title="拓撲激子極化激元量子流體反應堆 (Exciton-Polariton)">
+        ✨ 極化凝聚
+      </button>
+      <button class="hud-btn floquet-dtc-btn" @click="ui.openFloquetTimeCrystal" title="非平衡態 Floquet 預熱拓撲時間晶體 (Floquet Time Crystal)">
+        ⏳ Floquet晶體
+      </button>
+      <button class="hud-btn hawking-unruh-btn" @click="ui.openHawkingUnruh" title="霍金-安魯效應全息引力對偶量子微波探測器 (Hawking-Unruh)">
+        🌌 霍金安魯
+      </button>
+      <button class="hud-btn aharonov-casher-btn" @click="ui.openAharonovCasher" title="阿哈羅諾夫-卡舍爾中性費米子自旋拓撲干涉儀 (Aharonov-Casher)">
+        🧲 AC 自旋環
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

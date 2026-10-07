@@ -324,6 +324,18 @@
       <WeylChiralAnomalyModal v-if="ui.mode === 'weyl-chiral'" />
     </Transition>
     <Transition name="fade">
+      <ExcitonPolaritonModal v-if="ui.mode === 'exciton-polariton'" />
+    </Transition>
+    <Transition name="fade">
+      <FloquetTimeCrystalModal v-if="ui.mode === 'floquet-time-crystal'" />
+    </Transition>
+    <Transition name="fade">
+      <HawkingUnruhModal v-if="ui.mode === 'hawking-unruh'" />
+    </Transition>
+    <Transition name="fade">
+      <AharonovCasherModal v-if="ui.mode === 'aharonov-casher'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -457,6 +469,10 @@ import TopologicalSupersolidModal from '@/components/TopologicalSupersolidModal.
 import PrimordialGWModal from '@/components/PrimordialGWModal.vue'
 import AharonovBohmModal from '@/components/AharonovBohmModal.vue'
 import WeylChiralAnomalyModal from '@/components/WeylChiralAnomalyModal.vue'
+import ExcitonPolaritonModal from '@/components/ExcitonPolaritonModal.vue'
+import FloquetTimeCrystalModal from '@/components/FloquetTimeCrystalModal.vue'
+import HawkingUnruhModal from '@/components/HawkingUnruhModal.vue'
+import AharonovCasherModal from '@/components/AharonovCasherModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

@@ -114,6 +114,10 @@ import { topologicalSupersolidEngine } from '@/engine/topologicalSupersolid'
 import { primordialGWEngine } from '@/engine/primordialGravitationalWave'
 import { aharonovBohmEngine } from '@/engine/aharonovBohmRing'
 import { weylChiralEngine } from '@/engine/weylChiralAnomaly'
+import { excitonPolaritonEngine } from '@/engine/excitonPolaritonCondensate'
+import { floquetTimeCrystalEngine } from '@/engine/floquetTimeCrystal'
+import { hawkingUnruhDetectorEngine } from '@/engine/hawkingUnruhDetector'
+import { aharonovCasherEngine } from '@/engine/aharonovCasher'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -312,6 +316,10 @@ function loop(): void {
   primordialGWEngine.update(delta)
   aharonovBohmEngine.update(delta)
   weylChiralEngine.update(delta)
+  excitonPolaritonEngine.update(delta)
+  floquetTimeCrystalEngine.update(delta)
+  hawkingUnruhDetectorEngine.update(delta)
+  aharonovCasherEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
