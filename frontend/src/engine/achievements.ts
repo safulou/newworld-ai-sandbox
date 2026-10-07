@@ -109,6 +109,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'acoustic_hawking_harvester', title: '聲學霍金輻射採集者', description: '突破超音速聲學黑洞視界並提取熱聲子能量', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'scarred_time_crystal_chronos', title: '多體疤痕時間晶體之神', description: '激發離散時間晶體 2T 亞諧波破缺非熱化振盪', icon: '⌛', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'higher_order_corner_braider', title: '高階角態編織大師', description: '在四極矩拓撲超導體上完成零能馬約拉納非阿貝爾編織', icon: '📐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'casimir_torque_artisan', title: '卡西米爾扭矩工匠', description: '調諧雙折射微片各向異性零點扭矩並實現真空自轉加速', icon: '⚙️', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'holographic_anyon_coder', title: '全息任意子編碼宗師', description: '在龐加萊雙曲五邊形全息碼中完成斐波那契任意子融合', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'relativistic_teleport_runner', title: '相對論性穿梭行者', description: '在 500g 加速度下透過超流聲子波導完成跨視界量子隱形傳態', icon: '💫', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'planck_vacuum_dynamist', title: '普朗克真空動態大師', description: '透過 SQUID 超導反射鏡光速抖動激發動態卡西米爾微波光子對', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
 
 
   // Mastery

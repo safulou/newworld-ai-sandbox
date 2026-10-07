@@ -151,6 +151,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔊', desc: '開啟 超流真空聲學事件視界發電機 (Acoustic Black Hole)' },
       { combo: 'HUD ⌛', desc: '開啟 量子多體疤痕時間晶體調諧器 (Scarred Time Crystal)' },
       { combo: 'HUD 📐', desc: '開啟 拓撲超導高階角態量子中繼陣列 (Corner State Relay)' },
+      { combo: 'HUD ⚙️', desc: '開啟 拓撲缺陷卡西米爾真空扭矩馬達 (Casimir Vacuum Torque Motor)' },
+      { combo: 'HUD 🔮', desc: '開啟 非阿貝爾任意子全息量子糾錯編碼室 (Anyon Holographic Code)' },
+      { combo: 'HUD 💫', desc: '開啟 相對論性量子資訊穿梭超流波導 (Relativistic Teleportation)' },
+      { combo: 'HUD ⚡', desc: '開啟 極限普朗克常數真空相變臨界諧振腔 (Planck Vacuum Cavity)' },
 
 
     ]

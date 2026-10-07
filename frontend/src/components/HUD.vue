@@ -256,6 +256,18 @@
       <button class="hud-btn corner-btn" @click="ui.openCornerState" title="拓撲超導高階角態量子中繼陣列 (Corner State Relay)">
         📐 角態超導
       </button>
+      <button class="hud-btn casimir-btn" @click="ui.openCasimirTorque" title="拓撲缺陷卡西米爾真空扭矩馬達 (Casimir Vacuum Torque Motor)">
+        ⚙️ 扭矩馬達
+      </button>
+      <button class="hud-btn anyon-btn" @click="ui.openAnyonHolographic" title="非阿貝爾任意子全息量子糾錯編碼室 (Anyon Holographic Code)">
+        🔮 全息任意子
+      </button>
+      <button class="hud-btn teleport-btn" @click="ui.openRelativisticTeleport" title="相對論性量子資訊穿梭超流波導 (Relativistic Teleportation)">
+        💫 量子傳態
+      </button>
+      <button class="hud-btn planck-cavity-btn" @click="ui.openPlanckVacuum" title="極限普朗克常數真空相變臨界諧振腔 (Planck Vacuum Cavity)">
+        ⚡ 普朗克腔
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

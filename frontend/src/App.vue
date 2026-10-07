@@ -300,6 +300,18 @@
       <CornerStateModal v-if="ui.mode === 'corner-state'" />
     </Transition>
     <Transition name="fade">
+      <CasimirTorqueModal v-if="ui.mode === 'casimir-torque'" />
+    </Transition>
+    <Transition name="fade">
+      <AnyonHolographicModal v-if="ui.mode === 'anyon-holographic'" />
+    </Transition>
+    <Transition name="fade">
+      <RelativisticTeleportModal v-if="ui.mode === 'relativistic-teleport'" />
+    </Transition>
+    <Transition name="fade">
+      <PlanckVacuumCavityModal v-if="ui.mode === 'planck-vacuum'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -425,6 +437,10 @@ import RainbowGravitonModal from '@/components/RainbowGravitonModal.vue'
 import AcousticBlackHoleModal from '@/components/AcousticBlackHoleModal.vue'
 import ScarredTimeCrystalModal from '@/components/ScarredTimeCrystalModal.vue'
 import CornerStateModal from '@/components/CornerStateModal.vue'
+import CasimirTorqueModal from '@/components/CasimirTorqueModal.vue'
+import AnyonHolographicModal from '@/components/AnyonHolographicModal.vue'
+import RelativisticTeleportModal from '@/components/RelativisticTeleportModal.vue'
+import PlanckVacuumCavityModal from '@/components/PlanckVacuumCavityModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

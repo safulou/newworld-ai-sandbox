@@ -106,6 +106,10 @@ import { rainbowGravitonEngine } from '@/engine/rainbowGravitonMesh'
 import { acousticBlackHoleEngine } from '@/engine/acousticBlackHole'
 import { manyBodyScarredEngine } from '@/engine/manyBodyScarredTimeCrystal'
 import { higherOrderTopoEngine } from '@/engine/higherOrderTopoSuperconductor'
+import { casimirTorqueEngine } from '@/engine/casimirTorqueMotor'
+import { anyonHolographicEngine } from '@/engine/anyonHolographicCode'
+import { relativisticTeleportEngine } from '@/engine/relativisticTeleportation'
+import { planckVacuumEngine } from '@/engine/planckVacuumCavity'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -296,6 +300,10 @@ function loop(): void {
   acousticBlackHoleEngine.update(delta)
   manyBodyScarredEngine.update(delta)
   higherOrderTopoEngine.update(delta)
+  casimirTorqueEngine.update(delta)
+  anyonHolographicEngine.update(delta)
+  relativisticTeleportEngine.update(delta)
+  planckVacuumEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
