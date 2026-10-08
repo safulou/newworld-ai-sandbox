@@ -116,6 +116,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⏳` | Floquet Prethermal Topological Time Crystal & Subharmonic 2T DTTSB |
 | `HUD 🌌` | Hawking-Unruh Holographic Microwave Detector & TMSV Squeezed Vacuum |
 | `HUD 🧲` | Aharonov-Casher Neutral Spin Interferometer & Electromagnetic Duality Gate |
+| `HUD 🌀` | Spinor Skyrmion Condensate Reactor & Synthetic Gauge Dirac Monopole |
+| `HUD 🎯` | Non-Hermitian Exceptional Point Laser & Sublinear Fractional Topological Sensor |
+| `HUD ⚛️` | Majorana Zero Mode Non-Abelian Braiding Chip & T-Junction Parity Qubit |
+| `HUD 🕳️` | Kaluza-Klein Micro Black Hole Probe & Four-Stage Hawking Evaporation |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
