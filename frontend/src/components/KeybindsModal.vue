@@ -167,6 +167,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🎯', desc: '開啟 非厄米拓撲奇異點雷射放大器 (Exceptional Point Laser)' },
       { combo: 'HUD ⚛️', desc: '開啟 拓撲馬約拉納零能模非阿貝爾量子編織晶片 (Majorana Braiding Chip)' },
       { combo: 'HUD 🕳️', desc: '開啟 卡魯扎-克萊因高維引力微型黑洞探針 (Kaluza-Klein Micro Black Hole)' },
+      { combo: 'HUD 🌀', desc: '開啟 拓撲莫爾超晶格平帶非常規超導反應堆 (Moiré Flat-Band Superconductor)' },
+      { combo: 'HUD 🌌', desc: '開啟 時空引力波記憶效應天線矩陣 (GW Memory Array)' },
+      { combo: 'HUD 🧲', desc: '開啟 反鐵磁拓撲磁振子狄拉克半金屬波導 (Antiferromagnetic Magnon)' },
+      { combo: 'HUD 🕳️', desc: '開啟 全息蟲洞量子隱形傳態對偶反應爐 (Holographic Traversable Wormhole)' },
 
 
     ]

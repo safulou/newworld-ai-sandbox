@@ -348,6 +348,18 @@
       <KaluzaKleinModal v-if="ui.mode === 'kaluza-klein'" />
     </Transition>
     <Transition name="fade">
+      <MoireFlatBandModal v-if="ui.mode === 'moire-flatband'" />
+    </Transition>
+    <Transition name="fade">
+      <GWMemoryModal v-if="ui.mode === 'gw-memory'" />
+    </Transition>
+    <Transition name="fade">
+      <AntiferroMagnonModal v-if="ui.mode === 'antiferro-magnon'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicWormholeModal v-if="ui.mode === 'holographic-wormhole'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -489,6 +501,10 @@ import SpinorSkyrmionModal from '@/components/SpinorSkyrmionModal.vue'
 import ExceptionalPointModal from '@/components/ExceptionalPointModal.vue'
 import MajoranaBraidingModal from '@/components/MajoranaBraidingModal.vue'
 import KaluzaKleinModal from '@/components/KaluzaKleinModal.vue'
+import MoireFlatBandModal from '@/components/MoireFlatBandModal.vue'
+import GWMemoryModal from '@/components/GWMemoryModal.vue'
+import AntiferroMagnonModal from '@/components/AntiferroMagnonModal.vue'
+import HolographicWormholeModal from '@/components/HolographicWormholeModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

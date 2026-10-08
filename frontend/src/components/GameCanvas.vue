@@ -122,6 +122,10 @@ import { spinorSkyrmionEngine } from '@/engine/spinorSkyrmionCondensate'
 import { exceptionalPointEngine } from '@/engine/exceptionalPointLaser'
 import { majoranaBraidingEngine } from '@/engine/majoranaBraidingQubit'
 import { kaluzaKleinBlackHoleEngine } from '@/engine/kaluzaKleinMicroBlackHole'
+import { moireSuperconductorEngine } from '@/engine/moireFlatBandSuperconductor'
+import { gwMemoryEngine } from '@/engine/gravitationalWaveMemory'
+import { antiferroMagnonEngine } from '@/engine/antiferroTopologicalMagnon'
+import { holographicWormholeEngine } from '@/engine/holographicWormholeTeleport'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -328,6 +332,10 @@ function loop(): void {
   exceptionalPointEngine.update(delta)
   majoranaBraidingEngine.update(delta)
   kaluzaKleinBlackHoleEngine.update(delta)
+  moireSuperconductorEngine.update(delta)
+  gwMemoryEngine.update(delta)
+  antiferroMagnonEngine.update(delta)
+  holographicWormholeEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

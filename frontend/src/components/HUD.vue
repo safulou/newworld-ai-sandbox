@@ -304,6 +304,18 @@
       <button class="hud-btn kaluza-klein-btn" @click="ui.openKaluzaKlein" title="卡魯扎-克萊因高維引力微型黑洞探針 (Kaluza-Klein Micro Black Hole)">
         🕳️ KK 微黑洞
       </button>
+      <button class="hud-btn moire-flatband-btn" @click="ui.openMoireFlatBand" title="拓撲莫爾超晶格平帶非常規超導反應堆 (Moiré Flat-Band Superconductor)">
+        🌀 莫爾超導
+      </button>
+      <button class="hud-btn gw-memory-btn" @click="ui.openGWMemory" title="時空引力波記憶效應天線矩陣 (GW Memory Array)">
+        🌌 引力記憶
+      </button>
+      <button class="hud-btn antiferro-magnon-btn" @click="ui.openAntiferroMagnon" title="反鐵磁拓撲磁振子狄拉克半金屬波導 (Antiferromagnetic Magnon)">
+        🧲 反鐵磁磁振子
+      </button>
+      <button class="hud-btn holographic-wormhole-btn" @click="ui.openHolographicWormhole" title="全息蟲洞量子隱形傳態對偶反應爐 (Holographic Traversable Wormhole)">
+        🕳️ 全息蟲洞
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

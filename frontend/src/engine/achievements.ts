@@ -125,6 +125,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'exceptional_point_laser', title: '非厄米奇異點調諧大師', description: '調諧非厄米宇稱-時間對稱奇異點並實現分數階立方根超靈敏拓撲激光放大', icon: '🎯', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'majorana_braiding_qubit', title: '馬約拉納零能編織宗師', description: '在 T 型拓撲超導接面完成馬約拉納零能模非阿貝爾編織與宇稱容錯邏輯門', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'kaluza_klein_micro_blackhole', title: '高維卡魯扎-克萊因黑洞探險家', description: '在 TeV 標度大額外維度探測微型黑洞四階段霍金蒸發爆炸與 KK 重力子塔', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'moire_flatband_superconductor', title: '莫爾平帶超導領航者', description: '在魔角雙層石墨烯超晶格激發強關聯莫特絕緣能隙與量子度規非常規超導圓頂', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'gravitational_wave_memory', title: '引力波度規記憶觀測者', description: '探測雙黑洞併合引力波暴留下之非線性克里斯托杜盧永久直流應變殘餘與 BMS 軟毛', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'antiferro_topological_magnon', title: '反鐵磁拓撲磁振子大師', description: '調諧雙子晶格太赫茲自旋波反鐵磁共振，觀測狄拉克能隙與非零熱霍爾導率', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_wormhole_teleport', title: '全息蟲洞穿梭隱形傳態官', description: '施加雙邊非局域雙跡耦合注入負能量應力張量，透過可穿越蟲洞喉部因果穿梭量子資訊', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery
