@@ -118,6 +118,10 @@ import { excitonPolaritonEngine } from '@/engine/excitonPolaritonCondensate'
 import { floquetTimeCrystalEngine } from '@/engine/floquetTimeCrystal'
 import { hawkingUnruhDetectorEngine } from '@/engine/hawkingUnruhDetector'
 import { aharonovCasherEngine } from '@/engine/aharonovCasher'
+import { spinorSkyrmionEngine } from '@/engine/spinorSkyrmionCondensate'
+import { exceptionalPointEngine } from '@/engine/exceptionalPointLaser'
+import { majoranaBraidingEngine } from '@/engine/majoranaBraidingQubit'
+import { kaluzaKleinBlackHoleEngine } from '@/engine/kaluzaKleinMicroBlackHole'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -320,6 +324,10 @@ function loop(): void {
   floquetTimeCrystalEngine.update(delta)
   hawkingUnruhDetectorEngine.update(delta)
   aharonovCasherEngine.update(delta)
+  spinorSkyrmionEngine.update(delta)
+  exceptionalPointEngine.update(delta)
+  majoranaBraidingEngine.update(delta)
+  kaluzaKleinBlackHoleEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

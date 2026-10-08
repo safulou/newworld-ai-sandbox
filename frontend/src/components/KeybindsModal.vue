@@ -163,6 +163,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⏳', desc: '開啟 非平衡態 Floquet 預熱拓撲時間晶體 (Floquet Prethermal Time Crystal)' },
       { combo: 'HUD 🌌', desc: '開啟 霍金-安魯效應全息引力對偶量子微波探測器 (Hawking-Unruh Detector)' },
       { combo: 'HUD 🧲', desc: '開啟 阿哈羅諾夫-卡舍爾中性費米子自旋拓撲干涉儀 (Aharonov-Casher Interferometer)' },
+      { combo: 'HUD 🌀', desc: '開啟 旋量玻色-愛因斯坦凝聚斯格明子拓撲天體反應堆 (Spinor Skyrmion Condensate)' },
+      { combo: 'HUD 🎯', desc: '開啟 非厄米拓撲奇異點雷射放大器 (Exceptional Point Laser)' },
+      { combo: 'HUD ⚛️', desc: '開啟 拓撲馬約拉納零能模非阿貝爾量子編織晶片 (Majorana Braiding Chip)' },
+      { combo: 'HUD 🕳️', desc: '開啟 卡魯扎-克萊因高維引力微型黑洞探針 (Kaluza-Klein Micro Black Hole)' },
 
 
     ]

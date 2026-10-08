@@ -121,6 +121,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'floquet_time_crystal', title: 'Floquet 離散時間晶體主宰', description: '鎖定週期驅動非平衡態 Floquet 預熱高原與 2T 亞諧波對稱破缺振盪', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'hawking_unruh_detector', title: '霍金-安魯全息探測特使', description: '利用模擬加速視界超導量子電路探測雙模壓縮真空態霍金輻射微波光子對', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'aharonov_casher_interferometer', title: '阿哈羅諾夫-卡舍爾自旋幾何師', description: '調諧線電荷電場幾何力矩引發中性自旋幾何相位相消干涉與無耗散自旋流', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'spinor_skyrmion_condensate', title: '旋量斯格明子天體領航員', description: '激發旋量玻色凝聚二維斯格明子自旋晶格與合成規範場狄拉克單極子', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'scifi' },
+  { id: 'exceptional_point_laser', title: '非厄米奇異點調諧大師', description: '調諧非厄米宇稱-時間對稱奇異點並實現分數階立方根超靈敏拓撲激光放大', icon: '🎯', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'majorana_braiding_qubit', title: '馬約拉納零能編織宗師', description: '在 T 型拓撲超導接面完成馬約拉納零能模非阿貝爾編織與宇稱容錯邏輯門', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'kaluza_klein_micro_blackhole', title: '高維卡魯扎-克萊因黑洞探險家', description: '在 TeV 標度大額外維度探測微型黑洞四階段霍金蒸發爆炸與 KK 重力子塔', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

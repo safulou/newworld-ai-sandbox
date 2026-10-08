@@ -336,6 +336,18 @@
       <AharonovCasherModal v-if="ui.mode === 'aharonov-casher'" />
     </Transition>
     <Transition name="fade">
+      <SpinorSkyrmionModal v-if="ui.mode === 'spinor-skyrmion'" />
+    </Transition>
+    <Transition name="fade">
+      <ExceptionalPointModal v-if="ui.mode === 'exceptional-point'" />
+    </Transition>
+    <Transition name="fade">
+      <MajoranaBraidingModal v-if="ui.mode === 'majorana-braiding'" />
+    </Transition>
+    <Transition name="fade">
+      <KaluzaKleinModal v-if="ui.mode === 'kaluza-klein'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -473,6 +485,10 @@ import ExcitonPolaritonModal from '@/components/ExcitonPolaritonModal.vue'
 import FloquetTimeCrystalModal from '@/components/FloquetTimeCrystalModal.vue'
 import HawkingUnruhModal from '@/components/HawkingUnruhModal.vue'
 import AharonovCasherModal from '@/components/AharonovCasherModal.vue'
+import SpinorSkyrmionModal from '@/components/SpinorSkyrmionModal.vue'
+import ExceptionalPointModal from '@/components/ExceptionalPointModal.vue'
+import MajoranaBraidingModal from '@/components/MajoranaBraidingModal.vue'
+import KaluzaKleinModal from '@/components/KaluzaKleinModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

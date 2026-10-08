@@ -292,6 +292,18 @@
       <button class="hud-btn aharonov-casher-btn" @click="ui.openAharonovCasher" title="阿哈羅諾夫-卡舍爾中性費米子自旋拓撲干涉儀 (Aharonov-Casher)">
         🧲 AC 自旋環
       </button>
+      <button class="hud-btn spinor-skyrmion-btn" @click="ui.openSpinorSkyrmion" title="旋量玻色-愛因斯坦凝聚斯格明子拓撲天體反應堆 (Spinor Skyrmion)">
+        🌀 斯格明子
+      </button>
+      <button class="hud-btn exceptional-point-btn" @click="ui.openExceptionalPoint" title="非厄米拓撲奇異點雷射放大器 (Exceptional Point Laser)">
+        🎯 奇異點激光
+      </button>
+      <button class="hud-btn majorana-braiding-btn" @click="ui.openMajoranaBraiding" title="拓撲馬約拉納零能模非阿貝爾量子編織晶片 (Majorana Braiding)">
+        ⚛️ 馬約拉納
+      </button>
+      <button class="hud-btn kaluza-klein-btn" @click="ui.openKaluzaKlein" title="卡魯扎-克萊因高維引力微型黑洞探針 (Kaluza-Klein Micro Black Hole)">
+        🕳️ KK 微黑洞
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
