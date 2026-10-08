@@ -120,6 +120,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🎯` | Non-Hermitian Exceptional Point Laser & Sublinear Fractional Topological Sensor |
 | `HUD ⚛️` | Majorana Zero Mode Non-Abelian Braiding Chip & T-Junction Parity Qubit |
 | `HUD 🕳️` | Kaluza-Klein Micro Black Hole Probe & Four-Stage Hawking Evaporation |
+| `HUD 🌀` | Moiré Flat-Band Unconventional Superconductor & Quantum Metric Superfluidity |
+| `HUD 🌌` | Gravitational Wave Memory Antenna Array & BMS Asymptotic Supertranslations |
+| `HUD 🧲` | Antiferromagnetic Topological Dirac Magnon Waveguide & Magnon Thermal Hall Effect |
+| `HUD 🕳️` | Holographic Traversable Wormhole Teleportation Reactor & Gao-Jafferis-Wall Protocol |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
