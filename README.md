@@ -136,6 +136,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 📻` | Terahertz Josephson Quantum Mixer & Two-Mode Squeezed Microwave Probe |
 | `HUD 🧲` | Dynamical Axion Insulator Resonator & Topological Magnetoelectric Polaritons |
 | `HUD 🌌` | Holographic Complexity Equals Action Engine & WDW Patch Lloyd Bound |
+| `HUD 🌊` | Chiral Cooper-Pair Majorana Vortex Lattice & Edge Supercurrent Reactor |
+| `HUD 🛡️` | Quantum Spin Hall Helical Edge State Protection Chip & Zero Backscattering |
+| `HUD 🌈` | Giant Kerr Nonlinear Soliton Frequency Comb & Quantum Squeezing Generator |
+| `HUD 🌪️` | AdS4/CFT3 Holographic Weyl Semimetal Quantum Critical Fluid Engine & KSS Bound |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
