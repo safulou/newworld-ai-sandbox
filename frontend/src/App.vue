@@ -360,6 +360,18 @@
       <HolographicWormholeModal v-if="ui.mode === 'holographic-wormhole'" />
     </Transition>
     <Transition name="fade">
+      <ChiralPumpModal v-if="ui.mode === 'chiral-pump'" />
+    </Transition>
+    <Transition name="fade">
+      <GWSpinMemoryModal v-if="ui.mode === 'gw-spin-memory'" />
+    </Transition>
+    <Transition name="fade">
+      <HingeMajoranaModal v-if="ui.mode === 'hinge-majorana'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumIslandModal v-if="ui.mode === 'quantum-island'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -505,6 +517,10 @@ import MoireFlatBandModal from '@/components/MoireFlatBandModal.vue'
 import GWMemoryModal from '@/components/GWMemoryModal.vue'
 import AntiferroMagnonModal from '@/components/AntiferroMagnonModal.vue'
 import HolographicWormholeModal from '@/components/HolographicWormholeModal.vue'
+import ChiralPumpModal from '@/components/ChiralPumpModal.vue'
+import GWSpinMemoryModal from '@/components/GWSpinMemoryModal.vue'
+import HingeMajoranaModal from '@/components/HingeMajoranaModal.vue'
+import QuantumIslandModal from '@/components/QuantumIslandModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

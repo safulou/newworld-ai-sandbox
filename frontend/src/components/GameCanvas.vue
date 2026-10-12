@@ -126,6 +126,10 @@ import { moireSuperconductorEngine } from '@/engine/moireFlatBandSuperconductor'
 import { gwMemoryEngine } from '@/engine/gravitationalWaveMemory'
 import { antiferroMagnonEngine } from '@/engine/antiferroTopologicalMagnon'
 import { holographicWormholeEngine } from '@/engine/holographicWormholeTeleport'
+import { chiralPumpEngine } from '@/engine/chiralAnomalyQuantumPump'
+import { gwSpinMemoryEngine } from '@/engine/gravitationalSpinMemory'
+import { hingeMajoranaEngine } from '@/engine/hingeMajoranaSuperconductor'
+import { quantumIslandEngine } from '@/engine/quantumIslandReactor'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -336,6 +340,10 @@ function loop(): void {
   gwMemoryEngine.update(delta)
   antiferroMagnonEngine.update(delta)
   holographicWormholeEngine.update(delta)
+  chiralPumpEngine.update(delta)
+  gwSpinMemoryEngine.update(delta)
+  hingeMajoranaEngine.update(delta)
+  quantumIslandEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

@@ -129,6 +129,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'gravitational_wave_memory', title: '引力波度規記憶觀測者', description: '探測雙黑洞併合引力波暴留下之非線性克里斯托杜盧永久直流應變殘餘與 BMS 軟毛', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'antiferro_topological_magnon', title: '反鐵磁拓撲磁振子大師', description: '調諧雙子晶格太赫茲自旋波反鐵磁共振，觀測狄拉克能隙與非零熱霍爾導率', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_wormhole_teleport', title: '全息蟲洞穿梭隱形傳態官', description: '施加雙邊非局域雙跡耦合注入負能量應力張量，透過可穿越蟲洞喉部因果穿梭量子資訊', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'chiral_anomaly_pump', title: '外爾手性反常泵浦大師', description: '在外爾半金屬中激發 Adler-Bell-Jackiw 手性反常軸向電荷泵浦與無耗散手性磁效應超流', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'gravitational_spin_memory', title: '引力自旋記憶觀測者', description: '觀測雙克爾黑洞輻射角動量通量在天球誘發之 BMS 超旋轉永久自旋速度躍遷與時間延遲', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'hinge_majorana_superconductor', title: '二階拓撲鉸鏈超導宗師', description: '在 3D 二階拓撲超導相鄰表面質量反轉域壁激發 1D 手性馬約拉納鉸鏈態與半整數熱霍爾電導', icon: '📐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_island_reactor', title: '全息量子島佩吉領航員', description: '在 AdS/BCFT 蒸發黑洞中極值化量子極值面湧現量子島，透過 Petz 逆映射重構內部量子資訊', icon: '🏝️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

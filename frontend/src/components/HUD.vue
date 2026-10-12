@@ -316,6 +316,18 @@
       <button class="hud-btn holographic-wormhole-btn" @click="ui.openHolographicWormhole" title="全息蟲洞量子隱形傳態對偶反應爐 (Holographic Traversable Wormhole)">
         🕳️ 全息蟲洞
       </button>
+      <button class="hud-btn chiral-pump-btn" @click="ui.openChiralPump" title="拓撲手性反常弗蘭肯斯坦量子泵浦反應堆 (Chiral Anomaly Quantum Pump)">
+        ⚛️ 外爾泵浦
+      </button>
+      <button class="hud-btn gw-spin-memory-btn" @click="ui.openGWSpinMemory" title="引力波自旋記憶與天球角動量流干涉網 (GW Spin Memory Array)">
+        🌀 自旋記憶
+      </button>
+      <button class="hud-btn hinge-majorana-btn" @click="ui.openHingeMajorana" title="三維二階拓撲超導馬約拉納手性鉸鏈態晶片 (HOTSC Hinge Majorana Chip)">
+        📐 鉸鏈超導
+      </button>
+      <button class="hud-btn quantum-island-btn" @click="ui.openQuantumIsland" title="AdS/BCFT 邊界量子島黑洞資訊恢復反應堆 (AdS/BCFT Quantum Island)">
+        🏝️ 量子島
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

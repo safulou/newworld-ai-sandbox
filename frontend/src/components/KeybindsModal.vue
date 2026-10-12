@@ -171,6 +171,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌌', desc: '開啟 時空引力波記憶效應天線矩陣 (GW Memory Array)' },
       { combo: 'HUD 🧲', desc: '開啟 反鐵磁拓撲磁振子狄拉克半金屬波導 (Antiferromagnetic Magnon)' },
       { combo: 'HUD 🕳️', desc: '開啟 全息蟲洞量子隱形傳態對偶反應爐 (Holographic Traversable Wormhole)' },
+      { combo: 'HUD ⚛️', desc: '開啟 拓撲手性反常弗蘭肯斯坦量子泵浦反應堆 (Chiral Anomaly Quantum Pump)' },
+      { combo: 'HUD 🌀', desc: '開啟 引力波自旋記憶與天球角動量流干涉網 (GW Spin Memory Array)' },
+      { combo: 'HUD 📐', desc: '開啟 三維二階拓撲超導馬約拉納手性鉸鏈態晶片 (HOTSC Hinge Majorana Chip)' },
+      { combo: 'HUD 🏝️', desc: '開啟 AdS/BCFT 邊界量子島黑洞資訊恢復反應堆 (AdS/BCFT Quantum Island)' },
 
 
     ]

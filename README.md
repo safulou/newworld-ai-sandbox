@@ -124,6 +124,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌌` | Gravitational Wave Memory Antenna Array & BMS Asymptotic Supertranslations |
 | `HUD 🧲` | Antiferromagnetic Topological Dirac Magnon Waveguide & Magnon Thermal Hall Effect |
 | `HUD 🕳️` | Holographic Traversable Wormhole Teleportation Reactor & Gao-Jafferis-Wall Protocol |
+| `HUD ⚛️` | Chiral Anomaly Quantum Pump & CME Negative Longitudinal Magnetoresistance |
+| `HUD 🌀` | Gravitational-Wave Spin Memory Array & BMS Celestial Superrotations |
+| `HUD 📐` | Higher-Order Topological Superconductor Hinge Majorana Chip & Half-Integer Thermal Hall |
+| `HUD 🏝️` | AdS/BCFT Quantum Island Reactor & Unitary Page Curve Petz Map Reconstruction |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
