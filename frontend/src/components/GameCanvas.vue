@@ -142,6 +142,10 @@ import { chiralSuperfluidEngine } from '@/engine/chiralSuperfluidPWave'
 import { quantumSpinHallEngine } from '@/engine/quantumSpinHallHelical'
 import { quantumKerrCombEngine } from '@/engine/quantumKerrSolitonComb'
 import { holographicWeylFluidEngine } from '@/engine/holographicWeylFluid'
+import { modularHamiltonianVacuumEngine } from '@/engine/modularHamiltonianVacuum'
+import { multiChannelKondoEngine } from '@/engine/multiChannelKondo'
+import { birefringentGravLensEngine } from '@/engine/birefringentGravLens'
+import { holographicMicrostateEngine } from '@/engine/holographicMicrostateMesh'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -368,6 +372,10 @@ function loop(): void {
   quantumSpinHallEngine.update(delta)
   quantumKerrCombEngine.update(delta)
   holographicWeylFluidEngine.update(delta)
+  modularHamiltonianVacuumEngine.update(delta)
+  multiChannelKondoEngine.update(delta)
+  birefringentGravLensEngine.update(delta)
+  holographicMicrostateEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

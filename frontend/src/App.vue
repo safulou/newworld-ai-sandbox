@@ -408,6 +408,18 @@
       <HolographicWeylFluidModal v-if="ui.mode === 'holo-weyl-fluid'" />
     </Transition>
     <Transition name="fade">
+      <ModularVacuumModal v-if="ui.mode === 'modular-vacuum'" />
+    </Transition>
+    <Transition name="fade">
+      <MultiChannelKondoModal v-if="ui.mode === 'multichannel-kondo'" />
+    </Transition>
+    <Transition name="fade">
+      <BirefringentGravLensModal v-if="ui.mode === 'birefringent-lens'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicMicrostateModal v-if="ui.mode === 'holo-microstate'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -569,6 +581,10 @@ import ChiralSuperfluidModal from '@/components/ChiralSuperfluidModal.vue'
 import QuantumSpinHallModal from '@/components/QuantumSpinHallModal.vue'
 import QuantumKerrCombModal from '@/components/QuantumKerrCombModal.vue'
 import HolographicWeylFluidModal from '@/components/HolographicWeylFluidModal.vue'
+import ModularVacuumModal from '@/components/ModularVacuumModal.vue'
+import MultiChannelKondoModal from '@/components/MultiChannelKondoModal.vue'
+import BirefringentGravLensModal from '@/components/BirefringentGravLensModal.vue'
+import HolographicMicrostateModal from '@/components/HolographicMicrostateModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

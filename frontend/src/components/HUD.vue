@@ -364,6 +364,18 @@
       <button class="hud-btn holo-weyl-fluid-btn" @click="ui.openHoloWeylFluid" title="全息外爾量子臨界流體引擎 (Holographic Weyl Fluid Engine)">
         🌪️ 全息外爾
       </button>
+      <button class="hud-btn modular-vacuum-btn" @click="ui.openModularVacuum" title="富田-竹崎模態流與量子糾纏真空引擎 (Modular Vacuum Engine)">
+        ⚛️ 模態真空
+      </button>
+      <button class="hud-btn multichannel-kondo-btn" @click="ui.openMultiChannelKondo" title="多通道近藤效應與非費米液體奇異金屬反應堆 (Multi-Channel Kondo Reactor)">
+        🌀 近藤金屬
+      </button>
+      <button class="hud-btn birefringent-lens-btn" @click="ui.openBirefringentLens" title="雙折射引力透鏡與偏振旋角幾何相光子干涉儀 (Birefringent Grav Lens)">
+        🔭 雙折透鏡
+      </button>
+      <button class="hud-btn holo-microstate-btn" @click="ui.openHoloMicrostate" title="AdS/CFT 蟲洞微觀態與哈密頓量截斷弦網張量重構機 (Holo Microstate Mesh)">
+        🔮 絨毛全息
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

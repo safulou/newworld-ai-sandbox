@@ -187,6 +187,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🛡️', desc: '開啟 量子自旋霍爾效應螺旋晶片 (Quantum Spin Hall Chip)' },
       { combo: 'HUD 🌈', desc: '開啟 巨克爾量子孤子光頻梳發電機 (Kerr Soliton Comb)' },
       { combo: 'HUD 🌪️', desc: '開啟 全息外爾量子臨界流體引擎 (Holographic Weyl Fluid Engine)' },
+      { combo: 'HUD ⚛️', desc: '開啟 富田-竹崎模態流與量子糾纏真空引擎 (Modular Hamiltonian Vacuum Engine)' },
+      { combo: 'HUD 🌀', desc: '開啟 多通道近藤效應與非費米液體奇異金屬反應堆 (Multi-Channel Kondo Reactor)' },
+      { combo: 'HUD 🔭', desc: '開啟 雙折射引力透鏡與偏振旋角幾何相光子干涉儀 (Birefringent Grav Lens)' },
+      { combo: 'HUD 🔮', desc: '開啟 AdS/CFT 蟲洞微觀態與哈密頓量截斷弦網張量重構機 (Holo Microstate Mesh)' },
 
 
     ]

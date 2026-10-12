@@ -140,6 +140,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🛡️` | Quantum Spin Hall Helical Edge State Protection Chip & Zero Backscattering |
 | `HUD 🌈` | Giant Kerr Nonlinear Soliton Frequency Comb & Quantum Squeezing Generator |
 | `HUD 🌪️` | AdS4/CFT3 Holographic Weyl Semimetal Quantum Critical Fluid Engine & KSS Bound |
+| `HUD ⚛️` | Tomita-Takesaki Modular Vacuum Engine & Bisognano-Wichmann Flow (QEI Bound) |
+| `HUD 🌀` | Multi-Channel Kondo Effect & Non-Fermi Liquid Strange Metal Reactor (1/2 ln 2 Entropy) |
+| `HUD 🔭` | Birefringent Gravitational Lens & Polarized Twin Einstein Rings Interferometer |
+| `HUD 🔮` | AdS/CFT Holographic Microstate Mesh & Fuzzball HaPPY Tensor Network Reconstruction |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

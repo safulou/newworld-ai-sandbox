@@ -145,6 +145,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'quantum_spin_hall_helical', title: '量子自旋霍爾先驅', description: '在 2D 拓撲絕緣體建立時間反演對稱 ℤ₂=1 保護之無背向散射自旋動量鎖定螺旋邊緣態', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quantum_kerr_soliton_comb', title: '克爾孤子光頻梳宗師', description: '在微環超高 Q 諧振腔透過盧吉亞托-勒菲弗動力學鎖定八度光頻梳與多模量子壓縮態', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_weyl_fluid', title: '全息外爾流體領航員', description: '在 AdS₄/CFT₃ 全息對偶中驗證飽和 KSS 極限 η/s=1/(4π) 之宇宙近完美量子流體與拓撲反常流', icon: '🌪️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'modular_hamiltonian_vacuum', title: '富田-竹崎模態真空大師', description: '調諧林德勒雙曲旋轉對偶，驗證糾纏第一定律 δS_A = δ<K_A> 與 QEI 量子能量不等式約束', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'multichannel_kondo_nfl', title: '多通道近藤非費米金屬先驅', description: '在 2CK 雙通道過度屏蔽臨界點解鎖 1/2 ln 2 殘餘分數熵、孤立馬約拉納零模與對數奇異電阻', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'birefringent_grav_lens', title: '雙折射引力透鏡干涉大師', description: '在克爾黑洞外爾手性曲率場觀測左右圓偏振測地線分裂、孿生愛因斯坦環與幾何相微分時延', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'holographic_microstate_mesh', title: '全息微觀態弦網重構宗師', description: '在 AdS 彭加萊圓盤利用 HaPPY 完美張量網絡重構絨毛球平滑超重力冠帽與量子引力回波', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery
