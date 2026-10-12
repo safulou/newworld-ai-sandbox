@@ -328,6 +328,18 @@
       <button class="hud-btn quantum-island-btn" @click="ui.openQuantumIsland" title="AdS/BCFT 邊界量子島黑洞資訊恢復反應堆 (AdS/BCFT Quantum Island)">
         🏝️ 量子島
       </button>
+      <button class="hud-btn spin-liquid-btn" @click="ui.openSpinLiquid" title="拓撲分數量子自旋液體與基塔耶夫蜂巢晶格反應堆 (Fractional Quantum Spin Liquid)">
+        🌀 自旋液體
+      </button>
+      <button class="hud-btn kerr-shadow-btn" @click="ui.openKerrShadow" title="克爾黑洞極端光子球與事件視界全息陰影重構陣列 (Kerr Photon Shadow Array)">
+        🕳️ 光子陰影
+      </button>
+      <button class="hud-btn repulsive-casimir-btn" @click="ui.openRepulsiveCasimir" title="手性超材料動態拓撲卡西米爾斥力發電機 (Repulsive Casimir Motor)">
+        ⚙️ 斥力馬達
+      </button>
+      <button class="hud-btn multi-wormhole-btn" @click="ui.openMultiWormhole" title="AdS/dS 雙曲多端可穿越蟲洞多體糾纏網絡 (Multi-Boundary Wormhole Network)">
+        🌌 多端蟲洞
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

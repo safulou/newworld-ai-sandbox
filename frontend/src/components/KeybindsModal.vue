@@ -175,6 +175,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 引力波自旋記憶與天球角動量流干涉網 (GW Spin Memory Array)' },
       { combo: 'HUD 📐', desc: '開啟 三維二階拓撲超導馬約拉納手性鉸鏈態晶片 (HOTSC Hinge Majorana Chip)' },
       { combo: 'HUD 🏝️', desc: '開啟 AdS/BCFT 邊界量子島黑洞資訊恢復反應堆 (AdS/BCFT Quantum Island)' },
+      { combo: 'HUD 🌀', desc: '開啟 拓撲分數量子自旋液體與基塔耶夫蜂巢晶格反應堆 (Fractional Quantum Spin Liquid)' },
+      { combo: 'HUD 🕳️', desc: '開啟 克爾黑洞極端光子球與事件視界全息陰影重構陣列 (Kerr Photon Shadow Array)' },
+      { combo: 'HUD ⚙️', desc: '開啟 手性超材料動態拓撲卡西米爾斥力發電機 (Repulsive Casimir Motor)' },
+      { combo: 'HUD 🌌', desc: '開啟 AdS/dS 雙曲多端可穿越蟲洞多體糾纏網絡 (Multi-Boundary Wormhole Network)' },
 
 
     ]

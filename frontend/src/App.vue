@@ -372,6 +372,18 @@
       <QuantumIslandModal v-if="ui.mode === 'quantum-island'" />
     </Transition>
     <Transition name="fade">
+      <FractionalSpinLiquidModal v-if="ui.mode === 'spin-liquid'" />
+    </Transition>
+    <Transition name="fade">
+      <KerrPhotonShadowModal v-if="ui.mode === 'kerr-shadow'" />
+    </Transition>
+    <Transition name="fade">
+      <RepulsiveCasimirModal v-if="ui.mode === 'repulsive-casimir'" />
+    </Transition>
+    <Transition name="fade">
+      <MultiBoundaryWormholeModal v-if="ui.mode === 'multi-wormhole'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -521,6 +533,10 @@ import ChiralPumpModal from '@/components/ChiralPumpModal.vue'
 import GWSpinMemoryModal from '@/components/GWSpinMemoryModal.vue'
 import HingeMajoranaModal from '@/components/HingeMajoranaModal.vue'
 import QuantumIslandModal from '@/components/QuantumIslandModal.vue'
+import FractionalSpinLiquidModal from '@/components/FractionalSpinLiquidModal.vue'
+import KerrPhotonShadowModal from '@/components/KerrPhotonShadowModal.vue'
+import RepulsiveCasimirModal from '@/components/RepulsiveCasimirModal.vue'
+import MultiBoundaryWormholeModal from '@/components/MultiBoundaryWormholeModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

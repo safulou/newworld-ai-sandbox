@@ -133,6 +133,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'gravitational_spin_memory', title: '引力自旋記憶觀測者', description: '觀測雙克爾黑洞輻射角動量通量在天球誘發之 BMS 超旋轉永久自旋速度躍遷與時間延遲', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'hinge_majorana_superconductor', title: '二階拓撲鉸鏈超導宗師', description: '在 3D 二階拓撲超導相鄰表面質量反轉域壁激發 1D 手性馬約拉納鉸鏈態與半整數熱霍爾電導', icon: '📐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quantum_island_reactor', title: '全息量子島佩吉領航員', description: '在 AdS/BCFT 蒸發黑洞中極值化量子極值面湧現量子島，透過 Petz 逆映射重構內部量子資訊', icon: '🏝️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'kitaev_spin_liquid', title: '基塔耶夫自旋液體拓撲先驅', description: '在蜂巢晶格激發自旋分數化游走馬約拉納費米子與非阿貝爾伊辛任意子，量測半整數熱霍爾效應', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'kerr_photon_shadow', title: '極端克爾黑洞全息觀測官', description: '重構極值旋轉黑洞全息天球光子陰影 D 狀變形、極限李雅普諾夫光子子環與能層超輻射提取', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'repulsive_casimir_motor', title: '拓撲斥力卡西米爾動力宗師', description: '調諧手性超材料反轉栗弗席茲自由能實現量子真空懸浮斥力，驅動零靜摩擦奈米扭矩發電機', icon: '⚙️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'multiboundary_wormhole', title: '雙曲多端全息蟲洞網絡架構師', description: '在雙曲 AdS 多邊界黎曼面構建中央多體糾纏核心，以多跡負能量耦合實現多端夏皮羅時間超前傳態', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

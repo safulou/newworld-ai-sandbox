@@ -130,6 +130,10 @@ import { chiralPumpEngine } from '@/engine/chiralAnomalyQuantumPump'
 import { gwSpinMemoryEngine } from '@/engine/gravitationalSpinMemory'
 import { hingeMajoranaEngine } from '@/engine/hingeMajoranaSuperconductor'
 import { quantumIslandEngine } from '@/engine/quantumIslandReactor'
+import { fractionalSpinLiquidEngine } from '@/engine/fractionalSpinLiquid'
+import { kerrPhotonShadowEngine } from '@/engine/kerrPhotonShadow'
+import { repulsiveCasimirMotorEngine } from '@/engine/repulsiveCasimirMotor'
+import { multiBoundaryWormholeEngine } from '@/engine/multiBoundaryWormhole'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -344,6 +348,10 @@ function loop(): void {
   gwSpinMemoryEngine.update(delta)
   hingeMajoranaEngine.update(delta)
   quantumIslandEngine.update(delta)
+  fractionalSpinLiquidEngine.update(delta)
+  kerrPhotonShadowEngine.update(delta)
+  repulsiveCasimirMotorEngine.update(delta)
+  multiBoundaryWormholeEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

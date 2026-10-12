@@ -128,6 +128,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌀` | Gravitational-Wave Spin Memory Array & BMS Celestial Superrotations |
 | `HUD 📐` | Higher-Order Topological Superconductor Hinge Majorana Chip & Half-Integer Thermal Hall |
 | `HUD 🏝️` | AdS/BCFT Quantum Island Reactor & Unitary Page Curve Petz Map Reconstruction |
+| `HUD 🌀` | Topological Fractional Quantum Spin Liquid & Kitaev Honeycomb Anyon Reactor |
+| `HUD 🕳️` | Extremal Kerr Black Hole Photon Shadow & Superradiant Ergosphere Dynamo |
+| `HUD ⚙️` | Chiral Metamaterial Repulsive Casimir Motor & Quantum Vacuum Levitation Drive |
+| `HUD 🌌` | Multi-Boundary Hyperbolic AdS/CFT Wormhole Network & Negative Energy Secret Sharing |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
