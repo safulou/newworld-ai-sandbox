@@ -179,6 +179,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕳️', desc: '開啟 克爾黑洞極端光子球與事件視界全息陰影重構陣列 (Kerr Photon Shadow Array)' },
       { combo: 'HUD ⚙️', desc: '開啟 手性超材料動態拓撲卡西米爾斥力發電機 (Repulsive Casimir Motor)' },
       { combo: 'HUD 🌌', desc: '開啟 AdS/dS 雙曲多端可穿越蟲洞多體糾纏網絡 (Multi-Boundary Wormhole Network)' },
+      { combo: 'HUD ⚛️', desc: '開啟 量子反常分數霍爾反應堆 (Fractional Quantum Anomalous Hall)' },
+      { combo: 'HUD 📻', desc: '開啟 太赫茲約瑟夫森量子混頻器 (THz Josephson Quantum Mixer)' },
+      { combo: 'HUD 🧲', desc: '開啟 動態拓撲磁電效應軸子絕緣體諧振腔 (Axion Insulator Resonator)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息複雜度作用量引擎 (Holographic Complexity Engine)' },
 
 
     ]

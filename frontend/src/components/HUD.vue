@@ -340,6 +340,18 @@
       <button class="hud-btn multi-wormhole-btn" @click="ui.openMultiWormhole" title="AdS/dS 雙曲多端可穿越蟲洞多體糾纏網絡 (Multi-Boundary Wormhole Network)">
         🌌 多端蟲洞
       </button>
+      <button class="hud-btn fqah-btn" @click="ui.openFractionalHall" title="量子反常分數霍爾反應堆 (Fractional Quantum Anomalous Hall)">
+        ⚛️ 分數霍爾
+      </button>
+      <button class="hud-btn thz-josephson-btn" @click="ui.openThzJosephson" title="太赫茲約瑟夫森量子混頻器 (THz Josephson Quantum Mixer)">
+        📻 約瑟夫森
+      </button>
+      <button class="hud-btn axion-insulator-btn" @click="ui.openAxionInsulator" title="動態拓撲磁電效應軸子絕緣體諧振腔 (Axion Insulator Resonator)">
+        🧲 軸子絕緣
+      </button>
+      <button class="hud-btn holo-complexity-btn" @click="ui.openHoloComplexity" title="全息複雜度作用量引擎 (Holographic Complexity Engine)">
+        🌌 全息複雜
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

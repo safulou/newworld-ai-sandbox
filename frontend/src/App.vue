@@ -384,6 +384,18 @@
       <MultiBoundaryWormholeModal v-if="ui.mode === 'multi-wormhole'" />
     </Transition>
     <Transition name="fade">
+      <FractionalAnomalousHallModal v-if="ui.mode === 'fractional-hall'" />
+    </Transition>
+    <Transition name="fade">
+      <TerahertzJosephsonMixerModal v-if="ui.mode === 'thz-josephson'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionInsulatorModal v-if="ui.mode === 'axion-insulator'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicComplexityModal v-if="ui.mode === 'holo-complexity'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -537,6 +549,10 @@ import FractionalSpinLiquidModal from '@/components/FractionalSpinLiquidModal.vu
 import KerrPhotonShadowModal from '@/components/KerrPhotonShadowModal.vue'
 import RepulsiveCasimirModal from '@/components/RepulsiveCasimirModal.vue'
 import MultiBoundaryWormholeModal from '@/components/MultiBoundaryWormholeModal.vue'
+import FractionalAnomalousHallModal from '@/components/FractionalAnomalousHallModal.vue'
+import TerahertzJosephsonMixerModal from '@/components/TerahertzJosephsonMixerModal.vue'
+import AxionInsulatorModal from '@/components/AxionInsulatorModal.vue'
+import HolographicComplexityModal from '@/components/HolographicComplexityModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

@@ -137,6 +137,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'kerr_photon_shadow', title: '極端克爾黑洞全息觀測官', description: '重構極值旋轉黑洞全息天球光子陰影 D 狀變形、極限李雅普諾夫光子子環與能層超輻射提取', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'repulsive_casimir_motor', title: '拓撲斥力卡西米爾動力宗師', description: '調諧手性超材料反轉栗弗席茲自由能實現量子真空懸浮斥力，驅動零靜摩擦奈米扭矩發電機', icon: '⚙️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'multiboundary_wormhole', title: '雙曲多端全息蟲洞網絡架構師', description: '在雙曲 AdS 多邊界黎曼面構建中央多體糾纏核心，以多跡負能量耦合實現多端夏皮羅時間超前傳態', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'fractional_anomalous_hall', title: '量子反常分數霍爾先鋒', description: '在零外加磁場莫爾超晶格中湧現 Laughlin 分數電荷任意子與分數量子化階躍電導', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'terahertz_josephson_mixer', title: '太赫茲約瑟夫森混頻大師', description: '調諧超導交流約瑟夫森高頻振盪與夏皮羅量子階躍，生成突破標準量子極限之雙模壓縮光子態', icon: '📻', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'axion_insulator_resonator', title: '動態軸子極化激元共振宗師', description: '在偶數層反鐵磁拓撲絕緣體激發量子化軸子角 θ=π 拓撲磁電響應與巨法拉第旋轉', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_complexity_action', title: '全息複雜度勞埃德領航員', description: '在 AdS 惠勒-德威特時空斑塊中驗證量子電路複雜度飽和勞埃德極限與震波折返延遲', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery
