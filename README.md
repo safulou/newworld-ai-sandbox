@@ -132,6 +132,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕳️` | Extremal Kerr Black Hole Photon Shadow & Superradiant Ergosphere Dynamo |
 | `HUD ⚙️` | Chiral Metamaterial Repulsive Casimir Motor & Quantum Vacuum Levitation Drive |
 | `HUD 🌌` | Multi-Boundary Hyperbolic AdS/CFT Wormhole Network & Negative Energy Secret Sharing |
+| `HUD ⚛️` | Fractional Quantum Anomalous Hall (FQAH) Reactor & Zero-Field Moiré Anyons |
+| `HUD 📻` | Terahertz Josephson Quantum Mixer & Two-Mode Squeezed Microwave Probe |
+| `HUD 🧲` | Dynamical Axion Insulator Resonator & Topological Magnetoelectric Polaritons |
+| `HUD 🌌` | Holographic Complexity Equals Action Engine & WDW Patch Lloyd Bound |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
