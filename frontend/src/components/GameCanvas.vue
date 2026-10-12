@@ -138,6 +138,10 @@ import { fractionalAnomalousHallEngine } from '@/engine/fractionalAnomalousHall'
 import { terahertzJosephsonMixerEngine } from '@/engine/terahertzJosephsonMixer'
 import { axionInsulatorResonatorEngine } from '@/engine/axionInsulatorResonator'
 import { holographicComplexityActionEngine } from '@/engine/holographicComplexityAction'
+import { chiralSuperfluidEngine } from '@/engine/chiralSuperfluidPWave'
+import { quantumSpinHallEngine } from '@/engine/quantumSpinHallHelical'
+import { quantumKerrCombEngine } from '@/engine/quantumKerrSolitonComb'
+import { holographicWeylFluidEngine } from '@/engine/holographicWeylFluid'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -360,6 +364,10 @@ function loop(): void {
   terahertzJosephsonMixerEngine.update(delta)
   axionInsulatorResonatorEngine.update(delta)
   holographicComplexityActionEngine.update(delta)
+  chiralSuperfluidEngine.update(delta)
+  quantumSpinHallEngine.update(delta)
+  quantumKerrCombEngine.update(delta)
+  holographicWeylFluidEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

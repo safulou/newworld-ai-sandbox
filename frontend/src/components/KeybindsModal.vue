@@ -183,6 +183,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 📻', desc: '開啟 太赫茲約瑟夫森量子混頻器 (THz Josephson Quantum Mixer)' },
       { combo: 'HUD 🧲', desc: '開啟 動態拓撲磁電效應軸子絕緣體諧振腔 (Axion Insulator Resonator)' },
       { combo: 'HUD 🌌', desc: '開啟 全息複雜度作用量引擎 (Holographic Complexity Engine)' },
+      { combo: 'HUD 🌊', desc: '開啟 拓撲手性超流體 p_x + i p_y 反應堆 (Chiral Superfluid Reactor)' },
+      { combo: 'HUD 🛡️', desc: '開啟 量子自旋霍爾效應螺旋晶片 (Quantum Spin Hall Chip)' },
+      { combo: 'HUD 🌈', desc: '開啟 巨克爾量子孤子光頻梳發電機 (Kerr Soliton Comb)' },
+      { combo: 'HUD 🌪️', desc: '開啟 全息外爾量子臨界流體引擎 (Holographic Weyl Fluid Engine)' },
 
 
     ]

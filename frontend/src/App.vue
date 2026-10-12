@@ -396,6 +396,18 @@
       <HolographicComplexityModal v-if="ui.mode === 'holo-complexity'" />
     </Transition>
     <Transition name="fade">
+      <ChiralSuperfluidModal v-if="ui.mode === 'chiral-superfluid'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumSpinHallModal v-if="ui.mode === 'quantum-spin-hall'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumKerrCombModal v-if="ui.mode === 'kerr-comb'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicWeylFluidModal v-if="ui.mode === 'holo-weyl-fluid'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -553,6 +565,10 @@ import FractionalAnomalousHallModal from '@/components/FractionalAnomalousHallMo
 import TerahertzJosephsonMixerModal from '@/components/TerahertzJosephsonMixerModal.vue'
 import AxionInsulatorModal from '@/components/AxionInsulatorModal.vue'
 import HolographicComplexityModal from '@/components/HolographicComplexityModal.vue'
+import ChiralSuperfluidModal from '@/components/ChiralSuperfluidModal.vue'
+import QuantumSpinHallModal from '@/components/QuantumSpinHallModal.vue'
+import QuantumKerrCombModal from '@/components/QuantumKerrCombModal.vue'
+import HolographicWeylFluidModal from '@/components/HolographicWeylFluidModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

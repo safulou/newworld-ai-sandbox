@@ -141,6 +141,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'terahertz_josephson_mixer', title: '太赫茲約瑟夫森混頻大師', description: '調諧超導交流約瑟夫森高頻振盪與夏皮羅量子階躍，生成突破標準量子極限之雙模壓縮光子態', icon: '📻', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'axion_insulator_resonator', title: '動態軸子極化激元共振宗師', description: '在偶數層反鐵磁拓撲絕緣體激發量子化軸子角 θ=π 拓撲磁電響應與巨法拉第旋轉', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_complexity_action', title: '全息複雜度勞埃德領航員', description: '在 AdS 惠勒-德威特時空斑塊中驗證量子電路複雜度飽和勞埃德極限與震波折返延遲', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'chiral_pwave_superfluid', title: '拓撲手性超流大師', description: '在 2D 手性 p 波超流體激發拓撲非平凡陳數 C=1、半量子化渦旋束縛馬約拉納態與無耗散邊界超流', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_spin_hall_helical', title: '量子自旋霍爾先驅', description: '在 2D 拓撲絕緣體建立時間反演對稱 ℤ₂=1 保護之無背向散射自旋動量鎖定螺旋邊緣態', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_kerr_soliton_comb', title: '克爾孤子光頻梳宗師', description: '在微環超高 Q 諧振腔透過盧吉亞托-勒菲弗動力學鎖定八度光頻梳與多模量子壓縮態', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'holographic_weyl_fluid', title: '全息外爾流體領航員', description: '在 AdS₄/CFT₃ 全息對偶中驗證飽和 KSS 極限 η/s=1/(4π) 之宇宙近完美量子流體與拓撲反常流', icon: '🌪️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

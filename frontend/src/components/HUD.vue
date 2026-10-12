@@ -352,6 +352,18 @@
       <button class="hud-btn holo-complexity-btn" @click="ui.openHoloComplexity" title="全息複雜度作用量引擎 (Holographic Complexity Engine)">
         🌌 全息複雜
       </button>
+      <button class="hud-btn chiral-superfluid-btn" @click="ui.openChiralSuperfluid" title="拓撲手性超流體 p_x + i p_y 反應堆 (Chiral Superfluid Reactor)">
+        🌊 手性超流
+      </button>
+      <button class="hud-btn quantum-spin-hall-btn" @click="ui.openQuantumSpinHall" title="量子自旋霍爾效應螺旋晶片 (Quantum Spin Hall Chip)">
+        🛡️ 自旋霍爾
+      </button>
+      <button class="hud-btn kerr-comb-btn" @click="ui.openKerrComb" title="巨克爾量子孤子光頻梳發電機 (Kerr Soliton Comb)">
+        🌈 克爾頻梳
+      </button>
+      <button class="hud-btn holo-weyl-fluid-btn" @click="ui.openHoloWeylFluid" title="全息外爾量子臨界流體引擎 (Holographic Weyl Fluid Engine)">
+        🌪️ 全息外爾
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
