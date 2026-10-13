@@ -161,6 +161,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'four_d_quantum_hall_synthetic', title: '四維量子霍爾合成維度大師', description: '在光學晶格中構築正交合成維度，驗證第二陳數拓撲不變量與三維邊界手性外爾超表面', icon: '🌐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'parafermion_zero_modes', title: '非阿貝爾帕拉費米子拓撲宗師', description: '在分數量子霍爾超導疇壁編織 Z_4 帕拉費米子零能模，直接編譯非克利福德拓撲邏輯門', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'calabi_yau_moduli_stabilization', title: '卡拉比-丘流形模場穩定性先鋒', description: '利用通量緊緻化與 KKLT 抗膜上推機制穩定六維超弦幾何模場，實現亞穩德西特真空暴脹', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'hawking_page_ads_phase_transition', title: '霍金-佩奇全息引力相變宗師', description: '在反德西特空間調控臨界溫度 T_HP，驗證熱 AdS 禁閉氣體與大黑洞解禁閉等離子相一階相變及波利亞科夫圈序參量', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'axion_ti_witten_effect', title: '拓撲絕緣體維騰二元荷先驅', description: '在 θ=π 3D 拓撲絕緣體中感應狄拉克單極子半整數電荷 q=±e/2，驗證拓撲磁電效應與表面量子霍爾態', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'parisi_spin_glass_ultrametric', title: '帕里西超度規自旋玻璃領航員', description: '在 SK 模型幾何阻挫下驗證全層次複本破缺序參量 q(x)、超度規分形樹狀幾何與橫向場量子退火穿隧', icon: '🌲', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'non_abelian_cosmic_vortex', title: '非阿貝爾宇宙渦旋發電機大師', description: '在 BPS 飽和界限 (β=1.0) 實現平行非阿貝爾渦旋弦零力中性平衡，激發色通量碰撞重聯阻挫與暴脹弦環爆發', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

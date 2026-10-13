@@ -456,6 +456,18 @@
       <CalabiYauModal v-if="ui.mode === 'calabi-yau-moduli'" />
     </Transition>
     <Transition name="fade">
+      <HawkingPageAdSModal v-if="ui.mode === 'hawking-page-ads'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionTIWittenModal v-if="ui.mode === 'axion-ti-witten'" />
+    </Transition>
+    <Transition name="fade">
+      <ParisiSpinGlassModal v-if="ui.mode === 'parisi-spin-glass'" />
+    </Transition>
+    <Transition name="fade">
+      <NonAbelianCosmicVortexModal v-if="ui.mode === 'non-abelian-vortex'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -633,6 +645,10 @@ import AxionCherenkovModal from '@/components/AxionCherenkovModal.vue'
 import FourDQuantumHallModal from '@/components/FourDQuantumHallModal.vue'
 import ParafermionModal from '@/components/ParafermionModal.vue'
 import CalabiYauModal from '@/components/CalabiYauModal.vue'
+import HawkingPageAdSModal from '@/components/HawkingPageAdSModal.vue'
+import AxionTIWittenModal from '@/components/AxionTIWittenModal.vue'
+import ParisiSpinGlassModal from '@/components/ParisiSpinGlassModal.vue'
+import NonAbelianCosmicVortexModal from '@/components/NonAbelianCosmicVortexModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

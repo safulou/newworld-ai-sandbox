@@ -412,6 +412,18 @@
       <button class="hud-btn calabi-yau-btn" @click="ui.openCalabiYauModuli" title="超弦緊緻化卡拉比-丘流形模場穩定性與宇宙暴脹發電機 (Calabi-Yau Moduli Engine)">
         🪐 卡拉比丘
       </button>
+      <button class="hud-btn hawking-page-btn" @click="ui.openHawkingPageAdS" title="霍金-佩奇黑洞相變與全息引力凝聚 (Hawking-Page AdS Transition)">
+        🕳️ 霍金佩奇
+      </button>
+      <button class="hud-btn axion-witten-btn" @click="ui.openAxionTIWitten" title="三維拓撲絕緣體軸子電動力學與維騰效應 (Axion TI & Witten Effect)">
+        🧲 維騰效應
+      </button>
+      <button class="hud-btn parisi-spin-btn" @click="ui.openParisiSpinGlass" title="量子自旋玻璃帕里西極值破缺與超度規 (Parisi Spin Glass & Ultrametricity)">
+        🌲 帕里西樹
+      </button>
+      <button class="hud-btn cosmic-vortex-btn" @click="ui.openNonAbelianVortex" title="非阿貝爾宇宙渦旋弦與暴脹發電機 (Non-Abelian Cosmic Vortex)">
+        🌀 宇宙渦旋
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1221,5 +1233,21 @@ onUnmounted(() => {
 .calabi-yau-btn {
   border-color: rgba(245, 158, 11, 0.4);
   color: #fbbf24;
+}
+.hawking-page-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.axion-witten-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.parisi-spin-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.cosmic-vortex-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
 }
 </style>

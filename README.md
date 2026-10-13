@@ -156,6 +156,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌐` | 4D Quantum Hall Effect & Second Chern Number c_2 Synthetic Dimension Reactor |
 | `HUD 🧬` | Non-Abelian Parafermion Zero Modes (Z_4) & Intrinsic Non-Clifford Braiding Gates |
 | `HUD 🪐` | Calabi-Yau Moduli Stabilization & KKLT Metastable de Sitter Inflation Dynamo |
+| `HUD 🕳️` | Hawking-Page AdS Transition & Holographic Black Hole Deconfinement Plasma |
+| `HUD 🧲` | 3D Topological Insulator Axion Electrodynamics & Witten Fractional Dyon q=e/2 |
+| `HUD 🌲` | Quantum Parisi Spin Glass Ultrametricity & Transverse Field Annealing Dynamo |
+| `HUD 🌀` | Non-Abelian Cosmic Vortex Dynamo & BPS Saturation Bound Zero-Force Equilibrium |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

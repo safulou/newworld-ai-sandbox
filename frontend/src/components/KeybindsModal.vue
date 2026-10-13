@@ -203,6 +203,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌐', desc: '開啟 拓撲四維量子霍爾效應與第二陳數合成維度反應堆 (4D Quantum Hall)' },
       { combo: 'HUD 🧬', desc: '開啟 非阿貝爾分數量子霍爾帕拉費米子與拓撲四重量子位元處理器 (Parafermion)' },
       { combo: 'HUD 🪐', desc: '開啟 超弦緊緻化卡拉比-丘流形模場穩定性與宇宙暴脹發電機 (Calabi-Yau Moduli)' },
+      { combo: 'HUD 🕳️', desc: '開啟 霍金-佩奇黑洞相變與全息引力凝聚 (Hawking-Page AdS Transition)' },
+      { combo: 'HUD 🧲', desc: '開啟 三維拓撲絕緣體軸子電動力學與維騰效應 (Axion TI & Witten Effect)' },
+      { combo: 'HUD 🌲', desc: '開啟 量子自旋玻璃帕里西極值破缺與超度規 (Parisi Spin Glass & Ultrametricity)' },
+      { combo: 'HUD 🌀', desc: '開啟 非阿貝爾宇宙渦旋弦與暴脹發電機 (Non-Abelian Cosmic Vortex)' },
 
 
     ]

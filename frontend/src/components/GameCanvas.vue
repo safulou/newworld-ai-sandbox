@@ -158,6 +158,10 @@ import { axionCherenkovEngine } from '@/engine/axionGravitationalCherenkov'
 import { fourDQuantumHallEngine } from '@/engine/fourDQuantumHallSynthetic'
 import { parafermionEngine } from '@/engine/parafermionZeroModes'
 import { calabiYauModuliEngine } from '@/engine/calabiYauModuliStabilization'
+import { hawkingPageAdSEngine } from '@/engine/hawkingPageAdSPhaseTransition'
+import { axionTIWittenEngine } from '@/engine/axionTIWittenEffect'
+import { parisiSpinGlassEngine } from '@/engine/parisiSpinGlassUltrametric'
+import { nonAbelianCosmicVortexEngine } from '@/engine/nonAbelianCosmicVortex'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -400,6 +404,10 @@ function loop(): void {
   fourDQuantumHallEngine.update(delta)
   parafermionEngine.update(delta)
   calabiYauModuliEngine.update(delta)
+  hawkingPageAdSEngine.update(delta)
+  axionTIWittenEngine.update(delta)
+  parisiSpinGlassEngine.update(delta)
+  nonAbelianCosmicVortexEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
