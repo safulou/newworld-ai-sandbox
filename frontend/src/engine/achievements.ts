@@ -153,6 +153,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'celestial_holo_bms', title: '天球全息 BMS 記憶領航員', description: '在天球共形場論中驗證軟引力子定理瓦德恆等式，記錄超平移度規剪切永久時空記憶', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'floquet_andreev_superconductor', title: '弗洛凱安德烈夫量子宗師', description: '在高頻微波週期驅動下激發反常弗洛凱 π-模與動態安德烈夫束縛態 LZS 量子干涉', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quantum_metric_superfluid', title: '莫爾幾何度規超流先鋒', description: '在魔角石墨烯扁帶透過富比尼-斯特迪量子度規突破常規 BCS 失效，驗證幾何超流剛度', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'twisted_polariton_flat_band', title: '扭轉光子晶體平帶宗師', description: '在魔角扭轉微腔中實現極化激元慢光色散、低閾值玻色-愛因斯坦凝聚與假自旋半孤子渦旋', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'wigner_crystal_quantum_melting', title: '維格納晶格量子向列領航員', description: '在強關聯二維電子氣中觀察六角維格納晶體熔化相變與電子向列量子液晶巨各向異性傳輸', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'desitter_holo_static_patch', title: '德西特靜態膜全息先驅', description: '在德西特因果鑽石中計算吉本斯-霍金極端視界熵、Type II_1 馮諾依曼最大混態與佩奇島嶼', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'chiral_phonon_acoustic_hall', title: '手性聲子反常聲霍爾大師', description: '激發二維晶格原子圓周旋轉手性聲子，驗證零磁場量子反常聲霍爾橫向偏轉與單向聲學整流', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

@@ -148,6 +148,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌌` | Gravitational Wave Celestial Holography & BMS Supertranslation Synthesizer |
 | `HUD ⚡` | Floquet Topological Superconductor & Dynamical Andreev Bound State Engine |
 | `HUD 🌀` | Moiré Flat-Band Fubini-Study Quantum Metric Superfluidity & Geodesic Weight |
+| `HUD 🌈` | Twisted Polariton Flat-Band Photonics & Slow Light Nonequilibrium BEC Reactor |
+| `HUD ❄️` | Wigner Crystal Quantum Melting & Electronic Nematic Liquid Crystal Engine |
+| `HUD 🌌` | de Sitter Static Patch Holography & Gibbons-Hawking Horizon Entropy Reactor |
+| `HUD 🔊` | Chiral Phonon Quantum Anomalous Acoustic Hall Reactor & Single-Direction Diode |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

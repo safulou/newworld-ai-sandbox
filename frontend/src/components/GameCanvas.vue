@@ -150,6 +150,10 @@ import { fibonacciAnyonEngine } from '@/engine/fibonacciAnyonBraiding'
 import { celestialHoloBmsEngine } from '@/engine/celestialHoloBms'
 import { floquetAndreevEngine } from '@/engine/floquetAndreevSuperconductor'
 import { quantumMetricSuperfluidEngine } from '@/engine/quantumMetricSuperfluid'
+import { twistedPolaritonEngine } from '@/engine/twistedPolaritonFlatBand'
+import { wignerCrystalEngine } from '@/engine/wignerCrystalQuantumMelting'
+import { deSitterHoloEngine } from '@/engine/deSitterHoloStaticPatch'
+import { chiralPhononEngine } from '@/engine/chiralPhononAcousticHall'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -384,6 +388,10 @@ function loop(): void {
   celestialHoloBmsEngine.update(delta)
   floquetAndreevEngine.update(delta)
   quantumMetricSuperfluidEngine.update(delta)
+  twistedPolaritonEngine.update(delta)
+  wignerCrystalEngine.update(delta)
+  deSitterHoloEngine.update(delta)
+  chiralPhononEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

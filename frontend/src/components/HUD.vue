@@ -388,6 +388,18 @@
       <button class="hud-btn quantum-metric-btn" @click="ui.openQuantumMetric" title="莫爾平帶量子度規幾何超流反應堆 (Quantum Metric Superfluid)">
         🌀 幾何度規
       </button>
+      <button class="hud-btn twisted-polariton-btn" @click="ui.openTwistedPolariton" title="扭轉多層光子晶體拓撲平帶極化激元 (Twisted Polariton Flat-Band)">
+        🌈 極化激元
+      </button>
+      <button class="hud-btn wigner-crystal-btn" @click="ui.openWignerCrystal" title="高階維格納晶體量子熔化與向列量子液晶 (Wigner Crystal & Nematic Liquid)">
+        ❄️ 維格納晶體
+      </button>
+      <button class="hud-btn desitter-holo-btn" @click="ui.openDeSitterHolo" title="德西特宇宙全息對偶與靜態膜極端熵 (de Sitter Static Patch Holography)">
+        🌌 德西特全息
+      </button>
+      <button class="hud-btn chiral-phonon-btn" @click="ui.openChiralPhonon" title="拓撲手性聲子與量子反常聲霍爾效應 (Chiral Phonon & Acoustic Hall)">
+        🔊 手性聲子
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

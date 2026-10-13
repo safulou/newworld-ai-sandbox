@@ -195,6 +195,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌌', desc: '開啟 引力波天球全息與 BMS 漸近天線 (Celestial Holo BMS)' },
       { combo: 'HUD ⚡', desc: '開啟 弗洛凱拓撲超導與安德烈夫量子引擎 (Floquet Andreev Engine)' },
       { combo: 'HUD 🌀', desc: '開啟 莫爾平帶量子度規幾何超流反應堆 (Quantum Metric Superfluid)' },
+      { combo: 'HUD 🌈', desc: '開啟 扭轉多層光子晶體拓撲平帶極化激元 (Twisted Polariton Flat-Band)' },
+      { combo: 'HUD ❄️', desc: '開啟 高階維格納晶體量子熔化與向列量子液晶 (Wigner Crystal & Nematic Liquid)' },
+      { combo: 'HUD 🌌', desc: '開啟 德西特宇宙全息對偶與靜態膜極端熵 (de Sitter Static Patch Holography)' },
+      { combo: 'HUD 🔊', desc: '開啟 拓撲手性聲子與量子反常聲霍爾效應 (Chiral Phonon & Acoustic Hall)' },
 
 
     ]

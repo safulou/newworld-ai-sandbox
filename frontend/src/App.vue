@@ -432,6 +432,18 @@
       <QuantumMetricSuperfluidModal v-if="ui.mode === 'quantum-metric'" />
     </Transition>
     <Transition name="fade">
+      <TwistedPolaritonModal v-if="ui.mode === 'twisted-polariton'" />
+    </Transition>
+    <Transition name="fade">
+      <WignerCrystalModal v-if="ui.mode === 'wigner-crystal'" />
+    </Transition>
+    <Transition name="fade">
+      <DeSitterHoloModal v-if="ui.mode === 'desitter-holo'" />
+    </Transition>
+    <Transition name="fade">
+      <ChiralPhononModal v-if="ui.mode === 'chiral-phonon'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -601,6 +613,10 @@ import FibonacciAnyonModal from '@/components/FibonacciAnyonModal.vue'
 import CelestialHoloBmsModal from '@/components/CelestialHoloBmsModal.vue'
 import FloquetAndreevModal from '@/components/FloquetAndreevModal.vue'
 import QuantumMetricSuperfluidModal from '@/components/QuantumMetricSuperfluidModal.vue'
+import TwistedPolaritonModal from '@/components/TwistedPolaritonModal.vue'
+import WignerCrystalModal from '@/components/WignerCrystalModal.vue'
+import DeSitterHoloModal from '@/components/DeSitterHoloModal.vue'
+import ChiralPhononModal from '@/components/ChiralPhononModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
