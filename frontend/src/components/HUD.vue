@@ -424,6 +424,18 @@
       <button class="hud-btn cosmic-vortex-btn" @click="ui.openNonAbelianVortex" title="非阿貝爾宇宙渦旋弦與暴脹發電機 (Non-Abelian Cosmic Vortex)">
         🌀 宇宙渦旋
       </button>
+      <button class="hud-btn aa-phase-btn" @click="ui.openAAGeometricPhase" title="阿哈羅諾夫-安丹幾何相位與非阿貝爾拓撲泵浦 (Aharonov-Anandan Phase)">
+        📐 AA幾何相
+      </button>
+      <button class="hud-btn gem-drag-btn" @click="ui.openGravitoElectromagnetism" title="引力電磁學與蘭斯-蒂靈時空拖曳 (Gravito-Electromagnetism & Lense-Thirring)">
+        🧭 引力磁性
+      </button>
+      <button class="hud-btn weyl-fermi-btn" @click="ui.openWeylFermiArc" title="外爾半金屬費米弧與手性磁效應 (Weyl Fermi Arc & CME)">
+        ⚡ 費米弧
+      </button>
+      <button class="hud-btn dbrane-dbi-btn" @click="ui.openDBraneDBI" title="超弦 D-膜重聯與 DBI 非線性真空反應堆 (D-Brane & DBI Vacuum)">
+        🛡️ D膜重聯
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1249,5 +1261,21 @@ onUnmounted(() => {
 .cosmic-vortex-btn {
   border-color: rgba(244, 63, 94, 0.4);
   color: #fb7185;
+}
+.aa-phase-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.gem-drag-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.weyl-fermi-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+.dbrane-dbi-btn {
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #c084fc;
 }
 </style>

@@ -160,6 +160,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🧲` | 3D Topological Insulator Axion Electrodynamics & Witten Fractional Dyon q=e/2 |
 | `HUD 🌲` | Quantum Parisi Spin Glass Ultrametricity & Transverse Field Annealing Dynamo |
 | `HUD 🌀` | Non-Abelian Cosmic Vortex Dynamo & BPS Saturation Bound Zero-Force Equilibrium |
+| `HUD 📐` | Aharonov-Anandan Non-Adiabatic Geometric Holonomy & Fast Geometric Gate |
+| `HUD 🧭` | Gravito-Electromagnetism & Lense-Thirring Gyroscopic Frame Dragging Precession |
+| `HUD ⚡` | Weyl Semimetal Fermi Arc Surface States & Chiral Magnetic Effect (CME) |
+| `HUD 🛡️` | D-Brane Reconnection Dynamics & Dirac-Born-Infeld (DBI) Nonlinear Vacuum |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

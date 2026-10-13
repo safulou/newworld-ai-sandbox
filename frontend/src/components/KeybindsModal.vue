@@ -207,6 +207,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🧲', desc: '開啟 三維拓撲絕緣體軸子電動力學與維騰效應 (Axion TI & Witten Effect)' },
       { combo: 'HUD 🌲', desc: '開啟 量子自旋玻璃帕里西極值破缺與超度規 (Parisi Spin Glass & Ultrametricity)' },
       { combo: 'HUD 🌀', desc: '開啟 非阿貝爾宇宙渦旋弦與暴脹發電機 (Non-Abelian Cosmic Vortex)' },
+      { combo: 'HUD 📐', desc: '開啟 阿哈羅諾夫-安丹幾何相位與非阿貝爾拓撲泵浦 (Aharonov-Anandan Phase)' },
+      { combo: 'HUD 🧭', desc: '開啟 引力電磁學與蘭斯-蒂靈時空拖曳 (Gravito-Electromagnetism & Lense-Thirring)' },
+      { combo: 'HUD ⚡', desc: '開啟 外爾半金屬費米弧與手性磁效應 (Weyl Fermi Arc & CME)' },
+      { combo: 'HUD 🛡️', desc: '開啟 超弦 D-膜重聯與 DBI 非線性真空反應堆 (D-Brane & DBI Vacuum)' },
 
 
     ]

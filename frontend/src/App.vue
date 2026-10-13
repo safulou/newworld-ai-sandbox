@@ -468,6 +468,18 @@
       <NonAbelianCosmicVortexModal v-if="ui.mode === 'non-abelian-vortex'" />
     </Transition>
     <Transition name="fade">
+      <AharonovAnandanModal v-if="ui.mode === 'aa-geometric-phase'" />
+    </Transition>
+    <Transition name="fade">
+      <GravitoElectromagnetismModal v-if="ui.mode === 'gravito-electromagnetism'" />
+    </Transition>
+    <Transition name="fade">
+      <WeylFermiArcModal v-if="ui.mode === 'weyl-fermi-arc'" />
+    </Transition>
+    <Transition name="fade">
+      <DBraneDBIModal v-if="ui.mode === 'd-brane-dbi'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -649,6 +661,10 @@ import HawkingPageAdSModal from '@/components/HawkingPageAdSModal.vue'
 import AxionTIWittenModal from '@/components/AxionTIWittenModal.vue'
 import ParisiSpinGlassModal from '@/components/ParisiSpinGlassModal.vue'
 import NonAbelianCosmicVortexModal from '@/components/NonAbelianCosmicVortexModal.vue'
+import AharonovAnandanModal from '@/components/AharonovAnandanModal.vue'
+import GravitoElectromagnetismModal from '@/components/GravitoElectromagnetismModal.vue'
+import WeylFermiArcModal from '@/components/WeylFermiArcModal.vue'
+import DBraneDBIModal from '@/components/DBraneDBIModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

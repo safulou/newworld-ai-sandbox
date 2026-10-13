@@ -165,6 +165,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'axion_ti_witten_effect', title: '拓撲絕緣體維騰二元荷先驅', description: '在 θ=π 3D 拓撲絕緣體中感應狄拉克單極子半整數電荷 q=±e/2，驗證拓撲磁電效應與表面量子霍爾態', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'parisi_spin_glass_ultrametric', title: '帕里西超度規自旋玻璃領航員', description: '在 SK 模型幾何阻挫下驗證全層次複本破缺序參量 q(x)、超度規分形樹狀幾何與橫向場量子退火穿隧', icon: '🌲', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'non_abelian_cosmic_vortex', title: '非阿貝爾宇宙渦旋發電機大師', description: '在 BPS 飽和界限 (β=1.0) 實現平行非阿貝爾渦旋弦零力中性平衡，激發色通量碰撞重聯阻挫與暴脹弦環爆發', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'aharonov_anandan_geometric_phase', title: '阿哈羅諾夫-安丹幾何相位宗師', description: '在射影希爾伯特空間駕馭非絕熱 AA 幾何相與威爾切克-齊非阿貝爾單元完整群，實現超高速容錯幾何量子邏輯門', icon: '📐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'gravito_electromagnetism_lense_thirring', title: '引力磁性蘭斯-蒂靈時空拖曳大師', description: '在克爾旋轉時空度規中測量引力磁場、局域慣性系蘭斯-蒂靈剛性進動與極區超相對論噴流剪切加速', icon: '🧭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'weyl_fermi_arc_chiral_magnetic', title: '外爾費米弧手性磁效應先驅', description: '在動量空間操控拓撲單極外爾節點與開放費米弧表面態，驗證平行電磁場手性反常軸向電荷泵浦與 CME 淨電流', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'd_brane_dbi_nonlinear_vacuum', title: 'D-膜重聯狄拉克-玻恩-英費爾德領航員', description: '在次弦長尺度誘發開弦快子凝聚幾何重聯喉管，驗證 DBI 玻恩極限臨界場飽和與膜世界暴脹輻射', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

@@ -162,6 +162,10 @@ import { hawkingPageAdSEngine } from '@/engine/hawkingPageAdSPhaseTransition'
 import { axionTIWittenEngine } from '@/engine/axionTIWittenEffect'
 import { parisiSpinGlassEngine } from '@/engine/parisiSpinGlassUltrametric'
 import { nonAbelianCosmicVortexEngine } from '@/engine/nonAbelianCosmicVortex'
+import { aharonovAnandanEngine } from '@/engine/aharonovAnandanGeometricPhase'
+import { gravitoElectromagnetismEngine } from '@/engine/gravitoElectromagnetismLenseThirring'
+import { weylFermiArcEngine } from '@/engine/weylFermiArcChiralMagnetic'
+import { dBraneDBIEngine } from '@/engine/dBraneDBINonlinearVacuum'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -408,6 +412,10 @@ function loop(): void {
   axionTIWittenEngine.update(delta)
   parisiSpinGlassEngine.update(delta)
   nonAbelianCosmicVortexEngine.update(delta)
+  aharonovAnandanEngine.update(delta)
+  gravitoElectromagnetismEngine.update(delta)
+  weylFermiArcEngine.update(delta)
+  dBraneDBIEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
