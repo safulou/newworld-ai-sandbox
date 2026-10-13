@@ -149,6 +149,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'multichannel_kondo_nfl', title: '多通道近藤非費米金屬先驅', description: '在 2CK 雙通道過度屏蔽臨界點解鎖 1/2 ln 2 殘餘分數熵、孤立馬約拉納零模與對數奇異電阻', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'birefringent_grav_lens', title: '雙折射引力透鏡干涉大師', description: '在克爾黑洞外爾手性曲率場觀測左右圓偏振測地線分裂、孿生愛因斯坦環與幾何相微分時延', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_microstate_mesh', title: '全息微觀態弦網重構宗師', description: '在 AdS 彭加萊圓盤利用 HaPPY 完美張量網絡重構絨毛球平滑超重力冠帽與量子引力回波', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'fibonacci_anyon_braiding', title: '菲波那契金鍵編織大師', description: '操作黃金維度 d_τ 非阿貝爾任意子緻密辮群，編譯通用拓撲量子門且零退相干', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'celestial_holo_bms', title: '天球全息 BMS 記憶領航員', description: '在天球共形場論中驗證軟引力子定理瓦德恆等式，記錄超平移度規剪切永久時空記憶', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'floquet_andreev_superconductor', title: '弗洛凱安德烈夫量子宗師', description: '在高頻微波週期驅動下激發反常弗洛凱 π-模與動態安德烈夫束縛態 LZS 量子干涉', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_metric_superfluid', title: '莫爾幾何度規超流先鋒', description: '在魔角石墨烯扁帶透過富比尼-斯特迪量子度規突破常規 BCS 失效，驗證幾何超流剛度', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

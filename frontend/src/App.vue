@@ -420,6 +420,18 @@
       <HolographicMicrostateModal v-if="ui.mode === 'holo-microstate'" />
     </Transition>
     <Transition name="fade">
+      <FibonacciAnyonModal v-if="ui.mode === 'fibonacci-anyon'" />
+    </Transition>
+    <Transition name="fade">
+      <CelestialHoloBmsModal v-if="ui.mode === 'celestial-bms'" />
+    </Transition>
+    <Transition name="fade">
+      <FloquetAndreevModal v-if="ui.mode === 'floquet-andreev'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumMetricSuperfluidModal v-if="ui.mode === 'quantum-metric'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -585,6 +597,10 @@ import ModularVacuumModal from '@/components/ModularVacuumModal.vue'
 import MultiChannelKondoModal from '@/components/MultiChannelKondoModal.vue'
 import BirefringentGravLensModal from '@/components/BirefringentGravLensModal.vue'
 import HolographicMicrostateModal from '@/components/HolographicMicrostateModal.vue'
+import FibonacciAnyonModal from '@/components/FibonacciAnyonModal.vue'
+import CelestialHoloBmsModal from '@/components/CelestialHoloBmsModal.vue'
+import FloquetAndreevModal from '@/components/FloquetAndreevModal.vue'
+import QuantumMetricSuperfluidModal from '@/components/QuantumMetricSuperfluidModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

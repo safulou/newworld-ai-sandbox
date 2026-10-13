@@ -191,6 +191,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 多通道近藤效應與非費米液體奇異金屬反應堆 (Multi-Channel Kondo Reactor)' },
       { combo: 'HUD 🔭', desc: '開啟 雙折射引力透鏡與偏振旋角幾何相光子干涉儀 (Birefringent Grav Lens)' },
       { combo: 'HUD 🔮', desc: '開啟 AdS/CFT 蟲洞微觀態與哈密頓量截斷弦網張量重構機 (Holo Microstate Mesh)' },
+      { combo: 'HUD 🧬', desc: '開啟 菲波那契金鍵任意子編織處理器 (Fibonacci Anyon Processor)' },
+      { combo: 'HUD 🌌', desc: '開啟 引力波天球全息與 BMS 漸近天線 (Celestial Holo BMS)' },
+      { combo: 'HUD ⚡', desc: '開啟 弗洛凱拓撲超導與安德烈夫量子引擎 (Floquet Andreev Engine)' },
+      { combo: 'HUD 🌀', desc: '開啟 莫爾平帶量子度規幾何超流反應堆 (Quantum Metric Superfluid)' },
 
 
     ]

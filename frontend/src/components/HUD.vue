@@ -376,6 +376,18 @@
       <button class="hud-btn holo-microstate-btn" @click="ui.openHoloMicrostate" title="AdS/CFT 蟲洞微觀態與哈密頓量截斷弦網張量重構機 (Holo Microstate Mesh)">
         🔮 絨毛全息
       </button>
+      <button class="hud-btn fibonacci-anyon-btn" @click="ui.openFibonacciAnyon" title="菲波那契金鍵任意子編織處理器 (Fibonacci Anyon Processor)">
+        🧬 金鍵編織
+      </button>
+      <button class="hud-btn celestial-bms-btn" @click="ui.openCelestialBms" title="引力波天球全息與 BMS 漸近天線 (Celestial Holo BMS)">
+        🌌 天球全息
+      </button>
+      <button class="hud-btn floquet-andreev-btn" @click="ui.openFloquetAndreev" title="弗洛凱拓撲超導與安德烈夫量子引擎 (Floquet Andreev Engine)">
+        ⚡ 弗洛凱超導
+      </button>
+      <button class="hud-btn quantum-metric-btn" @click="ui.openQuantumMetric" title="莫爾平帶量子度規幾何超流反應堆 (Quantum Metric Superfluid)">
+        🌀 幾何度規
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>

@@ -144,6 +144,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌀` | Multi-Channel Kondo Effect & Non-Fermi Liquid Strange Metal Reactor (1/2 ln 2 Entropy) |
 | `HUD 🔭` | Birefringent Gravitational Lens & Polarized Twin Einstein Rings Interferometer |
 | `HUD 🔮` | AdS/CFT Holographic Microstate Mesh & Fuzzball HaPPY Tensor Network Reconstruction |
+| `HUD 🧬` | Fibonacci Anyon Universal Topological Quantum Braiding Processor (Golden Ratio d_τ) |
+| `HUD 🌌` | Gravitational Wave Celestial Holography & BMS Supertranslation Synthesizer |
+| `HUD ⚡` | Floquet Topological Superconductor & Dynamical Andreev Bound State Engine |
+| `HUD 🌀` | Moiré Flat-Band Fubini-Study Quantum Metric Superfluidity & Geodesic Weight |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
