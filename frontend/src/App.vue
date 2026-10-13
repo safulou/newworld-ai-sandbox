@@ -444,6 +444,18 @@
       <ChiralPhononModal v-if="ui.mode === 'chiral-phonon'" />
     </Transition>
     <Transition name="fade">
+      <AxionCherenkovModal v-if="ui.mode === 'axion-cherenkov'" />
+    </Transition>
+    <Transition name="fade">
+      <FourDQuantumHallModal v-if="ui.mode === 'four-d-quantum-hall'" />
+    </Transition>
+    <Transition name="fade">
+      <ParafermionModal v-if="ui.mode === 'parafermion-modes'" />
+    </Transition>
+    <Transition name="fade">
+      <CalabiYauModal v-if="ui.mode === 'calabi-yau-moduli'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -617,6 +629,10 @@ import TwistedPolaritonModal from '@/components/TwistedPolaritonModal.vue'
 import WignerCrystalModal from '@/components/WignerCrystalModal.vue'
 import DeSitterHoloModal from '@/components/DeSitterHoloModal.vue'
 import ChiralPhononModal from '@/components/ChiralPhononModal.vue'
+import AxionCherenkovModal from '@/components/AxionCherenkovModal.vue'
+import FourDQuantumHallModal from '@/components/FourDQuantumHallModal.vue'
+import ParafermionModal from '@/components/ParafermionModal.vue'
+import CalabiYauModal from '@/components/CalabiYauModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

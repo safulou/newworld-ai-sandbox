@@ -152,6 +152,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ❄️` | Wigner Crystal Quantum Melting & Electronic Nematic Liquid Crystal Engine |
 | `HUD 🌌` | de Sitter Static Patch Holography & Gibbons-Hawking Horizon Entropy Reactor |
 | `HUD 🔊` | Chiral Phonon Quantum Anomalous Acoustic Hall Reactor & Single-Direction Diode |
+| `HUD ⚡` | Axion Cosmic String Shock & Gravitational Cherenkov Radiation Cone (c_grav) |
+| `HUD 🌐` | 4D Quantum Hall Effect & Second Chern Number c_2 Synthetic Dimension Reactor |
+| `HUD 🧬` | Non-Abelian Parafermion Zero Modes (Z_4) & Intrinsic Non-Clifford Braiding Gates |
+| `HUD 🪐` | Calabi-Yau Moduli Stabilization & KKLT Metastable de Sitter Inflation Dynamo |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

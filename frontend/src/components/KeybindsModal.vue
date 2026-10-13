@@ -199,6 +199,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ❄️', desc: '開啟 高階維格納晶體量子熔化與向列量子液晶 (Wigner Crystal & Nematic Liquid)' },
       { combo: 'HUD 🌌', desc: '開啟 德西特宇宙全息對偶與靜態膜極端熵 (de Sitter Static Patch Holography)' },
       { combo: 'HUD 🔊', desc: '開啟 拓撲手性聲子與量子反常聲霍爾效應 (Chiral Phonon & Acoustic Hall)' },
+      { combo: 'HUD ⚡', desc: '開啟 軸子弦星系激波與超光速引力切倫科夫輻射天線 (Axion Cherenkov)' },
+      { combo: 'HUD 🌐', desc: '開啟 拓撲四維量子霍爾效應與第二陳數合成維度反應堆 (4D Quantum Hall)' },
+      { combo: 'HUD 🧬', desc: '開啟 非阿貝爾分數量子霍爾帕拉費米子與拓撲四重量子位元處理器 (Parafermion)' },
+      { combo: 'HUD 🪐', desc: '開啟 超弦緊緻化卡拉比-丘流形模場穩定性與宇宙暴脹發電機 (Calabi-Yau Moduli)' },
 
 
     ]

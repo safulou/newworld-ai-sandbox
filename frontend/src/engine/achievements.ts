@@ -157,6 +157,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'wigner_crystal_quantum_melting', title: '維格納晶格量子向列領航員', description: '在強關聯二維電子氣中觀察六角維格納晶體熔化相變與電子向列量子液晶巨各向異性傳輸', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'desitter_holo_static_patch', title: '德西特靜態膜全息先驅', description: '在德西特因果鑽石中計算吉本斯-霍金極端視界熵、Type II_1 馮諾依曼最大混態與佩奇島嶼', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'chiral_phonon_acoustic_hall', title: '手性聲子反常聲霍爾大師', description: '激發二維晶格原子圓周旋轉手性聲子，驗證零磁場量子反常聲霍爾橫向偏轉與單向聲學整流', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'axion_gravitational_cherenkov', title: '軸子宇宙弦引力切倫科夫先驅', description: '觀測超相對論性軸子宇宙弦激波突破雙度規引力子速度極限，激發相干引力波激波錐', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'four_d_quantum_hall_synthetic', title: '四維量子霍爾合成維度大師', description: '在光學晶格中構築正交合成維度，驗證第二陳數拓撲不變量與三維邊界手性外爾超表面', icon: '🌐', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'parafermion_zero_modes', title: '非阿貝爾帕拉費米子拓撲宗師', description: '在分數量子霍爾超導疇壁編織 Z_4 帕拉費米子零能模，直接編譯非克利福德拓撲邏輯門', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'calabi_yau_moduli_stabilization', title: '卡拉比-丘流形模場穩定性先鋒', description: '利用通量緊緻化與 KKLT 抗膜上推機制穩定六維超弦幾何模場，實現亞穩德西特真空暴脹', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

@@ -154,6 +154,10 @@ import { twistedPolaritonEngine } from '@/engine/twistedPolaritonFlatBand'
 import { wignerCrystalEngine } from '@/engine/wignerCrystalQuantumMelting'
 import { deSitterHoloEngine } from '@/engine/deSitterHoloStaticPatch'
 import { chiralPhononEngine } from '@/engine/chiralPhononAcousticHall'
+import { axionCherenkovEngine } from '@/engine/axionGravitationalCherenkov'
+import { fourDQuantumHallEngine } from '@/engine/fourDQuantumHallSynthetic'
+import { parafermionEngine } from '@/engine/parafermionZeroModes'
+import { calabiYauModuliEngine } from '@/engine/calabiYauModuliStabilization'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -392,6 +396,10 @@ function loop(): void {
   wignerCrystalEngine.update(delta)
   deSitterHoloEngine.update(delta)
   chiralPhononEngine.update(delta)
+  axionCherenkovEngine.update(delta)
+  fourDQuantumHallEngine.update(delta)
+  parafermionEngine.update(delta)
+  calabiYauModuliEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

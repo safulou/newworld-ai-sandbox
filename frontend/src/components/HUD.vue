@@ -400,6 +400,18 @@
       <button class="hud-btn chiral-phonon-btn" @click="ui.openChiralPhonon" title="拓撲手性聲子與量子反常聲霍爾效應 (Chiral Phonon & Acoustic Hall)">
         🔊 手性聲子
       </button>
+      <button class="hud-btn axion-cherenkov-btn" @click="ui.openAxionCherenkov" title="軸子弦星系激波與超光速引力切倫科夫輻射天線 (Axion Gravitational Cherenkov)">
+        ⚡ 軸子切倫
+      </button>
+      <button class="hud-btn four-d-hall-btn" @click="ui.openFourDQuantumHall" title="拓撲四維量子霍爾效應與第二陳數合成維度反應堆 (4D Quantum Hall Effect)">
+        🌐 四維霍爾
+      </button>
+      <button class="hud-btn parafermion-btn" @click="ui.openParafermion" title="非阿貝爾分數量子霍爾帕拉費米子與拓撲四重量子位元處理器 (Parafermion Processor)">
+        🧬 帕拉費米
+      </button>
+      <button class="hud-btn calabi-yau-btn" @click="ui.openCalabiYauModuli" title="超弦緊緻化卡拉比-丘流形模場穩定性與宇宙暴脹發電機 (Calabi-Yau Moduli Engine)">
+        🪐 卡拉比丘
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1192,5 +1204,22 @@ onUnmounted(() => {
 .saber-btn.live {
   background: rgba(0, 255, 255, 0.25);
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+.axion-cherenkov-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.four-d-hall-btn {
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #a78bfa;
+}
+.parafermion-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.calabi-yau-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
 }
 </style>
