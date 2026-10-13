@@ -480,6 +480,18 @@
       <DBraneDBIModal v-if="ui.mode === 'd-brane-dbi'" />
     </Transition>
     <Transition name="fade">
+      <TopologicalKondoModal v-if="ui.mode === 'topological-kondo'" />
+    </Transition>
+    <Transition name="fade">
+      <MagnetarQEDModal v-if="ui.mode === 'magnetar-qed'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicSuperconductorModal v-if="ui.mode === 'holographic-superconductor'" />
+    </Transition>
+    <Transition name="fade">
+      <InstantonVacuumModal v-if="ui.mode === 'instanton-vacuum'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -665,6 +677,10 @@ import AharonovAnandanModal from '@/components/AharonovAnandanModal.vue'
 import GravitoElectromagnetismModal from '@/components/GravitoElectromagnetismModal.vue'
 import WeylFermiArcModal from '@/components/WeylFermiArcModal.vue'
 import DBraneDBIModal from '@/components/DBraneDBIModal.vue'
+import TopologicalKondoModal from '@/components/TopologicalKondoModal.vue'
+import MagnetarQEDModal from '@/components/MagnetarQEDModal.vue'
+import HolographicSuperconductorModal from '@/components/HolographicSuperconductorModal.vue'
+import InstantonVacuumModal from '@/components/InstantonVacuumModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

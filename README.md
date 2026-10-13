@@ -164,6 +164,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🧭` | Gravito-Electromagnetism & Lense-Thirring Gyroscopic Frame Dragging Precession |
 | `HUD ⚡` | Weyl Semimetal Fermi Arc Surface States & Chiral Magnetic Effect (CME) |
 | `HUD 🛡️` | D-Brane Reconnection Dynamics & Dirac-Born-Infeld (DBI) Nonlinear Vacuum |
+| `HUD ⚛️` | Topological Kondo Insulator (TKI) & Strongly Correlated Dirac Cone Saturation |
+| `HUD 🧲` | Magnetar QED Euler-Heisenberg Vacuum Birefringence & Starquake Relativistic Alfvén Wave |
+| `HUD 🌌` | Holographic Superconductor & Charged AdS-RN Black Hole Scalar Hair Condensation |
+| `HUD 🌀` | Yang-Mills BPST Instanton Vacuum Tunneling & Topological θ-Angle Axion Restoration |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

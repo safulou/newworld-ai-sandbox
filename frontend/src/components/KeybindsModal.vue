@@ -211,6 +211,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🧭', desc: '開啟 引力電磁學與蘭斯-蒂靈時空拖曳 (Gravito-Electromagnetism & Lense-Thirring)' },
       { combo: 'HUD ⚡', desc: '開啟 外爾半金屬費米弧與手性磁效應 (Weyl Fermi Arc & CME)' },
       { combo: 'HUD 🛡️', desc: '開啟 超弦 D-膜重聯與 DBI 非線性真空反應堆 (D-Brane & DBI Vacuum)' },
+      { combo: 'HUD ⚛️', desc: '開啟 拓撲近藤絕緣體與表面狄拉克錐 (Topological Kondo Insulator)' },
+      { combo: 'HUD 🧲', desc: '開啟 中子星磁星 QED 真空雙折射與星震 (Magnetar QED & Starquake)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息超導與荷電黑洞 AdS-RN 純量凝聚 (Holographic Superconductor)' },
+      { combo: 'HUD 🌀', desc: '開啟 瞬子真空隧道效應與楊-米爾斯 θ-真空 (Yang-Mills Instanton Vacuum)' },
 
 
     ]

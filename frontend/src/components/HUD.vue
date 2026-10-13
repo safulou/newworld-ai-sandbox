@@ -436,6 +436,18 @@
       <button class="hud-btn dbrane-dbi-btn" @click="ui.openDBraneDBI" title="超弦 D-膜重聯與 DBI 非線性真空反應堆 (D-Brane & DBI Vacuum)">
         🛡️ D膜重聯
       </button>
+      <button class="hud-btn kondo-tki-btn" @click="ui.openTopologicalKondo" title="拓撲近藤絕緣體與表面狄拉克錐 (Topological Kondo Insulator)">
+        ⚛️ 近藤絕緣
+      </button>
+      <button class="hud-btn magnetar-qed-btn" @click="ui.openMagnetarQED" title="中子星磁星 QED 真空雙折射與星震 (Magnetar QED & Starquake)">
+        🧲 磁星雙折
+      </button>
+      <button class="hud-btn holo-sc-btn" @click="ui.openHolographicSuperconductor" title="全息超導與荷電黑洞 AdS-RN 純量凝聚 (Holographic Superconductor)">
+        🌌 全息超導
+      </button>
+      <button class="hud-btn instanton-ym-btn" @click="ui.openInstantonVacuum" title="瞬子真空隧道效應與楊-米爾斯 θ-真空 (Yang-Mills Instanton Vacuum)">
+        🌀 瞬子真空
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1277,5 +1289,21 @@ onUnmounted(() => {
 .dbrane-dbi-btn {
   border-color: rgba(139, 92, 246, 0.4);
   color: #c084fc;
+}
+.kondo-tki-btn {
+  border-color: rgba(0, 243, 255, 0.4);
+  color: #00f3ff;
+}
+.magnetar-qed-btn {
+  border-color: rgba(255, 77, 121, 0.4);
+  color: #ff4d79;
+}
+.holo-sc-btn {
+  border-color: rgba(0, 255, 170, 0.4);
+  color: #00ffaa;
+}
+.instanton-ym-btn {
+  border-color: rgba(187, 119, 255, 0.4);
+  color: #bb77ff;
 }
 </style>

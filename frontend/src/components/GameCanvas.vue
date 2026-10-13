@@ -166,6 +166,10 @@ import { aharonovAnandanEngine } from '@/engine/aharonovAnandanGeometricPhase'
 import { gravitoElectromagnetismEngine } from '@/engine/gravitoElectromagnetismLenseThirring'
 import { weylFermiArcEngine } from '@/engine/weylFermiArcChiralMagnetic'
 import { dBraneDBIEngine } from '@/engine/dBraneDBINonlinearVacuum'
+import { topologicalKondoEngine } from '@/engine/topologicalKondoInsulator'
+import { magnetarQEDEngine } from '@/engine/magnetarQEDVacuumBirefringence'
+import { holographicSuperconductorEngine } from '@/engine/holographicSuperconductorAdSRN'
+import { yangMillsInstantonEngine } from '@/engine/yangMillsInstantonVacuum'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -416,6 +420,10 @@ function loop(): void {
   gravitoElectromagnetismEngine.update(delta)
   weylFermiArcEngine.update(delta)
   dBraneDBIEngine.update(delta)
+  topologicalKondoEngine.update(delta)
+  magnetarQEDEngine.update(delta)
+  holographicSuperconductorEngine.update(delta)
+  yangMillsInstantonEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
