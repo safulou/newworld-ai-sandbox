@@ -472,6 +472,18 @@
       <button class="hud-btn matbg-graphene-btn" @click="ui.openMagicAngleGraphene" title="魔角扭轉雙層石墨烯平帶與非常規超導 (Magic-Angle Twisted Graphene)">
         ⚛️ 魔角平帶
       </button>
+      <button class="hud-btn superfluid-he3-btn" @click="ui.openSuperfluidHelium3" title="超流氦-3 拓撲 B 相與馬約拉納費米表面 (Superfluid Helium-3 B Phase)">
+        🧪 氦-3超流
+      </button>
+      <button class="hud-btn chiral-majorana-btn" @click="ui.openChiralMajorana" title="量子反常霍爾手性馬約拉納天使粒子 (Chiral Majorana Fermion Modes)">
+        👼 天使粒子
+      </button>
+      <button class="hud-btn bh-echoes-btn" @click="ui.openBlackHoleEchoes" title="黑洞量子視界引力波迴聲諧振腔 (Black Hole Quantum Echoes)">
+        🪐 視界迴聲
+      </button>
+      <button class="hud-btn composite-fermion-btn" @click="ui.openCompositeFermion" title="幾何複合費米子與 HLR 偶分母費米面 (Composite Fermion Liquid)">
+        ⚛️ 複合費米
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1361,5 +1373,21 @@ onUnmounted(() => {
 .matbg-graphene-btn {
   border-color: rgba(52, 211, 153, 0.4);
   color: #34d399;
+}
+.superfluid-he3-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.chiral-majorana-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
+}
+.bh-echoes-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.composite-fermion-btn {
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #22d3ee;
 }
 </style>

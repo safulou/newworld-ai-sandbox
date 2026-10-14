@@ -223,6 +223,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌊', desc: '開啟 量子霍爾奇性黏度與 Read-Rezayi 幾何流體 (Hall Viscosity & Read-Rezayi)' },
       { combo: 'HUD 🌌', desc: '開啟 外爾費米子混合引力-手性反常與熱電輸運 (Gravitational Chiral Anomaly)' },
       { combo: 'HUD ⚛️', desc: '開啟 魔角扭轉雙層石墨烯平帶與非常規超導 (Magic-Angle Twisted Graphene)' },
+      { combo: 'HUD 🧪', desc: '開啟 超流氦-3 拓撲 B 相與馬約拉納表面態 (Superfluid Helium-3 B Phase)' },
+      { combo: 'HUD 👼', desc: '開啟 量子反常霍爾手性馬約拉納天使粒子 (Chiral Majorana Fermion Modes)' },
+      { combo: 'HUD 🪐', desc: '開啟 黑洞量子視界引力波迴聲諧振腔 (Black Hole Quantum Echoes)' },
+      { combo: 'HUD ⚛️', desc: '開啟 幾何複合費米子與 HLR 偶分母費米面 (Composite Fermion Liquid)' },
 
 
     ]

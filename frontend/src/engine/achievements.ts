@@ -181,6 +181,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'hall_viscosity_read_rezayi', title: '拓撲量子霍爾奇性黏度宗師', description: '在 2D 手性量子流體中解析 Read-Rezayi 拓撲軌道自旋移位定理，實現嚴格零焦耳耗散奇性剪切應力張量、聲學圓雙折射分裂與邊界曲率手性漂移', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'gravitational_chiral_anomaly_weyl', title: '外爾引力軸向反常熱輸運先鋒', description: '利用魯丁格虛引力勢場對偶激發外爾半金屬混合引力-手性反常，觀測平行電磁熱電正縱向磁熱導率 (LMTC) 與維德曼-夫蘭茲定律巨幅破缺', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'magic_angle_twisted_graphene', title: '魔角莫爾超晶格平帶超導領航員', description: '精確調諧雙層石墨烯至第一魔角 θ ≈ 1.08° 淬火狄拉克費米速度，於活性極窄平帶中觀測半填充整數關聯莫特絕緣能隙與微量摻雜非常規超導穹頂 (Tc ≈ 1.72 K)', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'superfluid_helium3_topological_b', title: '超流氦-3 拓撲 B 相馬約拉納先驅', description: '在極低溫 mK 凝聚態中觀測 p-波自旋三重態超流、萊格特相干自旋共振雙頻響應、Class DIII 拓撲表面無質量馬約拉納費米雙錐與橫向聲學阻抗異常', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'chiral_majorana_qah_half_quantized', title: '量子反常霍爾手性馬約拉納天使粒子宗師', description: '在磁性拓撲絕緣體-超導體雜化結調諧交換能隙與配對能隙，解離狄拉克邊緣通道為一對手性馬約拉納費米子，實現精確半整數量子化電導平台 0.5 e²/h 與 c = 1/2 熱霍爾中心荷', icon: '👼', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'black_hole_quantum_horizon_echoes', title: '黑洞量子視界引力波迴聲領航員', description: '在普朗克尺度微觀反射量子視界膜與光子球有效勢壘諧振腔中，探測雙黑洞主並合鈴鳴後的週期性衰減引力波量子迴聲序列與玻爾茲曼反射率衰減', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'composite_fermion_hlr_liquid', title: '複合費米子與 HLR 幾何費米面大師', description: '在朗道半填充 ν = 1/2 實現陳-西蒙斯雙統計通量附著與平均場完全抵消，構建 Halperin-Lee-Read 複合費米液體並透過納米條紋微結構探測迴旋共振 2Rc*/a 縱向磁阻振盪峰', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

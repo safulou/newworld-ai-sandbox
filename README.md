@@ -176,6 +176,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌊` | Quantum Hall Viscosity (Odd Viscosity), Read-Rezayi Wen-Zee Shift & Non-Dissipative Shear Hydrodynamics |
 | `HUD 🌌` | Mixed Axial-Gravitational Chiral Anomaly, Luttinger Thermal Equivalence & Wiedemann-Franz Breakdown |
 | `HUD ⚛️` | Magic-Angle Twisted Bilayer Graphene (MATBG), Flat-Band Quenching & Unconventional Superconducting Dome |
+| `HUD 🧪` | Superfluid Helium-3 B Phase, Leggett Resonance & Class DIII Surface Majorana Cone |
+| `HUD 👼` | Quantum Anomalous Hall-Superconductor Chiral Majorana Edge Modes & Half-Quantized σ = 0.5 e²/h |
+| `HUD 🪐` | Black Hole Quantum Horizon Echoes, Planck-Membrane Cavity & Boltzmann Damped Resonances |
+| `HUD ⚛️` | Composite Fermion Chern-Simons Liquid, Halperin-Lee-Read (HLR) Fermi Sea & Geometric Resonance |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

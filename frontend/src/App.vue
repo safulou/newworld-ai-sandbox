@@ -516,6 +516,18 @@
       <MagicAngleGrapheneModal v-if="ui.mode === 'magic-angle-graphene'" />
     </Transition>
     <Transition name="fade">
+      <SuperfluidHelium3Modal v-if="ui.mode === 'superfluid-helium3'" />
+    </Transition>
+    <Transition name="fade">
+      <ChiralMajoranaModal v-if="ui.mode === 'chiral-majorana'" />
+    </Transition>
+    <Transition name="fade">
+      <BlackHoleQuantumEchoesModal v-if="ui.mode === 'black-hole-echoes'" />
+    </Transition>
+    <Transition name="fade">
+      <CompositeFermionHLRModal v-if="ui.mode === 'composite-fermion'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -713,6 +725,10 @@ import DynamicalCasimirModal from '@/components/DynamicalCasimirModal.vue'
 import HallViscosityModal from '@/components/HallViscosityModal.vue'
 import GravitationalChiralAnomalyModal from '@/components/GravitationalChiralAnomalyModal.vue'
 import MagicAngleGrapheneModal from '@/components/MagicAngleGrapheneModal.vue'
+import SuperfluidHelium3Modal from '@/components/SuperfluidHelium3Modal.vue'
+import ChiralMajoranaModal from '@/components/ChiralMajoranaModal.vue'
+import BlackHoleQuantumEchoesModal from '@/components/BlackHoleQuantumEchoesModal.vue'
+import CompositeFermionHLRModal from '@/components/CompositeFermionHLRModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

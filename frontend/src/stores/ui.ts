@@ -171,6 +171,10 @@ export type UIMode =
   | 'hall-viscosity'
   | 'gravitational-anomaly'
   | 'magic-angle-graphene'
+  | 'superfluid-helium3'
+  | 'chiral-majorana'
+  | 'black-hole-echoes'
+  | 'composite-fermion'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -460,6 +464,18 @@ export const useUIStore = defineStore('ui', () => {
   function openMagicAngleGraphene(): void { mode.value = 'magic-angle-graphene' }
   function setMagicAngleGrapheneModal(open: boolean): void { mode.value = open ? 'magic-angle-graphene' : 'game' }
   function setMagicAngleGrapheneOpen(open: boolean): void { mode.value = open ? 'magic-angle-graphene' : 'game' }
+  function openSuperfluidHelium3(): void { mode.value = 'superfluid-helium3' }
+  function setSuperfluidHelium3Modal(open: boolean): void { mode.value = open ? 'superfluid-helium3' : 'game' }
+  function setSuperfluidHelium3Open(open: boolean): void { mode.value = open ? 'superfluid-helium3' : 'game' }
+  function openChiralMajorana(): void { mode.value = 'chiral-majorana' }
+  function setChiralMajoranaModal(open: boolean): void { mode.value = open ? 'chiral-majorana' : 'game' }
+  function setChiralMajoranaOpen(open: boolean): void { mode.value = open ? 'chiral-majorana' : 'game' }
+  function openBlackHoleEchoes(): void { mode.value = 'black-hole-echoes' }
+  function setBlackHoleEchoesModal(open: boolean): void { mode.value = open ? 'black-hole-echoes' : 'game' }
+  function setBlackHoleEchoesOpen(open: boolean): void { mode.value = open ? 'black-hole-echoes' : 'game' }
+  function openCompositeFermion(): void { mode.value = 'composite-fermion' }
+  function setCompositeFermionModal(open: boolean): void { mode.value = open ? 'composite-fermion' : 'game' }
+  function setCompositeFermionOpen(open: boolean): void { mode.value = open ? 'composite-fermion' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -601,6 +617,10 @@ export const useUIStore = defineStore('ui', () => {
     openHallViscosity, setHallViscosityModal, setHallViscosityOpen,
     openGravitationalAnomaly, setGravitationalAnomalyModal, setGravitationalAnomalyOpen,
     openMagicAngleGraphene, setMagicAngleGrapheneModal, setMagicAngleGrapheneOpen,
+    openSuperfluidHelium3, setSuperfluidHelium3Modal, setSuperfluidHelium3Open,
+    openChiralMajorana, setChiralMajoranaModal, setChiralMajoranaOpen,
+    openBlackHoleEchoes, setBlackHoleEchoesModal, setBlackHoleEchoesOpen,
+    openCompositeFermion, setCompositeFermionModal, setCompositeFermionOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
