@@ -508,6 +508,18 @@
       <button class="hud-btn page-island-btn" @click="ui.openPageIsland" title="全息佩奇曲線與量子極值島嶼 (Holographic Page Island & QES)">
         🏝️ 佩奇島嶼
       </button>
+      <button class="hud-btn chern-mote2-btn" @click="ui.openFractionalChern" title="莫爾平帶分數陳絕緣體與非阿貝爾任意子編織 (Fractional Chern MoTe2)">
+        🌀 分數陳
+      </button>
+      <button class="hud-btn floquet-lzsm-btn" @click="ui.openFloquetLzsm" title="弗洛凱-斯圖克伯格量子位元干涉與 CDT 穿隧相消 (Floquet-LZSM Interferometry)">
+        ⚡ LZSM干涉
+      </button>
+      <button class="hud-btn kerr-newman-btn" @click="ui.openKerrNewman" title="克爾-紐曼黑洞能層發電機與 BZ 極區噴流 (Kerr-Newman Ergosphere & Jet)">
+        🪐 能層噴流
+      </button>
+      <button class="hud-btn holo-c-theorem-btn" @click="ui.openHoloCTheorem" title="全息重整化群流與不可逆 c-定理 (Holographic c-Theorem RG Flow)">
+        🌌 c-定理
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1445,5 +1457,21 @@ onUnmounted(() => {
 .page-island-btn {
   border-color: rgba(16, 185, 129, 0.4);
   color: #34d399;
+}
+.chern-mote2-btn {
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #818cf8;
+}
+.floquet-lzsm-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.kerr-newman-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+.holo-c-theorem-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
 }
 </style>

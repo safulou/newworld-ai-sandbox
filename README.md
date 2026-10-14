@@ -188,6 +188,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌈` | Spin-Orbit Coupled BEC Stripe Supersolid Phase, Spontaneous Translation Breaking & Anisotropic Rigidity |
 | `HUD 🧲` | Magnetic Weyl Semimetal Axion Polariton, Antiferromagnetic Magnon-Photon Gap & Faraday Non-Reciprocity |
 | `HUD 🏝️` | Holographic Many-Body Page Island & Quantum Extremal Surface (QES), Evaporating Black Hole Unitary Page Curve |
+| `HUD 🌀` | Twisted Bilayer MoTe₂ Fractional Chern Insulator (FQAHE), Moiré Flat Band & Non-Abelian Anyon Braiding |
+| `HUD ⚡` | Floquet-Landau-Zener-Stückelberg-Majorana (LZSM) Qubit Interferometry & Coherent Destruction of Tunneling (CDT) |
+| `HUD 🪐` | Kerr-Newman Black Hole Ergosphere, Blandford-Znajek Relativistic Plasma Jet & Penrose Energy Extraction |
+| `HUD 🌌` | Holographic AdS/CFT Renormalization Group (RG) Flow & Zamolodchikov Irreversible c-Theorem |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

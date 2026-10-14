@@ -552,6 +552,18 @@
       <HolographicPageIslandModal v-if="ui.mode === 'page-island'" />
     </Transition>
     <Transition name="fade">
+      <FractionalChernMoireModal v-if="ui.mode === 'fractional-chern'" />
+    </Transition>
+    <Transition name="fade">
+      <FloquetLzsmInterferometryModal v-if="ui.mode === 'floquet-lzsm'" />
+    </Transition>
+    <Transition name="fade">
+      <KerrNewmanErgosphereModal v-if="ui.mode === 'kerr-newman'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicCTheoremModal v-if="ui.mode === 'holo-c-theorem'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -761,6 +773,10 @@ import DiracKleinTunnelingModal from '@/components/DiracKleinTunnelingModal.vue'
 import SpinOrbitBecStripeModal from '@/components/SpinOrbitBecStripeModal.vue'
 import MagneticWeylAxionPolaritonModal from '@/components/MagneticWeylAxionPolaritonModal.vue'
 import HolographicPageIslandModal from '@/components/HolographicPageIslandModal.vue'
+import FractionalChernMoireModal from '@/components/FractionalChernMoireModal.vue'
+import FloquetLzsmInterferometryModal from '@/components/FloquetLzsmInterferometryModal.vue'
+import KerrNewmanErgosphereModal from '@/components/KerrNewmanErgosphereModal.vue'
+import HolographicCTheoremModal from '@/components/HolographicCTheoremModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

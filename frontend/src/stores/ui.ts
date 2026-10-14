@@ -183,6 +183,10 @@ export type UIMode =
   | 'spin-orbit-bec'
   | 'axion-polariton'
   | 'page-island'
+  | 'fractional-chern'
+  | 'floquet-lzsm'
+  | 'kerr-newman'
+  | 'holo-c-theorem'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -508,6 +512,18 @@ export const useUIStore = defineStore('ui', () => {
   function openPageIsland(): void { mode.value = 'page-island' }
   function setPageIslandModal(open: boolean): void { mode.value = open ? 'page-island' : 'game' }
   function setPageIslandOpen(open: boolean): void { mode.value = open ? 'page-island' : 'game' }
+  function openFractionalChern(): void { mode.value = 'fractional-chern' }
+  function setFractionalChernModal(open: boolean): void { mode.value = open ? 'fractional-chern' : 'game' }
+  function setFractionalChernOpen(open: boolean): void { mode.value = open ? 'fractional-chern' : 'game' }
+  function openFloquetLzsm(): void { mode.value = 'floquet-lzsm' }
+  function setFloquetLzsmModal(open: boolean): void { mode.value = open ? 'floquet-lzsm' : 'game' }
+  function setFloquetLzsmOpen(open: boolean): void { mode.value = open ? 'floquet-lzsm' : 'game' }
+  function openKerrNewman(): void { mode.value = 'kerr-newman' }
+  function setKerrNewmanModal(open: boolean): void { mode.value = open ? 'kerr-newman' : 'game' }
+  function setKerrNewmanOpen(open: boolean): void { mode.value = open ? 'kerr-newman' : 'game' }
+  function openHoloCTheorem(): void { mode.value = 'holo-c-theorem' }
+  function setHoloCTheoremModal(open: boolean): void { mode.value = open ? 'holo-c-theorem' : 'game' }
+  function setHoloCTheoremOpen(open: boolean): void { mode.value = open ? 'holo-c-theorem' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -661,7 +677,13 @@ export const useUIStore = defineStore('ui', () => {
     openSpinOrbitBec, setSpinOrbitBecModal, setSpinOrbitBecOpen,
     openAxionPolariton, setAxionPolaritonModal, setAxionPolaritonOpen,
     openPageIsland, setPageIslandModal, setPageIslandOpen,
-    setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
+    openFractionalChern, setFractionalChernModal, setFractionalChernOpen,
+    openFloquetLzsm, setFloquetLzsmModal, setFloquetLzsmOpen,
+    openKerrNewman, setKerrNewmanModal, setKerrNewmanOpen,
+    openHoloCTheorem, setHoloCTheoremModal, setHoloCTheoremOpen,
+    setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
 })
+
+export const useUiStore = useUIStore;

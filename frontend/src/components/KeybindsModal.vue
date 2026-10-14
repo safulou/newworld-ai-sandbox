@@ -235,6 +235,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌈', desc: '開啟 自旋-軌道耦合玻色凝聚條紋超固相 (Spin-Orbit Coupled BEC & Stripe Phase)' },
       { combo: 'HUD 🧲', desc: '開啟 磁性外爾半金屬軸子極化子與反鐵磁共振 (Magnetic Weyl Axion Polariton)' },
       { combo: 'HUD 🏝️', desc: '開啟 全息佩奇曲線與量子極值島嶼 (Holographic Page Island & QES)' },
+      { combo: 'HUD 🌀', desc: '開啟 扭轉雙層 MoTe₂ 莫爾分數陳絕緣體與非阿貝爾任意子 (Fractional Chern MoTe2)' },
+      { combo: 'HUD ⚡', desc: '開啟 弗洛凱-斯圖克伯格量子位元干涉與 CDT 穿隧相消 (Floquet-LZSM Interferometry)' },
+      { combo: 'HUD 🪐', desc: '開啟 克爾-紐曼黑洞能層發電機與 BZ 極區噴流 (Kerr-Newman Ergosphere & Jet)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息重整化群流與不可逆 c-定理 (Holographic c-Theorem RG Flow)' },
 
 
     ]

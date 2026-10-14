@@ -193,6 +193,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'spin_orbit_bec_stripe_phase', title: '自旋-軌道耦合玻色凝聚條紋超固先鋒', description: '在雙分量玻色凝聚體中合成拉什巴-杜塞爾豪斯自旋軌道耦合，自發破缺 U(1) 規範與空間平移對稱性，觀測條紋超固相與各向異性超流剛度', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'magnetic_weyl_axion_polariton', title: '磁性外爾半金屬軸子極化子宗師', description: '在磁性外爾半金屬中激發拓撲軸子電磁耦合與反鐵磁磁振子雜化，打開極化子全反射禁帶並觀測非互易反常法拉第光學旋光', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_page_island_thermalization', title: '全息佩奇曲線與量子極值島嶼領航員', description: '在蒸發黑洞 AdS2/JT 全息幾何中探測量子極值曲面 (QES) 拓撲突變與糾纏島嶼湧現，重構么正性佩奇曲線並消解黑洞資訊丟失佯謬', icon: '🏝️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'fractional_chern_moire_mote2', title: '莫爾分數陳絕緣體與非阿貝爾編織宗師', description: '在扭轉雙層 MoTe₂ 莫爾平帶中實現零磁場分數量子反常霍爾效應 (FQAHE)，觀測 ν=-1/2 摩爾-里德非阿貝爾任意子拓撲基態簡併與容錯量子編織', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'floquet_lzsm_qubit_interferometry', title: '弗洛凱-斯圖克伯格量子相干干涉大師', description: '在強週期驅動超導轉子量子位元中操控避交叉幾何路徑，解析斯圖克伯格菱形相干干涉條紋與貝索零點相干相消穿隧 (CDT)', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'kerr_newman_ergosphere_jet', title: '克爾-紐曼能層等離子體發電機先鋒', description: '在帶電旋轉黑洞克爾-紐曼能層中破解靜止極限，藉由布蘭福德-茲納耶克磁層發電機激發相對論極區阿爾芬噴流與彭羅斯超能粒子分裂 (η>1)', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'holographic_c_theorem_rg_flow', title: '全息重整化群流與不可逆 c-定理領航員', description: '在超引力疇壁 AdS/CFT 全息對偶中驗證零能量條件 (NEC)，追蹤扎莫洛奇科夫 c-函數單調遞減與微觀自由度不可逆粗粒化資訊流', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

@@ -190,6 +190,10 @@ import { diracKleinTunnelingEngine } from '@/engine/diracKleinTunnelingVeselago'
 import { spinOrbitBecEngine } from '@/engine/spinOrbitBecStripePhase'
 import { magneticWeylAxionEngine } from '@/engine/magneticWeylAxionPolariton'
 import { holographicPageIslandEngine } from '@/engine/holographicPageIslandThermalization'
+import { fractionalChernEngine } from '@/engine/fractionalChernMoireMoTe2'
+import { floquetLzsmEngine } from '@/engine/floquetLzsmQubitInterferometry'
+import { kerrNewmanJetEngine } from '@/engine/kerrNewmanErgosphereJet'
+import { holographicCTheoremEngine } from '@/engine/holographicCTheoremRgFlow'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -464,6 +468,10 @@ function loop(): void {
   spinOrbitBecEngine.update(delta)
   magneticWeylAxionEngine.update(delta)
   holographicPageIslandEngine.update(delta)
+  fractionalChernEngine.update(delta)
+  floquetLzsmEngine.update(delta)
+  kerrNewmanJetEngine.update(delta)
+  holographicCTheoremEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()
