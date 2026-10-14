@@ -227,6 +227,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 👼', desc: '開啟 量子反常霍爾手性馬約拉納天使粒子 (Chiral Majorana Fermion Modes)' },
       { combo: 'HUD 🪐', desc: '開啟 黑洞量子視界引力波迴聲諧振腔 (Black Hole Quantum Echoes)' },
       { combo: 'HUD ⚛️', desc: '開啟 幾何複合費米子與 HLR 偶分母費米面 (Composite Fermion Liquid)' },
+      { combo: 'HUD 🌪️', desc: '開啟 拓撲超流安德森局域化與 Thouless 逆參與率 (Disorder Anderson Superfluid)' },
+      { combo: 'HUD 🌀', desc: '開啟 旋轉玻色-愛因斯坦凝聚阿布里科索夫渦旋晶格 (Rotating BEC Abrikosov Lattice)' },
+      { combo: 'HUD 🧩', desc: '開啟 表面碼同調量子記憶體與 MWPM 糾錯 (Surface Code Quantum Memory)' },
+      { combo: 'HUD 🌌', desc: '開啟 AdS3/CFT2 全息對偶糾纏負度與共形反常 (Holographic Entanglement Negativity)' },
 
 
     ]

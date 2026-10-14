@@ -180,6 +180,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 👼` | Quantum Anomalous Hall-Superconductor Chiral Majorana Edge Modes & Half-Quantized σ = 0.5 e²/h |
 | `HUD 🪐` | Black Hole Quantum Horizon Echoes, Planck-Membrane Cavity & Boltzmann Damped Resonances |
 | `HUD ⚛️` | Composite Fermion Chern-Simons Liquid, Halperin-Lee-Read (HLR) Fermi Sea & Geometric Resonance |
+| `HUD 🌪️` | Disorder-Induced Anderson Localization in Topological Superfluids, IPR & Critical Disorder W_c |
+| `HUD 🌀` | Rotating Bose-Einstein Condensate Abrikosov Vortex Hexagonal Lattice & Tkachenko Shear Waves |
+| `HUD 🧩` | Surface Code Homological Quantum Memory, Anyonic Excitations & Minimum-Weight Perfect Matching (MWPM) |
+| `HUD 🌌` | Holographic Entanglement Negativity, AdS3/CFT2 Entanglement Wedge Cross-Section & Conformal Anomaly |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

@@ -484,6 +484,18 @@
       <button class="hud-btn composite-fermion-btn" @click="ui.openCompositeFermion" title="幾何複合費米子與 HLR 偶分母費米面 (Composite Fermion Liquid)">
         ⚛️ 複合費米
       </button>
+      <button class="hud-btn disorder-anderson-btn" @click="ui.openDisorderAnderson" title="拓撲超流安德森局域化與 Thouless 逆參與率 (Disorder Anderson Superfluid)">
+        🌪️ 安德森超流
+      </button>
+      <button class="hud-btn rotating-bec-btn" @click="ui.openRotatingBec" title="旋轉玻色-愛因斯坦凝聚阿布里科索夫渦旋晶格 (Rotating BEC Abrikosov Lattice)">
+        🌀 旋轉凝聚
+      </button>
+      <button class="hud-btn surface-code-btn" @click="ui.openSurfaceCode" title="表面碼拓撲量子記憶體與 MWPM 糾錯 (Surface Code Quantum Memory)">
+        🧩 表面碼
+      </button>
+      <button class="hud-btn holo-negativity-btn" @click="ui.openHolographicNegativity" title="AdS3/CFT2 全息對偶糾纏負度與共形反常 (Holographic Entanglement Negativity)">
+        🌌 糾纏負度
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1389,5 +1401,21 @@ onUnmounted(() => {
 .composite-fermion-btn {
   border-color: rgba(6, 182, 212, 0.4);
   color: #22d3ee;
+}
+.disorder-anderson-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
+}
+.rotating-bec-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.surface-code-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.holo-negativity-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
 }
 </style>

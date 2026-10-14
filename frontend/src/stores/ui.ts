@@ -175,6 +175,10 @@ export type UIMode =
   | 'chiral-majorana'
   | 'black-hole-echoes'
   | 'composite-fermion'
+  | 'disorder-anderson'
+  | 'rotating-bec'
+  | 'surface-code'
+  | 'holographic-negativity'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -476,6 +480,18 @@ export const useUIStore = defineStore('ui', () => {
   function openCompositeFermion(): void { mode.value = 'composite-fermion' }
   function setCompositeFermionModal(open: boolean): void { mode.value = open ? 'composite-fermion' : 'game' }
   function setCompositeFermionOpen(open: boolean): void { mode.value = open ? 'composite-fermion' : 'game' }
+  function openDisorderAnderson(): void { mode.value = 'disorder-anderson' }
+  function setDisorderAndersonModal(open: boolean): void { mode.value = open ? 'disorder-anderson' : 'game' }
+  function setDisorderAndersonOpen(open: boolean): void { mode.value = open ? 'disorder-anderson' : 'game' }
+  function openRotatingBec(): void { mode.value = 'rotating-bec' }
+  function setRotatingBecModal(open: boolean): void { mode.value = open ? 'rotating-bec' : 'game' }
+  function setRotatingBecOpen(open: boolean): void { mode.value = open ? 'rotating-bec' : 'game' }
+  function openSurfaceCode(): void { mode.value = 'surface-code' }
+  function setSurfaceCodeModal(open: boolean): void { mode.value = open ? 'surface-code' : 'game' }
+  function setSurfaceCodeOpen(open: boolean): void { mode.value = open ? 'surface-code' : 'game' }
+  function openHolographicNegativity(): void { mode.value = 'holographic-negativity' }
+  function setHolographicNegativityModal(open: boolean): void { mode.value = open ? 'holographic-negativity' : 'game' }
+  function setHolographicNegativityOpen(open: boolean): void { mode.value = open ? 'holographic-negativity' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -621,6 +637,10 @@ export const useUIStore = defineStore('ui', () => {
     openChiralMajorana, setChiralMajoranaModal, setChiralMajoranaOpen,
     openBlackHoleEchoes, setBlackHoleEchoesModal, setBlackHoleEchoesOpen,
     openCompositeFermion, setCompositeFermionModal, setCompositeFermionOpen,
+    openDisorderAnderson, setDisorderAndersonModal, setDisorderAndersonOpen,
+    openRotatingBec, setRotatingBecModal, setRotatingBecOpen,
+    openSurfaceCode, setSurfaceCodeModal, setSurfaceCodeOpen,
+    openHolographicNegativity, setHolographicNegativityModal, setHolographicNegativityOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

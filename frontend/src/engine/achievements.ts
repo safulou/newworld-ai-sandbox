@@ -185,6 +185,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'chiral_majorana_qah_half_quantized', title: '量子反常霍爾手性馬約拉納天使粒子宗師', description: '在磁性拓撲絕緣體-超導體雜化結調諧交換能隙與配對能隙，解離狄拉克邊緣通道為一對手性馬約拉納費米子，實現精確半整數量子化電導平台 0.5 e²/h 與 c = 1/2 熱霍爾中心荷', icon: '👼', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'black_hole_quantum_horizon_echoes', title: '黑洞量子視界引力波迴聲領航員', description: '在普朗克尺度微觀反射量子視界膜與光子球有效勢壘諧振腔中，探測雙黑洞主並合鈴鳴後的週期性衰減引力波量子迴聲序列與玻爾茲曼反射率衰減', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'composite_fermion_hlr_liquid', title: '複合費米子與 HLR 幾何費米面大師', description: '在朗道半填充 ν = 1/2 實現陳-西蒙斯雙統計通量附著與平均場完全抵消，構建 Halperin-Lee-Read 複合費米液體並透過納米條紋微結構探測迴旋共振 2Rc*/a 縱向磁阻振盪峰', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'disorder_anderson_topological_superfluid', title: '拓撲超流安德森局域化大師', description: '在拓撲超導體中調控淬火無序勢能，驗證 Thouless 逆參與率、李雅普諾夫局域化長度與馬約拉納零能模臨界無序韌性', icon: '🌪️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'rotating_bec_abrikosov_lattice', title: '旋轉玻色凝聚阿布里科索夫渦旋宗師', description: '在旋轉玻色-愛因斯坦凝聚中激發科氏規範勢、費曼量子化渦旋三角晶格常數與特卡琴科橫波剪切彈性', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'surface_code_topological_memory', title: '表面碼同調量子記憶體拓撲領航員', description: '在二維棋盤表面碼晶格中測量星形與方塊同調徵兆，執行最小權重完全匹配 (MWPM) 糾錯消除拓撲任意子並突破容錯閾值', icon: '🧩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_entanglement_negativity', title: '全息糾纏負度與共形反常先鋒', description: '在 AdS3/CFT2 全息對偶中計算 Ryu-Takayanagi 測地線與糾纏楔橫截面 (EWCS)，驗證混合態對數糾纏負度與拓撲相變', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

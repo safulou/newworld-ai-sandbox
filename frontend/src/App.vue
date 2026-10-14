@@ -528,6 +528,18 @@
       <CompositeFermionHLRModal v-if="ui.mode === 'composite-fermion'" />
     </Transition>
     <Transition name="fade">
+      <DisorderAndersonSuperfluidModal v-if="ui.mode === 'disorder-anderson'" />
+    </Transition>
+    <Transition name="fade">
+      <RotatingBecAbrikosovModal v-if="ui.mode === 'rotating-bec'" />
+    </Transition>
+    <Transition name="fade">
+      <SurfaceCodeQuantumMemoryModal v-if="ui.mode === 'surface-code'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicEntanglementNegativityModal v-if="ui.mode === 'holographic-negativity'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -729,6 +741,10 @@ import SuperfluidHelium3Modal from '@/components/SuperfluidHelium3Modal.vue'
 import ChiralMajoranaModal from '@/components/ChiralMajoranaModal.vue'
 import BlackHoleQuantumEchoesModal from '@/components/BlackHoleQuantumEchoesModal.vue'
 import CompositeFermionHLRModal from '@/components/CompositeFermionHLRModal.vue'
+import DisorderAndersonSuperfluidModal from '@/components/DisorderAndersonSuperfluidModal.vue'
+import RotatingBecAbrikosovModal from '@/components/RotatingBecAbrikosovModal.vue'
+import SurfaceCodeQuantumMemoryModal from '@/components/SurfaceCodeQuantumMemoryModal.vue'
+import HolographicEntanglementNegativityModal from '@/components/HolographicEntanglementNegativityModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
