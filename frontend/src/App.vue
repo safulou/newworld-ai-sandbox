@@ -504,6 +504,18 @@
       <QuantumSpinHallSolitonModal v-if="ui.mode === 'quantum-spin-hall-soliton'" />
     </Transition>
     <Transition name="fade">
+      <DynamicalCasimirModal v-if="ui.mode === 'dynamical-casimir'" />
+    </Transition>
+    <Transition name="fade">
+      <HallViscosityModal v-if="ui.mode === 'hall-viscosity'" />
+    </Transition>
+    <Transition name="fade">
+      <GravitationalChiralAnomalyModal v-if="ui.mode === 'gravitational-anomaly'" />
+    </Transition>
+    <Transition name="fade">
+      <MagicAngleGrapheneModal v-if="ui.mode === 'magic-angle-graphene'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -697,6 +709,10 @@ import SchwingerVacuumModal from '@/components/SchwingerVacuumModal.vue'
 import BlackHoleSuperradianceModal from '@/components/BlackHoleSuperradianceModal.vue'
 import StrangeMetalSYKModal from '@/components/StrangeMetalSYKModal.vue'
 import QuantumSpinHallSolitonModal from '@/components/QuantumSpinHallSolitonModal.vue'
+import DynamicalCasimirModal from '@/components/DynamicalCasimirModal.vue'
+import HallViscosityModal from '@/components/HallViscosityModal.vue'
+import GravitationalChiralAnomalyModal from '@/components/GravitationalChiralAnomalyModal.vue'
+import MagicAngleGrapheneModal from '@/components/MagicAngleGrapheneModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

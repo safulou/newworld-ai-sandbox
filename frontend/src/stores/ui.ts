@@ -167,6 +167,10 @@ export type UIMode =
   | 'black-hole-superradiance'
   | 'strange-metal-syk'
   | 'quantum-spin-hall-soliton'
+  | 'dynamical-casimir'
+  | 'hall-viscosity'
+  | 'gravitational-anomaly'
+  | 'magic-angle-graphene'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -444,6 +448,18 @@ export const useUIStore = defineStore('ui', () => {
   function openQuantumSpinHallSoliton(): void { mode.value = 'quantum-spin-hall-soliton' }
   function setQuantumSpinHallSolitonModal(open: boolean): void { mode.value = open ? 'quantum-spin-hall-soliton' : 'game' }
   function setQuantumSpinHallSolitonOpen(open: boolean): void { mode.value = open ? 'quantum-spin-hall-soliton' : 'game' }
+  function openDynamicalCasimir(): void { mode.value = 'dynamical-casimir' }
+  function setDynamicalCasimirModal(open: boolean): void { mode.value = open ? 'dynamical-casimir' : 'game' }
+  function setDynamicalCasimirOpen(open: boolean): void { mode.value = open ? 'dynamical-casimir' : 'game' }
+  function openHallViscosity(): void { mode.value = 'hall-viscosity' }
+  function setHallViscosityModal(open: boolean): void { mode.value = open ? 'hall-viscosity' : 'game' }
+  function setHallViscosityOpen(open: boolean): void { mode.value = open ? 'hall-viscosity' : 'game' }
+  function openGravitationalAnomaly(): void { mode.value = 'gravitational-anomaly' }
+  function setGravitationalAnomalyModal(open: boolean): void { mode.value = open ? 'gravitational-anomaly' : 'game' }
+  function setGravitationalAnomalyOpen(open: boolean): void { mode.value = open ? 'gravitational-anomaly' : 'game' }
+  function openMagicAngleGraphene(): void { mode.value = 'magic-angle-graphene' }
+  function setMagicAngleGrapheneModal(open: boolean): void { mode.value = open ? 'magic-angle-graphene' : 'game' }
+  function setMagicAngleGrapheneOpen(open: boolean): void { mode.value = open ? 'magic-angle-graphene' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -581,6 +597,10 @@ export const useUIStore = defineStore('ui', () => {
     openBlackHoleSuperradiance, setBlackHoleSuperradianceModal, setBlackHoleSuperradianceOpen,
     openStrangeMetalSYK, setStrangeMetalSYKModal, setStrangeMetalSYKOpen,
     openQuantumSpinHallSoliton, setQuantumSpinHallSolitonModal, setQuantumSpinHallSolitonOpen,
+    openDynamicalCasimir, setDynamicalCasimirModal, setDynamicalCasimirOpen,
+    openHallViscosity, setHallViscosityModal, setHallViscosityOpen,
+    openGravitationalAnomaly, setGravitationalAnomalyModal, setGravitationalAnomalyOpen,
+    openMagicAngleGraphene, setMagicAngleGrapheneModal, setMagicAngleGrapheneOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

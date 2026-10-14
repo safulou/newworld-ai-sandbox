@@ -172,6 +172,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌀` | Kerr Black Hole Superradiance Instability, Ergosphere Extraction & Hydrogenic Axion Cloud Ψ₂₁₁ |
 | `HUD 🔥` | Strange Metal Planckian Limit Dissipation, Sachdev-Ye-Kitaev (SYK) Fast Scrambling Chaos & JT Gravity Dual |
 | `HUD 🛡️` | Quantum Spin Hall Helical Edge State, BHZ Band Inversion & Jackiw-Rebbi Fractional Soliton e/2 |
+| `HUD ⚡` | Dynamical Casimir Effect (DCE), SQUID Accelerating Relativistic Boundary & Two-Mode Squeezing (TMSV) |
+| `HUD 🌊` | Quantum Hall Viscosity (Odd Viscosity), Read-Rezayi Wen-Zee Shift & Non-Dissipative Shear Hydrodynamics |
+| `HUD 🌌` | Mixed Axial-Gravitational Chiral Anomaly, Luttinger Thermal Equivalence & Wiedemann-Franz Breakdown |
+| `HUD ⚛️` | Magic-Angle Twisted Bilayer Graphene (MATBG), Flat-Band Quenching & Unconventional Superconducting Dome |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

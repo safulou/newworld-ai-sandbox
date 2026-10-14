@@ -460,6 +460,18 @@
       <button class="hud-btn helical-edge-btn" @click="ui.openQuantumSpinHallSoliton" title="拓撲量子自旋霍爾螺旋邊緣態與分數孤子 (Quantum Spin Hall & Fractional Soliton)">
         🛡️ 螺旋邊緣
       </button>
+      <button class="hud-btn casimir-dce-btn" @click="ui.openDynamicalCasimir" title="動力學卡西米爾效應與加速運動反射鏡 (Dynamical Casimir Effect)">
+        ⚡ 卡西米爾
+      </button>
+      <button class="hud-btn hall-viscosity-btn" @click="ui.openHallViscosity" title="量子霍爾黏度與非耗散奇性剪切應力 (Hall Viscosity & Read-Rezayi)">
+        🌊 霍爾黏度
+      </button>
+      <button class="hud-btn chiral-anomaly-btn" @click="ui.openGravitationalAnomaly" title="外爾費米子混合引力-手性反常與熱電輸運 (Gravitational Chiral Anomaly)">
+        🌌 引力反常
+      </button>
+      <button class="hud-btn matbg-graphene-btn" @click="ui.openMagicAngleGraphene" title="魔角扭轉雙層石墨烯平帶與非常規超導 (Magic-Angle Twisted Graphene)">
+        ⚛️ 魔角平帶
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1333,5 +1345,21 @@ onUnmounted(() => {
 .helical-edge-btn {
   border-color: rgba(245, 158, 11, 0.4);
   color: #f59e0b;
+}
+.casimir-dce-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.hall-viscosity-btn {
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #06b6d4;
+}
+.chiral-anomaly-btn {
+  border-color: rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+}
+.matbg-graphene-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
 }
 </style>

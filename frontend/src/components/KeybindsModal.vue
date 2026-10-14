@@ -219,6 +219,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 旋轉黑洞超輻射不穩定性與軸子玻色子雲 (Black Hole Superradiance & Axion)' },
       { combo: 'HUD 🔥', desc: '開啟 奇異金屬普朗克極限耗散與 SYK 全息混亂 (Strange Metal & SYK Chaos)' },
       { combo: 'HUD 🛡️', desc: '開啟 拓撲量子自旋霍爾螺旋邊緣態與分數孤子 (Quantum Spin Hall & Fractional Soliton)' },
+      { combo: 'HUD ⚡', desc: '開啟 動力學卡西米爾效應與 SQUID 加速運動反射鏡 (Dynamical Casimir Effect)' },
+      { combo: 'HUD 🌊', desc: '開啟 量子霍爾奇性黏度與 Read-Rezayi 幾何流體 (Hall Viscosity & Read-Rezayi)' },
+      { combo: 'HUD 🌌', desc: '開啟 外爾費米子混合引力-手性反常與熱電輸運 (Gravitational Chiral Anomaly)' },
+      { combo: 'HUD ⚛️', desc: '開啟 魔角扭轉雙層石墨烯平帶與非常規超導 (Magic-Angle Twisted Graphene)' },
 
 
     ]

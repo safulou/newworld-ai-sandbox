@@ -174,6 +174,10 @@ import { schwingerVacuumEngine } from '@/engine/schwingerVacuumBreakdown'
 import { blackHoleSuperradianceEngine } from '@/engine/blackHoleSuperradianceAxion'
 import { strangeMetalSYKEngine } from '@/engine/strangeMetalSYKChaos'
 import { quantumSpinHallEngine as qshFractionalSolitonEngine } from '@/engine/quantumSpinHallFractionalSoliton'
+import { dynamicalCasimirEngine } from '@/engine/dynamicalCasimirEffect'
+import { hallViscosityEngine } from '@/engine/hallViscosityReadRezayi'
+import { gravitationalChiralAnomalyEngine } from '@/engine/gravitationalChiralAnomalyWeyl'
+import { magicAngleGrapheneEngine } from '@/engine/magicAngleTwistedGraphene'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -432,6 +436,10 @@ function loop(): void {
   blackHoleSuperradianceEngine.update(delta)
   strangeMetalSYKEngine.update(delta)
   qshFractionalSolitonEngine.update(delta)
+  dynamicalCasimirEngine.update(delta)
+  hallViscosityEngine.update(delta)
+  gravitationalChiralAnomalyEngine.update(delta)
+  magicAngleGrapheneEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

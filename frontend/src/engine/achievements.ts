@@ -177,6 +177,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'black_hole_superradiance_axion', title: '克爾黑洞超輻射軸子凝聚領航員', description: '在能層彭羅斯能區引發超輕玻色子超輻射不穩定性，凝聚 Ψ₂₁₁ 引力原子星雲，觀測連續單色引力波與 Bosenova 星震', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'strange_metal_syk_chaos', title: '奇異金屬普朗克耗散與 SYK 混亂大師', description: '解體準粒子達到普朗克耗散極限 ħ/τ ≈ k_BT 與純線性電阻率，在全對全 4-費米子網絡中飽和 MSS 量子混亂上界與 AdS₂ 全息黑洞對偶', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quantum_spin_hall_fractional_soliton', title: '拓撲量子自旋霍爾螺旋孤子先鋒', description: '在 BHZ 能帶反轉薄膜中開拓時間反演保護螺旋邊緣通道，實現零背散射量子化電導 2 e²/h，並於磁疇壁捕獲 Jackiw-Rebbi e/2 分數電荷孤子', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'dynamical_casimir_effect', title: '動力學卡西米爾光子創生大師', description: '透過 SQUID 磁通高頻調製驅動相對論運動反射鏡 (v_eff ≈ 0.25c)，自發激發非絕熱玻戈留玻夫真空衰變，創生糾纏微波光子對與雙模極限正交壓縮態', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'hall_viscosity_read_rezayi', title: '拓撲量子霍爾奇性黏度宗師', description: '在 2D 手性量子流體中解析 Read-Rezayi 拓撲軌道自旋移位定理，實現嚴格零焦耳耗散奇性剪切應力張量、聲學圓雙折射分裂與邊界曲率手性漂移', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'gravitational_chiral_anomaly_weyl', title: '外爾引力軸向反常熱輸運先鋒', description: '利用魯丁格虛引力勢場對偶激發外爾半金屬混合引力-手性反常，觀測平行電磁熱電正縱向磁熱導率 (LMTC) 與維德曼-夫蘭茲定律巨幅破缺', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'magic_angle_twisted_graphene', title: '魔角莫爾超晶格平帶超導領航員', description: '精確調諧雙層石墨烯至第一魔角 θ ≈ 1.08° 淬火狄拉克費米速度，於活性極窄平帶中觀測半填充整數關聯莫特絕緣能隙與微量摻雜非常規超導穹頂 (Tc ≈ 1.72 K)', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery
