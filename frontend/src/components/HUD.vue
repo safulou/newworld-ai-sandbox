@@ -496,6 +496,18 @@
       <button class="hud-btn holo-negativity-btn" @click="ui.openHolographicNegativity" title="AdS3/CFT2 全息對偶糾纏負度與共形反常 (Holographic Entanglement Negativity)">
         🌌 糾纏負度
       </button>
+      <button class="hud-btn dirac-klein-btn" @click="ui.openDiracKlein" title="狄拉克克萊因穿隧與 Veselago 負折射透鏡 (Dirac Klein Tunneling & Lens)">
+        🎯 克萊因穿隧
+      </button>
+      <button class="hud-btn soc-bec-btn" @click="ui.openSpinOrbitBec" title="自旋-軌道耦合玻色凝聚條紋超固相 (Spin-Orbit Coupled BEC & Stripe Phase)">
+        🌈 條紋超固
+      </button>
+      <button class="hud-btn axion-polariton-btn" @click="ui.openAxionPolariton" title="磁性外爾半金屬軸子極化子與反鐵磁共振 (Magnetic Weyl Axion Polariton)">
+        🧲 軸子極化
+      </button>
+      <button class="hud-btn page-island-btn" @click="ui.openPageIsland" title="全息佩奇曲線與量子極值島嶼 (Holographic Page Island & QES)">
+        🏝️ 佩奇島嶼
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1417,5 +1429,21 @@ onUnmounted(() => {
 .holo-negativity-btn {
   border-color: rgba(168, 85, 247, 0.4);
   color: #c084fc;
+}
+.dirac-klein-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.soc-bec-btn {
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #f472b6;
+}
+.axion-polariton-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
+}
+.page-island-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 </style>

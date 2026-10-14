@@ -540,6 +540,18 @@
       <HolographicEntanglementNegativityModal v-if="ui.mode === 'holographic-negativity'" />
     </Transition>
     <Transition name="fade">
+      <DiracKleinTunnelingModal v-if="ui.mode === 'dirac-klein'" />
+    </Transition>
+    <Transition name="fade">
+      <SpinOrbitBecStripeModal v-if="ui.mode === 'spin-orbit-bec'" />
+    </Transition>
+    <Transition name="fade">
+      <MagneticWeylAxionPolaritonModal v-if="ui.mode === 'axion-polariton'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicPageIslandModal v-if="ui.mode === 'page-island'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -745,6 +757,10 @@ import DisorderAndersonSuperfluidModal from '@/components/DisorderAndersonSuperf
 import RotatingBecAbrikosovModal from '@/components/RotatingBecAbrikosovModal.vue'
 import SurfaceCodeQuantumMemoryModal from '@/components/SurfaceCodeQuantumMemoryModal.vue'
 import HolographicEntanglementNegativityModal from '@/components/HolographicEntanglementNegativityModal.vue'
+import DiracKleinTunnelingModal from '@/components/DiracKleinTunnelingModal.vue'
+import SpinOrbitBecStripeModal from '@/components/SpinOrbitBecStripeModal.vue'
+import MagneticWeylAxionPolaritonModal from '@/components/MagneticWeylAxionPolaritonModal.vue'
+import HolographicPageIslandModal from '@/components/HolographicPageIslandModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

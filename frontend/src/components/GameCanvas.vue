@@ -186,6 +186,10 @@ import { disorderAndersonEngine } from '@/engine/disorderAndersonTopologicalSupe
 import { rotatingBecEngine } from '@/engine/rotatingBecAbrikosovLattice'
 import { surfaceCodeEngine } from '@/engine/surfaceCodeQuantumMemory'
 import { holographicNegativityEngine } from '@/engine/holographicEntanglementNegativity'
+import { diracKleinTunnelingEngine } from '@/engine/diracKleinTunnelingVeselago'
+import { spinOrbitBecEngine } from '@/engine/spinOrbitBecStripePhase'
+import { magneticWeylAxionEngine } from '@/engine/magneticWeylAxionPolariton'
+import { holographicPageIslandEngine } from '@/engine/holographicPageIslandThermalization'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -456,6 +460,10 @@ function loop(): void {
   rotatingBecEngine.update(delta)
   surfaceCodeEngine.update(delta)
   holographicNegativityEngine.update(delta)
+  diracKleinTunnelingEngine.update(delta)
+  spinOrbitBecEngine.update(delta)
+  magneticWeylAxionEngine.update(delta)
+  holographicPageIslandEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

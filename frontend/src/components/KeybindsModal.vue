@@ -231,6 +231,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 旋轉玻色-愛因斯坦凝聚阿布里科索夫渦旋晶格 (Rotating BEC Abrikosov Lattice)' },
       { combo: 'HUD 🧩', desc: '開啟 表面碼同調量子記憶體與 MWPM 糾錯 (Surface Code Quantum Memory)' },
       { combo: 'HUD 🌌', desc: '開啟 AdS3/CFT2 全息對偶糾纏負度與共形反常 (Holographic Entanglement Negativity)' },
+      { combo: 'HUD 🎯', desc: '開啟 狄拉克克萊因穿隧與 Veselago 負折射透鏡 (Dirac Klein Tunneling & Lens)' },
+      { combo: 'HUD 🌈', desc: '開啟 自旋-軌道耦合玻色凝聚條紋超固相 (Spin-Orbit Coupled BEC & Stripe Phase)' },
+      { combo: 'HUD 🧲', desc: '開啟 磁性外爾半金屬軸子極化子與反鐵磁共振 (Magnetic Weyl Axion Polariton)' },
+      { combo: 'HUD 🏝️', desc: '開啟 全息佩奇曲線與量子極值島嶼 (Holographic Page Island & QES)' },
 
 
     ]

@@ -179,6 +179,10 @@ export type UIMode =
   | 'rotating-bec'
   | 'surface-code'
   | 'holographic-negativity'
+  | 'dirac-klein'
+  | 'spin-orbit-bec'
+  | 'axion-polariton'
+  | 'page-island'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -492,6 +496,18 @@ export const useUIStore = defineStore('ui', () => {
   function openHolographicNegativity(): void { mode.value = 'holographic-negativity' }
   function setHolographicNegativityModal(open: boolean): void { mode.value = open ? 'holographic-negativity' : 'game' }
   function setHolographicNegativityOpen(open: boolean): void { mode.value = open ? 'holographic-negativity' : 'game' }
+  function openDiracKlein(): void { mode.value = 'dirac-klein' }
+  function setDiracKleinModal(open: boolean): void { mode.value = open ? 'dirac-klein' : 'game' }
+  function setDiracKleinOpen(open: boolean): void { mode.value = open ? 'dirac-klein' : 'game' }
+  function openSpinOrbitBec(): void { mode.value = 'spin-orbit-bec' }
+  function setSpinOrbitBecModal(open: boolean): void { mode.value = open ? 'spin-orbit-bec' : 'game' }
+  function setSpinOrbitBecOpen(open: boolean): void { mode.value = open ? 'spin-orbit-bec' : 'game' }
+  function openAxionPolariton(): void { mode.value = 'axion-polariton' }
+  function setAxionPolaritonModal(open: boolean): void { mode.value = open ? 'axion-polariton' : 'game' }
+  function setAxionPolaritonOpen(open: boolean): void { mode.value = open ? 'axion-polariton' : 'game' }
+  function openPageIsland(): void { mode.value = 'page-island' }
+  function setPageIslandModal(open: boolean): void { mode.value = open ? 'page-island' : 'game' }
+  function setPageIslandOpen(open: boolean): void { mode.value = open ? 'page-island' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -641,6 +657,10 @@ export const useUIStore = defineStore('ui', () => {
     openRotatingBec, setRotatingBecModal, setRotatingBecOpen,
     openSurfaceCode, setSurfaceCodeModal, setSurfaceCodeOpen,
     openHolographicNegativity, setHolographicNegativityModal, setHolographicNegativityOpen,
+    openDiracKlein, setDiracKleinModal, setDiracKleinOpen,
+    openSpinOrbitBec, setSpinOrbitBecModal, setSpinOrbitBecOpen,
+    openAxionPolariton, setAxionPolaritonModal, setAxionPolaritonOpen,
+    openPageIsland, setPageIslandModal, setPageIslandOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

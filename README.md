@@ -184,6 +184,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌀` | Rotating Bose-Einstein Condensate Abrikosov Vortex Hexagonal Lattice & Tkachenko Shear Waves |
 | `HUD 🧩` | Surface Code Homological Quantum Memory, Anyonic Excitations & Minimum-Weight Perfect Matching (MWPM) |
 | `HUD 🌌` | Holographic Entanglement Negativity, AdS3/CFT2 Entanglement Wedge Cross-Section & Conformal Anomaly |
+| `HUD 🎯` | Dirac Klein Tunneling & Veselago Negative Refraction Lens, Chiral Anti-Backscattering T=1 |
+| `HUD 🌈` | Spin-Orbit Coupled BEC Stripe Supersolid Phase, Spontaneous Translation Breaking & Anisotropic Rigidity |
+| `HUD 🧲` | Magnetic Weyl Semimetal Axion Polariton, Antiferromagnetic Magnon-Photon Gap & Faraday Non-Reciprocity |
+| `HUD 🏝️` | Holographic Many-Body Page Island & Quantum Extremal Surface (QES), Evaporating Black Hole Unitary Page Curve |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

@@ -189,6 +189,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'rotating_bec_abrikosov_lattice', title: '旋轉玻色凝聚阿布里科索夫渦旋宗師', description: '在旋轉玻色-愛因斯坦凝聚中激發科氏規範勢、費曼量子化渦旋三角晶格常數與特卡琴科橫波剪切彈性', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'surface_code_topological_memory', title: '表面碼同調量子記憶體拓撲領航員', description: '在二維棋盤表面碼晶格中測量星形與方塊同調徵兆，執行最小權重完全匹配 (MWPM) 糾錯消除拓撲任意子並突破容錯閾值', icon: '🧩', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_entanglement_negativity', title: '全息糾纏負度與共形反常先鋒', description: '在 AdS3/CFT2 全息對偶中計算 Ryu-Takayanagi 測地線與糾纏楔橫截面 (EWCS)，驗證混合態對數糾纏負度與拓撲相變', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'dirac_klein_tunneling_veselago', title: '狄拉克克萊因穿隧與負折射透鏡宗師', description: '在二維狄拉克半金屬中驗證正入射假自旋守恆無背散射完美穿透 T=1，並調控 Veselago 負折射率 n2 < 0 實現焦散透鏡聚焦', icon: '🎯', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'spin_orbit_bec_stripe_phase', title: '自旋-軌道耦合玻色凝聚條紋超固先鋒', description: '在雙分量玻色凝聚體中合成拉什巴-杜塞爾豪斯自旋軌道耦合，自發破缺 U(1) 規範與空間平移對稱性，觀測條紋超固相與各向異性超流剛度', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'magnetic_weyl_axion_polariton', title: '磁性外爾半金屬軸子極化子宗師', description: '在磁性外爾半金屬中激發拓撲軸子電磁耦合與反鐵磁磁振子雜化，打開極化子全反射禁帶並觀測非互易反常法拉第光學旋光', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_page_island_thermalization', title: '全息佩奇曲線與量子極值島嶼領航員', description: '在蒸發黑洞 AdS2/JT 全息幾何中探測量子極值曲面 (QES) 拓撲突變與糾纏島嶼湧現，重構么正性佩奇曲線並消解黑洞資訊丟失佯謬', icon: '🏝️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery
