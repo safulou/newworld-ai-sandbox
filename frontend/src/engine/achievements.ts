@@ -173,6 +173,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'magnetar_qed_vacuum_birefringence', title: '磁星 QED 真空雙折射領航員', description: '於施溫格超強磁場中測量尤拉-海森堡非線性真空雙折射、固態地殼星震斷裂與相對論阿爾芬波 QPO', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_superconductor', title: '全息超導凝聚先鋒', description: '透過 AdS/CFT 對偶突破 Breitenlohner-Freedman 穩定邊界，激發荷電 AdS-RN 黑洞純量毛髮凝聚與狄拉克超流奇異點', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'yang_mills_instanton_vacuum', title: 'θ-真空穿隧破缺大師', description: '在非阿貝爾規範場中觀測自對偶 BPST 瞬子量子穿隧、θ-真空能量週期調製與軸子 Peccei-Quinn 動態 CP 恢復', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'schwinger_vacuum_breakdown', title: '舒溫格強場真空衰變宗師', description: '突破 Euler-Heisenberg 非微擾臨界電場 E_crit，激發狄拉克負能海穿隧創生電子-正電子對與 Breit-Wheeler 級聯雪崩', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'black_hole_superradiance_axion', title: '克爾黑洞超輻射軸子凝聚領航員', description: '在能層彭羅斯能區引發超輕玻色子超輻射不穩定性，凝聚 Ψ₂₁₁ 引力原子星雲，觀測連續單色引力波與 Bosenova 星震', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'strange_metal_syk_chaos', title: '奇異金屬普朗克耗散與 SYK 混亂大師', description: '解體準粒子達到普朗克耗散極限 ħ/τ ≈ k_BT 與純線性電阻率，在全對全 4-費米子網絡中飽和 MSS 量子混亂上界與 AdS₂ 全息黑洞對偶', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_spin_hall_fractional_soliton', title: '拓撲量子自旋霍爾螺旋孤子先鋒', description: '在 BHZ 能帶反轉薄膜中開拓時間反演保護螺旋邊緣通道，實現零背散射量子化電導 2 e²/h，並於磁疇壁捕獲 Jackiw-Rebbi e/2 分數電荷孤子', icon: '🛡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

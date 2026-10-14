@@ -215,6 +215,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🧲', desc: '開啟 中子星磁星 QED 真空雙折射與星震 (Magnetar QED & Starquake)' },
       { combo: 'HUD 🌌', desc: '開啟 全息超導與荷電黑洞 AdS-RN 純量凝聚 (Holographic Superconductor)' },
       { combo: 'HUD 🌀', desc: '開啟 瞬子真空隧道效應與楊-米爾斯 θ-真空 (Yang-Mills Instanton Vacuum)' },
+      { combo: 'HUD ⚡', desc: '開啟 舒溫格真空衰變與強場 QED 級聯雪崩 (Schwinger Vacuum Breakdown)' },
+      { combo: 'HUD 🌀', desc: '開啟 旋轉黑洞超輻射不穩定性與軸子玻色子雲 (Black Hole Superradiance & Axion)' },
+      { combo: 'HUD 🔥', desc: '開啟 奇異金屬普朗克極限耗散與 SYK 全息混亂 (Strange Metal & SYK Chaos)' },
+      { combo: 'HUD 🛡️', desc: '開啟 拓撲量子自旋霍爾螺旋邊緣態與分數孤子 (Quantum Spin Hall & Fractional Soliton)' },
 
 
     ]

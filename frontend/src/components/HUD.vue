@@ -448,6 +448,18 @@
       <button class="hud-btn instanton-ym-btn" @click="ui.openInstantonVacuum" title="瞬子真空隧道效應與楊-米爾斯 θ-真空 (Yang-Mills Instanton Vacuum)">
         🌀 瞬子真空
       </button>
+      <button class="hud-btn schwinger-vacuum-btn" @click="ui.openSchwingerVacuum" title="舒溫格效應與強場 QED 真空衰變 (Schwinger Vacuum Breakdown)">
+        ⚡ 舒溫格
+      </button>
+      <button class="hud-btn superradiance-bh-btn" @click="ui.openBlackHoleSuperradiance" title="旋轉黑洞超輻射不穩定性與軸子玻色子雲 (Black Hole Superradiance & Axion)">
+        🌀 超輻射
+      </button>
+      <button class="hud-btn strange-metal-btn" @click="ui.openStrangeMetalSYK" title="奇異金屬普朗克極限耗散與 SYK 模型 (Strange Metal & SYK Chaos)">
+        🔥 奇異金屬
+      </button>
+      <button class="hud-btn helical-edge-btn" @click="ui.openQuantumSpinHallSoliton" title="拓撲量子自旋霍爾螺旋邊緣態與分數孤子 (Quantum Spin Hall & Fractional Soliton)">
+        🛡️ 螺旋邊緣
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1305,5 +1317,21 @@ onUnmounted(() => {
 .instanton-ym-btn {
   border-color: rgba(187, 119, 255, 0.4);
   color: #bb77ff;
+}
+.schwinger-vacuum-btn {
+  border-color: rgba(0, 243, 255, 0.4);
+  color: #00f3ff;
+}
+.superradiance-bh-btn {
+  border-color: rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+}
+.strange-metal-btn {
+  border-color: rgba(251, 113, 133, 0.4);
+  color: #fb7185;
+}
+.helical-edge-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
 }
 </style>

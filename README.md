@@ -168,6 +168,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🧲` | Magnetar QED Euler-Heisenberg Vacuum Birefringence & Starquake Relativistic Alfvén Wave |
 | `HUD 🌌` | Holographic Superconductor & Charged AdS-RN Black Hole Scalar Hair Condensation |
 | `HUD 🌀` | Yang-Mills BPST Instanton Vacuum Tunneling & Topological θ-Angle Axion Restoration |
+| `HUD ⚡` | Schwinger Critical Field Vacuum Breakdown, Non-perturbative Dirac Sea Tunneling & Breit-Wheeler Cascades |
+| `HUD 🌀` | Kerr Black Hole Superradiance Instability, Ergosphere Extraction & Hydrogenic Axion Cloud Ψ₂₁₁ |
+| `HUD 🔥` | Strange Metal Planckian Limit Dissipation, Sachdev-Ye-Kitaev (SYK) Fast Scrambling Chaos & JT Gravity Dual |
+| `HUD 🛡️` | Quantum Spin Hall Helical Edge State, BHZ Band Inversion & Jackiw-Rebbi Fractional Soliton e/2 |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

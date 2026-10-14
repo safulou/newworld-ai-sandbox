@@ -170,6 +170,10 @@ import { topologicalKondoEngine } from '@/engine/topologicalKondoInsulator'
 import { magnetarQEDEngine } from '@/engine/magnetarQEDVacuumBirefringence'
 import { holographicSuperconductorEngine } from '@/engine/holographicSuperconductorAdSRN'
 import { yangMillsInstantonEngine } from '@/engine/yangMillsInstantonVacuum'
+import { schwingerVacuumEngine } from '@/engine/schwingerVacuumBreakdown'
+import { blackHoleSuperradianceEngine } from '@/engine/blackHoleSuperradianceAxion'
+import { strangeMetalSYKEngine } from '@/engine/strangeMetalSYKChaos'
+import { quantumSpinHallEngine as qshFractionalSolitonEngine } from '@/engine/quantumSpinHallFractionalSoliton'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -424,6 +428,10 @@ function loop(): void {
   magnetarQEDEngine.update(delta)
   holographicSuperconductorEngine.update(delta)
   yangMillsInstantonEngine.update(delta)
+  schwingerVacuumEngine.update(delta)
+  blackHoleSuperradianceEngine.update(delta)
+  strangeMetalSYKEngine.update(delta)
+  qshFractionalSolitonEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

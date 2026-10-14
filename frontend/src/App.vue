@@ -492,6 +492,18 @@
       <InstantonVacuumModal v-if="ui.mode === 'instanton-vacuum'" />
     </Transition>
     <Transition name="fade">
+      <SchwingerVacuumModal v-if="ui.mode === 'schwinger-vacuum'" />
+    </Transition>
+    <Transition name="fade">
+      <BlackHoleSuperradianceModal v-if="ui.mode === 'black-hole-superradiance'" />
+    </Transition>
+    <Transition name="fade">
+      <StrangeMetalSYKModal v-if="ui.mode === 'strange-metal-syk'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumSpinHallSolitonModal v-if="ui.mode === 'quantum-spin-hall-soliton'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -681,6 +693,10 @@ import TopologicalKondoModal from '@/components/TopologicalKondoModal.vue'
 import MagnetarQEDModal from '@/components/MagnetarQEDModal.vue'
 import HolographicSuperconductorModal from '@/components/HolographicSuperconductorModal.vue'
 import InstantonVacuumModal from '@/components/InstantonVacuumModal.vue'
+import SchwingerVacuumModal from '@/components/SchwingerVacuumModal.vue'
+import BlackHoleSuperradianceModal from '@/components/BlackHoleSuperradianceModal.vue'
+import StrangeMetalSYKModal from '@/components/StrangeMetalSYKModal.vue'
+import QuantumSpinHallSolitonModal from '@/components/QuantumSpinHallSolitonModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
