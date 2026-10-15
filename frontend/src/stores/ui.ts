@@ -187,6 +187,10 @@ export type UIMode =
   | 'floquet-lzsm'
   | 'kerr-newman'
   | 'holo-c-theorem'
+  | 'vortex-hall'
+  | 'floquet-time-crystal-majorana'
+  | 'tachyonic-reconnection'
+  | 'holo-chaos'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -524,6 +528,18 @@ export const useUIStore = defineStore('ui', () => {
   function openHoloCTheorem(): void { mode.value = 'holo-c-theorem' }
   function setHoloCTheoremModal(open: boolean): void { mode.value = open ? 'holo-c-theorem' : 'game' }
   function setHoloCTheoremOpen(open: boolean): void { mode.value = open ? 'holo-c-theorem' : 'game' }
+  function openVortexHall(): void { mode.value = 'vortex-hall' }
+  function setVortexHallModal(open: boolean): void { mode.value = open ? 'vortex-hall' : 'game' }
+  function setVortexHallOpen(open: boolean): void { mode.value = open ? 'vortex-hall' : 'game' }
+  function openFloquetMajoranaTimeCrystal(): void { mode.value = 'floquet-time-crystal-majorana' }
+  function setFloquetMajoranaTimeCrystalModal(open: boolean): void { mode.value = open ? 'floquet-time-crystal-majorana' : 'game' }
+  function setFloquetMajoranaTimeCrystalOpen(open: boolean): void { mode.value = open ? 'floquet-time-crystal-majorana' : 'game' }
+  function openTachyonicReconnection(): void { mode.value = 'tachyonic-reconnection' }
+  function setTachyonicReconnectionModal(open: boolean): void { mode.value = open ? 'tachyonic-reconnection' : 'game' }
+  function setTachyonicReconnectionOpen(open: boolean): void { mode.value = open ? 'tachyonic-reconnection' : 'game' }
+  function openHoloChaos(): void { mode.value = 'holo-chaos' }
+  function setHoloChaosModal(open: boolean): void { mode.value = open ? 'holo-chaos' : 'game' }
+  function setHoloChaosOpen(open: boolean): void { mode.value = open ? 'holo-chaos' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -681,6 +697,10 @@ export const useUIStore = defineStore('ui', () => {
     openFloquetLzsm, setFloquetLzsmModal, setFloquetLzsmOpen,
     openKerrNewman, setKerrNewmanModal, setKerrNewmanOpen,
     openHoloCTheorem, setHoloCTheoremModal, setHoloCTheoremOpen,
+    openVortexHall, setVortexHallModal, setVortexHallOpen,
+    openFloquetMajoranaTimeCrystal, setFloquetMajoranaTimeCrystalModal, setFloquetMajoranaTimeCrystalOpen,
+    openTachyonicReconnection, setTachyonicReconnectionModal, setTachyonicReconnectionOpen,
+    openHoloChaos, setHoloChaosModal, setHoloChaosOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

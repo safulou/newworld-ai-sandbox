@@ -194,6 +194,10 @@ import { fractionalChernEngine } from '@/engine/fractionalChernMoireMoTe2'
 import { floquetLzsmEngine } from '@/engine/floquetLzsmQubitInterferometry'
 import { kerrNewmanJetEngine } from '@/engine/kerrNewmanErgosphereJet'
 import { holographicCTheoremEngine } from '@/engine/holographicCTheoremRgFlow'
+import { quantumVortexHallEngine } from '@/engine/quantumVortexHallSuperfluid'
+import { floquetMajoranaTimeCrystalEngine } from '@/engine/floquetMajoranaTimeCrystal'
+import { tachyonicReconnectionEngine } from '@/engine/tachyonicCosmicReconnection'
+import { holographicChaosEngine } from '@/engine/holographicChaosThermalization'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -472,6 +476,10 @@ function loop(): void {
   floquetLzsmEngine.update(delta)
   kerrNewmanJetEngine.update(delta)
   holographicCTheoremEngine.update(delta)
+  quantumVortexHallEngine.update(delta)
+  floquetMajoranaTimeCrystalEngine.update(delta)
+  tachyonicReconnectionEngine.update(delta)
+  holographicChaosEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

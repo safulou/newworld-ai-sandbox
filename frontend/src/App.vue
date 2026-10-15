@@ -564,6 +564,18 @@
       <HolographicCTheoremModal v-if="ui.mode === 'holo-c-theorem'" />
     </Transition>
     <Transition name="fade">
+      <QuantumVortexHallModal v-if="ui.mode === 'vortex-hall'" />
+    </Transition>
+    <Transition name="fade">
+      <FloquetMajoranaTimeCrystalModal v-if="ui.mode === 'floquet-time-crystal-majorana'" />
+    </Transition>
+    <Transition name="fade">
+      <TachyonicCosmicReconnectionModal v-if="ui.mode === 'tachyonic-reconnection'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicChaosThermalizationModal v-if="ui.mode === 'holo-chaos'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -777,6 +789,10 @@ import FractionalChernMoireModal from '@/components/FractionalChernMoireModal.vu
 import FloquetLzsmInterferometryModal from '@/components/FloquetLzsmInterferometryModal.vue'
 import KerrNewmanErgosphereModal from '@/components/KerrNewmanErgosphereModal.vue'
 import HolographicCTheoremModal from '@/components/HolographicCTheoremModal.vue'
+import QuantumVortexHallModal from '@/components/QuantumVortexHallModal.vue'
+import FloquetMajoranaTimeCrystalModal from '@/components/FloquetMajoranaTimeCrystalModal.vue'
+import TachyonicCosmicReconnectionModal from '@/components/TachyonicCosmicReconnectionModal.vue'
+import HolographicChaosThermalizationModal from '@/components/HolographicChaosThermalizationModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

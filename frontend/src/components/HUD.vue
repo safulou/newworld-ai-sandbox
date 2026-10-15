@@ -520,6 +520,18 @@
       <button class="hud-btn holo-c-theorem-btn" @click="ui.openHoloCTheorem" title="全息重整化群流與不可逆 c-定理 (Holographic c-Theorem RG Flow)">
         🌌 c-定理
       </button>
+      <button class="hud-btn vortex-hall-btn" @click="ui.openVortexHall" title="量子渦旋霍爾效應與雙重超流反應堆 (Quantum Vortex Hall Superfluid)">
+        🌀 渦旋霍爾
+      </button>
+      <button class="hud-btn floquet-crystal-btn" @click="ui.openFloquetMajoranaTimeCrystal" title="弗洛凱-馬約拉納時間晶體與週期倍增 (Floquet Majorana Time Crystal)">
+        ⚡ 時間晶體
+      </button>
+      <button class="hud-btn tachyonic-rec-btn" @click="ui.openTachyonicReconnection" title="超弦重聯與快子喉管躍遷反應堆 (Tachyonic Cosmic String Reconnection)">
+        🪐 快子重聯
+      </button>
+      <button class="hud-btn holo-chaos-btn" @click="ui.openHoloChaos" title="全息量子混亂與極大李雅普諾夫熱化反應堆 (Holographic Chaos & MSS Bound)">
+        🌌 全息混亂
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1473,5 +1485,21 @@ onUnmounted(() => {
 .holo-c-theorem-btn {
   border-color: rgba(168, 85, 247, 0.4);
   color: #c084fc;
+}
+.vortex-hall-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.floquet-crystal-btn {
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #f472b6;
+}
+.tachyonic-rec-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.holo-chaos-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
 }
 </style>

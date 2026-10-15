@@ -239,8 +239,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⚡', desc: '開啟 弗洛凱-斯圖克伯格量子位元干涉與 CDT 穿隧相消 (Floquet-LZSM Interferometry)' },
       { combo: 'HUD 🪐', desc: '開啟 克爾-紐曼黑洞能層發電機與 BZ 極區噴流 (Kerr-Newman Ergosphere & Jet)' },
       { combo: 'HUD 🌌', desc: '開啟 全息重整化群流與不可逆 c-定理 (Holographic c-Theorem RG Flow)' },
-
-
+      { combo: 'HUD 🌀', desc: '開啟 量子渦旋霍爾效應與雙重超流反應堆 (Quantum Vortex Hall Superfluid)' },
+      { combo: 'HUD ⚡', desc: '開啟 弗洛凱-馬約拉納時間晶體與週期倍增 (Floquet Majorana Time Crystal)' },
+      { combo: 'HUD 🪐', desc: '開啟 超弦重聯與快子喉管躍遷反應堆 (Tachyonic Cosmic String Reconnection)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息量子混亂與極大李雅普諾夫熱化反應堆 (Holographic Chaos & MSS Bound)' },
     ]
   }
 ]

@@ -197,6 +197,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'floquet_lzsm_qubit_interferometry', title: '弗洛凱-斯圖克伯格量子相干干涉大師', description: '在強週期驅動超導轉子量子位元中操控避交叉幾何路徑，解析斯圖克伯格菱形相干干涉條紋與貝索零點相干相消穿隧 (CDT)', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'kerr_newman_ergosphere_jet', title: '克爾-紐曼能層等離子體發電機先鋒', description: '在帶電旋轉黑洞克爾-紐曼能層中破解靜止極限，藉由布蘭福德-茲納耶克磁層發電機激發相對論極區阿爾芬噴流與彭羅斯超能粒子分裂 (η>1)', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_c_theorem_rg_flow', title: '全息重整化群流與不可逆 c-定理領航員', description: '在超引力疇壁 AdS/CFT 全息對偶中驗證零能量條件 (NEC)，追蹤扎莫洛奇科夫 c-函數單調遞減與微觀自由度不可逆粗粒化資訊流', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'quantum_vortex_hall_superfluid', title: '量子渦旋霍爾效應與雙重超流宗師', description: '在旋轉超流體中驗證粒子-渦旋對偶性與馬格納斯力橫向偏轉，觀測拓撲量子渦旋霍爾角偏轉與對偶超導-絕緣體臨界相變', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'floquet_majorana_time_crystal', title: '弗洛凱-馬約拉納時間晶體領航員', description: '在週期驅動基塔耶夫鏈中突破熱化極限，激發亞諧波 2T 週期倍增非平衡態結晶序與 0-π 雙邊界馬約拉納保護模', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'tachyonic_cosmic_reconnection', title: '引力重聯快子凝聚與閉弦裂變先鋒', description: '在超弦碰撞中誘發不穩定快子負質量平方凝聚，觀測重聯幾何喉管拓撲穿透與弦尖突引力子巨脈衝輻射', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'holographic_chaos_thermalization', title: '全息量子混亂與極大李雅普諾夫大師', description: '在 AdS/CFT 黑洞視界中飽和 MSS 普朗克混亂極限界限 λ_L = 2πk_B T / ℏ，追蹤 OTOC 指數衰減雪崩與宇宙最快擾亂時間', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
 
 
   // Mastery

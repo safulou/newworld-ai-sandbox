@@ -192,6 +192,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⚡` | Floquet-Landau-Zener-Stückelberg-Majorana (LZSM) Qubit Interferometry & Coherent Destruction of Tunneling (CDT) |
 | `HUD 🪐` | Kerr-Newman Black Hole Ergosphere, Blandford-Znajek Relativistic Plasma Jet & Penrose Energy Extraction |
 | `HUD 🌌` | Holographic AdS/CFT Renormalization Group (RG) Flow & Zamolodchikov Irreversible c-Theorem |
+| `HUD 🌀` | Quantum Vortex Hall Effect & Particle-Vortex Duality in Rotating Superfluids, Pinning Lattice & Anomalous Conductance |
+| `HUD ⚡` | Floquet-Majorana Discrete Time Crystal (DTC), Kitaev Chain Subharmonic 2T Period Doubling & MBL Protection |
+| `HUD 🪐` | Tachyonic Cosmic String Reconnection, Unstable D-Brane Condensation & Gravitational Wave Cusp Relativistic Jet |
+| `HUD 🌌` | Holographic Quantum Chaos, AdS/CFT Fastest Scramblers, OTOC Correlators & Maldacena-Shenker-Stanford (MSS) Bound |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
