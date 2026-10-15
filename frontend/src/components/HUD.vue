@@ -532,6 +532,18 @@
       <button class="hud-btn holo-chaos-btn" @click="ui.openHoloChaos" title="全息量子混亂與極大李雅普諾夫熱化反應堆 (Holographic Chaos & MSS Bound)">
         🌌 全息混亂
       </button>
+      <button class="hud-btn exciton-bec-btn" @click="ui.openMoireExcitonBec" title="莫爾拓撲激子絕緣體與對流超流反應堆 (Moiré Excitonic Insulator & Counterflow BEC)">
+        ❄️ 激子絕緣
+      </button>
+      <button class="hud-btn spin-superfluid-btn" @click="ui.openNonAbelianSpinSuperfluid" title="非阿貝爾自旋超流與外爾扭折反應堆 (Non-Abelian Spin Superfluid & Weyl Kink)">
+        🌀 自旋超流
+      </button>
+      <button class="hud-btn inflation-holo-btn" @click="ui.openPlanckianInflationHolo" title="普朗克引力暴脹與全息對偶天線 (Planckian Inflation & Holographic Antenna)">
+        📡 暴脹天線
+      </button>
+      <button class="hud-btn topo-laser-btn" @click="ui.openTopologicalLaser" title="拓撲非互易光子晶體奇異點雷射發電機 (Topological Non-Reciprocal Laser)">
+        🎯 拓撲雷射
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1501,5 +1513,21 @@ onUnmounted(() => {
 .holo-chaos-btn {
   border-color: rgba(244, 63, 94, 0.4);
   color: #fb7185;
+}
+.exciton-bec-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.spin-superfluid-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.inflation-holo-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+.topo-laser-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 </style>

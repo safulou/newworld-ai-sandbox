@@ -191,6 +191,10 @@ export type UIMode =
   | 'floquet-time-crystal-majorana'
   | 'tachyonic-reconnection'
   | 'holo-chaos'
+  | 'moire-exciton-bec'
+  | 'non-abelian-spin-superfluid'
+  | 'planckian-inflation-holo'
+  | 'topological-laser'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -540,6 +544,18 @@ export const useUIStore = defineStore('ui', () => {
   function openHoloChaos(): void { mode.value = 'holo-chaos' }
   function setHoloChaosModal(open: boolean): void { mode.value = open ? 'holo-chaos' : 'game' }
   function setHoloChaosOpen(open: boolean): void { mode.value = open ? 'holo-chaos' : 'game' }
+  function openMoireExcitonBec(): void { mode.value = 'moire-exciton-bec' }
+  function setMoireExcitonBecModal(open: boolean): void { mode.value = open ? 'moire-exciton-bec' : 'game' }
+  function setMoireExcitonBecOpen(open: boolean): void { mode.value = open ? 'moire-exciton-bec' : 'game' }
+  function openNonAbelianSpinSuperfluid(): void { mode.value = 'non-abelian-spin-superfluid' }
+  function setNonAbelianSpinSuperfluidModal(open: boolean): void { mode.value = open ? 'non-abelian-spin-superfluid' : 'game' }
+  function setNonAbelianSpinSuperfluidOpen(open: boolean): void { mode.value = open ? 'non-abelian-spin-superfluid' : 'game' }
+  function openPlanckianInflationHolo(): void { mode.value = 'planckian-inflation-holo' }
+  function setPlanckianInflationHoloModal(open: boolean): void { mode.value = open ? 'planckian-inflation-holo' : 'game' }
+  function setPlanckianInflationHoloOpen(open: boolean): void { mode.value = open ? 'planckian-inflation-holo' : 'game' }
+  function openTopologicalLaser(): void { mode.value = 'topological-laser' }
+  function setTopologicalLaserModal(open: boolean): void { mode.value = open ? 'topological-laser' : 'game' }
+  function setTopologicalLaserOpen(open: boolean): void { mode.value = open ? 'topological-laser' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -701,6 +717,10 @@ export const useUIStore = defineStore('ui', () => {
     openFloquetMajoranaTimeCrystal, setFloquetMajoranaTimeCrystalModal, setFloquetMajoranaTimeCrystalOpen,
     openTachyonicReconnection, setTachyonicReconnectionModal, setTachyonicReconnectionOpen,
     openHoloChaos, setHoloChaosModal, setHoloChaosOpen,
+    openMoireExcitonBec, setMoireExcitonBecModal, setMoireExcitonBecOpen,
+    openNonAbelianSpinSuperfluid, setNonAbelianSpinSuperfluidModal, setNonAbelianSpinSuperfluidOpen,
+    openPlanckianInflationHolo, setPlanckianInflationHoloModal, setPlanckianInflationHoloOpen,
+    openTopologicalLaser, setTopologicalLaserModal, setTopologicalLaserOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

@@ -576,6 +576,18 @@
       <HolographicChaosThermalizationModal v-if="ui.mode === 'holo-chaos'" />
     </Transition>
     <Transition name="fade">
+      <MoireExcitonicInsulatorModal v-if="ui.mode === 'moire-exciton-bec'" />
+    </Transition>
+    <Transition name="fade">
+      <NonAbelianSpinSuperfluidModal v-if="ui.mode === 'non-abelian-spin-superfluid'" />
+    </Transition>
+    <Transition name="fade">
+      <PlanckianInflationHoloModal v-if="ui.mode === 'planckian-inflation-holo'" />
+    </Transition>
+    <Transition name="fade">
+      <TopologicalNonReciprocalLaserModal v-if="ui.mode === 'topological-laser'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -793,6 +805,10 @@ import QuantumVortexHallModal from '@/components/QuantumVortexHallModal.vue'
 import FloquetMajoranaTimeCrystalModal from '@/components/FloquetMajoranaTimeCrystalModal.vue'
 import TachyonicCosmicReconnectionModal from '@/components/TachyonicCosmicReconnectionModal.vue'
 import HolographicChaosThermalizationModal from '@/components/HolographicChaosThermalizationModal.vue'
+import MoireExcitonicInsulatorModal from '@/components/MoireExcitonicInsulatorModal.vue'
+import NonAbelianSpinSuperfluidModal from '@/components/NonAbelianSpinSuperfluidModal.vue'
+import PlanckianInflationHoloModal from '@/components/PlanckianInflationHoloModal.vue'
+import TopologicalNonReciprocalLaserModal from '@/components/TopologicalNonReciprocalLaserModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

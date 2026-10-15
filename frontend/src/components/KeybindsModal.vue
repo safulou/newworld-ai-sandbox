@@ -243,6 +243,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⚡', desc: '開啟 弗洛凱-馬約拉納時間晶體與週期倍增 (Floquet Majorana Time Crystal)' },
       { combo: 'HUD 🪐', desc: '開啟 超弦重聯與快子喉管躍遷反應堆 (Tachyonic Cosmic String Reconnection)' },
       { combo: 'HUD 🌌', desc: '開啟 全息量子混亂與極大李雅普諾夫熱化反應堆 (Holographic Chaos & MSS Bound)' },
+      { combo: 'HUD ❄️', desc: '開啟 莫爾拓撲激子絕緣體與對流超流反應堆 (Moiré Excitonic Insulator & Counterflow BEC)' },
+      { combo: 'HUD 🌀', desc: '開啟 非阿貝爾自旋超流與外爾扭折反應堆 (Non-Abelian Spin Superfluid & Weyl Kink)' },
+      { combo: 'HUD 📡', desc: '開啟 普朗克引力暴脹與全息對偶天線 (Planckian Inflation & Holographic Antenna)' },
+      { combo: 'HUD 🎯', desc: '開啟 拓撲非互易光子晶體奇異點雷射發電機 (Topological Non-Reciprocal Laser)' },
     ]
   }
 ]

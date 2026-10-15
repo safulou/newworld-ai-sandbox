@@ -201,6 +201,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'floquet_majorana_time_crystal', title: '弗洛凱-馬約拉納時間晶體領航員', description: '在週期驅動基塔耶夫鏈中突破熱化極限，激發亞諧波 2T 週期倍增非平衡態結晶序與 0-π 雙邊界馬約拉納保護模', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'tachyonic_cosmic_reconnection', title: '引力重聯快子凝聚與閉弦裂變先鋒', description: '在超弦碰撞中誘發不穩定快子負質量平方凝聚，觀測重聯幾何喉管拓撲穿透與弦尖突引力子巨脈衝輻射', icon: '🪐', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_chaos_thermalization', title: '全息量子混亂與極大李雅普諾夫大師', description: '在 AdS/CFT 黑洞視界中飽和 MSS 普朗克混亂極限界限 λ_L = 2πk_B T / ℏ，追蹤 OTOC 指數衰減雪崩與宇宙最快擾亂時間', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'moire_excitonic_insulator_bec', title: '莫爾拓撲激子絕緣體與對流超流宗師', description: '在雙層過渡金屬硫化物莫爾異質結中激發層間激子庫侖結合與自發凝聚，觀測拓撲陳數 C=1 與無耗散對流超流電導', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_abelian_spin_superfluid', title: '非阿貝爾自旋超流與外爾扭折領航員', description: '在易面量子磁體中驅動無耗散純自旋超流 J_s = -ρ_s ∇φ_s，結合外爾手性反常激發拓撲自旋扭折孤子與自旋約瑟夫森高頻振盪', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'planckian_inflation_holo_antenna', title: '普朗克引力暴脹與全息對偶天線先鋒', description: '在早期宇宙慢滾暴脹中藉由全息重整化消解奇點，觀測張量-標量比 r 與微波背景輻射 CMB B-模式旋度偏振太初引力波', icon: '📡', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'topological_non_reciprocal_laser', title: '拓撲非互易光子晶體奇異點雷射大師', description: '在非厄米拓撲光子晶體中破缺 PT 對稱性，跨越非厄米奇異點 (EP) 激發單向手性邊緣態雷射與高達 40 dB 巨非互易光學隔離', icon: '🎯', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

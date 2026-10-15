@@ -196,6 +196,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⚡` | Floquet-Majorana Discrete Time Crystal (DTC), Kitaev Chain Subharmonic 2T Period Doubling & MBL Protection |
 | `HUD 🪐` | Tachyonic Cosmic String Reconnection, Unstable D-Brane Condensation & Gravitational Wave Cusp Relativistic Jet |
 | `HUD 🌌` | Holographic Quantum Chaos, AdS/CFT Fastest Scramblers, OTOC Correlators & Maldacena-Shenker-Stanford (MSS) Bound |
+| `HUD ❄️` | Moiré Topological Excitonic Insulator & Exciton BEC Superfluid, Interlayer Dipoles & Counterflow Supercurrent |
+| `HUD 🌀` | Non-Abelian Spin Superfluid & Weyl Fermion Topological Kink, Spin Josephson Precession & Chiral Anomaly |
+| `HUD 📡` | Planckian Cosmic Inflation & Holographic Cosmological Antenna, CMB B-Mode Polarization & Primordial GW Tensor Power |
+| `HUD 🎯` | Topological Non-Reciprocal Photonic Crystal Laser, PT-Symmetry Breaking Exceptional Point & Unidirectional Edge Modes |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
