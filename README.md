@@ -208,6 +208,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕸️` | Chiral Weyl Semimetal Topological Superconducting Diode Network, CME Rectification Tensor & Logic Gates |
 | `HUD 🕳️` | Micro-Black Hole Holographic Graviton Teleportation Antenna, ER=EPR Traversable Wormhole & Gao-Jafferis-Wall Protocol |
 | `HUD 💎` | Spin-Orbit Coupled Fractal Weyl Time Crystal, Sierpinski Manifold 4T Subharmonic Period Quadrupling & Rigidity |
+| `HUD 🌀` | Non-Hermitian Abelian-Higgs String Vortex Network, NH Skin Effect, Exceptional Point Annihilation & Cosmic Tension |
+| `HUD 🧪` | Dynamical Spin-Polaron Bose Gel, Spin-Phonon Coupling, Viscoelastic Shear Modulus G*(ω) & Supersolid Rigidity |
+| `HUD 🌌` | Holographic Gravitational Wave Exotic Polarization Antenna, 6 GW Polarization Modes, Holographic Cavity SNR |
+| `HUD 🧊` | 4D Topological Insulator Second Chern Hyper-Crystal, 4D QHE, SO(4) Tesseract Projection & 3D Dirac Cones |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

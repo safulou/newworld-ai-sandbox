@@ -210,6 +210,10 @@ import { fractionalHallStripeLiquidCrystalEngine } from '@/engine/fractionalHall
 import { weylSuperconductingDiodeNetworkEngine } from '@/engine/weylSuperconductingDiodeNetwork'
 import { microBlackHoleTeleportationEngine } from '@/engine/microBlackHoleTeleportationAntenna'
 import { socFractalWeylTimeCrystalEngine } from '@/engine/socFractalWeylTimeCrystal'
+import { nonHermitianAbelianHiggsEngine } from '@/engine/nonHermitianAbelianHiggsString'
+import { dynamicalSpinPolaronBoseGelEngine } from '@/engine/dynamicalSpinPolaronBoseGel'
+import { holographicGravitationalWaveAntennaEngine } from '@/engine/holographicGravitationalWaveAntenna'
+import { fourDTopologicalHyperCrystalEngine } from '@/engine/fourDTopologicalHyperCrystal'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -504,6 +508,10 @@ function loop(): void {
   weylSuperconductingDiodeNetworkEngine.update(delta)
   microBlackHoleTeleportationEngine.update(delta)
   socFractalWeylTimeCrystalEngine.update(delta)
+  nonHermitianAbelianHiggsEngine.update(delta)
+  dynamicalSpinPolaronBoseGelEngine.update(delta)
+  holographicGravitationalWaveAntennaEngine.update(delta)
+  fourDTopologicalHyperCrystalEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

@@ -213,6 +213,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'weyl_superconducting_diode_network', title: '手性外爾拓撲超導二極體網絡領航員', description: '在手性外爾半金屬費米弧多端點超導結網絡中調控反常相位與手性磁效應，實現無耗散超導二極體整流張量與可編程量子邏輯閘', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'micro_black_hole_teleportation', title: '微觀黑洞全息引力子隱形傳態先鋒', description: '在 ER=EPR 雙面 AdS 施瓦西黑洞中藉由負能量衝擊波打破零能量條件開啟可穿越蟲洞，實現保真度 F>98% 之全息解擾量子隱形傳態', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'soc_fractal_weyl_time_crystal', title: '自旋軌道耦合分形外爾時間晶體大師', description: '在三維分形晶格中結合強自旋軌道耦合與弗洛凱週期驅動，破缺離散時間平移對稱性並展現 4T 週期四倍化拓撲剛性次諧波時間晶體', icon: '💎', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_hermitian_abelian_higgs_string', title: '非厄米阿貝爾-希格斯弦拓撲渦旋宗師', description: '在阿貝爾-希格斯模型中調控尼爾森-奧爾森宇宙弦與磁通渦旋，激發非厄米趨膚效應與奇異點 (EP) 拓撲消融雪崩', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'dynamical_spin_polaron_bose_gel', title: '動態自旋極化子玻色凝聚膠體領航員', description: '在強自旋-聲子耦合系統中自組裝黏彈性量子膠體，探索複數剪切模量 G*(ω) 與相干超固態無耗散剪切剛性', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_gravitational_wave_antenna', title: '全息引力波奇異偏振天線先鋒', description: '超越愛因斯坦廣義相對論，探測六維引力偏振模（含呼吸純量與剪切向量模），藉由全息共振腔捕獲超高信噪比雙星 Chirp 波形', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'four_d_topological_hyper_crystal', title: '四維拓撲絕緣體二階陳數超幾何晶體大師', description: '在四維超立方晶格中實現四維量子霍爾效應，量化非阿貝爾二階陳數 C₂ 與 SO(4) 超空間立體投影 3D 表面狄拉克錐態', icon: '🧊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

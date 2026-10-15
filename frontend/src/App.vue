@@ -612,6 +612,18 @@
       <SocFractalWeylTimeCrystalModal v-if="ui.mode === 'soc-fractal-weyl-time-crystal'" />
     </Transition>
     <Transition name="fade">
+      <NonHermitianAbelianHiggsModal v-if="ui.mode === 'non-hermitian-abelian-higgs'" />
+    </Transition>
+    <Transition name="fade">
+      <DynamicalSpinPolaronGelModal v-if="ui.mode === 'dynamical-spin-polaron-gel'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicGravitationalWaveModal v-if="ui.mode === 'holographic-gravitational-wave'" />
+    </Transition>
+    <Transition name="fade">
+      <FourDTopologicalHyperCrystalModal v-if="ui.mode === 'four-d-topological-hyper-crystal'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -841,6 +853,10 @@ import FractionalHallStripeModal from '@/components/FractionalHallStripeModal.vu
 import WeylSuperconductingDiodeNetworkModal from '@/components/WeylSuperconductingDiodeNetworkModal.vue'
 import MicroBlackHoleTeleportationModal from '@/components/MicroBlackHoleTeleportationModal.vue'
 import SocFractalWeylTimeCrystalModal from '@/components/SocFractalWeylTimeCrystalModal.vue'
+import NonHermitianAbelianHiggsModal from '@/components/NonHermitianAbelianHiggsModal.vue'
+import DynamicalSpinPolaronGelModal from '@/components/DynamicalSpinPolaronGelModal.vue'
+import HolographicGravitationalWaveModal from '@/components/HolographicGravitationalWaveModal.vue'
+import FourDTopologicalHyperCrystalModal from '@/components/FourDTopologicalHyperCrystalModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

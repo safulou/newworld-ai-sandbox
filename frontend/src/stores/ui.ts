@@ -203,6 +203,10 @@ export type UIMode =
   | 'weyl-superconducting-diode-network'
   | 'micro-black-hole-teleportation'
   | 'soc-fractal-weyl-time-crystal'
+  | 'non-hermitian-abelian-higgs'
+  | 'dynamical-spin-polaron-gel'
+  | 'holographic-gravitational-wave'
+  | 'four-d-topological-hyper-crystal'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -588,6 +592,18 @@ export const useUIStore = defineStore('ui', () => {
   function openSocFractalWeylTimeCrystal(): void { mode.value = 'soc-fractal-weyl-time-crystal' }
   function setSocFractalWeylTimeCrystalModal(open: boolean): void { mode.value = open ? 'soc-fractal-weyl-time-crystal' : 'game' }
   function setSocFractalWeylTimeCrystalOpen(open: boolean): void { mode.value = open ? 'soc-fractal-weyl-time-crystal' : 'game' }
+  function openNonHermitianAbelianHiggs(): void { mode.value = 'non-hermitian-abelian-higgs' }
+  function setNonHermitianAbelianHiggsModal(open: boolean): void { mode.value = open ? 'non-hermitian-abelian-higgs' : 'game' }
+  function setNonHermitianAbelianHiggsOpen(open: boolean): void { mode.value = open ? 'non-hermitian-abelian-higgs' : 'game' }
+  function openDynamicalSpinPolaronGel(): void { mode.value = 'dynamical-spin-polaron-gel' }
+  function setDynamicalSpinPolaronGelModal(open: boolean): void { mode.value = open ? 'dynamical-spin-polaron-gel' : 'game' }
+  function setDynamicalSpinPolaronGelOpen(open: boolean): void { mode.value = open ? 'dynamical-spin-polaron-gel' : 'game' }
+  function openHolographicGravitationalWave(): void { mode.value = 'holographic-gravitational-wave' }
+  function setHolographicGravitationalWaveModal(open: boolean): void { mode.value = open ? 'holographic-gravitational-wave' : 'game' }
+  function setHolographicGravitationalWaveOpen(open: boolean): void { mode.value = open ? 'holographic-gravitational-wave' : 'game' }
+  function openFourDTopologicalHyperCrystal(): void { mode.value = 'four-d-topological-hyper-crystal' }
+  function setFourDTopologicalHyperCrystalModal(open: boolean): void { mode.value = open ? 'four-d-topological-hyper-crystal' : 'game' }
+  function setFourDTopologicalHyperCrystalOpen(open: boolean): void { mode.value = open ? 'four-d-topological-hyper-crystal' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -761,6 +777,10 @@ export const useUIStore = defineStore('ui', () => {
     openWeylSuperconductingDiodeNetwork, setWeylSuperconductingDiodeNetworkModal, setWeylSuperconductingDiodeNetworkOpen,
     openMicroBlackHoleTeleportation, setMicroBlackHoleTeleportationModal, setMicroBlackHoleTeleportationOpen,
     openSocFractalWeylTimeCrystal, setSocFractalWeylTimeCrystalModal, setSocFractalWeylTimeCrystalOpen,
+    openNonHermitianAbelianHiggs, setNonHermitianAbelianHiggsModal, setNonHermitianAbelianHiggsOpen,
+    openDynamicalSpinPolaronGel, setDynamicalSpinPolaronGelModal, setDynamicalSpinPolaronGelOpen,
+    openHolographicGravitationalWave, setHolographicGravitationalWaveModal, setHolographicGravitationalWaveOpen,
+    openFourDTopologicalHyperCrystal, setFourDTopologicalHyperCrystalModal, setFourDTopologicalHyperCrystalOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

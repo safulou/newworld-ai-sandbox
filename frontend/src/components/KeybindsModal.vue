@@ -255,6 +255,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕸️', desc: '開啟 手性外爾半金屬拓撲超導二極體網絡 (Weyl Superconducting Diode Network)' },
       { combo: 'HUD 🕳️', desc: '開啟 微觀黑洞全息引力子隱形傳態天線 (Micro-Black Hole Holographic Teleportation)' },
       { combo: 'HUD 💎', desc: '開啟 自旋軌道耦合分形外爾時間晶體 (SOC Fractal Weyl Time Crystal)' },
+      { combo: 'HUD 🌀', desc: '開啟 非厄米阿貝爾-希格斯弦拓撲渦旋網絡 (Non-Hermitian Higgs Strings)' },
+      { combo: 'HUD 🧪', desc: '開啟 動態自旋極化子玻色凝聚膠體 (Dynamical Spin-Polaron Bose Gel)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息引力波奇異偏振探測天線 (Holographic GW Exotic Antenna)' },
+      { combo: 'HUD 🧊', desc: '開啟 四維拓撲絕緣體二階陳數超幾何晶體 (4D Topological Hyper-Crystal)' },
     ]
   }
 ]

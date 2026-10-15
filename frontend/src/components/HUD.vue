@@ -568,6 +568,18 @@
       <button class="hud-btn soc-crystal-btn" @click="ui.openSocFractalWeylTimeCrystal" title="自旋軌道耦合分形外爾時間晶體 (SOC Fractal Weyl Time Crystal)">
         💎 四維外爾
       </button>
+      <button class="hud-btn higgs-string-btn" @click="ui.openNonHermitianAbelianHiggs" title="非厄米阿貝爾-希格斯弦拓撲渦旋網絡 (Non-Hermitian Higgs Strings)">
+        🌀 希格斯弦
+      </button>
+      <button class="hud-btn spin-gel-btn" @click="ui.openDynamicalSpinPolaronGel" title="動態自旋極化子玻色凝聚膠體 (Dynamical Spin-Polaron Bose Gel)">
+        🧪 極化膠體
+      </button>
+      <button class="hud-btn gw-antenna-btn" @click="ui.openHolographicGravitationalWave" title="全息引力波奇異偏振探測天線 (Holographic GW Exotic Antenna)">
+        🌌 奇異引力
+      </button>
+      <button class="hud-btn hyper-crystal-btn" @click="ui.openFourDTopologicalHyperCrystal" title="四維拓撲絕緣體二階陳數超幾何晶體 (4D Topological Hyper-Crystal)">
+        🧊 四維陳晶
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1585,5 +1597,21 @@ onUnmounted(() => {
 .soc-crystal-btn {
   border-color: rgba(45, 212, 191, 0.4);
   color: #2dd4bf;
+}
+.higgs-string-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.spin-gel-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.gw-antenna-btn {
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+}
+.hyper-crystal-btn {
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #f472b6;
 }
 </style>
