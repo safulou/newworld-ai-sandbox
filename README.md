@@ -204,6 +204,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ⚡` | Topological Majorana Zero Mode Josephson Diode (JDE), Non-Reciprocal Supercurrent & 4π Fractional Tunneling |
 | `HUD 🔮` | Kerr Black Hole Holographic Hyper-Entangled Gravitational Lens Antenna, Relativistic Einstein Rings & OAM Multiplexing |
 | `HUD ❄️` | Higher-Order Non-Abelian Fractal Time Crystal, Sierpinski Lattice HOTI Corner Locking & Subharmonic 3T Period Multiplication |
+| `HUD 🌊` | Fractional Quantum Hall Stripe Phase & Electronic Nematic Liquid Crystal, CDW & Giant Anisotropic Resistivity |
+| `HUD 🕸️` | Chiral Weyl Semimetal Topological Superconducting Diode Network, CME Rectification Tensor & Logic Gates |
+| `HUD 🕳️` | Micro-Black Hole Holographic Graviton Teleportation Antenna, ER=EPR Traversable Wormhole & Gao-Jafferis-Wall Protocol |
+| `HUD 💎` | Spin-Orbit Coupled Fractal Weyl Time Crystal, Sierpinski Manifold 4T Subharmonic Period Quadrupling & Rigidity |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

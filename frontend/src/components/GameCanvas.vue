@@ -206,6 +206,10 @@ import { fractionalQshSpinLiquidEngine } from '@/engine/fractionalQshSpinLiquid'
 import { majoranaJosephsonDiodeEngine } from '@/engine/majoranaJosephsonDiode'
 import { holographicHyperEntangledLensEngine } from '@/engine/holographicHyperEntangledLens'
 import { higherOrderFractalTimeCrystalEngine } from '@/engine/higherOrderFractalTimeCrystal'
+import { fractionalHallStripeLiquidCrystalEngine } from '@/engine/fractionalHallStripeLiquidCrystal'
+import { weylSuperconductingDiodeNetworkEngine } from '@/engine/weylSuperconductingDiodeNetwork'
+import { microBlackHoleTeleportationEngine } from '@/engine/microBlackHoleTeleportationAntenna'
+import { socFractalWeylTimeCrystalEngine } from '@/engine/socFractalWeylTimeCrystal'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -496,6 +500,10 @@ function loop(): void {
   majoranaJosephsonDiodeEngine.update(delta)
   holographicHyperEntangledLensEngine.update(delta)
   higherOrderFractalTimeCrystalEngine.update(delta)
+  fractionalHallStripeLiquidCrystalEngine.update(delta)
+  weylSuperconductingDiodeNetworkEngine.update(delta)
+  microBlackHoleTeleportationEngine.update(delta)
+  socFractalWeylTimeCrystalEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

@@ -199,6 +199,10 @@ export type UIMode =
   | 'majorana-josephson-diode'
   | 'holographic-hyper-entangled-lens'
   | 'higher-order-fractal-time-crystal'
+  | 'fractional-hall-stripe-liquid-crystal'
+  | 'weyl-superconducting-diode-network'
+  | 'micro-black-hole-teleportation'
+  | 'soc-fractal-weyl-time-crystal'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -572,6 +576,18 @@ export const useUIStore = defineStore('ui', () => {
   function openHigherOrderFractalTimeCrystal(): void { mode.value = 'higher-order-fractal-time-crystal' }
   function setHigherOrderFractalTimeCrystalModal(open: boolean): void { mode.value = open ? 'higher-order-fractal-time-crystal' : 'game' }
   function setHigherOrderFractalTimeCrystalOpen(open: boolean): void { mode.value = open ? 'higher-order-fractal-time-crystal' : 'game' }
+  function openFractionalHallStripeLiquidCrystal(): void { mode.value = 'fractional-hall-stripe-liquid-crystal' }
+  function setFractionalHallStripeLiquidCrystalModal(open: boolean): void { mode.value = open ? 'fractional-hall-stripe-liquid-crystal' : 'game' }
+  function setFractionalHallStripeLiquidCrystalOpen(open: boolean): void { mode.value = open ? 'fractional-hall-stripe-liquid-crystal' : 'game' }
+  function openWeylSuperconductingDiodeNetwork(): void { mode.value = 'weyl-superconducting-diode-network' }
+  function setWeylSuperconductingDiodeNetworkModal(open: boolean): void { mode.value = open ? 'weyl-superconducting-diode-network' : 'game' }
+  function setWeylSuperconductingDiodeNetworkOpen(open: boolean): void { mode.value = open ? 'weyl-superconducting-diode-network' : 'game' }
+  function openMicroBlackHoleTeleportation(): void { mode.value = 'micro-black-hole-teleportation' }
+  function setMicroBlackHoleTeleportationModal(open: boolean): void { mode.value = open ? 'micro-black-hole-teleportation' : 'game' }
+  function setMicroBlackHoleTeleportationOpen(open: boolean): void { mode.value = open ? 'micro-black-hole-teleportation' : 'game' }
+  function openSocFractalWeylTimeCrystal(): void { mode.value = 'soc-fractal-weyl-time-crystal' }
+  function setSocFractalWeylTimeCrystalModal(open: boolean): void { mode.value = open ? 'soc-fractal-weyl-time-crystal' : 'game' }
+  function setSocFractalWeylTimeCrystalOpen(open: boolean): void { mode.value = open ? 'soc-fractal-weyl-time-crystal' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -741,6 +757,10 @@ export const useUIStore = defineStore('ui', () => {
     openMajoranaJosephsonDiode, setMajoranaJosephsonDiodeModal, setMajoranaJosephsonDiodeOpen,
     openHolographicHyperEntangledLens, setHolographicHyperEntangledLensModal, setHolographicHyperEntangledLensOpen,
     openHigherOrderFractalTimeCrystal, setHigherOrderFractalTimeCrystalModal, setHigherOrderFractalTimeCrystalOpen,
+    openFractionalHallStripeLiquidCrystal, setFractionalHallStripeLiquidCrystalModal, setFractionalHallStripeLiquidCrystalOpen,
+    openWeylSuperconductingDiodeNetwork, setWeylSuperconductingDiodeNetworkModal, setWeylSuperconductingDiodeNetworkOpen,
+    openMicroBlackHoleTeleportation, setMicroBlackHoleTeleportationModal, setMicroBlackHoleTeleportationOpen,
+    openSocFractalWeylTimeCrystal, setSocFractalWeylTimeCrystalModal, setSocFractalWeylTimeCrystalOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

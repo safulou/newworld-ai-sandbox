@@ -600,6 +600,18 @@
       <HigherOrderFractalTimeCrystalModal v-if="ui.mode === 'higher-order-fractal-time-crystal'" />
     </Transition>
     <Transition name="fade">
+      <FractionalHallStripeModal v-if="ui.mode === 'fractional-hall-stripe-liquid-crystal'" />
+    </Transition>
+    <Transition name="fade">
+      <WeylSuperconductingDiodeNetworkModal v-if="ui.mode === 'weyl-superconducting-diode-network'" />
+    </Transition>
+    <Transition name="fade">
+      <MicroBlackHoleTeleportationModal v-if="ui.mode === 'micro-black-hole-teleportation'" />
+    </Transition>
+    <Transition name="fade">
+      <SocFractalWeylTimeCrystalModal v-if="ui.mode === 'soc-fractal-weyl-time-crystal'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -825,6 +837,10 @@ import FractionalQshSpinLiquidModal from '@/components/FractionalQshSpinLiquidMo
 import MajoranaJosephsonDiodeModal from '@/components/MajoranaJosephsonDiodeModal.vue'
 import HolographicHyperEntangledLensModal from '@/components/HolographicHyperEntangledLensModal.vue'
 import HigherOrderFractalTimeCrystalModal from '@/components/HigherOrderFractalTimeCrystalModal.vue'
+import FractionalHallStripeModal from '@/components/FractionalHallStripeModal.vue'
+import WeylSuperconductingDiodeNetworkModal from '@/components/WeylSuperconductingDiodeNetworkModal.vue'
+import MicroBlackHoleTeleportationModal from '@/components/MicroBlackHoleTeleportationModal.vue'
+import SocFractalWeylTimeCrystalModal from '@/components/SocFractalWeylTimeCrystalModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

@@ -251,6 +251,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ⚡', desc: '開啟 拓撲馬約拉納零模約瑟夫森二極體 (Topological Majorana Josephson Diode)' },
       { combo: 'HUD 🔮', desc: '開啟 旋轉黑洞全息超糾纏引力透鏡天線 (Holographic Hyper-Entangled Lens Antenna)' },
       { combo: 'HUD ❄️', desc: '開啟 高階非阿貝爾分形時間晶體反應堆 (Higher-Order Fractal Time Crystal)' },
+      { combo: 'HUD 🌊', desc: '開啟 分數量子霍爾條紋相與向列液晶反應堆 (Fractional Quantum Hall Stripe & Nematic LC)' },
+      { combo: 'HUD 🕸️', desc: '開啟 手性外爾半金屬拓撲超導二極體網絡 (Weyl Superconducting Diode Network)' },
+      { combo: 'HUD 🕳️', desc: '開啟 微觀黑洞全息引力子隱形傳態天線 (Micro-Black Hole Holographic Teleportation)' },
+      { combo: 'HUD 💎', desc: '開啟 自旋軌道耦合分形外爾時間晶體 (SOC Fractal Weyl Time Crystal)' },
     ]
   }
 ]

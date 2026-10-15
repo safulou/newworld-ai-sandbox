@@ -209,6 +209,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'majorana_josephson_diode', title: '拓撲馬約拉納零模約瑟夫森二極體領航員', description: '在打破反演與時間反演的拓撲超導結中實現無耗散超導二極體效應 (JDE)，調控反常相移 φ₀ 與馬約拉納 4π 分數穿隧', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_hyper_entangled_lens', title: '旋轉黑洞全息超糾纏引力透鏡先鋒', description: '在克爾旋轉黑洞光子球強偏折極限下捕獲相對論愛因斯坦環，藉由 AdS/CFT 全息對偶傳輸偏振-OAM-時隙三重超糾纏態', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'higher_order_fractal_time_crystal', title: '高階非阿貝爾分形時間晶體大師', description: '在謝爾賓斯基分形晶格中結合高階拓撲角隅態與非阿貝爾自旋相互作用，實現亞諧波 3T 週期倍增自相似離散時間晶體', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'fractional_hall_stripe_liquid_crystal', title: '分數量子霍爾條紋相與向列液晶宗師', description: '在半填充高朗道能級中破缺空間連續旋轉對稱性，激發電荷密度波條紋相與巨向列液晶各向異性 (α_nem > 100) 及泡泡晶格相', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'weyl_superconducting_diode_network', title: '手性外爾拓撲超導二極體網絡領航員', description: '在手性外爾半金屬費米弧多端點超導結網絡中調控反常相位與手性磁效應，實現無耗散超導二極體整流張量與可編程量子邏輯閘', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'micro_black_hole_teleportation', title: '微觀黑洞全息引力子隱形傳態先鋒', description: '在 ER=EPR 雙面 AdS 施瓦西黑洞中藉由負能量衝擊波打破零能量條件開啟可穿越蟲洞，實現保真度 F>98% 之全息解擾量子隱形傳態', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'soc_fractal_weyl_time_crystal', title: '自旋軌道耦合分形外爾時間晶體大師', description: '在三維分形晶格中結合強自旋軌道耦合與弗洛凱週期驅動，破缺離散時間平移對稱性並展現 4T 週期四倍化拓撲剛性次諧波時間晶體', icon: '💎', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

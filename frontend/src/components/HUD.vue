@@ -556,6 +556,18 @@
       <button class="hud-btn fractal-crystal-btn" @click="ui.openHigherOrderFractalTimeCrystal" title="高階非阿貝爾分形時間晶體反應堆 (Higher-Order Fractal Time Crystal)">
         ❄️ 分形晶體
       </button>
+      <button class="hud-btn fqh-stripe-btn" @click="ui.openFractionalHallStripeLiquidCrystal" title="分數量子霍爾條紋相與向列液晶反應堆 (Fractional Quantum Hall Stripe & Nematic LC)">
+        🌊 條紋液晶
+      </button>
+      <button class="hud-btn weyl-diode-btn" @click="ui.openWeylSuperconductingDiodeNetwork" title="手性外爾半金屬拓撲超導二極體網絡 (Weyl Superconducting Diode Network)">
+        🕸️ 外爾二極
+      </button>
+      <button class="hud-btn hole-teleport-btn" @click="ui.openMicroBlackHoleTeleportation" title="微觀黑洞全息引力子隱形傳態天線 (Micro-Black Hole Holographic Teleportation)">
+        🕳️ 蟲洞傳態
+      </button>
+      <button class="hud-btn soc-crystal-btn" @click="ui.openSocFractalWeylTimeCrystal" title="自旋軌道耦合分形外爾時間晶體 (SOC Fractal Weyl Time Crystal)">
+        💎 四維外爾
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1557,5 +1569,21 @@ onUnmounted(() => {
 .fractal-crystal-btn {
   border-color: rgba(2, 132, 199, 0.4);
   color: #7dd3fc;
+}
+.fqh-stripe-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.weyl-diode-btn {
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #818cf8;
+}
+.hole-teleport-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.soc-crystal-btn {
+  border-color: rgba(45, 212, 191, 0.4);
+  color: #2dd4bf;
 }
 </style>
