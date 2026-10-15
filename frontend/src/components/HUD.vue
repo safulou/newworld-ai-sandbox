@@ -544,6 +544,18 @@
       <button class="hud-btn topo-laser-btn" @click="ui.openTopologicalLaser" title="拓撲非互易光子晶體奇異點雷射發電機 (Topological Non-Reciprocal Laser)">
         🎯 拓撲雷射
       </button>
+      <button class="hud-btn fqsh-spin-btn" @click="ui.openFractionalQshSpinLiquid" title="莫爾分數量子自旋霍爾與雙重自旋液體反應堆 (Fractional QSH & Dual Spin Liquid)">
+        ⚛️ 分數自旋
+      </button>
+      <button class="hud-btn majorana-diode-btn" @click="ui.openMajoranaJosephsonDiode" title="拓撲馬約拉納零模約瑟夫森二極體 (Majorana Josephson Diode)">
+        ⚡ 二極體結
+      </button>
+      <button class="hud-btn hyper-lens-btn" @click="ui.openHolographicHyperEntangledLens" title="旋轉黑洞全息超糾纏引力透鏡天線 (Hyper-Entangled Lens Antenna)">
+        🔮 超糾纏鏡
+      </button>
+      <button class="hud-btn fractal-crystal-btn" @click="ui.openHigherOrderFractalTimeCrystal" title="高階非阿貝爾分形時間晶體反應堆 (Higher-Order Fractal Time Crystal)">
+        ❄️ 分形晶體
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1529,5 +1541,21 @@ onUnmounted(() => {
 .topo-laser-btn {
   border-color: rgba(16, 185, 129, 0.4);
   color: #34d399;
+}
+.fqsh-spin-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.majorana-diode-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.hyper-lens-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.fractal-crystal-btn {
+  border-color: rgba(2, 132, 199, 0.4);
+  color: #7dd3fc;
 }
 </style>

@@ -205,6 +205,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'non_abelian_spin_superfluid', title: '非阿貝爾自旋超流與外爾扭折領航員', description: '在易面量子磁體中驅動無耗散純自旋超流 J_s = -ρ_s ∇φ_s，結合外爾手性反常激發拓撲自旋扭折孤子與自旋約瑟夫森高頻振盪', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'planckian_inflation_holo_antenna', title: '普朗克引力暴脹與全息對偶天線先鋒', description: '在早期宇宙慢滾暴脹中藉由全息重整化消解奇點，觀測張量-標量比 r 與微波背景輻射 CMB B-模式旋度偏振太初引力波', icon: '📡', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'topological_non_reciprocal_laser', title: '拓撲非互易光子晶體奇異點雷射大師', description: '在非厄米拓撲光子晶體中破缺 PT 對稱性，跨越非厄米奇異點 (EP) 激發單向手性邊緣態雷射與高達 40 dB 巨非互易光學隔離', icon: '🎯', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'fractional_qsh_spin_liquid', title: '莫爾分數量子自旋霍爾與雙重自旋液體宗師', description: '在扭轉雙層 TMD 莫爾超晶格中觀測時間反演對稱分數量子自旋霍爾效應 (FQSH)，激發自旋-電荷分離與雙重拓撲自旋液體基態', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'majorana_josephson_diode', title: '拓撲馬約拉納零模約瑟夫森二極體領航員', description: '在打破反演與時間反演的拓撲超導結中實現無耗散超導二極體效應 (JDE)，調控反常相移 φ₀ 與馬約拉納 4π 分數穿隧', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_hyper_entangled_lens', title: '旋轉黑洞全息超糾纏引力透鏡先鋒', description: '在克爾旋轉黑洞光子球強偏折極限下捕獲相對論愛因斯坦環，藉由 AdS/CFT 全息對偶傳輸偏振-OAM-時隙三重超糾纏態', icon: '🔮', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'higher_order_fractal_time_crystal', title: '高階非阿貝爾分形時間晶體大師', description: '在謝爾賓斯基分形晶格中結合高階拓撲角隅態與非阿貝爾自旋相互作用，實現亞諧波 3T 週期倍增自相似離散時間晶體', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

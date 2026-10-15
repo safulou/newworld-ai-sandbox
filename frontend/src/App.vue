@@ -588,6 +588,18 @@
       <TopologicalNonReciprocalLaserModal v-if="ui.mode === 'topological-laser'" />
     </Transition>
     <Transition name="fade">
+      <FractionalQshSpinLiquidModal v-if="ui.mode === 'fractional-qsh-spin-liquid'" />
+    </Transition>
+    <Transition name="fade">
+      <MajoranaJosephsonDiodeModal v-if="ui.mode === 'majorana-josephson-diode'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicHyperEntangledLensModal v-if="ui.mode === 'holographic-hyper-entangled-lens'" />
+    </Transition>
+    <Transition name="fade">
+      <HigherOrderFractalTimeCrystalModal v-if="ui.mode === 'higher-order-fractal-time-crystal'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -809,6 +821,10 @@ import MoireExcitonicInsulatorModal from '@/components/MoireExcitonicInsulatorMo
 import NonAbelianSpinSuperfluidModal from '@/components/NonAbelianSpinSuperfluidModal.vue'
 import PlanckianInflationHoloModal from '@/components/PlanckianInflationHoloModal.vue'
 import TopologicalNonReciprocalLaserModal from '@/components/TopologicalNonReciprocalLaserModal.vue'
+import FractionalQshSpinLiquidModal from '@/components/FractionalQshSpinLiquidModal.vue'
+import MajoranaJosephsonDiodeModal from '@/components/MajoranaJosephsonDiodeModal.vue'
+import HolographicHyperEntangledLensModal from '@/components/HolographicHyperEntangledLensModal.vue'
+import HigherOrderFractalTimeCrystalModal from '@/components/HigherOrderFractalTimeCrystalModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

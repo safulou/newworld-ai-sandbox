@@ -200,6 +200,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌀` | Non-Abelian Spin Superfluid & Weyl Fermion Topological Kink, Spin Josephson Precession & Chiral Anomaly |
 | `HUD 📡` | Planckian Cosmic Inflation & Holographic Cosmological Antenna, CMB B-Mode Polarization & Primordial GW Tensor Power |
 | `HUD 🎯` | Topological Non-Reciprocal Photonic Crystal Laser, PT-Symmetry Breaking Exceptional Point & Unidirectional Edge Modes |
+| `HUD ⚛️` | Moiré Fractional Quantum Spin Hall (FQSH) & Dual Spin Liquid, Spin-Charge Separation & Helical Edge States |
+| `HUD ⚡` | Topological Majorana Zero Mode Josephson Diode (JDE), Non-Reciprocal Supercurrent & 4π Fractional Tunneling |
+| `HUD 🔮` | Kerr Black Hole Holographic Hyper-Entangled Gravitational Lens Antenna, Relativistic Einstein Rings & OAM Multiplexing |
+| `HUD ❄️` | Higher-Order Non-Abelian Fractal Time Crystal, Sierpinski Lattice HOTI Corner Locking & Subharmonic 3T Period Multiplication |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

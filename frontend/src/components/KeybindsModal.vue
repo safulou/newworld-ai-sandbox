@@ -247,6 +247,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌀', desc: '開啟 非阿貝爾自旋超流與外爾扭折反應堆 (Non-Abelian Spin Superfluid & Weyl Kink)' },
       { combo: 'HUD 📡', desc: '開啟 普朗克引力暴脹與全息對偶天線 (Planckian Inflation & Holographic Antenna)' },
       { combo: 'HUD 🎯', desc: '開啟 拓撲非互易光子晶體奇異點雷射發電機 (Topological Non-Reciprocal Laser)' },
+      { combo: 'HUD ⚛️', desc: '開啟 莫爾分數量子自旋霍爾與雙重自旋液體反應堆 (Fractional QSH & Dual Spin Liquid)' },
+      { combo: 'HUD ⚡', desc: '開啟 拓撲馬約拉納零模約瑟夫森二極體 (Topological Majorana Josephson Diode)' },
+      { combo: 'HUD 🔮', desc: '開啟 旋轉黑洞全息超糾纏引力透鏡天線 (Holographic Hyper-Entangled Lens Antenna)' },
+      { combo: 'HUD ❄️', desc: '開啟 高階非阿貝爾分形時間晶體反應堆 (Higher-Order Fractal Time Crystal)' },
     ]
   }
 ]

@@ -195,6 +195,10 @@ export type UIMode =
   | 'non-abelian-spin-superfluid'
   | 'planckian-inflation-holo'
   | 'topological-laser'
+  | 'fractional-qsh-spin-liquid'
+  | 'majorana-josephson-diode'
+  | 'holographic-hyper-entangled-lens'
+  | 'higher-order-fractal-time-crystal'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -556,6 +560,18 @@ export const useUIStore = defineStore('ui', () => {
   function openTopologicalLaser(): void { mode.value = 'topological-laser' }
   function setTopologicalLaserModal(open: boolean): void { mode.value = open ? 'topological-laser' : 'game' }
   function setTopologicalLaserOpen(open: boolean): void { mode.value = open ? 'topological-laser' : 'game' }
+  function openFractionalQshSpinLiquid(): void { mode.value = 'fractional-qsh-spin-liquid' }
+  function setFractionalQshSpinLiquidModal(open: boolean): void { mode.value = open ? 'fractional-qsh-spin-liquid' : 'game' }
+  function setFractionalQshSpinLiquidOpen(open: boolean): void { mode.value = open ? 'fractional-qsh-spin-liquid' : 'game' }
+  function openMajoranaJosephsonDiode(): void { mode.value = 'majorana-josephson-diode' }
+  function setMajoranaJosephsonDiodeModal(open: boolean): void { mode.value = open ? 'majorana-josephson-diode' : 'game' }
+  function setMajoranaJosephsonDiodeOpen(open: boolean): void { mode.value = open ? 'majorana-josephson-diode' : 'game' }
+  function openHolographicHyperEntangledLens(): void { mode.value = 'holographic-hyper-entangled-lens' }
+  function setHolographicHyperEntangledLensModal(open: boolean): void { mode.value = open ? 'holographic-hyper-entangled-lens' : 'game' }
+  function setHolographicHyperEntangledLensOpen(open: boolean): void { mode.value = open ? 'holographic-hyper-entangled-lens' : 'game' }
+  function openHigherOrderFractalTimeCrystal(): void { mode.value = 'higher-order-fractal-time-crystal' }
+  function setHigherOrderFractalTimeCrystalModal(open: boolean): void { mode.value = open ? 'higher-order-fractal-time-crystal' : 'game' }
+  function setHigherOrderFractalTimeCrystalOpen(open: boolean): void { mode.value = open ? 'higher-order-fractal-time-crystal' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -721,6 +737,10 @@ export const useUIStore = defineStore('ui', () => {
     openNonAbelianSpinSuperfluid, setNonAbelianSpinSuperfluidModal, setNonAbelianSpinSuperfluidOpen,
     openPlanckianInflationHolo, setPlanckianInflationHoloModal, setPlanckianInflationHoloOpen,
     openTopologicalLaser, setTopologicalLaserModal, setTopologicalLaserOpen,
+    openFractionalQshSpinLiquid, setFractionalQshSpinLiquidModal, setFractionalQshSpinLiquidOpen,
+    openMajoranaJosephsonDiode, setMajoranaJosephsonDiodeModal, setMajoranaJosephsonDiodeOpen,
+    openHolographicHyperEntangledLens, setHolographicHyperEntangledLensModal, setHolographicHyperEntangledLensOpen,
+    openHigherOrderFractalTimeCrystal, setHigherOrderFractalTimeCrystalModal, setHigherOrderFractalTimeCrystalOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
