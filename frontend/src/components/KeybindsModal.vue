@@ -259,6 +259,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🧪', desc: '開啟 動態自旋極化子玻色凝聚膠體 (Dynamical Spin-Polaron Bose Gel)' },
       { combo: 'HUD 🌌', desc: '開啟 全息引力波奇異偏振探測天線 (Holographic GW Exotic Antenna)' },
       { combo: 'HUD 🧊', desc: '開啟 四維拓撲絕緣體二階陳數超幾何晶體 (4D Topological Hyper-Crystal)' },
+      { combo: 'HUD ❄️', desc: '開啟 非阿貝爾分形高階拓撲超導體 (Non-Abelian Fractal HOTSC)' },
+      { combo: 'HUD 🌪️', desc: '開啟 動態外爾手性引力異常流體 (Weyl Chiral Anomaly Fluid)' },
+      { combo: 'HUD ✨', desc: '開啟 量子極化拓撲光子晶格 (Polariton Kagome Lattice)' },
+      { combo: 'HUD 💥', desc: '開啟 旋量超流全息奇異孤子碰撞反應堆 (Spinor Soliton Collider)' },
     ]
   }
 ]

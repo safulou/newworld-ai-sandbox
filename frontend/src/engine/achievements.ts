@@ -217,6 +217,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'dynamical_spin_polaron_bose_gel', title: '動態自旋極化子玻色凝聚膠體領航員', description: '在強自旋-聲子耦合系統中自組裝黏彈性量子膠體，探索複數剪切模量 G*(ω) 與相干超固態無耗散剪切剛性', icon: '🧪', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_gravitational_wave_antenna', title: '全息引力波奇異偏振天線先鋒', description: '超越愛因斯坦廣義相對論，探測六維引力偏振模（含呼吸純量與剪切向量模），藉由全息共振腔捕獲超高信噪比雙星 Chirp 波形', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'four_d_topological_hyper_crystal', title: '四維拓撲絕緣體二階陳數超幾何晶體大師', description: '在四維超立方晶格中實現四維量子霍爾效應，量化非阿貝爾二階陳數 C₂ 與 SO(4) 超空間立體投影 3D 表面狄拉克錐態', icon: '🧊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_abelian_fractal_hots', title: '非阿貝爾分形高階拓撲超導宗師', description: '在謝爾賓斯基分形晶格中結合 p+ip 超導配對與非阿貝爾自旋軌道耦合，激發局域化馬約拉納分形角隅模與容錯任意子編織量子位元', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'weyl_chiral_gravitational_fluid', title: '外爾手性引力異常流體領航員', description: '在相對論外爾費米子流體中調控混合引力-手性反常與渦度，實現手性渦旋效應 (CVE) 與無耗散量子熱霍爾電導異常輸運', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_polariton_lattice', title: '量子極化拓撲光子晶格先鋒', description: '在籠目微腔極化激元超晶格中藉由 TE-TM 自旋軌道分裂構建人工規範場，激發光學自旋霍爾效應與平帶自發相干拓撲單模雷射', icon: '✨', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'spinor_soliton_collider', title: '旋量超流全息奇異孤子對撞大師', description: '在自旋-1 玻色凝聚態中驅動亮-暗拓撲孤子相對論高速對撞，透過 AdS/CFT 引力對偶模擬雙黑洞融合視界幾何熵增與自旋波輻射', icon: '💥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

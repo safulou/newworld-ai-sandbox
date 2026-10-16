@@ -624,6 +624,18 @@
       <FourDTopologicalHyperCrystalModal v-if="ui.mode === 'four-d-topological-hyper-crystal'" />
     </Transition>
     <Transition name="fade">
+      <NonAbelianFractalHotsModal v-if="ui.mode === 'non-abelian-fractal-hots'" />
+    </Transition>
+    <Transition name="fade">
+      <WeylChiralGravitationalFluidModal v-if="ui.mode === 'weyl-chiral-gravitational-fluid'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumPolaritonLatticeModal v-if="ui.mode === 'quantum-polariton-lattice'" />
+    </Transition>
+    <Transition name="fade">
+      <SpinorSolitonColliderModal v-if="ui.mode === 'spinor-soliton-collider'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -857,6 +869,10 @@ import NonHermitianAbelianHiggsModal from '@/components/NonHermitianAbelianHiggs
 import DynamicalSpinPolaronGelModal from '@/components/DynamicalSpinPolaronGelModal.vue'
 import HolographicGravitationalWaveModal from '@/components/HolographicGravitationalWaveModal.vue'
 import FourDTopologicalHyperCrystalModal from '@/components/FourDTopologicalHyperCrystalModal.vue'
+import NonAbelianFractalHotsModal from '@/components/NonAbelianFractalHotsModal.vue'
+import WeylChiralGravitationalFluidModal from '@/components/WeylChiralGravitationalFluidModal.vue'
+import QuantumPolaritonLatticeModal from '@/components/QuantumPolaritonLatticeModal.vue'
+import SpinorSolitonColliderModal from '@/components/SpinorSolitonColliderModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

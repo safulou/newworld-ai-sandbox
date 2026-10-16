@@ -207,6 +207,10 @@ export type UIMode =
   | 'dynamical-spin-polaron-gel'
   | 'holographic-gravitational-wave'
   | 'four-d-topological-hyper-crystal'
+  | 'non-abelian-fractal-hots'
+  | 'weyl-chiral-gravitational-fluid'
+  | 'quantum-polariton-lattice'
+  | 'spinor-soliton-collider'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -604,6 +608,18 @@ export const useUIStore = defineStore('ui', () => {
   function openFourDTopologicalHyperCrystal(): void { mode.value = 'four-d-topological-hyper-crystal' }
   function setFourDTopologicalHyperCrystalModal(open: boolean): void { mode.value = open ? 'four-d-topological-hyper-crystal' : 'game' }
   function setFourDTopologicalHyperCrystalOpen(open: boolean): void { mode.value = open ? 'four-d-topological-hyper-crystal' : 'game' }
+  function openNonAbelianFractalHots(): void { mode.value = 'non-abelian-fractal-hots' }
+  function setNonAbelianFractalHotsModal(open: boolean): void { mode.value = open ? 'non-abelian-fractal-hots' : 'game' }
+  function setNonAbelianFractalHotsOpen(open: boolean): void { mode.value = open ? 'non-abelian-fractal-hots' : 'game' }
+  function openWeylChiralGravitationalFluid(): void { mode.value = 'weyl-chiral-gravitational-fluid' }
+  function setWeylChiralGravitationalFluidModal(open: boolean): void { mode.value = open ? 'weyl-chiral-gravitational-fluid' : 'game' }
+  function setWeylChiralGravitationalFluidOpen(open: boolean): void { mode.value = open ? 'weyl-chiral-gravitational-fluid' : 'game' }
+  function openQuantumPolaritonLattice(): void { mode.value = 'quantum-polariton-lattice' }
+  function setQuantumPolaritonLatticeModal(open: boolean): void { mode.value = open ? 'quantum-polariton-lattice' : 'game' }
+  function setQuantumPolaritonLatticeOpen(open: boolean): void { mode.value = open ? 'quantum-polariton-lattice' : 'game' }
+  function openSpinorSolitonCollider(): void { mode.value = 'spinor-soliton-collider' }
+  function setSpinorSolitonColliderModal(open: boolean): void { mode.value = open ? 'spinor-soliton-collider' : 'game' }
+  function setSpinorSolitonColliderOpen(open: boolean): void { mode.value = open ? 'spinor-soliton-collider' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -781,6 +797,10 @@ export const useUIStore = defineStore('ui', () => {
     openDynamicalSpinPolaronGel, setDynamicalSpinPolaronGelModal, setDynamicalSpinPolaronGelOpen,
     openHolographicGravitationalWave, setHolographicGravitationalWaveModal, setHolographicGravitationalWaveOpen,
     openFourDTopologicalHyperCrystal, setFourDTopologicalHyperCrystalModal, setFourDTopologicalHyperCrystalOpen,
+    openNonAbelianFractalHots, setNonAbelianFractalHotsModal, setNonAbelianFractalHotsOpen,
+    openWeylChiralGravitationalFluid, setWeylChiralGravitationalFluidModal, setWeylChiralGravitationalFluidOpen,
+    openQuantumPolaritonLattice, setQuantumPolaritonLatticeModal, setQuantumPolaritonLatticeOpen,
+    openSpinorSolitonCollider, setSpinorSolitonColliderModal, setSpinorSolitonColliderOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

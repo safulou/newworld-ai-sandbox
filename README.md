@@ -212,6 +212,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🧪` | Dynamical Spin-Polaron Bose Gel, Spin-Phonon Coupling, Viscoelastic Shear Modulus G*(ω) & Supersolid Rigidity |
 | `HUD 🌌` | Holographic Gravitational Wave Exotic Polarization Antenna, 6 GW Polarization Modes, Holographic Cavity SNR |
 | `HUD 🧊` | 4D Topological Insulator Second Chern Hyper-Crystal, 4D QHE, SO(4) Tesseract Projection & 3D Dirac Cones |
+| `HUD ❄️` | Non-Abelian Fractal Higher-Order Topological Superconductor (HOTSC), Sierpinski Corner Modes & Braiding Qubits |
+| `HUD 🌪️` | Dynamical Weyl Chiral Gravitational Anomaly Fluid, Mixed Relativistic Anomaly, CVE & Thermal Hall |
+| `HUD ✨` | Quantum Polariton Topological Photonic Lattice, Kagome Microcavity Artificial Gauge & Flatband Laser |
+| `HUD 💥` | Spinor Superfluid Holographic Soliton Collider, F=1 BEC Relativistic Collision & Black Hole Merger |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

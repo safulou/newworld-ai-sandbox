@@ -580,6 +580,18 @@
       <button class="hud-btn hyper-crystal-btn" @click="ui.openFourDTopologicalHyperCrystal" title="四維拓撲絕緣體二階陳數超幾何晶體 (4D Topological Hyper-Crystal)">
         🧊 四維陳晶
       </button>
+      <button class="hud-btn fractal-hots-btn" @click="ui.openNonAbelianFractalHots" title="非阿貝爾分形高階拓撲超導體 (Non-Abelian Fractal HOTSC)">
+        ❄️ 分形超導
+      </button>
+      <button class="hud-btn weyl-fluid-btn" @click="ui.openWeylChiralGravitationalFluid" title="動態外爾手性引力異常流體 (Weyl Chiral Anomaly Fluid)">
+        🌪️ 外爾引力
+      </button>
+      <button class="hud-btn polariton-lattice-btn" @click="ui.openQuantumPolaritonLattice" title="量子極化拓撲光子晶格 (Polariton Kagome Lattice)">
+        ✨ 極化籠目
+      </button>
+      <button class="hud-btn soliton-collider-btn" @click="ui.openSpinorSolitonCollider" title="旋量超流全息奇異孤子碰撞反應堆 (Spinor Soliton Collider)">
+        💥 孤子對撞
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1613,5 +1625,21 @@ onUnmounted(() => {
 .hyper-crystal-btn {
   border-color: rgba(236, 72, 153, 0.4);
   color: #f472b6;
+}
+.fractal-hots-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.weyl-fluid-btn {
+  border-color: rgba(217, 70, 239, 0.4);
+  color: #d946ef;
+}
+.polariton-lattice-btn {
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #22d3ee;
+}
+.soliton-collider-btn {
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #fb923c;
 }
 </style>
