@@ -636,6 +636,18 @@
       <SpinorSolitonColliderModal v-if="ui.mode === 'spinor-soliton-collider'" />
     </Transition>
     <Transition name="fade">
+      <SuperconductingFluxonKnotModal v-if="ui.mode === 'superconducting-fluxon-knot'" />
+    </Transition>
+    <Transition name="fade">
+      <TopologicalSpinMobiusModal v-if="ui.mode === 'topological-spin-mobius'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicCasimirWormholeModal v-if="ui.mode === 'holographic-casimir-wormhole'" />
+    </Transition>
+    <Transition name="fade">
+      <SusyQcdMonopoleBecModal v-if="ui.mode === 'susy-qcd-monopole-bec'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -873,6 +885,10 @@ import NonAbelianFractalHotsModal from '@/components/NonAbelianFractalHotsModal.
 import WeylChiralGravitationalFluidModal from '@/components/WeylChiralGravitationalFluidModal.vue'
 import QuantumPolaritonLatticeModal from '@/components/QuantumPolaritonLatticeModal.vue'
 import SpinorSolitonColliderModal from '@/components/SpinorSolitonColliderModal.vue'
+import SuperconductingFluxonKnotModal from '@/components/SuperconductingFluxonKnotModal.vue'
+import TopologicalSpinMobiusModal from '@/components/TopologicalSpinMobiusModal.vue'
+import HolographicCasimirWormholeModal from '@/components/HolographicCasimirWormholeModal.vue'
+import SusyQcdMonopoleBecModal from '@/components/SusyQcdMonopoleBecModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

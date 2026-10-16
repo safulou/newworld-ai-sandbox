@@ -221,6 +221,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'weyl_chiral_gravitational_fluid', title: '外爾手性引力異常流體領航員', description: '在相對論外爾費米子流體中調控混合引力-手性反常與渦度，實現手性渦旋效應 (CVE) 與無耗散量子熱霍爾電導異常輸運', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quantum_polariton_lattice', title: '量子極化拓撲光子晶格先鋒', description: '在籠目微腔極化激元超晶格中藉由 TE-TM 自旋軌道分裂構建人工規範場，激發光學自旋霍爾效應與平帶自發相干拓撲單模雷射', icon: '✨', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'spinor_soliton_collider', title: '旋量超流全息奇異孤子對撞大師', description: '在自旋-1 玻色凝聚態中驅動亮-暗拓撲孤子相對論高速對撞，透過 AdS/CFT 引力對偶模擬雙黑洞融合視界幾何熵增與自旋波輻射', icon: '💥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'superconducting_fluxon_knot', title: '超導拓撲磁通子扭結結晶宗師', description: '在手性超導體中調控霍普夫拓撲不變量 Q_H，自組裝三維法捷耶夫-涅米霍普夫子扭結晶格與臨界電流解結雪崩', icon: '🪢', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'topological_spin_mobius', title: '拓撲非阿貝爾自旋梅比烏斯先鋒', description: '在不可定向梅比烏斯奈米帶中利用內稟貝里相位 γ=π 與亞諧波干涉，實現 4π 旋轉復原自旋流與非阿貝爾幾何進動', icon: '♾️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'holographic_casimir_wormhole', title: '全息卡西米爾暗能量蟲洞領航員', description: '在共形場論邊界藉由動態卡西米爾效應產生負能量破缺 NEC，以幻影暗能量 (w<-1) 穩定莫里斯-索恩可穿越蟲洞喉管', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'susy_qcd_monopole_bec', title: '超對稱量子色動力學磁單極凝聚大師', description: '在 N=2 Seiberg-Witten 阿蓋爾斯-道格拉斯臨界點凝聚無質量磁單極，激發對偶邁斯納效應與色電通量管強禁閉', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

@@ -211,6 +211,10 @@ export type UIMode =
   | 'weyl-chiral-gravitational-fluid'
   | 'quantum-polariton-lattice'
   | 'spinor-soliton-collider'
+  | 'superconducting-fluxon-knot'
+  | 'topological-spin-mobius'
+  | 'holographic-casimir-wormhole'
+  | 'susy-qcd-monopole-bec'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -620,6 +624,18 @@ export const useUIStore = defineStore('ui', () => {
   function openSpinorSolitonCollider(): void { mode.value = 'spinor-soliton-collider' }
   function setSpinorSolitonColliderModal(open: boolean): void { mode.value = open ? 'spinor-soliton-collider' : 'game' }
   function setSpinorSolitonColliderOpen(open: boolean): void { mode.value = open ? 'spinor-soliton-collider' : 'game' }
+  function openFluxonKnot(): void { mode.value = 'superconducting-fluxon-knot' }
+  function setFluxonKnotModal(open: boolean): void { mode.value = open ? 'superconducting-fluxon-knot' : 'game' }
+  function setFluxonKnotOpen(open: boolean): void { mode.value = open ? 'superconducting-fluxon-knot' : 'game' }
+  function openSpinMobius(): void { mode.value = 'topological-spin-mobius' }
+  function setSpinMobiusModal(open: boolean): void { mode.value = open ? 'topological-spin-mobius' : 'game' }
+  function setSpinMobiusOpen(open: boolean): void { mode.value = open ? 'topological-spin-mobius' : 'game' }
+  function openCasimirWormhole(): void { mode.value = 'holographic-casimir-wormhole' }
+  function setCasimirWormholeModal(open: boolean): void { mode.value = open ? 'holographic-casimir-wormhole' : 'game' }
+  function setCasimirWormholeOpen(open: boolean): void { mode.value = open ? 'holographic-casimir-wormhole' : 'game' }
+  function openSusyMonopole(): void { mode.value = 'susy-qcd-monopole-bec' }
+  function setSusyMonopoleModal(open: boolean): void { mode.value = open ? 'susy-qcd-monopole-bec' : 'game' }
+  function setSusyMonopoleOpen(open: boolean): void { mode.value = open ? 'susy-qcd-monopole-bec' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -801,6 +817,10 @@ export const useUIStore = defineStore('ui', () => {
     openWeylChiralGravitationalFluid, setWeylChiralGravitationalFluidModal, setWeylChiralGravitationalFluidOpen,
     openQuantumPolaritonLattice, setQuantumPolaritonLatticeModal, setQuantumPolaritonLatticeOpen,
     openSpinorSolitonCollider, setSpinorSolitonColliderModal, setSpinorSolitonColliderOpen,
+    openFluxonKnot, setFluxonKnotModal, setFluxonKnotOpen,
+    openSpinMobius, setSpinMobiusModal, setSpinMobiusOpen,
+    openCasimirWormhole, setCasimirWormholeModal, setCasimirWormholeOpen,
+    openSusyMonopole, setSusyMonopoleModal, setSusyMonopoleOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

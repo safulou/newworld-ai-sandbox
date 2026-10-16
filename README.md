@@ -216,6 +216,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌪️` | Dynamical Weyl Chiral Gravitational Anomaly Fluid, Mixed Relativistic Anomaly, CVE & Thermal Hall |
 | `HUD ✨` | Quantum Polariton Topological Photonic Lattice, Kagome Microcavity Artificial Gauge & Flatband Laser |
 | `HUD 💥` | Spinor Superfluid Holographic Soliton Collider, F=1 BEC Relativistic Collision & Black Hole Merger |
+| `HUD 🪢` | Superconducting Topological Fluxon Knot Crystallizer, Faddeev-Niemi 3D Hopfions & Trefoil Untying |
+| `HUD ♾️` | Topological Non-Abelian Spin-Möbius Resonator, Non-Orientable Berry Phase γ = π & Half-Integer OAM |
+| `HUD 🌌` | Holographic Casimir Dark Energy Wormhole Engine, NEC Violation, Morris-Thorne Throat & Phantom Field |
+| `HUD ⚛️` | Supersymmetric QCD Magnetic Monopole BEC Ring, N=2 Seiberg-Witten Dual Meissner & Color String |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

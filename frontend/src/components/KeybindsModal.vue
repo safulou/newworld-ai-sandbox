@@ -263,6 +263,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌪️', desc: '開啟 動態外爾手性引力異常流體 (Weyl Chiral Anomaly Fluid)' },
       { combo: 'HUD ✨', desc: '開啟 量子極化拓撲光子晶格 (Polariton Kagome Lattice)' },
       { combo: 'HUD 💥', desc: '開啟 旋量超流全息奇異孤子碰撞反應堆 (Spinor Soliton Collider)' },
+      { combo: 'HUD 🪢', desc: '開啟 超導拓撲磁通子扭結結晶器 (Superconducting Fluxon Knot Crystallizer)' },
+      { combo: 'HUD ♾️', desc: '開啟 拓撲非阿貝爾自旋梅比烏斯條共振腔 (Spin-Möbius Resonator)' },
+      { combo: 'HUD 🌌', desc: '開啟 全息卡西米爾暗能量蟲洞引擎 (Casimir Dark Energy Wormhole Engine)' },
+      { combo: 'HUD ⚛️', desc: '開啟 超對稱量子色動力學磁單極玻色凝聚環 (SUSY Monopole BEC Ring)' },
     ]
   }
 ]

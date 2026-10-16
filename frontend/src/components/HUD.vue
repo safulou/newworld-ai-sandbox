@@ -592,6 +592,18 @@
       <button class="hud-btn soliton-collider-btn" @click="ui.openSpinorSolitonCollider" title="旋量超流全息奇異孤子碰撞反應堆 (Spinor Soliton Collider)">
         💥 孤子對撞
       </button>
+      <button class="hud-btn fluxon-knot-btn" @click="ui.openFluxonKnot" title="超導拓撲磁通子扭結結晶器 (Superconducting Fluxon Knot)">
+        🪢 磁通結
+      </button>
+      <button class="hud-btn spin-mobius-btn" @click="ui.openSpinMobius" title="拓撲非阿貝爾自旋梅比烏斯條共振腔 (Spin-Möbius Resonator)">
+        ♾️ 梅比烏斯
+      </button>
+      <button class="hud-btn casimir-wormhole-btn" @click="ui.openCasimirWormhole" title="全息卡西米爾暗能量蟲洞引擎 (Casimir Dark Energy Wormhole)">
+        🌌 卡西米爾
+      </button>
+      <button class="hud-btn susy-monopole-btn" @click="ui.openSusyMonopole" title="超對稱量子色動力學磁單極玻色凝聚環 (SUSY Monopole BEC Ring)">
+        ⚛️ 磁單極
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1641,5 +1653,21 @@ onUnmounted(() => {
 .soliton-collider-btn {
   border-color: rgba(249, 115, 22, 0.4);
   color: #fb923c;
+}
+.fluxon-knot-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.spin-mobius-btn {
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #22d3ee;
+}
+.casimir-wormhole-btn {
+  border-color: rgba(217, 70, 239, 0.4);
+  color: #e879f9;
+}
+.susy-monopole-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
 }
 </style>
