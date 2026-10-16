@@ -225,6 +225,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'topological_spin_mobius', title: '拓撲非阿貝爾自旋梅比烏斯先鋒', description: '在不可定向梅比烏斯奈米帶中利用內稟貝里相位 γ=π 與亞諧波干涉，實現 4π 旋轉復原自旋流與非阿貝爾幾何進動', icon: '♾️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'holographic_casimir_wormhole', title: '全息卡西米爾暗能量蟲洞領航員', description: '在共形場論邊界藉由動態卡西米爾效應產生負能量破缺 NEC，以幻影暗能量 (w<-1) 穩定莫里斯-索恩可穿越蟲洞喉管', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'susy_qcd_monopole_bec', title: '超對稱量子色動力學磁單極凝聚大師', description: '在 N=2 Seiberg-Witten 阿蓋爾斯-道格拉斯臨界點凝聚無質量磁單極，激發對偶邁斯納效應與色電通量管強禁閉', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_hermitian_hopf_skin', title: '非厄米奇異環霍普夫皮膚渦旋宗師', description: '在三維雙帶非厄米霍普夫絕緣體中操控外爾奇異簡併環 R_EP 與複數能譜編織指數 ν_braid，激發高階非厄米頂角皮膚渦旋凝聚', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'fractal_quantum_spin_liquid', title: '分數維度碎形量子自旋液體領航員', description: '在謝爾賓斯基豪斯多夫分數維度晶格中實現 Kitaev 自旋分數化，透過馬赫-曾德爾任意子全息干涉儀測量非阿貝爾編織相位與拓撲糾纏熵', icon: '🔺', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'gravitational_alfven_soliton', title: '相對論引力波阿爾文孤子共振先鋒', description: '在強磁化中子星磁層中利用蓋爾森斯坦參量共振將張量引力波轉換為 DNLS 相對論阿爾文包絡孤子，觸發快速電波爆發坡印廷激波', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'bose_fermi_exciton_supersolid', title: '超流玻色-費米激子超固體轉子大師', description: '在雙層異質結中藉由費米面嵌套與旋子軟化同時破缺平移與 U(1) 規範對稱性，實現非經典轉動慣量 (NCRI) 與間隙量子渦旋超固體晶格', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

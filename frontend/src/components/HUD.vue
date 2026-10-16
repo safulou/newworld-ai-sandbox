@@ -604,6 +604,18 @@
       <button class="hud-btn susy-monopole-btn" @click="ui.openSusyMonopole" title="超對稱量子色動力學磁單極玻色凝聚環 (SUSY Monopole BEC Ring)">
         ⚛️ 磁單極
       </button>
+      <button class="hud-btn hopf-skin-btn" @click="ui.openNonHermitianHopfSkin" title="非厄米奇異環霍普夫絕緣體與高階皮膚渦旋反應器 (Non-Hermitian Hopf Skin Insulator)">
+        🌀 霍普夫膚
+      </button>
+      <button class="hud-btn fractal-qsl-btn" @click="ui.openFractalQuantumSpinLiquid" title="分數維度碎形量子自旋液體與任意子對偶全息干涉儀 (Fractal Quantum Spin Liquid)">
+        🔺 碎形自旋
+      </button>
+      <button class="hud-btn alfven-soliton-btn" @click="ui.openGravitationalAlfvenSoliton" title="相對論性引力波磁流體阿爾文孤子共振腔 (Gravitational-Wave Alfvén Soliton)">
+        🌊 阿爾文波
+      </button>
+      <button class="hud-btn exciton-supersolid-btn" @click="ui.openBoseFermiExcitonSupersolid" title="超流玻色-費米混合拓撲激子超固體轉子 (Bose-Fermi Exciton Supersolid Rotor)">
+        ❄️ 激子超固
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1669,5 +1681,21 @@ onUnmounted(() => {
 .susy-monopole-btn {
   border-color: rgba(16, 185, 129, 0.4);
   color: #34d399;
+}
+.hopf-skin-btn {
+  border-color: rgba(217, 70, 239, 0.4);
+  color: #f0abfc;
+}
+.fractal-qsl-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.alfven-soliton-btn {
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+}
+.exciton-supersolid-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
 }
 </style>

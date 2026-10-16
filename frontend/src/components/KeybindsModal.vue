@@ -267,6 +267,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD ♾️', desc: '開啟 拓撲非阿貝爾自旋梅比烏斯條共振腔 (Spin-Möbius Resonator)' },
       { combo: 'HUD 🌌', desc: '開啟 全息卡西米爾暗能量蟲洞引擎 (Casimir Dark Energy Wormhole Engine)' },
       { combo: 'HUD ⚛️', desc: '開啟 超對稱量子色動力學磁單極玻色凝聚環 (SUSY Monopole BEC Ring)' },
+      { combo: 'HUD 🌀', desc: '開啟 非厄米奇異環霍普夫絕緣體與高階皮膚渦旋反應器 (Non-Hermitian Hopf Skin Insulator)' },
+      { combo: 'HUD 🔺', desc: '開啟 分數維度碎形量子自旋液體與任意子對偶全息干涉儀 (Fractal Quantum Spin Liquid)' },
+      { combo: 'HUD 🌊', desc: '開啟 相對論性引力波磁流體阿爾文孤子共振腔 (Gravitational-Wave Alfvén Soliton)' },
+      { combo: 'HUD ❄️', desc: '開啟 超流玻色-費米混合拓撲激子超固體轉子 (Bose-Fermi Exciton Supersolid Rotor)' },
     ]
   }
 ]

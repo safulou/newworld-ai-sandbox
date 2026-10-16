@@ -222,6 +222,10 @@ import { superconductingFluxonKnotCrystallizerEngine } from '@/engine/supercondu
 import { topologicalSpinMobiusResonatorEngine } from '@/engine/topologicalSpinMobiusResonator'
 import { holographicCasimirWormholeEngine } from '@/engine/holographicCasimirWormholeEngine'
 import { susyQcdMonopoleBecRingEngine } from '@/engine/susyQcdMonopoleBecRing'
+import { nonHermitianHopfSkinInsulatorEngine } from '@/engine/nonHermitianHopfSkinInsulator'
+import { fractalQuantumSpinLiquidInterferometerEngine } from '@/engine/fractalQuantumSpinLiquidInterferometer'
+import { gravitationalAlfvenSolitonResonatorEngine } from '@/engine/gravitationalAlfvenSolitonResonator'
+import { boseFermiExcitonSupersolidRotorEngine } from '@/engine/boseFermiExcitonSupersolidRotor'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -528,6 +532,10 @@ function loop(): void {
   topologicalSpinMobiusResonatorEngine.update(delta)
   holographicCasimirWormholeEngine.update(delta)
   susyQcdMonopoleBecRingEngine.update(delta)
+  nonHermitianHopfSkinInsulatorEngine.update(delta)
+  fractalQuantumSpinLiquidInterferometerEngine.update(delta)
+  gravitationalAlfvenSolitonResonatorEngine.update(delta)
+  boseFermiExcitonSupersolidRotorEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

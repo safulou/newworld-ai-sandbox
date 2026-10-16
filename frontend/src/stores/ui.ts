@@ -215,6 +215,10 @@ export type UIMode =
   | 'topological-spin-mobius'
   | 'holographic-casimir-wormhole'
   | 'susy-qcd-monopole-bec'
+  | 'non-hermitian-hopf-skin'
+  | 'fractal-quantum-spin-liquid'
+  | 'gravitational-alfven-soliton'
+  | 'bose-fermi-exciton-supersolid'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -636,6 +640,18 @@ export const useUIStore = defineStore('ui', () => {
   function openSusyMonopole(): void { mode.value = 'susy-qcd-monopole-bec' }
   function setSusyMonopoleModal(open: boolean): void { mode.value = open ? 'susy-qcd-monopole-bec' : 'game' }
   function setSusyMonopoleOpen(open: boolean): void { mode.value = open ? 'susy-qcd-monopole-bec' : 'game' }
+  function openNonHermitianHopfSkin(): void { mode.value = 'non-hermitian-hopf-skin' }
+  function setNonHermitianHopfSkinModal(open: boolean): void { mode.value = open ? 'non-hermitian-hopf-skin' : 'game' }
+  function setNonHermitianHopfSkinOpen(open: boolean): void { mode.value = open ? 'non-hermitian-hopf-skin' : 'game' }
+  function openFractalQuantumSpinLiquid(): void { mode.value = 'fractal-quantum-spin-liquid' }
+  function setFractalQuantumSpinLiquidModal(open: boolean): void { mode.value = open ? 'fractal-quantum-spin-liquid' : 'game' }
+  function setFractalQuantumSpinLiquidOpen(open: boolean): void { mode.value = open ? 'fractal-quantum-spin-liquid' : 'game' }
+  function openGravitationalAlfvenSoliton(): void { mode.value = 'gravitational-alfven-soliton' }
+  function setGravitationalAlfvenSolitonModal(open: boolean): void { mode.value = open ? 'gravitational-alfven-soliton' : 'game' }
+  function setGravitationalAlfvenSolitonOpen(open: boolean): void { mode.value = open ? 'gravitational-alfven-soliton' : 'game' }
+  function openBoseFermiExcitonSupersolid(): void { mode.value = 'bose-fermi-exciton-supersolid' }
+  function setBoseFermiExcitonSupersolidModal(open: boolean): void { mode.value = open ? 'bose-fermi-exciton-supersolid' : 'game' }
+  function setBoseFermiExcitonSupersolidOpen(open: boolean): void { mode.value = open ? 'bose-fermi-exciton-supersolid' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -821,6 +837,10 @@ export const useUIStore = defineStore('ui', () => {
     openSpinMobius, setSpinMobiusModal, setSpinMobiusOpen,
     openCasimirWormhole, setCasimirWormholeModal, setCasimirWormholeOpen,
     openSusyMonopole, setSusyMonopoleModal, setSusyMonopoleOpen,
+    openNonHermitianHopfSkin, setNonHermitianHopfSkinModal, setNonHermitianHopfSkinOpen,
+    openFractalQuantumSpinLiquid, setFractalQuantumSpinLiquidModal, setFractalQuantumSpinLiquidOpen,
+    openGravitationalAlfvenSoliton, setGravitationalAlfvenSolitonModal, setGravitationalAlfvenSolitonOpen,
+    openBoseFermiExcitonSupersolid, setBoseFermiExcitonSupersolidModal, setBoseFermiExcitonSupersolidOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

@@ -648,6 +648,18 @@
       <SusyQcdMonopoleBecModal v-if="ui.mode === 'susy-qcd-monopole-bec'" />
     </Transition>
     <Transition name="fade">
+      <NonHermitianHopfSkinModal v-if="ui.mode === 'non-hermitian-hopf-skin'" />
+    </Transition>
+    <Transition name="fade">
+      <FractalQuantumSpinLiquidModal v-if="ui.mode === 'fractal-quantum-spin-liquid'" />
+    </Transition>
+    <Transition name="fade">
+      <GravitationalAlfvenSolitonModal v-if="ui.mode === 'gravitational-alfven-soliton'" />
+    </Transition>
+    <Transition name="fade">
+      <BoseFermiExcitonSupersolidModal v-if="ui.mode === 'bose-fermi-exciton-supersolid'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -889,6 +901,10 @@ import SuperconductingFluxonKnotModal from '@/components/SuperconductingFluxonKn
 import TopologicalSpinMobiusModal from '@/components/TopologicalSpinMobiusModal.vue'
 import HolographicCasimirWormholeModal from '@/components/HolographicCasimirWormholeModal.vue'
 import SusyQcdMonopoleBecModal from '@/components/SusyQcdMonopoleBecModal.vue'
+import NonHermitianHopfSkinModal from '@/components/NonHermitianHopfSkinModal.vue'
+import FractalQuantumSpinLiquidModal from '@/components/FractalQuantumSpinLiquidModal.vue'
+import GravitationalAlfvenSolitonModal from '@/components/GravitationalAlfvenSolitonModal.vue'
+import BoseFermiExcitonSupersolidModal from '@/components/BoseFermiExcitonSupersolidModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

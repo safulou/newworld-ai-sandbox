@@ -220,6 +220,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD ♾️` | Topological Non-Abelian Spin-Möbius Resonator, Non-Orientable Berry Phase γ = π & Half-Integer OAM |
 | `HUD 🌌` | Holographic Casimir Dark Energy Wormhole Engine, NEC Violation, Morris-Thorne Throat & Phantom Field |
 | `HUD ⚛️` | Supersymmetric QCD Magnetic Monopole BEC Ring, N=2 Seiberg-Witten Dual Meissner & Color String |
+| `HUD 🌀` | Non-Hermitian Exceptional-Ring Hopf Insulator, Weyl Exceptional Rings, Complex Braiding & Corner Skin Vortex |
+| `HUD 🔺` | Fractal-Dimensional Quantum Spin Liquid, Sierpiński Kitaev Fractionalization & Anyon Mach-Zehnder Interferometer |
+| `HUD 🌊` | Relativistic Gravitational-Wave MHD Alfvén Soliton Resonator, Gertsenshtein Parametric Coupling & FRB Surge |
+| `HUD ❄️` | Superfluid Bose-Fermi Topological Exciton Supersolid Rotor, Roton Softening & Leggett NCRI Fraction |
 | `ESC` | Unlock cursor |
 
 ## AI Providers
