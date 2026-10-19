@@ -660,6 +660,18 @@
       <BoseFermiExcitonSupersolidModal v-if="ui.mode === 'bose-fermi-exciton-supersolid'" />
     </Transition>
     <Transition name="fade">
+      <TopologicalChiralWeylPhononModal v-if="ui.mode === 'topological-chiral-weyl-phonon'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicYangMillsTensorModal v-if="ui.mode === 'holographic-yang-mills-tensor'" />
+    </Transition>
+    <Transition name="fade">
+      <SpinOrbitalOctupoleModal v-if="ui.mode === 'spin-orbital-octupole'" />
+    </Transition>
+    <Transition name="fade">
+      <LaserWakefieldQuantumRadiationModal v-if="ui.mode === 'laser-wakefield-quantum-radiation'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -905,6 +917,10 @@ import NonHermitianHopfSkinModal from '@/components/NonHermitianHopfSkinModal.vu
 import FractalQuantumSpinLiquidModal from '@/components/FractalQuantumSpinLiquidModal.vue'
 import GravitationalAlfvenSolitonModal from '@/components/GravitationalAlfvenSolitonModal.vue'
 import BoseFermiExcitonSupersolidModal from '@/components/BoseFermiExcitonSupersolidModal.vue'
+import TopologicalChiralWeylPhononModal from '@/components/TopologicalChiralWeylPhononModal.vue'
+import HolographicYangMillsTensorModal from '@/components/HolographicYangMillsTensorModal.vue'
+import SpinOrbitalOctupoleModal from '@/components/SpinOrbitalOctupoleModal.vue'
+import LaserWakefieldQuantumRadiationModal from '@/components/LaserWakefieldQuantumRadiationModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

@@ -616,6 +616,18 @@
       <button class="hud-btn exciton-supersolid-btn" @click="ui.openBoseFermiExcitonSupersolid" title="超流玻色-費米混合拓撲激子超固體轉子 (Bose-Fermi Exciton Supersolid Rotor)">
         ❄️ 激子超固
       </button>
+      <button class="hud-btn weyl-phonon-btn" @click="ui.openTopologicalChiralWeylPhonon" title="拓撲手性時間反演破缺外爾聲子超流體與熱霍爾渦旋晶格 (Chiral Weyl Phonon Superfluid)">
+        🎵 外爾聲子
+      </button>
+      <button class="hud-btn ym-tensor-btn" @click="ui.openHolographicYangMillsTensor" title="全息楊-米爾斯張量網路與多體糾纏幾何湧現重整化流引擎 (Holographic YM Tensor Network)">
+        🕸️ 楊米張量
+      </button>
+      <button class="hud-btn octupole-insulator-btn" @click="ui.openSpinOrbitalOctupole" title="非阿貝爾量子自旋軌道液體與四極矩拓撲八極子絕緣體 (Spin-Orbital Octupole Insulator)">
+        💠 八極絕緣
+      </button>
+      <button class="hud-btn lwfa-qed-btn" @click="ui.openLaserWakefieldQuantumRadiation" title="超強雷射等離子體尾波場吉電子伏特對撞與量子輻射反作用反應堆 (Laser Wakefield QED Collider)">
+        ⚡ 尾波對撞
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1697,5 +1709,21 @@ onUnmounted(() => {
 .exciton-supersolid-btn {
   border-color: rgba(16, 185, 129, 0.4);
   color: #6ee7b7;
+}
+.weyl-phonon-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.ym-tensor-btn {
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #a78bfa;
+}
+.octupole-insulator-btn {
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+.lwfa-qed-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
 }
 </style>

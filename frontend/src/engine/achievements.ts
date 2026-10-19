@@ -229,6 +229,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'fractal_quantum_spin_liquid', title: '分數維度碎形量子自旋液體領航員', description: '在謝爾賓斯基豪斯多夫分數維度晶格中實現 Kitaev 自旋分數化，透過馬赫-曾德爾任意子全息干涉儀測量非阿貝爾編織相位與拓撲糾纏熵', icon: '🔺', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'gravitational_alfven_soliton', title: '相對論引力波阿爾文孤子共振先鋒', description: '在強磁化中子星磁層中利用蓋爾森斯坦參量共振將張量引力波轉換為 DNLS 相對論阿爾文包絡孤子，觸發快速電波爆發坡印廷激波', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'bose_fermi_exciton_supersolid', title: '超流玻色-費米激子超固體轉子大師', description: '在雙層異質結中藉由費米面嵌套與旋子軟化同時破缺平移與 U(1) 規範對稱性，實現非經典轉動慣量 (NCRI) 與間隙量子渦旋超固體晶格', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'topological_chiral_weyl_phonon', title: '拓撲手性外爾聲子超流體宗師', description: '在時間反演破缺磁性晶體中調控外爾聲子單極荷 C_ph 與贗角動量，實現手性聲子超流凝聚與無耗散聲子熱霍爾效應', icon: '🎵', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_yang_mills_tensor', title: '全息楊-米爾斯張量網路領航員', description: '透過龐加萊雙曲 MERA 張量網路將邊界 SU(N_c) 規範場映射至湧現 AdS 體幾何，驗證笠-高柳測地線糾纏熵與威爾森面積律強禁閉', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
+  { id: 'spin_orbital_octupole_insulator', title: '自旋軌道液體拓撲八極子絕緣先鋒', description: '在 SU(4) Kugel-Khomskii 自旋軌道糾纏晶格中結合 π-磁通面，實現 BBH 量子化體八極矩 q_xyz=e/2 與 8 頂角分數化 ±e/2 電荷保護', icon: '💠', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'laser_wakefield_quantum_radiation', title: '雷射尾波場強場 QED 對撞大師', description: '以拍瓦雷射驅動非線性等離子體空泡尾波場加速多 GeV 電子束，在量子非線性體制 χ_e≳1 下觸發隨機量子輻射反作用與 Breit-Wheeler 正負電子對雪崩', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

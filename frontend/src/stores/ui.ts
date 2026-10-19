@@ -219,6 +219,10 @@ export type UIMode =
   | 'fractal-quantum-spin-liquid'
   | 'gravitational-alfven-soliton'
   | 'bose-fermi-exciton-supersolid'
+  | 'topological-chiral-weyl-phonon'
+  | 'holographic-yang-mills-tensor'
+  | 'spin-orbital-octupole'
+  | 'laser-wakefield-quantum-radiation'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -652,6 +656,18 @@ export const useUIStore = defineStore('ui', () => {
   function openBoseFermiExcitonSupersolid(): void { mode.value = 'bose-fermi-exciton-supersolid' }
   function setBoseFermiExcitonSupersolidModal(open: boolean): void { mode.value = open ? 'bose-fermi-exciton-supersolid' : 'game' }
   function setBoseFermiExcitonSupersolidOpen(open: boolean): void { mode.value = open ? 'bose-fermi-exciton-supersolid' : 'game' }
+  function openTopologicalChiralWeylPhonon(): void { mode.value = 'topological-chiral-weyl-phonon' }
+  function setTopologicalChiralWeylPhononModal(open: boolean): void { mode.value = open ? 'topological-chiral-weyl-phonon' : 'game' }
+  function setTopologicalChiralWeylPhononOpen(open: boolean): void { mode.value = open ? 'topological-chiral-weyl-phonon' : 'game' }
+  function openHolographicYangMillsTensor(): void { mode.value = 'holographic-yang-mills-tensor' }
+  function setHolographicYangMillsTensorModal(open: boolean): void { mode.value = open ? 'holographic-yang-mills-tensor' : 'game' }
+  function setHolographicYangMillsTensorOpen(open: boolean): void { mode.value = open ? 'holographic-yang-mills-tensor' : 'game' }
+  function openSpinOrbitalOctupole(): void { mode.value = 'spin-orbital-octupole' }
+  function setSpinOrbitalOctupoleModal(open: boolean): void { mode.value = open ? 'spin-orbital-octupole' : 'game' }
+  function setSpinOrbitalOctupoleOpen(open: boolean): void { mode.value = open ? 'spin-orbital-octupole' : 'game' }
+  function openLaserWakefieldQuantumRadiation(): void { mode.value = 'laser-wakefield-quantum-radiation' }
+  function setLaserWakefieldQuantumRadiationModal(open: boolean): void { mode.value = open ? 'laser-wakefield-quantum-radiation' : 'game' }
+  function setLaserWakefieldQuantumRadiationOpen(open: boolean): void { mode.value = open ? 'laser-wakefield-quantum-radiation' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -841,6 +857,10 @@ export const useUIStore = defineStore('ui', () => {
     openFractalQuantumSpinLiquid, setFractalQuantumSpinLiquidModal, setFractalQuantumSpinLiquidOpen,
     openGravitationalAlfvenSoliton, setGravitationalAlfvenSolitonModal, setGravitationalAlfvenSolitonOpen,
     openBoseFermiExcitonSupersolid, setBoseFermiExcitonSupersolidModal, setBoseFermiExcitonSupersolidOpen,
+    openTopologicalChiralWeylPhonon, setTopologicalChiralWeylPhononModal, setTopologicalChiralWeylPhononOpen,
+    openHolographicYangMillsTensor, setHolographicYangMillsTensorModal, setHolographicYangMillsTensorOpen,
+    openSpinOrbitalOctupole, setSpinOrbitalOctupoleModal, setSpinOrbitalOctupoleOpen,
+    openLaserWakefieldQuantumRadiation, setLaserWakefieldQuantumRadiationModal, setLaserWakefieldQuantumRadiationOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

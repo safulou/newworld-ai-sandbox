@@ -224,6 +224,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔺` | Fractal-Dimensional Quantum Spin Liquid, Sierpiński Kitaev Fractionalization & Anyon Mach-Zehnder Interferometer |
 | `HUD 🌊` | Relativistic Gravitational-Wave MHD Alfvén Soliton Resonator, Gertsenshtein Parametric Coupling & FRB Surge |
 | `HUD ❄️` | Superfluid Bose-Fermi Topological Exciton Supersolid Rotor, Roton Softening & Leggett NCRI Fraction |
+| `HUD 🎵` | Topological Chiral Weyl Phonon Superfluid, Phonon Monopoles, Surface Phonon Arcs & Thermal Hall Conductivity |
+| `HUD 🕸️` | Holographic SU(N_c) Yang-Mills Tensor Network, Hyperbolic MERA RG Flow, RT Geodesic & Wilson Confinement |
+| `HUD 💠` | Non-Abelian SU(4) Spin-Orbital Liquid & BBH Topological Octupole Insulator, π-Flux & ±e/2 Corner Charges |
+| `HUD ⚡` | Petawatt Laser-Plasma Wakefield GeV Collider, Strong-Field QED Radiation Recoil & Breit-Wheeler Pair Cascade |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

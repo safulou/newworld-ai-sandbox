@@ -271,6 +271,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔺', desc: '開啟 分數維度碎形量子自旋液體與任意子對偶全息干涉儀 (Fractal Quantum Spin Liquid)' },
       { combo: 'HUD 🌊', desc: '開啟 相對論性引力波磁流體阿爾文孤子共振腔 (Gravitational-Wave Alfvén Soliton)' },
       { combo: 'HUD ❄️', desc: '開啟 超流玻色-費米混合拓撲激子超固體轉子 (Bose-Fermi Exciton Supersolid Rotor)' },
+      { combo: 'HUD 🎵', desc: '開啟 拓撲手性時間反演破缺外爾聲子超流體與熱霍爾渦旋晶格 (Chiral Weyl Phonon Superfluid)' },
+      { combo: 'HUD 🕸️', desc: '開啟 全息楊-米爾斯張量網路與多體糾纏幾何湧現重整化流引擎 (Holographic YM Tensor Network)' },
+      { combo: 'HUD 💠', desc: '開啟 非阿貝爾量子自旋軌道液體與四極矩拓撲八極子絕緣體 (Spin-Orbital Octupole Insulator)' },
+      { combo: 'HUD ⚡', desc: '開啟 超強雷射等離子體尾波場吉電子伏特對撞與量子輻射反作用反應堆 (Laser Wakefield QED Collider)' },
     ]
   }
 ]
