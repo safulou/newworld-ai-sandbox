@@ -628,6 +628,18 @@
       <button class="hud-btn lwfa-qed-btn" @click="ui.openLaserWakefieldQuantumRadiation" title="超強雷射等離子體尾波場吉電子伏特對撞與量子輻射反作用反應堆 (Laser Wakefield QED Collider)">
         ⚡ 尾波對撞
       </button>
+      <button class="hud-btn altermagnet-btn" @click="ui.openAltermagneticSpinSplitter" title="交錯磁性體手性自旋分光器與非互易自旋波二極體 (Altermagnetic Spin-Splitter)">
+        🧲 交錯自旋
+      </button>
+      <button class="hud-btn rydberg-qsl-btn" @click="ui.openRydbergSpinLiquidArray" title="里德堡光鑷陣列非阿貝爾拓撲自旋液體與共振價鍵干涉儀 (Rydberg Topological Spin Liquid)">
+        🔬 里德堡陣列
+      </button>
+      <button class="hud-btn aqn-resonator-btn" @click="ui.openAxionQuarkNuggetResonator" title="相對論性軸子夸克團塊暗物質磁層諧振與反物質電離層湮滅 (Axion Quark Nugget Resonator)">
+        ☄️ 夸克團塊
+      </button>
+      <button class="hud-btn euler-metamaterial-btn" @click="ui.openTopologicalEulerMetamaterial" title="拓撲歐拉類多能隙超材料與非阿貝爾四元數節點編織 (Topological Euler-Class Metamaterial)">
+        🧬 歐拉拓撲
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1725,5 +1737,21 @@ onUnmounted(() => {
 .lwfa-qed-btn {
   border-color: rgba(244, 63, 94, 0.4);
   color: #fb7185;
+}
+.altermagnet-btn {
+  border-color: rgba(192, 132, 252, 0.4);
+  color: #d8b4fe;
+}
+.rydberg-qsl-btn {
+  border-color: rgba(20, 184, 166, 0.4);
+  color: #2dd4bf;
+}
+.aqn-resonator-btn {
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+}
+.euler-metamaterial-btn {
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #818cf8;
 }
 </style>

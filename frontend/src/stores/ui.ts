@@ -223,6 +223,10 @@ export type UIMode =
   | 'holographic-yang-mills-tensor'
   | 'spin-orbital-octupole'
   | 'laser-wakefield-quantum-radiation'
+  | 'altermagnetic-spin-splitter'
+  | 'rydberg-spin-liquid-array'
+  | 'axion-quark-nugget-resonator'
+  | 'topological-euler-metamaterial'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -668,6 +672,18 @@ export const useUIStore = defineStore('ui', () => {
   function openLaserWakefieldQuantumRadiation(): void { mode.value = 'laser-wakefield-quantum-radiation' }
   function setLaserWakefieldQuantumRadiationModal(open: boolean): void { mode.value = open ? 'laser-wakefield-quantum-radiation' : 'game' }
   function setLaserWakefieldQuantumRadiationOpen(open: boolean): void { mode.value = open ? 'laser-wakefield-quantum-radiation' : 'game' }
+  function openAltermagneticSpinSplitter(): void { mode.value = 'altermagnetic-spin-splitter' }
+  function setAltermagneticSpinSplitterModal(open: boolean): void { mode.value = open ? 'altermagnetic-spin-splitter' : 'game' }
+  function setAltermagneticSpinSplitterOpen(open: boolean): void { mode.value = open ? 'altermagnetic-spin-splitter' : 'game' }
+  function openRydbergSpinLiquidArray(): void { mode.value = 'rydberg-spin-liquid-array' }
+  function setRydbergSpinLiquidArrayModal(open: boolean): void { mode.value = open ? 'rydberg-spin-liquid-array' : 'game' }
+  function setRydbergSpinLiquidArrayOpen(open: boolean): void { mode.value = open ? 'rydberg-spin-liquid-array' : 'game' }
+  function openAxionQuarkNuggetResonator(): void { mode.value = 'axion-quark-nugget-resonator' }
+  function setAxionQuarkNuggetResonatorModal(open: boolean): void { mode.value = open ? 'axion-quark-nugget-resonator' : 'game' }
+  function setAxionQuarkNuggetResonatorOpen(open: boolean): void { mode.value = open ? 'axion-quark-nugget-resonator' : 'game' }
+  function openTopologicalEulerMetamaterial(): void { mode.value = 'topological-euler-metamaterial' }
+  function setTopologicalEulerMetamaterialModal(open: boolean): void { mode.value = open ? 'topological-euler-metamaterial' : 'game' }
+  function setTopologicalEulerMetamaterialOpen(open: boolean): void { mode.value = open ? 'topological-euler-metamaterial' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -861,6 +877,10 @@ export const useUIStore = defineStore('ui', () => {
     openHolographicYangMillsTensor, setHolographicYangMillsTensorModal, setHolographicYangMillsTensorOpen,
     openSpinOrbitalOctupole, setSpinOrbitalOctupoleModal, setSpinOrbitalOctupoleOpen,
     openLaserWakefieldQuantumRadiation, setLaserWakefieldQuantumRadiationModal, setLaserWakefieldQuantumRadiationOpen,
+    openAltermagneticSpinSplitter, setAltermagneticSpinSplitterModal, setAltermagneticSpinSplitterOpen,
+    openRydbergSpinLiquidArray, setRydbergSpinLiquidArrayModal, setRydbergSpinLiquidArrayOpen,
+    openAxionQuarkNuggetResonator, setAxionQuarkNuggetResonatorModal, setAxionQuarkNuggetResonatorOpen,
+    openTopologicalEulerMetamaterial, setTopologicalEulerMetamaterialModal, setTopologicalEulerMetamaterialOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

@@ -233,6 +233,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'holographic_yang_mills_tensor', title: '全息楊-米爾斯張量網路領航員', description: '透過龐加萊雙曲 MERA 張量網路將邊界 SU(N_c) 規範場映射至湧現 AdS 體幾何，驗證笠-高柳測地線糾纏熵與威爾森面積律強禁閉', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'exploration' },
   { id: 'spin_orbital_octupole_insulator', title: '自旋軌道液體拓撲八極子絕緣先鋒', description: '在 SU(4) Kugel-Khomskii 自旋軌道糾纏晶格中結合 π-磁通面，實現 BBH 量子化體八極矩 q_xyz=e/2 與 8 頂角分數化 ±e/2 電荷保護', icon: '💠', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'laser_wakefield_quantum_radiation', title: '雷射尾波場強場 QED 對撞大師', description: '以拍瓦雷射驅動非線性等離子體空泡尾波場加速多 GeV 電子束，在量子非線性體制 χ_e≳1 下觸發隨機量子輻射反作用與 Breit-Wheeler 正負電子對雪崩', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'altermagnetic_chiral_spin_splitter', title: '交錯磁手性自旋分光大師', description: '在零淨磁化交錯磁性體中激發非相對論性 d/g/i-wave 動量空間自旋劈裂、巨幅自旋分光角 θ_SS 與手性磁振子非互易二極體整流', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'rydberg_topological_spin_liquid', title: '里德堡光鑷拓撲自旋液體大師', description: '在紅寶石光鑷晶格中調諧里德堡阻塞比 R_b/a 與絕熱失諧，實現 Z₂ 共振價鍵拓撲自旋液體、Fredenhagen-Marcu 非局域序與磁通子編織', icon: '🔬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'axion_quark_nugget_resonator', title: '軸子夸克團塊暗物質諧振大師', description: '探測色味鎖定反物質夸克團塊暗物質穿越磁層時激發之正電子電離層 511 keV 湮滅伽瑪射線與軸子疇壁 Primakoff 相干射電暴', icon: '☄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'topological_euler_class_metamaterial', title: '拓撲歐拉類非阿貝爾編織大師', description: '在時空反演對稱多能隙超材料中編織攜帶四元數荷 Q_8 的相鄰能隙節點，創造區塊歐拉類 χ_D ≥ 2 之拓撲阻挫無法成對湮滅態', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

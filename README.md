@@ -228,6 +228,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕸️` | Holographic SU(N_c) Yang-Mills Tensor Network, Hyperbolic MERA RG Flow, RT Geodesic & Wilson Confinement |
 | `HUD 💠` | Non-Abelian SU(4) Spin-Orbital Liquid & BBH Topological Octupole Insulator, π-Flux & ±e/2 Corner Charges |
 | `HUD ⚡` | Petawatt Laser-Plasma Wakefield GeV Collider, Strong-Field QED Radiation Recoil & Breit-Wheeler Pair Cascade |
+| `HUD 🧲` | Altermagnetic Chiral Spin-Splitter & Non-Reciprocal Magnonic Diode, d/g/i-Wave Spin Splitting & Giant SSE |
+| `HUD 🔬` | Rydberg Optical Tweezer Ruby Lattice Non-Abelian Topological Spin Liquid, RVB Dimers & Fredenhagen-Marcu Order |
+| `HUD ☄️` | Relativistic Axion Quark-Nugget (AQN) Dark Matter Magnetosphere Resonator, 511 keV Positron Annihilation & Primakoff Flare |
+| `HUD 🧬` | Topological Euler-Class Multi-Gap Metamaterial, Non-Abelian Quaternion Q_8 Nodal Braiding & Annihilation Obstruction |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

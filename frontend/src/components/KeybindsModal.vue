@@ -275,6 +275,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕸️', desc: '開啟 全息楊-米爾斯張量網路與多體糾纏幾何湧現重整化流引擎 (Holographic YM Tensor Network)' },
       { combo: 'HUD 💠', desc: '開啟 非阿貝爾量子自旋軌道液體與四極矩拓撲八極子絕緣體 (Spin-Orbital Octupole Insulator)' },
       { combo: 'HUD ⚡', desc: '開啟 超強雷射等離子體尾波場吉電子伏特對撞與量子輻射反作用反應堆 (Laser Wakefield QED Collider)' },
+      { combo: 'HUD 🧲', desc: '開啟 交錯磁性體手性自旋分光器與非互易自旋波二極體 (Altermagnetic Spin-Splitter)' },
+      { combo: 'HUD 🔬', desc: '開啟 里德堡光鑷陣列非阿貝爾拓撲自旋液體與共振價鍵干涉儀 (Rydberg Topological Spin Liquid)' },
+      { combo: 'HUD ☄️', desc: '開啟 相對論性軸子夸克團塊暗物質磁層諧振與反物質電離層湮滅 (Axion Quark Nugget Resonator)' },
+      { combo: 'HUD 🧬', desc: '開啟 拓撲歐拉類多能隙超材料與非阿貝爾四元數節點編織 (Topological Euler-Class Metamaterial)' },
     ]
   }
 ]

@@ -672,6 +672,18 @@
       <LaserWakefieldQuantumRadiationModal v-if="ui.mode === 'laser-wakefield-quantum-radiation'" />
     </Transition>
     <Transition name="fade">
+      <AltermagneticSpinSplitterModal v-if="ui.mode === 'altermagnetic-spin-splitter'" />
+    </Transition>
+    <Transition name="fade">
+      <RydbergSpinLiquidArrayModal v-if="ui.mode === 'rydberg-spin-liquid-array'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionQuarkNuggetResonatorModal v-if="ui.mode === 'axion-quark-nugget-resonator'" />
+    </Transition>
+    <Transition name="fade">
+      <TopologicalEulerMetamaterialModal v-if="ui.mode === 'topological-euler-metamaterial'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -921,6 +933,10 @@ import TopologicalChiralWeylPhononModal from '@/components/TopologicalChiralWeyl
 import HolographicYangMillsTensorModal from '@/components/HolographicYangMillsTensorModal.vue'
 import SpinOrbitalOctupoleModal from '@/components/SpinOrbitalOctupoleModal.vue'
 import LaserWakefieldQuantumRadiationModal from '@/components/LaserWakefieldQuantumRadiationModal.vue'
+import AltermagneticSpinSplitterModal from '@/components/AltermagneticSpinSplitterModal.vue'
+import RydbergSpinLiquidArrayModal from '@/components/RydbergSpinLiquidArrayModal.vue'
+import AxionQuarkNuggetResonatorModal from '@/components/AxionQuarkNuggetResonatorModal.vue'
+import TopologicalEulerMetamaterialModal from '@/components/TopologicalEulerMetamaterialModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
