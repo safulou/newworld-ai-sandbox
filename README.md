@@ -232,6 +232,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔬` | Rydberg Optical Tweezer Ruby Lattice Non-Abelian Topological Spin Liquid, RVB Dimers & Fredenhagen-Marcu Order |
 | `HUD ☄️` | Relativistic Axion Quark-Nugget (AQN) Dark Matter Magnetosphere Resonator, 511 keV Positron Annihilation & Primakoff Flare |
 | `HUD 🧬` | Topological Euler-Class Multi-Gap Metamaterial, Non-Abelian Quaternion Q_8 Nodal Braiding & Annihilation Obstruction |
+| `HUD ✡️` | Kagome Metal Pair-Density-Wave & Chiral Orbital Loop-Current Superconductor, 3Q PDW & Vestigial Charge-6e Condensate |
+| `HUD 🌈` | Floquet Helically-Modulated Photonic Waveguide Array, Wilczek-Zee U(N) Holonomy & π-Mode Anyon Braider |
+| `HUD 🕳️` | Holographic Sachdev-Ye-Kitaev (SYK) Traversable AdS₂ Wormhole, Operator Size-Winding & Gravitational Teleportation |
+| `HUD 🌟` | Relativistic Pion-Condensate Neutron Star Core, ³P₂ Superfluid Half-Quantum Vortex Avalanche & Pulsar Glitch |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

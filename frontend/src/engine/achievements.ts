@@ -237,6 +237,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'rydberg_topological_spin_liquid', title: '里德堡光鑷拓撲自旋液體大師', description: '在紅寶石光鑷晶格中調諧里德堡阻塞比 R_b/a 與絕熱失諧，實現 Z₂ 共振價鍵拓撲自旋液體、Fredenhagen-Marcu 非局域序與磁通子編織', icon: '🔬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'axion_quark_nugget_resonator', title: '軸子夸克團塊暗物質諧振大師', description: '探測色味鎖定反物質夸克團塊暗物質穿越磁層時激發之正電子電離層 511 keV 湮滅伽瑪射線與軸子疇壁 Primakoff 相干射電暴', icon: '☄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'topological_euler_class_metamaterial', title: '拓撲歐拉類非阿貝爾編織大師', description: '在時空反演對稱多能隙超材料中編織攜帶四元數荷 Q_8 的相鄰能隙節點，創造區塊歐拉類 χ_D ≥ 2 之拓撲阻挫無法成對湮滅態', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'kagome_pair_density_wave_loop_current', title: '籠目配對密度波環電流超導大師', description: '在大衛之星籠目晶格超導體中激發時間反演破缺手性軌道環電流、3Q 配對密度波與分數化磁通 h/6e 殘留電荷-6e 玻色凝聚態', icon: '✡️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'floquet_non_abelian_photonic_waveguide', title: '弗洛凱光子波導非阿貝爾編織大師', description: '在三維螺旋調制光子波導陣列中誘導合成弗洛凱規範場、非阿貝爾 Wilczek-Zee U(N) 幾何和樂與準能量 π-模光子任意子編織', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_syk_wormhole_teleportation', title: '全息 SYK 可穿越蟲洞傳態大師', description: '透過雙邊馬約拉納費米子 GJW 非局域耦合向 AdS₂ 黑洞視界注入負能量衝擊波，以算符尺寸纏繞實現全息可穿越蟲洞量子引力傳態', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'pion_condensate_vortex_avalanche', title: '中子星介子凝聚渦旋雪崩大師', description: '在中子星高密內核激發手性 p-波 π 介子凝聚層狀晶格，觸發數十億條 ³P₂ 超流半量子渦旋集體脫釘雪崩與脈衝星自轉突變', icon: '🌟', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

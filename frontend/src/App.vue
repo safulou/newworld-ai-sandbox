@@ -684,6 +684,18 @@
       <TopologicalEulerMetamaterialModal v-if="ui.mode === 'topological-euler-metamaterial'" />
     </Transition>
     <Transition name="fade">
+      <KagomePairDensityWaveModal v-if="ui.mode === 'kagome-pair-density-wave'" />
+    </Transition>
+    <Transition name="fade">
+      <FloquetNonAbelianWaveguideModal v-if="ui.mode === 'floquet-non-abelian-waveguide'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicSykWormholeModal v-if="ui.mode === 'holographic-syk-wormhole'" />
+    </Transition>
+    <Transition name="fade">
+      <PionCondensateVortexAvalancheModal v-if="ui.mode === 'pion-condensate-vortex-avalanche'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -937,6 +949,10 @@ import AltermagneticSpinSplitterModal from '@/components/AltermagneticSpinSplitt
 import RydbergSpinLiquidArrayModal from '@/components/RydbergSpinLiquidArrayModal.vue'
 import AxionQuarkNuggetResonatorModal from '@/components/AxionQuarkNuggetResonatorModal.vue'
 import TopologicalEulerMetamaterialModal from '@/components/TopologicalEulerMetamaterialModal.vue'
+import KagomePairDensityWaveModal from '@/components/KagomePairDensityWaveModal.vue'
+import FloquetNonAbelianWaveguideModal from '@/components/FloquetNonAbelianWaveguideModal.vue'
+import HolographicSykWormholeModal from '@/components/HolographicSykWormholeModal.vue'
+import PionCondensateVortexAvalancheModal from '@/components/PionCondensateVortexAvalancheModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

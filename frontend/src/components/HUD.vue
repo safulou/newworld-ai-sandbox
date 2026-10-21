@@ -640,6 +640,18 @@
       <button class="hud-btn euler-metamaterial-btn" @click="ui.openTopologicalEulerMetamaterial" title="拓撲歐拉類多能隙超材料與非阿貝爾四元數節點編織 (Topological Euler-Class Metamaterial)">
         🧬 歐拉拓撲
       </button>
+      <button class="hud-btn kagome-pdw-btn" @click="ui.openKagomePairDensityWave" title="籠目金屬配對密度波與手性軌道環電流超導 (Kagome Pair-Density-Wave & Loop Current)">
+        ✡️ 籠目超導
+      </button>
+      <button class="hud-btn floquet-wg-btn" @click="ui.openFloquetNonAbelianWaveguide" title="弗洛凱螺旋調制光子波導陣列與非阿貝爾任意子編織器 (Floquet Non-Abelian Photonic Waveguide)">
+        🌈 光子編織
+      </button>
+      <button class="hud-btn syk-wormhole-btn" @click="ui.openHolographicSykWormhole" title="全息 SYK 雙邊耦合可穿越蟲洞與量子資訊引力傳態 (Holographic SYK Traversable Wormhole)">
+        🕳️ SYK蟲洞
+      </button>
+      <button class="hud-btn pion-glitch-btn" @click="ui.openPionCondensateVortexAvalanche" title="中子星內核相對論性 π 介子凝聚與超流渦旋雪崩自轉突變 (Pion-Condensate Vortex Avalanche)">
+        🌟 脈衝星變
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1753,5 +1765,21 @@ onUnmounted(() => {
 .euler-metamaterial-btn {
   border-color: rgba(99, 102, 241, 0.4);
   color: #818cf8;
+}
+.kagome-pdw-btn {
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+.floquet-wg-btn {
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #f472b6;
+}
+.syk-wormhole-btn {
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+}
+.pion-glitch-btn {
+  border-color: rgba(234, 179, 8, 0.4);
+  color: #facc15;
 }
 </style>

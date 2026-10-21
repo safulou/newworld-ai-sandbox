@@ -279,6 +279,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔬', desc: '開啟 里德堡光鑷陣列非阿貝爾拓撲自旋液體與共振價鍵干涉儀 (Rydberg Topological Spin Liquid)' },
       { combo: 'HUD ☄️', desc: '開啟 相對論性軸子夸克團塊暗物質磁層諧振與反物質電離層湮滅 (Axion Quark Nugget Resonator)' },
       { combo: 'HUD 🧬', desc: '開啟 拓撲歐拉類多能隙超材料與非阿貝爾四元數節點編織 (Topological Euler-Class Metamaterial)' },
+      { combo: 'HUD ✡️', desc: '開啟 籠目金屬配對密度波與手性軌道環電流超導 (Kagome Pair-Density-Wave & Loop Current)' },
+      { combo: 'HUD 🌈', desc: '開啟 弗洛凱螺旋調制光子波導陣列與非阿貝爾任意子編織器 (Floquet Non-Abelian Photonic Waveguide)' },
+      { combo: 'HUD 🕳️', desc: '開啟 全息 SYK 雙邊耦合可穿越蟲洞與量子資訊引力傳態 (Holographic SYK Traversable Wormhole)' },
+      { combo: 'HUD 🌟', desc: '開啟 中子星內核相對論性 π 介子凝聚與超流渦旋雪崩自轉突變 (Pion-Condensate Vortex Avalanche)' },
     ]
   }
 ]

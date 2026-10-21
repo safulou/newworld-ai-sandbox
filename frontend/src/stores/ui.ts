@@ -227,6 +227,10 @@ export type UIMode =
   | 'rydberg-spin-liquid-array'
   | 'axion-quark-nugget-resonator'
   | 'topological-euler-metamaterial'
+  | 'kagome-pair-density-wave'
+  | 'floquet-non-abelian-waveguide'
+  | 'holographic-syk-wormhole'
+  | 'pion-condensate-vortex-avalanche'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -684,6 +688,18 @@ export const useUIStore = defineStore('ui', () => {
   function openTopologicalEulerMetamaterial(): void { mode.value = 'topological-euler-metamaterial' }
   function setTopologicalEulerMetamaterialModal(open: boolean): void { mode.value = open ? 'topological-euler-metamaterial' : 'game' }
   function setTopologicalEulerMetamaterialOpen(open: boolean): void { mode.value = open ? 'topological-euler-metamaterial' : 'game' }
+  function openKagomePairDensityWave(): void { mode.value = 'kagome-pair-density-wave' }
+  function setKagomePairDensityWaveModal(open: boolean): void { mode.value = open ? 'kagome-pair-density-wave' : 'game' }
+  function setKagomePairDensityWaveOpen(open: boolean): void { mode.value = open ? 'kagome-pair-density-wave' : 'game' }
+  function openFloquetNonAbelianWaveguide(): void { mode.value = 'floquet-non-abelian-waveguide' }
+  function setFloquetNonAbelianWaveguideModal(open: boolean): void { mode.value = open ? 'floquet-non-abelian-waveguide' : 'game' }
+  function setFloquetNonAbelianWaveguideOpen(open: boolean): void { mode.value = open ? 'floquet-non-abelian-waveguide' : 'game' }
+  function openHolographicSykWormhole(): void { mode.value = 'holographic-syk-wormhole' }
+  function setHolographicSykWormholeModal(open: boolean): void { mode.value = open ? 'holographic-syk-wormhole' : 'game' }
+  function setHolographicSykWormholeOpen(open: boolean): void { mode.value = open ? 'holographic-syk-wormhole' : 'game' }
+  function openPionCondensateVortexAvalanche(): void { mode.value = 'pion-condensate-vortex-avalanche' }
+  function setPionCondensateVortexAvalancheModal(open: boolean): void { mode.value = open ? 'pion-condensate-vortex-avalanche' : 'game' }
+  function setPionCondensateVortexAvalancheOpen(open: boolean): void { mode.value = open ? 'pion-condensate-vortex-avalanche' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -881,6 +897,10 @@ export const useUIStore = defineStore('ui', () => {
     openRydbergSpinLiquidArray, setRydbergSpinLiquidArrayModal, setRydbergSpinLiquidArrayOpen,
     openAxionQuarkNuggetResonator, setAxionQuarkNuggetResonatorModal, setAxionQuarkNuggetResonatorOpen,
     openTopologicalEulerMetamaterial, setTopologicalEulerMetamaterialModal, setTopologicalEulerMetamaterialOpen,
+    openKagomePairDensityWave, setKagomePairDensityWaveModal, setKagomePairDensityWaveOpen,
+    openFloquetNonAbelianWaveguide, setFloquetNonAbelianWaveguideModal, setFloquetNonAbelianWaveguideOpen,
+    openHolographicSykWormhole, setHolographicSykWormholeModal, setHolographicSykWormholeOpen,
+    openPionCondensateVortexAvalanche, setPionCondensateVortexAvalancheModal, setPionCondensateVortexAvalancheOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
