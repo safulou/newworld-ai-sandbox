@@ -240,6 +240,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔥` | Quantum Otto Squeeze Heat Engine, Squeezed Thermal Bath, STA Counterdiabatic Drive & Beyond-Carnot Efficiency |
 | `HUD 🌀` | Asymptotically Safe Quantum Gravity Non-Gaussian UV Fixed Point, Wetterich FRG Flow & Spectral Dimension d_s → 2 |
 | `HUD ⚗️` | Optical Microcavity Vibrational Polariton Condensate, VSC Rabi Splitting & Bose-Enhanced Super-Chemistry |
+| `HUD ❄️` | Twisted Bilayer Cuprate High-Tc d+id Topological Josephson Junction, Charge-4e Co-Tunneling & Semifluxon Diode |
+| `HUD 🌌` | Loop Quantum Cosmology Big Bounce Singularity Resolution, Area Gap Δ_area & Planck Star White-Hole Transition |
+| `HUD ⚛️` | Heavy-Fermion Kondo-Breakdown Quantum Critical Point, Small-to-Large Fermi Surface Jump & ω/T Strange Metal |
+| `HUD 🔊` | Superspace Phason-Pump Topological Phonon Quasicrystal, Penrose C₂ Invariant & Non-Reciprocal Acoustic Diode |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

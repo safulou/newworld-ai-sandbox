@@ -245,6 +245,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'quantum_otto_squeeze_heat_engine', title: '量子奧托壓縮熱庫超越卡諾極限大師', description: '利用非熱相干壓縮玻色熱庫與無過渡捷徑（STA）反絕熱驅動，使單離子量子奧托熱機熱效率突破傳統卡諾極限並達到廣義 Roßnagel-Abah 極限', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'asymptotically_safe_gravity_collider', title: '漸近安全量子引力紫外不動點大師', description: '透過泛函重整化群（FRG）Wetterich 方程流向 Reuter 非高斯紫外不動點，消除超普朗克散射紫外發散並實現維度約化 d_s → 2', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'cavity_polaritonic_super_chemistry', title: '微腔振動極化激元超化學催化大師', description: '在法布里-珀羅光學微腔中達成 N 分子集體振動強耦合（VSC）與拉比分裂，凝聚下極化激元實現玻色增強超化學反應速率調控', icon: '⚗️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'twisted_cuprate_high_tc_josephson', title: '扭轉銅氧化物高溫拓撲超導大師', description: '在接近 45° 魔角扭轉雙層鉍系銅氧化物中激發電荷-4e 雙庫柏對協同穿隧、手性 d+id 拓撲超導能隙與半磁通約瑟夫森二極體效應', icon: '❄️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'lqc_big_bounce_planck_star', title: '圈量子宇宙大反彈與普朗克星大師', description: '透過圈量子引力最小面積能隙與全純修正弗里德曼方程，在臨界普朗克密度處消除引力奇點並觸發么正大反彈與普朗克星-白洞穿隧', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'heavy_fermion_kondo_breakdown_qcp', title: '重費米子近藤崩潰量子臨界大師', description: '調諧重費米子近藤晶格跨越局域量子臨界點，觸發大/小費米面體積不連續重構、霍爾係數陡峭躍變與奇異金屬 ω/T 動力學標度', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quasicrystal_topological_phonon_diode', title: '超空間準晶拓撲相子聲學二極體大師', description: '在彭羅斯五重對稱聲子準晶中利用高維超空間第二陳數 C₂ 與正交相子滑移泵浦，實現無布洛赫平移對稱之單向手性聲學二極體', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

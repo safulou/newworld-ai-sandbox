@@ -708,6 +708,18 @@
       <CavityPolaritonicChemistryModal v-if="ui.mode === 'cavity-polaritonic-chemistry'" />
     </Transition>
     <Transition name="fade">
+      <TwistedCuprateJosephsonModal v-if="ui.mode === 'twisted-cuprate-josephson'" />
+    </Transition>
+    <Transition name="fade">
+      <LoopQuantumCosmologyBounceModal v-if="ui.mode === 'loop-quantum-cosmology-bounce'" />
+    </Transition>
+    <Transition name="fade">
+      <HeavyFermionKondoQcpModal v-if="ui.mode === 'heavy-fermion-kondo-qcp'" />
+    </Transition>
+    <Transition name="fade">
+      <QuasicrystalPhononDiodeModal v-if="ui.mode === 'quasicrystal-phonon-diode'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -969,6 +981,10 @@ import RhombohedralGrapheneModal from '@/components/RhombohedralGrapheneModal.vu
 import QuantumOttoHeatEngineModal from '@/components/QuantumOttoHeatEngineModal.vue'
 import AsymptoticallySafeGravityModal from '@/components/AsymptoticallySafeGravityModal.vue'
 import CavityPolaritonicChemistryModal from '@/components/CavityPolaritonicChemistryModal.vue'
+import TwistedCuprateJosephsonModal from '@/components/TwistedCuprateJosephsonModal.vue'
+import LoopQuantumCosmologyBounceModal from '@/components/LoopQuantumCosmologyBounceModal.vue'
+import HeavyFermionKondoQcpModal from '@/components/HeavyFermionKondoQcpModal.vue'
+import QuasicrystalPhononDiodeModal from '@/components/QuasicrystalPhononDiodeModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

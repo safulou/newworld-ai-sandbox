@@ -664,6 +664,18 @@
       <button class="hud-btn cavity-polariton-btn" @click="ui.openCavityPolaritonicChemistry" title="量子光學微腔振動極化激元凝聚與超化學反應速率控制 (Cavity Polaritonic Super-Chemistry)">
         ⚗️ 極化化學
       </button>
+      <button class="hud-btn twisted-cuprate-btn" @click="ui.openTwistedCuprateJosephson" title="扭轉雙層銅氧化物高溫超導 d+id 拓撲約瑟夫森節與半整數磁通渦旋 (Twisted Bilayer Cuprate Josephson)">
+        ❄️ 扭轉銅氧
+      </button>
+      <button class="hud-btn lqc-bounce-btn" @click="ui.openLoopQuantumCosmologyBounce" title="圈量子宇宙學大反彈奇點消除與普朗克星霍金-白洞躍遷 (Loop Quantum Cosmology Big Bounce)">
+        🌌 圈量子彈
+      </button>
+      <button class="hud-btn heavy-kondo-btn" @click="ui.openHeavyFermionKondoQcp" title="重費米子近藤崩潰量子臨界點與動量空間費米面重構譜儀 (Heavy-Fermion Kondo-Breakdown QCP)">
+        ⚛️ 近藤臨界
+      </button>
+      <button class="hud-btn quasicrystal-phonon-btn" @click="ui.openQuasicrystalPhononDiode" title="非阿貝爾拓撲聲子準晶與高維超空間相子泵浦聲學二極體 (Quasicrystal Topological Phonon Diode)">
+        🔊 準晶聲子
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1809,5 +1821,21 @@ onUnmounted(() => {
 .cavity-polariton-btn {
   border-color: rgba(236, 72, 153, 0.4);
   color: #f472b6;
+}
+.twisted-cuprate-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.lqc-bounce-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #fde047;
+}
+.heavy-kondo-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.quasicrystal-phonon-btn {
+  border-color: rgba(232, 121, 249, 0.4);
+  color: #e879f9;
 }
 </style>

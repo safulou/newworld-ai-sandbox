@@ -235,6 +235,10 @@ export type UIMode =
   | 'quantum-otto-heat-engine'
   | 'asymptotically-safe-gravity'
   | 'cavity-polaritonic-chemistry'
+  | 'twisted-cuprate-josephson'
+  | 'loop-quantum-cosmology-bounce'
+  | 'heavy-fermion-kondo-qcp'
+  | 'quasicrystal-phonon-diode'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -716,6 +720,18 @@ export const useUIStore = defineStore('ui', () => {
   function openCavityPolaritonicChemistry(): void { mode.value = 'cavity-polaritonic-chemistry' }
   function setCavityPolaritonicChemistryModal(open: boolean): void { mode.value = open ? 'cavity-polaritonic-chemistry' : 'game' }
   function setCavityPolaritonicChemistryOpen(open: boolean): void { mode.value = open ? 'cavity-polaritonic-chemistry' : 'game' }
+  function openTwistedCuprateJosephson(): void { mode.value = 'twisted-cuprate-josephson' }
+  function setTwistedCuprateJosephsonModal(open: boolean): void { mode.value = open ? 'twisted-cuprate-josephson' : 'game' }
+  function setTwistedCuprateJosephsonOpen(open: boolean): void { mode.value = open ? 'twisted-cuprate-josephson' : 'game' }
+  function openLoopQuantumCosmologyBounce(): void { mode.value = 'loop-quantum-cosmology-bounce' }
+  function setLoopQuantumCosmologyBounceModal(open: boolean): void { mode.value = open ? 'loop-quantum-cosmology-bounce' : 'game' }
+  function setLoopQuantumCosmologyBounceOpen(open: boolean): void { mode.value = open ? 'loop-quantum-cosmology-bounce' : 'game' }
+  function openHeavyFermionKondoQcp(): void { mode.value = 'heavy-fermion-kondo-qcp' }
+  function setHeavyFermionKondoQcpModal(open: boolean): void { mode.value = open ? 'heavy-fermion-kondo-qcp' : 'game' }
+  function setHeavyFermionKondoQcpOpen(open: boolean): void { mode.value = open ? 'heavy-fermion-kondo-qcp' : 'game' }
+  function openQuasicrystalPhononDiode(): void { mode.value = 'quasicrystal-phonon-diode' }
+  function setQuasicrystalPhononDiodeModal(open: boolean): void { mode.value = open ? 'quasicrystal-phonon-diode' : 'game' }
+  function setQuasicrystalPhononDiodeOpen(open: boolean): void { mode.value = open ? 'quasicrystal-phonon-diode' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -921,6 +937,10 @@ export const useUIStore = defineStore('ui', () => {
     openQuantumOttoHeatEngine, setQuantumOttoHeatEngineModal, setQuantumOttoHeatEngineOpen,
     openAsymptoticallySafeGravity, setAsymptoticallySafeGravityModal, setAsymptoticallySafeGravityOpen,
     openCavityPolaritonicChemistry, setCavityPolaritonicChemistryModal, setCavityPolaritonicChemistryOpen,
+    openTwistedCuprateJosephson, setTwistedCuprateJosephsonModal, setTwistedCuprateJosephsonOpen,
+    openLoopQuantumCosmologyBounce, setLoopQuantumCosmologyBounceModal, setLoopQuantumCosmologyBounceOpen,
+    openHeavyFermionKondoQcp, setHeavyFermionKondoQcpModal, setHeavyFermionKondoQcpOpen,
+    openQuasicrystalPhononDiode, setQuasicrystalPhononDiodeModal, setQuasicrystalPhononDiodeOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

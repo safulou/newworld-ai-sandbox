@@ -287,6 +287,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔥', desc: '開啟 量子奧托熱機與壓縮熱庫超越卡諾極限能量提取器 (Quantum Otto Squeeze Heat Engine)' },
       { combo: 'HUD 🌀', desc: '開啟 漸近安全量子引力非高斯紫外不動點與超普朗克散射對撞機 (Asymptotically Safe Gravity)' },
       { combo: 'HUD ⚗️', desc: '開啟 量子光學微腔振動極化激元凝聚與超化學反應速率控制 (Cavity Polaritonic Super-Chemistry)' },
+      { combo: 'HUD ❄️', desc: '開啟 扭轉雙層銅氧化物高溫超導 d+id 拓撲約瑟夫森節與半整數磁通渦旋 (Twisted Bilayer Cuprate Josephson)' },
+      { combo: 'HUD 🌌', desc: '開啟 圈量子宇宙學大反彈奇點消除與普朗克星霍金-白洞躍遷 (Loop Quantum Cosmology Big Bounce)' },
+      { combo: 'HUD ⚛️', desc: '開啟 重費米子近藤崩潰量子臨界點與動量空間費米面重構譜儀 (Heavy-Fermion Kondo-Breakdown QCP)' },
+      { combo: 'HUD 🔊', desc: '開啟 非阿貝爾拓撲聲子準晶與高維超空間相子泵浦聲學二極體 (Quasicrystal Topological Phonon Diode)' },
     ]
   }
 ]
