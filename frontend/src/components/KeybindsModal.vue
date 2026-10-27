@@ -283,6 +283,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌈', desc: '開啟 弗洛凱螺旋調制光子波導陣列與非阿貝爾任意子編織器 (Floquet Non-Abelian Photonic Waveguide)' },
       { combo: 'HUD 🕳️', desc: '開啟 全息 SYK 雙邊耦合可穿越蟲洞與量子資訊引力傳態 (Holographic SYK Traversable Wormhole)' },
       { combo: 'HUD 🌟', desc: '開啟 中子星內核相對論性 π 介子凝聚與超流渦旋雪崩自轉突變 (Pion-Condensate Vortex Avalanche)' },
+      { combo: 'HUD 🔷', desc: '開啟 菱方多層石墨烯拓撲手性超導與反常霍爾四分之一金屬 (Rhombohedral Pentalayer Graphene)' },
+      { combo: 'HUD 🔥', desc: '開啟 量子奧托熱機與壓縮熱庫超越卡諾極限能量提取器 (Quantum Otto Squeeze Heat Engine)' },
+      { combo: 'HUD 🌀', desc: '開啟 漸近安全量子引力非高斯紫外不動點與超普朗克散射對撞機 (Asymptotically Safe Gravity)' },
+      { combo: 'HUD ⚗️', desc: '開啟 量子光學微腔振動極化激元凝聚與超化學反應速率控制 (Cavity Polaritonic Super-Chemistry)' },
     ]
   }
 ]

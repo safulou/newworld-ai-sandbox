@@ -231,6 +231,10 @@ export type UIMode =
   | 'floquet-non-abelian-waveguide'
   | 'holographic-syk-wormhole'
   | 'pion-condensate-vortex-avalanche'
+  | 'rhombohedral-graphene-superconductor'
+  | 'quantum-otto-heat-engine'
+  | 'asymptotically-safe-gravity'
+  | 'cavity-polaritonic-chemistry'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -700,6 +704,18 @@ export const useUIStore = defineStore('ui', () => {
   function openPionCondensateVortexAvalanche(): void { mode.value = 'pion-condensate-vortex-avalanche' }
   function setPionCondensateVortexAvalancheModal(open: boolean): void { mode.value = open ? 'pion-condensate-vortex-avalanche' : 'game' }
   function setPionCondensateVortexAvalancheOpen(open: boolean): void { mode.value = open ? 'pion-condensate-vortex-avalanche' : 'game' }
+  function openRhombohedralGraphene(): void { mode.value = 'rhombohedral-graphene-superconductor' }
+  function setRhombohedralGrapheneModal(open: boolean): void { mode.value = open ? 'rhombohedral-graphene-superconductor' : 'game' }
+  function setRhombohedralGrapheneOpen(open: boolean): void { mode.value = open ? 'rhombohedral-graphene-superconductor' : 'game' }
+  function openQuantumOttoHeatEngine(): void { mode.value = 'quantum-otto-heat-engine' }
+  function setQuantumOttoHeatEngineModal(open: boolean): void { mode.value = open ? 'quantum-otto-heat-engine' : 'game' }
+  function setQuantumOttoHeatEngineOpen(open: boolean): void { mode.value = open ? 'quantum-otto-heat-engine' : 'game' }
+  function openAsymptoticallySafeGravity(): void { mode.value = 'asymptotically-safe-gravity' }
+  function setAsymptoticallySafeGravityModal(open: boolean): void { mode.value = open ? 'asymptotically-safe-gravity' : 'game' }
+  function setAsymptoticallySafeGravityOpen(open: boolean): void { mode.value = open ? 'asymptotically-safe-gravity' : 'game' }
+  function openCavityPolaritonicChemistry(): void { mode.value = 'cavity-polaritonic-chemistry' }
+  function setCavityPolaritonicChemistryModal(open: boolean): void { mode.value = open ? 'cavity-polaritonic-chemistry' : 'game' }
+  function setCavityPolaritonicChemistryOpen(open: boolean): void { mode.value = open ? 'cavity-polaritonic-chemistry' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -901,6 +917,10 @@ export const useUIStore = defineStore('ui', () => {
     openFloquetNonAbelianWaveguide, setFloquetNonAbelianWaveguideModal, setFloquetNonAbelianWaveguideOpen,
     openHolographicSykWormhole, setHolographicSykWormholeModal, setHolographicSykWormholeOpen,
     openPionCondensateVortexAvalanche, setPionCondensateVortexAvalancheModal, setPionCondensateVortexAvalancheOpen,
+    openRhombohedralGraphene, setRhombohedralGrapheneModal, setRhombohedralGrapheneOpen,
+    openQuantumOttoHeatEngine, setQuantumOttoHeatEngineModal, setQuantumOttoHeatEngineOpen,
+    openAsymptoticallySafeGravity, setAsymptoticallySafeGravityModal, setAsymptoticallySafeGravityOpen,
+    openCavityPolaritonicChemistry, setCavityPolaritonicChemistryModal, setCavityPolaritonicChemistryOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

@@ -241,6 +241,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'floquet_non_abelian_photonic_waveguide', title: '弗洛凱光子波導非阿貝爾編織大師', description: '在三維螺旋調制光子波導陣列中誘導合成弗洛凱規範場、非阿貝爾 Wilczek-Zee U(N) 幾何和樂與準能量 π-模光子任意子編織', icon: '🌈', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_syk_wormhole_teleportation', title: '全息 SYK 可穿越蟲洞傳態大師', description: '透過雙邊馬約拉納費米子 GJW 非局域耦合向 AdS₂ 黑洞視界注入負能量衝擊波，以算符尺寸纏繞實現全息可穿越蟲洞量子引力傳態', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'pion_condensate_vortex_avalanche', title: '中子星介子凝聚渦旋雪崩大師', description: '在中子星高密內核激發手性 p-波 π 介子凝聚層狀晶格，觸發數十億條 ³P₂ 超流半量子渦旋集體脫釘雪崩與脈衝星自轉突變', icon: '🌟', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'rhombohedral_graphene_chiral_superconductor', title: '菱方石墨烯手性超導與反常霍爾大師', description: '在菱方五層石墨烯 k⁵ 平帶中誘導自旋-能谷鎖定四分之一金屬、陳數 C=5 反常霍爾晶體與零磁場手性 p+ip 超導二極體效應', icon: '🔷', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_otto_squeeze_heat_engine', title: '量子奧托壓縮熱庫超越卡諾極限大師', description: '利用非熱相干壓縮玻色熱庫與無過渡捷徑（STA）反絕熱驅動，使單離子量子奧托熱機熱效率突破傳統卡諾極限並達到廣義 Roßnagel-Abah 極限', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'asymptotically_safe_gravity_collider', title: '漸近安全量子引力紫外不動點大師', description: '透過泛函重整化群（FRG）Wetterich 方程流向 Reuter 非高斯紫外不動點，消除超普朗克散射紫外發散並實現維度約化 d_s → 2', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'cavity_polaritonic_super_chemistry', title: '微腔振動極化激元超化學催化大師', description: '在法布里-珀羅光學微腔中達成 N 分子集體振動強耦合（VSC）與拉比分裂，凝聚下極化激元實現玻色增強超化學反應速率調控', icon: '⚗️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

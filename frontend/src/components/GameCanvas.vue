@@ -238,6 +238,10 @@ import { kagomePairDensityWaveLoopCurrentEngine } from '@/engine/kagomePairDensi
 import { floquetNonAbelianPhotonicWaveguideEngine } from '@/engine/floquetNonAbelianPhotonicWaveguide'
 import { holographicSykWormholeTeleportationEngine } from '@/engine/holographicSykWormholeTeleportation'
 import { pionCondensateNeutronStarVortexAvalancheEngine } from '@/engine/pionCondensateNeutronStarVortexAvalanche'
+import { rhombohedralGrapheneChiralSuperconductorEngine } from '@/engine/rhombohedralGrapheneChiralSuperconductor'
+import { quantumOttoSqueezeHeatEngine } from '@/engine/quantumOttoSqueezeHeatEngine'
+import { asymptoticallySafeGravityColliderEngine } from '@/engine/asymptoticallySafeGravityCollider'
+import { cavityPolaritonicSuperChemistryEngine } from '@/engine/cavityPolaritonicSuperChemistry'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -560,6 +564,10 @@ function loop(): void {
   floquetNonAbelianPhotonicWaveguideEngine.update(delta)
   holographicSykWormholeTeleportationEngine.update(delta)
   pionCondensateNeutronStarVortexAvalancheEngine.update(delta)
+  rhombohedralGrapheneChiralSuperconductorEngine.update(delta)
+  quantumOttoSqueezeHeatEngine.update(delta)
+  asymptoticallySafeGravityColliderEngine.update(delta)
+  cavityPolaritonicSuperChemistryEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

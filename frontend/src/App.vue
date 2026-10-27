@@ -696,6 +696,18 @@
       <PionCondensateVortexAvalancheModal v-if="ui.mode === 'pion-condensate-vortex-avalanche'" />
     </Transition>
     <Transition name="fade">
+      <RhombohedralGrapheneModal v-if="ui.mode === 'rhombohedral-graphene-superconductor'" />
+    </Transition>
+    <Transition name="fade">
+      <QuantumOttoHeatEngineModal v-if="ui.mode === 'quantum-otto-heat-engine'" />
+    </Transition>
+    <Transition name="fade">
+      <AsymptoticallySafeGravityModal v-if="ui.mode === 'asymptotically-safe-gravity'" />
+    </Transition>
+    <Transition name="fade">
+      <CavityPolaritonicChemistryModal v-if="ui.mode === 'cavity-polaritonic-chemistry'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -953,6 +965,10 @@ import KagomePairDensityWaveModal from '@/components/KagomePairDensityWaveModal.
 import FloquetNonAbelianWaveguideModal from '@/components/FloquetNonAbelianWaveguideModal.vue'
 import HolographicSykWormholeModal from '@/components/HolographicSykWormholeModal.vue'
 import PionCondensateVortexAvalancheModal from '@/components/PionCondensateVortexAvalancheModal.vue'
+import RhombohedralGrapheneModal from '@/components/RhombohedralGrapheneModal.vue'
+import QuantumOttoHeatEngineModal from '@/components/QuantumOttoHeatEngineModal.vue'
+import AsymptoticallySafeGravityModal from '@/components/AsymptoticallySafeGravityModal.vue'
+import CavityPolaritonicChemistryModal from '@/components/CavityPolaritonicChemistryModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

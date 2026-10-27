@@ -236,6 +236,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌈` | Floquet Helically-Modulated Photonic Waveguide Array, Wilczek-Zee U(N) Holonomy & π-Mode Anyon Braider |
 | `HUD 🕳️` | Holographic Sachdev-Ye-Kitaev (SYK) Traversable AdS₂ Wormhole, Operator Size-Winding & Gravitational Teleportation |
 | `HUD 🌟` | Relativistic Pion-Condensate Neutron Star Core, ³P₂ Superfluid Half-Quantum Vortex Avalanche & Pulsar Glitch |
+| `HUD 🔷` | Rhombohedral Pentalayer Graphene Chiral Superconductor, Quarter-Metal Valley Polarization & C=5 QAH |
+| `HUD 🔥` | Quantum Otto Squeeze Heat Engine, Squeezed Thermal Bath, STA Counterdiabatic Drive & Beyond-Carnot Efficiency |
+| `HUD 🌀` | Asymptotically Safe Quantum Gravity Non-Gaussian UV Fixed Point, Wetterich FRG Flow & Spectral Dimension d_s → 2 |
+| `HUD ⚗️` | Optical Microcavity Vibrational Polariton Condensate, VSC Rabi Splitting & Bose-Enhanced Super-Chemistry |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

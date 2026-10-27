@@ -652,6 +652,18 @@
       <button class="hud-btn pion-glitch-btn" @click="ui.openPionCondensateVortexAvalanche" title="中子星內核相對論性 π 介子凝聚與超流渦旋雪崩自轉突變 (Pion-Condensate Vortex Avalanche)">
         🌟 脈衝星變
       </button>
+      <button class="hud-btn rhombo-graphene-btn" @click="ui.openRhombohedralGraphene" title="菱方多層石墨烯拓撲手性超導與反常霍爾四分之一金屬 (Rhombohedral Pentalayer Graphene)">
+        🔷 菱方石墨
+      </button>
+      <button class="hud-btn quantum-otto-btn" @click="ui.openQuantumOttoHeatEngine" title="量子奧托熱機與壓縮熱庫超越卡諾極限能量提取器 (Quantum Otto Squeeze Heat Engine)">
+        🔥 量子熱機
+      </button>
+      <button class="hud-btn asymptotic-gravity-btn" @click="ui.openAsymptoticallySafeGravity" title="漸近安全量子引力非高斯紫外不動點與超普朗克散射對撞機 (Asymptotically Safe Gravity)">
+        🌀 漸近引力
+      </button>
+      <button class="hud-btn cavity-polariton-btn" @click="ui.openCavityPolaritonicChemistry" title="量子光學微腔振動極化激元凝聚與超化學反應速率控制 (Cavity Polaritonic Super-Chemistry)">
+        ⚗️ 極化化學
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1781,5 +1793,21 @@ onUnmounted(() => {
 .pion-glitch-btn {
   border-color: rgba(234, 179, 8, 0.4);
   color: #facc15;
+}
+.rhombo-graphene-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.quantum-otto-btn {
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+}
+.asymptotic-gravity-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.cavity-polariton-btn {
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #f472b6;
 }
 </style>
