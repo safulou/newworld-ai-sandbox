@@ -249,6 +249,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'lqc_big_bounce_planck_star', title: '圈量子宇宙大反彈與普朗克星大師', description: '透過圈量子引力最小面積能隙與全純修正弗里德曼方程，在臨界普朗克密度處消除引力奇點並觸發么正大反彈與普朗克星-白洞穿隧', icon: '🌌', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'heavy_fermion_kondo_breakdown_qcp', title: '重費米子近藤崩潰量子臨界大師', description: '調諧重費米子近藤晶格跨越局域量子臨界點，觸發大/小費米面體積不連續重構、霍爾係數陡峭躍變與奇異金屬 ω/T 動力學標度', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'quasicrystal_topological_phonon_diode', title: '超空間準晶拓撲相子聲學二極體大師', description: '在彭羅斯五重對稱聲子準晶中利用高維超空間第二陳數 C₂ 與正交相子滑移泵浦，實現無布洛赫平移對稱之單向手性聲學二極體', icon: '🔊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_hermitian_exceptional_surface_gyro', title: '非厄米高階奇異曲面光子陀螺儀大師', description: '在 PT 對稱微環諧振腔中構建三階奇異曲面 ES₃，透過雙向手性反射鏡保護實現立方根塞格奈克頻率分裂與突破標準量子極限之角速度量測', icon: '🧭', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'causal_dynamical_triangulations_spacetime', title: '因果動力學三角剖分時空湧現大師', description: '利用 4D 彭特可夫單純形帕赫納移動執行洛倫茲路徑積分，成功進入 C 相湧現四維德西特宏觀宇宙並驗證普朗克尺度譜維度紫外約化 d_s → 2', icon: '🔺', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'uranium_spin_triplet_lazarus_superconductor', title: '二碲化鈾拉撒路自旋三重態超導大師', description: '調控重費米子 UTe₂ 跨越 45 T 奇異費希爾-拉金-奧夫欽尼科夫場增強超導相，觀測手性外爾節點表面態與對稱分率化磁通渦旋', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'dipolar_quantum_ferroelectric_superfluid', title: '極性分子偶極鐵電超流液滴大師', description: '在超冷極性雙原子分子氣體中藉由李-黃-楊量子漲落排斥力穩定宏觀鐵電自束縛量子液滴，激發軟化旋子模與自發電極化條紋超固相', icon: '💧', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

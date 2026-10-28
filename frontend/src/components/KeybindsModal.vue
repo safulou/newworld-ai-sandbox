@@ -291,6 +291,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🌌', desc: '開啟 圈量子宇宙學大反彈奇點消除與普朗克星霍金-白洞躍遷 (Loop Quantum Cosmology Big Bounce)' },
       { combo: 'HUD ⚛️', desc: '開啟 重費米子近藤崩潰量子臨界點與動量空間費米面重構譜儀 (Heavy-Fermion Kondo-Breakdown QCP)' },
       { combo: 'HUD 🔊', desc: '開啟 非阿貝爾拓撲聲子準晶與高維超空間相子泵浦聲學二極體 (Quasicrystal Topological Phonon Diode)' },
+      { combo: 'HUD 🧭', desc: '開啟 非厄米高階奇異曲面光子陀螺儀與立方根塞格奈克量子靈敏度放大器 (Non-Hermitian ES3 Gyroscope)' },
+      { combo: 'HUD 🔺', desc: '開啟 因果動力學三角剖分量子時空湧現與維度約化譜分析儀 (Causal Dynamical Triangulations)' },
+      { combo: 'HUD 🧲', desc: '開啟 重費米子二碲化鈾自旋三重態拓撲超導與極端強場拉撒路重入相反應堆 (UTe2 Spin-Triplet Superconductor)' },
+      { combo: 'HUD 💧', desc: '開啟 極性分子偶極量子鐵電超流體與旋子激發宏觀自束縛液滴共振腔 (Dipolar Ferroelectric Superfluid)' },
     ]
   }
 ]

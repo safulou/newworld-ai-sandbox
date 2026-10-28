@@ -239,6 +239,10 @@ export type UIMode =
   | 'loop-quantum-cosmology-bounce'
   | 'heavy-fermion-kondo-qcp'
   | 'quasicrystal-phonon-diode'
+  | 'exceptional-surface-gyroscope'
+  | 'causal-dynamical-triangulations'
+  | 'uranium-spin-triplet-superconductor'
+  | 'dipolar-ferroelectric-superfluid'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -732,6 +736,18 @@ export const useUIStore = defineStore('ui', () => {
   function openQuasicrystalPhononDiode(): void { mode.value = 'quasicrystal-phonon-diode' }
   function setQuasicrystalPhononDiodeModal(open: boolean): void { mode.value = open ? 'quasicrystal-phonon-diode' : 'game' }
   function setQuasicrystalPhononDiodeOpen(open: boolean): void { mode.value = open ? 'quasicrystal-phonon-diode' : 'game' }
+  function openExceptionalSurfaceGyro(): void { mode.value = 'exceptional-surface-gyroscope' }
+  function setExceptionalSurfaceGyroModal(open: boolean): void { mode.value = open ? 'exceptional-surface-gyroscope' : 'game' }
+  function setExceptionalSurfaceGyroOpen(open: boolean): void { mode.value = open ? 'exceptional-surface-gyroscope' : 'game' }
+  function openCausalDynamicalTriangulations(): void { mode.value = 'causal-dynamical-triangulations' }
+  function setCausalDynamicalTriangulationsModal(open: boolean): void { mode.value = open ? 'causal-dynamical-triangulations' : 'game' }
+  function setCausalDynamicalTriangulationsOpen(open: boolean): void { mode.value = open ? 'causal-dynamical-triangulations' : 'game' }
+  function openUraniumSpinTriplet(): void { mode.value = 'uranium-spin-triplet-superconductor' }
+  function setUraniumSpinTripletModal(open: boolean): void { mode.value = open ? 'uranium-spin-triplet-superconductor' : 'game' }
+  function setUraniumSpinTripletOpen(open: boolean): void { mode.value = open ? 'uranium-spin-triplet-superconductor' : 'game' }
+  function openDipolarFerroelectric(): void { mode.value = 'dipolar-ferroelectric-superfluid' }
+  function setDipolarFerroelectricModal(open: boolean): void { mode.value = open ? 'dipolar-ferroelectric-superfluid' : 'game' }
+  function setDipolarFerroelectricOpen(open: boolean): void { mode.value = open ? 'dipolar-ferroelectric-superfluid' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -941,6 +957,10 @@ export const useUIStore = defineStore('ui', () => {
     openLoopQuantumCosmologyBounce, setLoopQuantumCosmologyBounceModal, setLoopQuantumCosmologyBounceOpen,
     openHeavyFermionKondoQcp, setHeavyFermionKondoQcpModal, setHeavyFermionKondoQcpOpen,
     openQuasicrystalPhononDiode, setQuasicrystalPhononDiodeModal, setQuasicrystalPhononDiodeOpen,
+    openExceptionalSurfaceGyro, setExceptionalSurfaceGyroModal, setExceptionalSurfaceGyroOpen,
+    openCausalDynamicalTriangulations, setCausalDynamicalTriangulationsModal, setCausalDynamicalTriangulationsOpen,
+    openUraniumSpinTriplet, setUraniumSpinTripletModal, setUraniumSpinTripletOpen,
+    openDipolarFerroelectric, setDipolarFerroelectricModal, setDipolarFerroelectricOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

@@ -720,6 +720,18 @@
       <QuasicrystalPhononDiodeModal v-if="ui.mode === 'quasicrystal-phonon-diode'" />
     </Transition>
     <Transition name="fade">
+      <ExceptionalSurfaceGyroscopeModal v-if="ui.mode === 'exceptional-surface-gyroscope'" />
+    </Transition>
+    <Transition name="fade">
+      <CausalDynamicalTriangulationsModal v-if="ui.mode === 'causal-dynamical-triangulations'" />
+    </Transition>
+    <Transition name="fade">
+      <UraniumSpinTripletSuperconductorModal v-if="ui.mode === 'uranium-spin-triplet-superconductor'" />
+    </Transition>
+    <Transition name="fade">
+      <DipolarFerroelectricSuperfluidModal v-if="ui.mode === 'dipolar-ferroelectric-superfluid'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -985,6 +997,10 @@ import TwistedCuprateJosephsonModal from '@/components/TwistedCuprateJosephsonMo
 import LoopQuantumCosmologyBounceModal from '@/components/LoopQuantumCosmologyBounceModal.vue'
 import HeavyFermionKondoQcpModal from '@/components/HeavyFermionKondoQcpModal.vue'
 import QuasicrystalPhononDiodeModal from '@/components/QuasicrystalPhononDiodeModal.vue'
+import ExceptionalSurfaceGyroscopeModal from '@/components/ExceptionalSurfaceGyroscopeModal.vue'
+import CausalDynamicalTriangulationsModal from '@/components/CausalDynamicalTriangulationsModal.vue'
+import UraniumSpinTripletSuperconductorModal from '@/components/UraniumSpinTripletSuperconductorModal.vue'
+import DipolarFerroelectricSuperfluidModal from '@/components/DipolarFerroelectricSuperfluidModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

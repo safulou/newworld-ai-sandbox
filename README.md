@@ -244,6 +244,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🌌` | Loop Quantum Cosmology Big Bounce Singularity Resolution, Area Gap Δ_area & Planck Star White-Hole Transition |
 | `HUD ⚛️` | Heavy-Fermion Kondo-Breakdown Quantum Critical Point, Small-to-Large Fermi Surface Jump & ω/T Strange Metal |
 | `HUD 🔊` | Superspace Phason-Pump Topological Phonon Quasicrystal, Penrose C₂ Invariant & Non-Reciprocal Acoustic Diode |
+| `HUD 🧭` | Non-Hermitian 3rd-Order Exceptional Surface (ES₃) Photonic Gyroscope, Cube-Root Sagnac Splitting & Sub-SQL Sensing |
+| `HUD 🔺` | Causal Dynamical Triangulations (CDT) Quantum Spacetime Emergence, De Sitter Phase C & UV Spectral Dimension d_s → 2 |
+| `HUD 🧲` | Heavy-Fermion UTe₂ Spin-Triplet Topological Superconductor, 45 T Lazarus Re-Entrant Phase & Chiral Weyl Surface States |
+| `HUD 💧` | Polar-Molecule Dipolar Quantum Ferroelectric Superfluid, Lee-Huang-Yang Self-Bound Droplets & Roton Stripe Supersolid |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

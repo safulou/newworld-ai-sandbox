@@ -676,6 +676,18 @@
       <button class="hud-btn quasicrystal-phonon-btn" @click="ui.openQuasicrystalPhononDiode" title="非阿貝爾拓撲聲子準晶與高維超空間相子泵浦聲學二極體 (Quasicrystal Topological Phonon Diode)">
         🔊 準晶聲子
       </button>
+      <button class="hud-btn es3-gyro-btn" @click="ui.openExceptionalSurfaceGyro" title="非厄米高階奇異曲面光子陀螺儀與立方根塞格奈克量子靈敏度放大器 (Non-Hermitian ES3 Gyroscope)">
+        🧭 奇異陀螺
+      </button>
+      <button class="hud-btn cdt-spacetime-btn" @click="ui.openCausalDynamicalTriangulations" title="因果動力學三角剖分量子時空湧現與維度約化譜分析儀 (Causal Dynamical Triangulations)">
+        🔺 因果三角
+      </button>
+      <button class="hud-btn ute2-triplet-btn" @click="ui.openUraniumSpinTriplet" title="重費米子二碲化鈾自旋三重態拓撲超導與極端強場拉撒路重入相反應堆 (UTe2 Spin-Triplet Superconductor)">
+        🧲 鈾三重態
+      </button>
+      <button class="hud-btn dipolar-ferro-btn" @click="ui.openDipolarFerroelectric" title="極性分子偶極量子鐵電超流體與旋子激發宏觀自束縛液滴共振腔 (Dipolar Ferroelectric Superfluid)">
+        💧 偶極液滴
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1837,5 +1849,21 @@ onUnmounted(() => {
 .quasicrystal-phonon-btn {
   border-color: rgba(232, 121, 249, 0.4);
   color: #e879f9;
+}
+.es3-gyro-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.cdt-spacetime-btn {
+  border-color: rgba(251, 146, 60, 0.4);
+  color: #fb923c;
+}
+.ute2-triplet-btn {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+.dipolar-ferro-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
 }
 </style>
