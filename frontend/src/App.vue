@@ -744,6 +744,18 @@
       <MagnonPolaritonBecInterferometerModal v-if="ui.mode === 'magnon-polariton-bec'" />
     </Transition>
     <Transition name="fade">
+      <TopologicalKondoSuperconductorModal v-if="ui.mode === 'topological-kondo-superconductor'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionPhotonBirefringenceModal v-if="ui.mode === 'axion-photon-birefringence'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicDeSitterStaticPatchModal v-if="ui.mode === 'holographic-desitter-patch'" />
+    </Transition>
+    <Transition name="fade">
+      <NonAbelianAnyonThermalDiodeModal v-if="ui.mode === 'non-abelian-anyon-thermal-diode'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1017,6 +1029,10 @@ import FractionalExcitonicInsulatorModal from '@/components/FractionalExcitonicI
 import HolographicQuantumErrorCorrectionModal from '@/components/HolographicQuantumErrorCorrectionModal.vue'
 import CavityQedSuperradiantTimeCrystalModal from '@/components/CavityQedSuperradiantTimeCrystalModal.vue'
 import MagnonPolaritonBecInterferometerModal from '@/components/MagnonPolaritonBecInterferometerModal.vue'
+import TopologicalKondoSuperconductorModal from '@/components/TopologicalKondoSuperconductorModal.vue'
+import AxionPhotonBirefringenceModal from '@/components/AxionPhotonBirefringenceModal.vue'
+import HolographicDeSitterStaticPatchModal from '@/components/HolographicDeSitterStaticPatchModal.vue'
+import NonAbelianAnyonThermalDiodeModal from '@/components/NonAbelianAnyonThermalDiodeModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

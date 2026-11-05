@@ -247,6 +247,10 @@ export type UIMode =
   | 'holographic-qec-bulk'
   | 'cavity-qed-superradiant-tc'
   | 'magnon-polariton-bec'
+  | 'topological-kondo-superconductor'
+  | 'axion-photon-birefringence'
+  | 'holographic-desitter-patch'
+  | 'non-abelian-anyon-thermal-diode'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -764,6 +768,18 @@ export const useUIStore = defineStore('ui', () => {
   function openMagnonPolaritonBec(): void { mode.value = 'magnon-polariton-bec' }
   function setMagnonPolaritonBecModal(open: boolean): void { mode.value = open ? 'magnon-polariton-bec' : 'game' }
   function setMagnonPolaritonBecOpen(open: boolean): void { mode.value = open ? 'magnon-polariton-bec' : 'game' }
+  function openTopologicalKondoSuperconductor(): void { mode.value = 'topological-kondo-superconductor' }
+  function setTopologicalKondoSuperconductorModal(open: boolean): void { mode.value = open ? 'topological-kondo-superconductor' : 'game' }
+  function setTopologicalKondoSuperconductorOpen(open: boolean): void { mode.value = open ? 'topological-kondo-superconductor' : 'game' }
+  function openAxionPhotonBirefringence(): void { mode.value = 'axion-photon-birefringence' }
+  function setAxionPhotonBirefringenceModal(open: boolean): void { mode.value = open ? 'axion-photon-birefringence' : 'game' }
+  function setAxionPhotonBirefringenceOpen(open: boolean): void { mode.value = open ? 'axion-photon-birefringence' : 'game' }
+  function openHolographicDeSitterPatch(): void { mode.value = 'holographic-desitter-patch' }
+  function setHolographicDeSitterPatchModal(open: boolean): void { mode.value = open ? 'holographic-desitter-patch' : 'game' }
+  function setHolographicDeSitterPatchOpen(open: boolean): void { mode.value = open ? 'holographic-desitter-patch' : 'game' }
+  function openNonAbelianAnyonThermalDiode(): void { mode.value = 'non-abelian-anyon-thermal-diode' }
+  function setNonAbelianAnyonThermalDiodeModal(open: boolean): void { mode.value = open ? 'non-abelian-anyon-thermal-diode' : 'game' }
+  function setNonAbelianAnyonThermalDiodeOpen(open: boolean): void { mode.value = open ? 'non-abelian-anyon-thermal-diode' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -981,6 +997,10 @@ export const useUIStore = defineStore('ui', () => {
     openHolographicQecBulk, setHolographicQecBulkModal, setHolographicQecBulkOpen,
     openCavityQedSuperradiantTc, setCavityQedSuperradiantTcModal, setCavityQedSuperradiantTcOpen,
     openMagnonPolaritonBec, setMagnonPolaritonBecModal, setMagnonPolaritonBecOpen,
+    openTopologicalKondoSuperconductor, setTopologicalKondoSuperconductorModal, setTopologicalKondoSuperconductorOpen,
+    openAxionPhotonBirefringence, setAxionPhotonBirefringenceModal, setAxionPhotonBirefringenceOpen,
+    openHolographicDeSitterPatch, setHolographicDeSitterPatchModal, setHolographicDeSitterPatchOpen,
+    openNonAbelianAnyonThermalDiode, setNonAbelianAnyonThermalDiodeModal, setNonAbelianAnyonThermalDiodeOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

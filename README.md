@@ -252,6 +252,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕸️` | Holographic Tensor-Network HaPPY Quantum Error-Correcting Code, Entanglement Wedge & RT/JLMS Bulk Reconstruction |
 | `HUD ⏱️` | Cavity-QED Superradiant Continuous Time Crystal, Open Dicke-Lindblad Limit Cycle & Sub-Schawlow-Townes Laser |
 | `HUD 🌀` | YIG Magnon-Polariton Bose-Einstein Condensate, Double-Minimum ±k₀ Stripes & Interfacial DMI Sagnac Interferometer |
+| `HUD 🧬` | Topological Kondo Superconductor, Class DIII Z₂=1 Time-Reversal Majorana Kramers Pairs & 4e²/h Zero-Bias Peak |
+| `HUD 🔭` | Axion-Photon Vacuum Birefringence Bow-Tie Interferometer, LCP/RCP Phase Split & Primakoff LSW Regeneration |
+| `HUD 🌅` | Holographic De Sitter Static-Patch Horizon, Type II₁ von Neumann Algebra & Antipodal Cosmological Entanglement Island |
+| `HUD 🔥` | ν=5/2 Non-Abelian Anyon Fabry-Pérot Interferometer, e/4 Even-Odd Extinction & Chiral Majorana Thermal Diode |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

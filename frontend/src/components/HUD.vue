@@ -700,6 +700,18 @@
       <button class="hud-btn magnon-bec-btn" @click="ui.openMagnonPolaritonBec" title="磁振子-極化激元玻色凝聚與非互易手性自旋波塞格奈克干涉儀 (Magnon-Polariton BEC Interferometer)">
         🌀 磁振凝聚
       </button>
+      <button class="hud-btn kondo-sc-btn" @click="ui.openTopologicalKondoSuperconductor" title="拓撲近藤超導體與時間反演不變馬約拉納克萊默斯對反應堆 (Topological Kondo Superconductor)">
+        🧬 近藤超導
+      </button>
+      <button class="hud-btn axion-biref-btn" @click="ui.openAxionPhotonBirefringence" title="軸子-光子強磁場雙折射干涉儀與暗物質普里馬科夫共振腔 (Axion-Photon Birefringence Interferometer)">
+        🔭 軸子雙折
+      </button>
+      <button class="hud-btn ds-patch-btn" @click="ui.openHolographicDeSitterPatch" title="全息德西特靜止塊體視界熱化與宇宙學糾纏島嶼引擎 (Holographic De Sitter Static Patch)">
+        🌅 德西特島
+      </button>
+      <button class="hud-btn anyon-diode-btn" @click="ui.openNonAbelianAnyonThermalDiode" title="非阿貝爾任意子量子霍爾干涉熱電二極體與手性馬約拉納熱流閥 (Non-Abelian Anyon Thermal Diode)">
+        🔥 任意子熱閥
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1893,5 +1905,21 @@ onUnmounted(() => {
 .magnon-bec-btn {
   border-color: rgba(232, 121, 249, 0.4);
   color: #e879f9;
+}
+.kondo-sc-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.axion-biref-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.ds-patch-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
+}
+.anyon-diode-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
 }
 </style>

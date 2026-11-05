@@ -257,6 +257,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'holographic_qec_happy_bulk_reconstruction', title: '全息張量網路 HaPPY 量子糾錯與體重構大師', description: '在龐加萊雙曲圓盤 {5,4} 五邊形完美張量網路上執行貪婪糾纏楔形區重構與廣義笠-高柳切面解碼，免疫邊界擦除錯誤並保護體邏輯量子位元', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'cavity_qed_superradiant_time_crystal', title: '腔量子電動力學超輻射連續時間晶體大師', description: '在超冷鍶鐘原子與高精細光學微腔開放 Dicke-Lindblad 系統中自發破缺連續時間平移對稱，進入劉維爾極限環相並輸出超越 Schawlow-Townes 極限之超輻射相干光', icon: '⏱️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'magnon_polariton_bec_sagnac_interferometer', title: '磁振子-極化激元凝聚與手性自旋波干涉大師', description: '藉由平行微波參量泵浦在 YIG-微波腔強耦合系統之 ±k₀ 雙極小值處觸發室溫磁振子-極化激元玻色凝聚，觀測界面 DMI 非互易手性塞格奈克干涉條紋', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'topological_kondo_majorana_kramers_superconductor', title: '拓撲近藤超導體與馬約拉納克萊默斯對大師', description: '在奇宇稱 4f-5d 近藤雜化重費米子異質結中實現 DIII 類時間反演不變拓撲超導，觀測克萊默斯保護雙馬約拉納零模 4e²/h 零偏壓電導峰與 8π 自旋超電流', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'axion_photon_birefringence_interferometer', title: '軸子-光子強磁場雙折射與穿牆再生大師', description: '利用高精細領結型法布里-珀羅光學腔與強超導偶極磁場探測暗物質軸子誘導之圓偏振真空雙折射相速度劈裂與普里馬科夫穿牆光子再生', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_desitter_static_patch_island', title: '全息德西特靜止塊體視界與宇宙島嶼大師', description: '在馮·諾伊曼 II₁ 型最大熵代數架構下觀測德西特宇宙學視界吉本斯-霍金輻射，跨越佩奇時間於對蹠靜止塊體成核量子極值宇宙學糾纏島嶼', icon: '🌅', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_abelian_anyon_thermal_diode_interferometer', title: '非阿貝爾任意子奇偶干涉與馬約拉納熱閥大師', description: '在 ν=5/2 分數量子霍爾雙 QPC 干涉儀中驗證 e/4 伊辛非阿貝爾任意子奇偶干涉消光效應，並以 κ_xy=(5/2)κ₀ 半整數手性馬約拉納邊界模實現高整流熱二極體', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

@@ -299,6 +299,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕸️', desc: '開啟 全息張量網路表面/狀態對偶與 HaPPY 量子糾錯碼體重構器 (Holographic QEC & Bulk Reconstruction)' },
       { combo: 'HUD ⏱️', desc: '開啟 腔量子電動力學超輻射時間晶體與耗散林德布拉德極限環雷射 (Cavity-QED Superradiant Time Crystal)' },
       { combo: 'HUD 🌀', desc: '開啟 磁振子-極化激元玻色凝聚與非互易手性自旋波塞格奈克干涉儀 (Magnon-Polariton BEC Interferometer)' },
+      { combo: 'HUD 🧬', desc: '開啟 拓撲近藤超導體與時間反演不變馬約拉納克萊默斯對反應堆 (Topological Kondo Superconductor)' },
+      { combo: 'HUD 🔭', desc: '開啟 軸子-光子強磁場雙折射干涉儀與暗物質普里馬科夫共振腔 (Axion-Photon Birefringence Interferometer)' },
+      { combo: 'HUD 🌅', desc: '開啟 全息德西特靜止塊體視界熱化與宇宙學糾纏島嶼引擎 (Holographic De Sitter Static Patch)' },
+      { combo: 'HUD 🔥', desc: '開啟 非阿貝爾任意子量子霍爾干涉熱電二極體與手性馬約拉納熱流閥 (Non-Abelian Anyon Thermal Diode)' },
     ]
   }
 ]
