@@ -756,6 +756,18 @@
       <NonAbelianAnyonThermalDiodeModal v-if="ui.mode === 'non-abelian-anyon-thermal-diode'" />
     </Transition>
     <Transition name="fade">
+      <TimeQuasicrystalFloquetPumpModal v-if="ui.mode === 'time-quasicrystal-floquet'" />
+    </Transition>
+    <Transition name="fade">
+      <PlanckCoreRegularBlackHoleModal v-if="ui.mode === 'planck-core-black-hole-remnant'" />
+    </Transition>
+    <Transition name="fade">
+      <TwistedTrilayerGrapheneModal v-if="ui.mode === 'twisted-trilayer-graphene-sc'" />
+    </Transition>
+    <Transition name="fade">
+      <SuperfluidHe3KibbleZurekModal v-if="ui.mode === 'superfluid-he3-kibble-zurek'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1033,6 +1045,10 @@ import TopologicalKondoSuperconductorModal from '@/components/TopologicalKondoSu
 import AxionPhotonBirefringenceModal from '@/components/AxionPhotonBirefringenceModal.vue'
 import HolographicDeSitterStaticPatchModal from '@/components/HolographicDeSitterStaticPatchModal.vue'
 import NonAbelianAnyonThermalDiodeModal from '@/components/NonAbelianAnyonThermalDiodeModal.vue'
+import TimeQuasicrystalFloquetPumpModal from '@/components/TimeQuasicrystalFloquetPumpModal.vue'
+import PlanckCoreRegularBlackHoleModal from '@/components/PlanckCoreRegularBlackHoleModal.vue'
+import TwistedTrilayerGrapheneModal from '@/components/TwistedTrilayerGrapheneModal.vue'
+import SuperfluidHe3KibbleZurekModal from '@/components/SuperfluidHe3KibbleZurekModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

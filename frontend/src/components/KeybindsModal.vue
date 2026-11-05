@@ -303,6 +303,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔭', desc: '開啟 軸子-光子強磁場雙折射干涉儀與暗物質普里馬科夫共振腔 (Axion-Photon Birefringence Interferometer)' },
       { combo: 'HUD 🌅', desc: '開啟 全息德西特靜止塊體視界熱化與宇宙學糾纏島嶼引擎 (Holographic De Sitter Static Patch)' },
       { combo: 'HUD 🔥', desc: '開啟 非阿貝爾任意子量子霍爾干涉熱電二極體與手性馬約拉納熱流閥 (Non-Abelian Anyon Thermal Diode)' },
+      { combo: 'HUD ⏳', desc: '開啟 多頻不可通約弗洛凱時間準晶與合成維度拓撲能量泵浦 (Time Quasicrystal Floquet Pump)' },
+      { combo: 'HUD 🕳️', desc: '開啟 正則黑洞德西特普朗克核心與零溫霍金蒸發殘餘天體 (Planck-Core Regular Black Hole Remnant)' },
+      { combo: 'HUD 🥞', desc: '開啟 魔角扭轉三層石墨烯平帶狄拉克錐共存與超越泡利極限自旋三重態重入超導 (Twisted Trilayer Graphene Triplet SC)' },
+      { combo: 'HUD 🧊', desc: '開啟 超流氦-3 宇宙學基布爾-祖雷克相變渦旋生成與手性釘子單極子模擬器 (Superfluid He-3 Kibble-Zurek & Monopole)' },
     ]
   }
 ]

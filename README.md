@@ -256,6 +256,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔭` | Axion-Photon Vacuum Birefringence Bow-Tie Interferometer, LCP/RCP Phase Split & Primakoff LSW Regeneration |
 | `HUD 🌅` | Holographic De Sitter Static-Patch Horizon, Type II₁ von Neumann Algebra & Antipodal Cosmological Entanglement Island |
 | `HUD 🔥` | ν=5/2 Non-Abelian Anyon Fabry-Pérot Interferometer, e/4 Even-Odd Extinction & Chiral Majorana Thermal Diode |
+| `HUD ⏳` | Multi-Frequency Incommensurate Floquet Time Quasicrystal, Golden-Ratio Subharmonics & 2D Synthetic-Lattice Energy Pump |
+| `HUD 🕳️` | Regular Black Hole De Sitter Planck Core (Hayward/Bardeen), Singularity-Free Metric & Zero-Temperature Hawking Remnant |
+| `HUD 🥞` | Magic-Angle Twisted Trilayer Graphene (MATTG), Flat-Band + Dirac-Cone Coexistence & >10 T Pauli-Limit-Violating Triplet SC |
+| `HUD 🧊` | Superfluid He-3 Cosmological Kibble-Zurek Vortex Quench, A-B Brane Interface & Chiral Boojum Monopole Simulator |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

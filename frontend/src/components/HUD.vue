@@ -712,6 +712,18 @@
       <button class="hud-btn anyon-diode-btn" @click="ui.openNonAbelianAnyonThermalDiode" title="非阿貝爾任意子量子霍爾干涉熱電二極體與手性馬約拉納熱流閥 (Non-Abelian Anyon Thermal Diode)">
         🔥 任意子熱閥
       </button>
+      <button class="hud-btn time-qc-btn" @click="ui.openTimeQuasicrystalFloquet" title="多頻不可通約弗洛凱時間準晶與合成維度拓撲能量泵浦 (Time Quasicrystal Floquet Pump)">
+        ⏳ 時間準晶
+      </button>
+      <button class="hud-btn planck-core-btn" @click="ui.openPlanckCoreBlackHoleRemnant" title="正則黑洞德西特普朗克核心與零溫霍金蒸發殘餘天體 (Planck-Core Regular Black Hole Remnant)">
+        🕳️ 普朗克殘餘
+      </button>
+      <button class="hud-btn ttg-sc-btn" @click="ui.openTwistedTrilayerGrapheneSc" title="魔角扭轉三層石墨烯平帶狄拉克錐共存與超越泡利極限自旋三重態重入超導 (Twisted Trilayer Graphene Triplet SC)">
+        🥞 三層魔角
+      </button>
+      <button class="hud-btn he3-kz-btn" @click="ui.openSuperfluidHe3KibbleZurek" title="超流氦-3 宇宙學基布爾-祖雷克相變渦旋生成與手性釘子單極子模擬器 (Superfluid He-3 Kibble-Zurek & Monopole)">
+        🧊 氦三宇宙
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1921,5 +1933,21 @@ onUnmounted(() => {
 .anyon-diode-btn {
   border-color: rgba(244, 63, 94, 0.4);
   color: #fb7185;
+}
+.time-qc-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
+}
+.planck-core-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.ttg-sc-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.he3-kz-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
 }
 </style>

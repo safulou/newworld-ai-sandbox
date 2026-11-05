@@ -261,6 +261,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'axion_photon_birefringence_interferometer', title: '軸子-光子強磁場雙折射與穿牆再生大師', description: '利用高精細領結型法布里-珀羅光學腔與強超導偶極磁場探測暗物質軸子誘導之圓偏振真空雙折射相速度劈裂與普里馬科夫穿牆光子再生', icon: '🔭', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'holographic_desitter_static_patch_island', title: '全息德西特靜止塊體視界與宇宙島嶼大師', description: '在馮·諾伊曼 II₁ 型最大熵代數架構下觀測德西特宇宙學視界吉本斯-霍金輻射，跨越佩奇時間於對蹠靜止塊體成核量子極值宇宙學糾纏島嶼', icon: '🌅', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'non_abelian_anyon_thermal_diode_interferometer', title: '非阿貝爾任意子奇偶干涉與馬約拉納熱閥大師', description: '在 ν=5/2 分數量子霍爾雙 QPC 干涉儀中驗證 e/4 伊辛非阿貝爾任意子奇偶干涉消光效應，並以 κ_xy=(5/2)κ₀ 半整數手性馬約拉納邊界模實現高整流熱二極體', icon: '🔥', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'time_quasicrystal_incommensurate_floquet_pump', title: '多頻無理數時間準晶與合成頻率拓撲泵浦大師', description: '以黃金比例 φ=1.618 無理數雙頻驅動強關聯自旋晶格，藉由丟番圖預熱化保護實現離散時間準晶雙次諧波序與合成頻率晶格陳數能量泵浦', icon: '⏳', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'planck_core_regular_black_hole_remnant', title: '漸近安全普朗克核正則黑洞殘餘大師', description: '透過重整化群跑動牛頓常數消除黑洞中心奇點形成德西特普朗克內核，並在內外視界重合處使霍金溫度歸零穩定為零溫暗物質黑洞殘餘', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'twisted_trilayer_graphene_pauli_violation_sc', title: '交替扭轉三層石墨烯自旋三重態超導大師', description: '在 1.56° 鏡像對稱魔角扭轉三層石墨烯中以垂直電場雜化平帶與狄拉克錐，在強面內磁場下突破 3.5 倍包立順磁極限並觸發高場重入自旋三重態超導', icon: '🥞', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'superfluid_he3_kibble_zurek_torsion_monopole', title: '超流氦-3 宇宙基布爾-祖瑞克單極與扭率大師', description: '模擬超流 ³He 跨越毫秒快速淬火相變之基布爾-祖瑞克宇宙弦網路，在 A-B 相界面激發 π₂ 狄拉克單極子、Boojum 缺陷與愛因斯坦-嘉當有效時空扭率', icon: '🧊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

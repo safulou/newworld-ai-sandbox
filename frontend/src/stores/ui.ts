@@ -251,6 +251,10 @@ export type UIMode =
   | 'axion-photon-birefringence'
   | 'holographic-desitter-patch'
   | 'non-abelian-anyon-thermal-diode'
+  | 'time-quasicrystal-floquet'
+  | 'planck-core-black-hole-remnant'
+  | 'twisted-trilayer-graphene-sc'
+  | 'superfluid-he3-kibble-zurek'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -780,6 +784,18 @@ export const useUIStore = defineStore('ui', () => {
   function openNonAbelianAnyonThermalDiode(): void { mode.value = 'non-abelian-anyon-thermal-diode' }
   function setNonAbelianAnyonThermalDiodeModal(open: boolean): void { mode.value = open ? 'non-abelian-anyon-thermal-diode' : 'game' }
   function setNonAbelianAnyonThermalDiodeOpen(open: boolean): void { mode.value = open ? 'non-abelian-anyon-thermal-diode' : 'game' }
+  function openTimeQuasicrystalFloquet(): void { mode.value = 'time-quasicrystal-floquet' }
+  function setTimeQuasicrystalFloquetModal(open: boolean): void { mode.value = open ? 'time-quasicrystal-floquet' : 'game' }
+  function setTimeQuasicrystalFloquetOpen(open: boolean): void { mode.value = open ? 'time-quasicrystal-floquet' : 'game' }
+  function openPlanckCoreBlackHoleRemnant(): void { mode.value = 'planck-core-black-hole-remnant' }
+  function setPlanckCoreBlackHoleRemnantModal(open: boolean): void { mode.value = open ? 'planck-core-black-hole-remnant' : 'game' }
+  function setPlanckCoreBlackHoleRemnantOpen(open: boolean): void { mode.value = open ? 'planck-core-black-hole-remnant' : 'game' }
+  function openTwistedTrilayerGrapheneSc(): void { mode.value = 'twisted-trilayer-graphene-sc' }
+  function setTwistedTrilayerGrapheneScModal(open: boolean): void { mode.value = open ? 'twisted-trilayer-graphene-sc' : 'game' }
+  function setTwistedTrilayerGrapheneScOpen(open: boolean): void { mode.value = open ? 'twisted-trilayer-graphene-sc' : 'game' }
+  function openSuperfluidHe3KibbleZurek(): void { mode.value = 'superfluid-he3-kibble-zurek' }
+  function setSuperfluidHe3KibbleZurekModal(open: boolean): void { mode.value = open ? 'superfluid-he3-kibble-zurek' : 'game' }
+  function setSuperfluidHe3KibbleZurekOpen(open: boolean): void { mode.value = open ? 'superfluid-he3-kibble-zurek' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -1001,6 +1017,10 @@ export const useUIStore = defineStore('ui', () => {
     openAxionPhotonBirefringence, setAxionPhotonBirefringenceModal, setAxionPhotonBirefringenceOpen,
     openHolographicDeSitterPatch, setHolographicDeSitterPatchModal, setHolographicDeSitterPatchOpen,
     openNonAbelianAnyonThermalDiode, setNonAbelianAnyonThermalDiodeModal, setNonAbelianAnyonThermalDiodeOpen,
+    openTimeQuasicrystalFloquet, setTimeQuasicrystalFloquetModal, setTimeQuasicrystalFloquetOpen,
+    openPlanckCoreBlackHoleRemnant, setPlanckCoreBlackHoleRemnantModal, setPlanckCoreBlackHoleRemnantOpen,
+    openTwistedTrilayerGrapheneSc, setTwistedTrilayerGrapheneScModal, setTwistedTrilayerGrapheneScOpen,
+    openSuperfluidHe3KibbleZurek, setSuperfluidHe3KibbleZurekModal, setSuperfluidHe3KibbleZurekOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }
