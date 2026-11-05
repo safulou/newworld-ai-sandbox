@@ -260,6 +260,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕳️` | Regular Black Hole De Sitter Planck Core (Hayward/Bardeen), Singularity-Free Metric & Zero-Temperature Hawking Remnant |
 | `HUD 🥞` | Magic-Angle Twisted Trilayer Graphene (MATTG), Flat-Band + Dirac-Cone Coexistence & >10 T Pauli-Limit-Violating Triplet SC |
 | `HUD 🧊` | Superfluid He-3 Cosmological Kibble-Zurek Vortex Quench, A-B Brane Interface & Chiral Boojum Monopole Simulator |
+| `HUD 🧊` | Pyrochlore Quantum Spin Ice Emergent U(1) Photons, π-Flux Visons & Debye-Screened Magnetic Monopole Plasma |
+| `HUD 🕳️` | Holographic Wormhole Complexity-Equals-Volume (CV 2.0), Lloyd Growth Ramp, Switchback Delay & Baby-Universe Plateau |
+| `HUD ⚡` | Topological Weyl Superconductor Bogoliubov-Weyl Nodes, Chiral Majorana-Andreev Fermi Arcs & Berry-Dipole Laser |
+| `HUD 🌊` | Cosmic Axion String-Domain Wall Network Annihilation, N_DW Ribbon Collapse & Nano-Hz Hellings-Downs PTA GW Background |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

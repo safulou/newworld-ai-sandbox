@@ -255,6 +255,10 @@ export type UIMode =
   | 'planck-core-black-hole-remnant'
   | 'twisted-trilayer-graphene-sc'
   | 'superfluid-he3-kibble-zurek'
+  | 'quantum-spin-ice-monopole'
+  | 'holographic-wormhole-complexity'
+  | 'weyl-superconductor-andreev'
+  | 'axion-string-domain-wall-gw'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -796,6 +800,18 @@ export const useUIStore = defineStore('ui', () => {
   function openSuperfluidHe3KibbleZurek(): void { mode.value = 'superfluid-he3-kibble-zurek' }
   function setSuperfluidHe3KibbleZurekModal(open: boolean): void { mode.value = open ? 'superfluid-he3-kibble-zurek' : 'game' }
   function setSuperfluidHe3KibbleZurekOpen(open: boolean): void { mode.value = open ? 'superfluid-he3-kibble-zurek' : 'game' }
+  function openQuantumSpinIceMonopole(): void { mode.value = 'quantum-spin-ice-monopole' }
+  function setQuantumSpinIceMonopoleModal(open: boolean): void { mode.value = open ? 'quantum-spin-ice-monopole' : 'game' }
+  function setQuantumSpinIceMonopoleOpen(open: boolean): void { mode.value = open ? 'quantum-spin-ice-monopole' : 'game' }
+  function openHolographicWormholeComplexity(): void { mode.value = 'holographic-wormhole-complexity' }
+  function setHolographicWormholeComplexityModal(open: boolean): void { mode.value = open ? 'holographic-wormhole-complexity' : 'game' }
+  function setHolographicWormholeComplexityOpen(open: boolean): void { mode.value = open ? 'holographic-wormhole-complexity' : 'game' }
+  function openWeylSuperconductorAndreev(): void { mode.value = 'weyl-superconductor-andreev' }
+  function setWeylSuperconductorAndreevModal(open: boolean): void { mode.value = open ? 'weyl-superconductor-andreev' : 'game' }
+  function setWeylSuperconductorAndreevOpen(open: boolean): void { mode.value = open ? 'weyl-superconductor-andreev' : 'game' }
+  function openAxionStringDomainWallGw(): void { mode.value = 'axion-string-domain-wall-gw' }
+  function setAxionStringDomainWallGwModal(open: boolean): void { mode.value = open ? 'axion-string-domain-wall-gw' : 'game' }
+  function setAxionStringDomainWallGwOpen(open: boolean): void { mode.value = open ? 'axion-string-domain-wall-gw' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -1021,6 +1037,10 @@ export const useUIStore = defineStore('ui', () => {
     openPlanckCoreBlackHoleRemnant, setPlanckCoreBlackHoleRemnantModal, setPlanckCoreBlackHoleRemnantOpen,
     openTwistedTrilayerGrapheneSc, setTwistedTrilayerGrapheneScModal, setTwistedTrilayerGrapheneScOpen,
     openSuperfluidHe3KibbleZurek, setSuperfluidHe3KibbleZurekModal, setSuperfluidHe3KibbleZurekOpen,
+    openQuantumSpinIceMonopole, setQuantumSpinIceMonopoleModal, setQuantumSpinIceMonopoleOpen,
+    openHolographicWormholeComplexity, setHolographicWormholeComplexityModal, setHolographicWormholeComplexityOpen,
+    openWeylSuperconductorAndreev, setWeylSuperconductorAndreevModal, setWeylSuperconductorAndreevOpen,
+    openAxionStringDomainWallGw, setAxionStringDomainWallGwModal, setAxionStringDomainWallGwOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

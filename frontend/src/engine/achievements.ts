@@ -265,6 +265,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'planck_core_regular_black_hole_remnant', title: '漸近安全普朗克核正則黑洞殘餘大師', description: '透過重整化群跑動牛頓常數消除黑洞中心奇點形成德西特普朗克內核，並在內外視界重合處使霍金溫度歸零穩定為零溫暗物質黑洞殘餘', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'twisted_trilayer_graphene_pauli_violation_sc', title: '交替扭轉三層石墨烯自旋三重態超導大師', description: '在 1.56° 鏡像對稱魔角扭轉三層石墨烯中以垂直電場雜化平帶與狄拉克錐，在強面內磁場下突破 3.5 倍包立順磁極限並觸發高場重入自旋三重態超導', icon: '🥞', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'superfluid_he3_kibble_zurek_torsion_monopole', title: '超流氦-3 宇宙基布爾-祖瑞克單極與扭率大師', description: '模擬超流 ³He 跨越毫秒快速淬火相變之基布爾-祖瑞克宇宙弦網路，在 A-B 相界面激發 π₂ 狄拉克單極子、Boojum 缺陷與愛因斯坦-嘉當有效時空扭率', icon: '🧊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'quantum_spin_ice_emergent_monopole_plasma', title: '焦綠石量子自旋冰湧現光子與磁單極電漿大師', description: '在共角四面體焦綠石量子自旋冰中透過六角環交換融化二進二出冰規則，觀測無能隙湧現 U(1) 光子、π-磁通視覺子與德拜屏蔽磁單極子電漿針尖點', icon: '🧊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_wormhole_complexity_volume_plateau', title: '全息蟲洞複雜度等於體積與嬰兒宇宙高原大師', description: '在雙邊永恆反德西特黑洞中追蹤最大類空超曲面愛因斯坦-羅森橋勞埃德線性複雜度暴脹、蝴蝶效應衝擊波折返延遲與指數時間嬰兒宇宙穿隧高原', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'weyl_superconductor_chiral_andreev_laser', title: '拓撲外爾超導手性安德烈夫弧與貝里雷射大師', description: '在時間反演破缺外爾超導體中操控動量空間 Bogoliubov-Weyl 節點對、手性馬約拉納-安德烈夫表面費米弧與貝里曲率偶極非線性受激微波雷射', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'axion_string_domain_wall_nanohertz_gw', title: '宇宙軸子弦-疇壁湮滅與納赫茲引力波大師', description: '模擬佩切伊-奎因對稱破缺宇宙軸子弦與 QCD 瞬子疇壁網路張力坍縮，重建脈衝星計時陣列 Hellings-Downs 四極相關納赫茲隨機引力波背景', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

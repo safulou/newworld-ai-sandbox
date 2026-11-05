@@ -768,6 +768,18 @@
       <SuperfluidHe3KibbleZurekModal v-if="ui.mode === 'superfluid-he3-kibble-zurek'" />
     </Transition>
     <Transition name="fade">
+      <QuantumSpinIceMonopoleModal v-if="ui.mode === 'quantum-spin-ice-monopole'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicWormholeComplexityModal v-if="ui.mode === 'holographic-wormhole-complexity'" />
+    </Transition>
+    <Transition name="fade">
+      <WeylSuperconductorAndreevLaserModal v-if="ui.mode === 'weyl-superconductor-andreev'" />
+    </Transition>
+    <Transition name="fade">
+      <AxionStringDomainWallGwModal v-if="ui.mode === 'axion-string-domain-wall-gw'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1049,6 +1061,10 @@ import TimeQuasicrystalFloquetPumpModal from '@/components/TimeQuasicrystalFloqu
 import PlanckCoreRegularBlackHoleModal from '@/components/PlanckCoreRegularBlackHoleModal.vue'
 import TwistedTrilayerGrapheneModal from '@/components/TwistedTrilayerGrapheneModal.vue'
 import SuperfluidHe3KibbleZurekModal from '@/components/SuperfluidHe3KibbleZurekModal.vue'
+import QuantumSpinIceMonopoleModal from '@/components/QuantumSpinIceMonopoleModal.vue'
+import HolographicWormholeComplexityModal from '@/components/HolographicWormholeComplexityModal.vue'
+import WeylSuperconductorAndreevLaserModal from '@/components/WeylSuperconductorAndreevLaserModal.vue'
+import AxionStringDomainWallGwModal from '@/components/AxionStringDomainWallGwModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

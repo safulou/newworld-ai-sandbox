@@ -307,6 +307,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕳️', desc: '開啟 正則黑洞德西特普朗克核心與零溫霍金蒸發殘餘天體 (Planck-Core Regular Black Hole Remnant)' },
       { combo: 'HUD 🥞', desc: '開啟 魔角扭轉三層石墨烯平帶狄拉克錐共存與超越泡利極限自旋三重態重入超導 (Twisted Trilayer Graphene Triplet SC)' },
       { combo: 'HUD 🧊', desc: '開啟 超流氦-3 宇宙學基布爾-祖雷克相變渦旋生成與手性釘子單極子模擬器 (Superfluid He-3 Kibble-Zurek & Monopole)' },
+      { combo: 'HUD 🧊', desc: '開啟 非阿貝爾量子自旋冰與湧現規範磁單極子電漿 (Quantum Spin Ice & Monopole Plasma)' },
+      { combo: 'HUD 🕳️', desc: '開啟 全息蟲洞複雜度等於體積生長與後佩奇量子洛倫茲橋 (Holographic Wormhole Complexity=Volume)' },
+      { combo: 'HUD ⚡', desc: '開啟 拓撲外爾超導體手性安德烈夫束縛態與貝里偶極微波雷射 (Weyl Superconductor Chiral Andreev Laser)' },
+      { combo: 'HUD 🌊', desc: '開啟 宇宙軸子弦-疇壁網路湮滅與納赫茲隨機引力波背景譜儀 (Axion String-Domain Wall GW Background)' },
     ]
   }
 ]

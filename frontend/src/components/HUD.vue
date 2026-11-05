@@ -724,6 +724,18 @@
       <button class="hud-btn he3-kz-btn" @click="ui.openSuperfluidHe3KibbleZurek" title="超流氦-3 宇宙學基布爾-祖雷克相變渦旋生成與手性釘子單極子模擬器 (Superfluid He-3 Kibble-Zurek & Monopole)">
         🧊 氦三宇宙
       </button>
+      <button class="hud-btn qsi-mono-btn" @click="ui.openQuantumSpinIceMonopole" title="非阿貝爾量子自旋冰與湧現規範磁單極子電漿 (Quantum Spin Ice & Monopole Plasma)">
+        🧊 自旋冰單極
+      </button>
+      <button class="hud-btn wormhole-cv-btn" @click="ui.openHolographicWormholeComplexity" title="全息蟲洞複雜度等於體積生長與後佩奇量子洛倫茲橋 (Holographic Wormhole Complexity=Volume)">
+        🕳️ 蟲洞複雜度
+      </button>
+      <button class="hud-btn weyl-sc-btn" @click="ui.openWeylSuperconductorAndreev" title="拓撲外爾超導體手性安德烈夫束縛態與貝里偶極微波雷射 (Weyl Superconductor Chiral Andreev Laser)">
+        ⚡ 外爾超導弧
+      </button>
+      <button class="hud-btn axion-gw-btn" @click="ui.openAxionStringDomainWallGw" title="宇宙軸子弦-疇壁網路湮滅與納赫茲隨機引力波背景譜儀 (Axion String-Domain Wall GW Background)">
+        🌊 軸子弦引力波
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1949,5 +1961,21 @@ onUnmounted(() => {
 .he3-kz-btn {
   border-color: rgba(56, 189, 248, 0.4);
   color: #38bdf8;
+}
+.qsi-mono-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+}
+.wormhole-cv-btn {
+  border-color: rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+}
+.weyl-sc-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.axion-gw-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
 }
 </style>
