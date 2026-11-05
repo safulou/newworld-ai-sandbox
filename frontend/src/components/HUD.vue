@@ -688,6 +688,18 @@
       <button class="hud-btn dipolar-ferro-btn" @click="ui.openDipolarFerroelectric" title="極性分子偶極量子鐵電超流體與旋子激發宏觀自束縛液滴共振腔 (Dipolar Ferroelectric Superfluid)">
         💧 偶極液滴
       </button>
+      <button class="hud-btn fei-bilayer-btn" @click="ui.openFractionalExcitonicInsulator" title="雙層莫爾分數激子絕緣體與時間反演對稱對流超流反應堆 (Fractional Excitonic Insulator)">
+        ⚛️ 分數激子
+      </button>
+      <button class="hud-btn holo-qec-btn" @click="ui.openHolographicQecBulk" title="全息張量網路表面/狀態對偶與 HaPPY 量子糾錯碼體重構器 (Holographic QEC & Bulk Reconstruction)">
+        🕸️ 全息糾錯
+      </button>
+      <button class="hud-btn ctc-superradiant-btn" @click="ui.openCavityQedSuperradiantTc" title="腔量子電動力學超輻射時間晶體與耗散林德布拉德極限環雷射 (Cavity-QED Superradiant Time Crystal)">
+        ⏱️ 超輻射晶
+      </button>
+      <button class="hud-btn magnon-bec-btn" @click="ui.openMagnonPolaritonBec" title="磁振子-極化激元玻色凝聚與非互易手性自旋波塞格奈克干涉儀 (Magnon-Polariton BEC Interferometer)">
+        🌀 磁振凝聚
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1865,5 +1877,21 @@ onUnmounted(() => {
 .dipolar-ferro-btn {
   border-color: rgba(168, 85, 247, 0.4);
   color: #c084fc;
+}
+.fei-bilayer-btn {
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+}
+.holo-qec-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.ctc-superradiant-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
+}
+.magnon-bec-btn {
+  border-color: rgba(232, 121, 249, 0.4);
+  color: #e879f9;
 }
 </style>

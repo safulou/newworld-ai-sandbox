@@ -243,6 +243,10 @@ export type UIMode =
   | 'causal-dynamical-triangulations'
   | 'uranium-spin-triplet-superconductor'
   | 'dipolar-ferroelectric-superfluid'
+  | 'fractional-excitonic-insulator'
+  | 'holographic-qec-bulk'
+  | 'cavity-qed-superradiant-tc'
+  | 'magnon-polariton-bec'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -748,6 +752,18 @@ export const useUIStore = defineStore('ui', () => {
   function openDipolarFerroelectric(): void { mode.value = 'dipolar-ferroelectric-superfluid' }
   function setDipolarFerroelectricModal(open: boolean): void { mode.value = open ? 'dipolar-ferroelectric-superfluid' : 'game' }
   function setDipolarFerroelectricOpen(open: boolean): void { mode.value = open ? 'dipolar-ferroelectric-superfluid' : 'game' }
+  function openFractionalExcitonicInsulator(): void { mode.value = 'fractional-excitonic-insulator' }
+  function setFractionalExcitonicInsulatorModal(open: boolean): void { mode.value = open ? 'fractional-excitonic-insulator' : 'game' }
+  function setFractionalExcitonicInsulatorOpen(open: boolean): void { mode.value = open ? 'fractional-excitonic-insulator' : 'game' }
+  function openHolographicQecBulk(): void { mode.value = 'holographic-qec-bulk' }
+  function setHolographicQecBulkModal(open: boolean): void { mode.value = open ? 'holographic-qec-bulk' : 'game' }
+  function setHolographicQecBulkOpen(open: boolean): void { mode.value = open ? 'holographic-qec-bulk' : 'game' }
+  function openCavityQedSuperradiantTc(): void { mode.value = 'cavity-qed-superradiant-tc' }
+  function setCavityQedSuperradiantTcModal(open: boolean): void { mode.value = open ? 'cavity-qed-superradiant-tc' : 'game' }
+  function setCavityQedSuperradiantTcOpen(open: boolean): void { mode.value = open ? 'cavity-qed-superradiant-tc' : 'game' }
+  function openMagnonPolaritonBec(): void { mode.value = 'magnon-polariton-bec' }
+  function setMagnonPolaritonBecModal(open: boolean): void { mode.value = open ? 'magnon-polariton-bec' : 'game' }
+  function setMagnonPolaritonBecOpen(open: boolean): void { mode.value = open ? 'magnon-polariton-bec' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -961,6 +977,10 @@ export const useUIStore = defineStore('ui', () => {
     openCausalDynamicalTriangulations, setCausalDynamicalTriangulationsModal, setCausalDynamicalTriangulationsOpen,
     openUraniumSpinTriplet, setUraniumSpinTripletModal, setUraniumSpinTripletOpen,
     openDipolarFerroelectric, setDipolarFerroelectricModal, setDipolarFerroelectricOpen,
+    openFractionalExcitonicInsulator, setFractionalExcitonicInsulatorModal, setFractionalExcitonicInsulatorOpen,
+    openHolographicQecBulk, setHolographicQecBulkModal, setHolographicQecBulkOpen,
+    openCavityQedSuperradiantTc, setCavityQedSuperradiantTcModal, setCavityQedSuperradiantTcOpen,
+    openMagnonPolaritonBec, setMagnonPolaritonBecModal, setMagnonPolaritonBecOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

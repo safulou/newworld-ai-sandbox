@@ -253,6 +253,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'causal_dynamical_triangulations_spacetime', title: '因果動力學三角剖分時空湧現大師', description: '利用 4D 彭特可夫單純形帕赫納移動執行洛倫茲路徑積分，成功進入 C 相湧現四維德西特宏觀宇宙並驗證普朗克尺度譜維度紫外約化 d_s → 2', icon: '🔺', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'uranium_spin_triplet_lazarus_superconductor', title: '二碲化鈾拉撒路自旋三重態超導大師', description: '調控重費米子 UTe₂ 跨越 45 T 奇異費希爾-拉金-奧夫欽尼科夫場增強超導相，觀測手性外爾節點表面態與對稱分率化磁通渦旋', icon: '🧲', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'dipolar_quantum_ferroelectric_superfluid', title: '極性分子偶極鐵電超流液滴大師', description: '在超冷極性雙原子分子氣體中藉由李-黃-楊量子漲落排斥力穩定宏觀鐵電自束縛量子液滴，激發軟化旋子模與自發電極化條紋超固相', icon: '💧', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'fractional_excitonic_insulator_bilayer', title: '雙層莫爾分數激子絕緣體與對流超流大師', description: '在零磁場相反陳數莫爾雙層異質結中使 ν=1/3 分數化準粒子與準電洞配對形成分數激子絕緣體，實現 R_xy^drag = 3h/e² 完美分數霍爾拖曳與複合費米子對流超流', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_qec_happy_bulk_reconstruction', title: '全息張量網路 HaPPY 量子糾錯與體重構大師', description: '在龐加萊雙曲圓盤 {5,4} 五邊形完美張量網路上執行貪婪糾纏楔形區重構與廣義笠-高柳切面解碼，免疫邊界擦除錯誤並保護體邏輯量子位元', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'cavity_qed_superradiant_time_crystal', title: '腔量子電動力學超輻射連續時間晶體大師', description: '在超冷鍶鐘原子與高精細光學微腔開放 Dicke-Lindblad 系統中自發破缺連續時間平移對稱，進入劉維爾極限環相並輸出超越 Schawlow-Townes 極限之超輻射相干光', icon: '⏱️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'magnon_polariton_bec_sagnac_interferometer', title: '磁振子-極化激元凝聚與手性自旋波干涉大師', description: '藉由平行微波參量泵浦在 YIG-微波腔強耦合系統之 ±k₀ 雙極小值處觸發室溫磁振子-極化激元玻色凝聚，觀測界面 DMI 非互易手性塞格奈克干涉條紋', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

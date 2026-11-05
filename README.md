@@ -248,6 +248,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🔺` | Causal Dynamical Triangulations (CDT) Quantum Spacetime Emergence, De Sitter Phase C & UV Spectral Dimension d_s → 2 |
 | `HUD 🧲` | Heavy-Fermion UTe₂ Spin-Triplet Topological Superconductor, 45 T Lazarus Re-Entrant Phase & Chiral Weyl Surface States |
 | `HUD 💧` | Polar-Molecule Dipolar Quantum Ferroelectric Superfluid, Lee-Huang-Yang Self-Bound Droplets & Roton Stripe Supersolid |
+| `HUD ⚛️` | Zero-Field Opposite-Chern Bilayer Fractional Excitonic Insulator (FEI), Fractional Hall Drag & CF Counterflow Superfluid |
+| `HUD 🕸️` | Holographic Tensor-Network HaPPY Quantum Error-Correcting Code, Entanglement Wedge & RT/JLMS Bulk Reconstruction |
+| `HUD ⏱️` | Cavity-QED Superradiant Continuous Time Crystal, Open Dicke-Lindblad Limit Cycle & Sub-Schawlow-Townes Laser |
+| `HUD 🌀` | YIG Magnon-Polariton Bose-Einstein Condensate, Double-Minimum ±k₀ Stripes & Interfacial DMI Sagnac Interferometer |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

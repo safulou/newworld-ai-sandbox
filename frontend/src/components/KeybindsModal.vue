@@ -295,6 +295,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🔺', desc: '開啟 因果動力學三角剖分量子時空湧現與維度約化譜分析儀 (Causal Dynamical Triangulations)' },
       { combo: 'HUD 🧲', desc: '開啟 重費米子二碲化鈾自旋三重態拓撲超導與極端強場拉撒路重入相反應堆 (UTe2 Spin-Triplet Superconductor)' },
       { combo: 'HUD 💧', desc: '開啟 極性分子偶極量子鐵電超流體與旋子激發宏觀自束縛液滴共振腔 (Dipolar Ferroelectric Superfluid)' },
+      { combo: 'HUD ⚛️', desc: '開啟 雙層莫爾分數激子絕緣體與時間反演對稱對流超流反應堆 (Fractional Excitonic Insulator)' },
+      { combo: 'HUD 🕸️', desc: '開啟 全息張量網路表面/狀態對偶與 HaPPY 量子糾錯碼體重構器 (Holographic QEC & Bulk Reconstruction)' },
+      { combo: 'HUD ⏱️', desc: '開啟 腔量子電動力學超輻射時間晶體與耗散林德布拉德極限環雷射 (Cavity-QED Superradiant Time Crystal)' },
+      { combo: 'HUD 🌀', desc: '開啟 磁振子-極化激元玻色凝聚與非互易手性自旋波塞格奈克干涉儀 (Magnon-Polariton BEC Interferometer)' },
     ]
   }
 ]

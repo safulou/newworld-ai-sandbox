@@ -732,6 +732,18 @@
       <DipolarFerroelectricSuperfluidModal v-if="ui.mode === 'dipolar-ferroelectric-superfluid'" />
     </Transition>
     <Transition name="fade">
+      <FractionalExcitonicInsulatorModal v-if="ui.mode === 'fractional-excitonic-insulator'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicQuantumErrorCorrectionModal v-if="ui.mode === 'holographic-qec-bulk'" />
+    </Transition>
+    <Transition name="fade">
+      <CavityQedSuperradiantTimeCrystalModal v-if="ui.mode === 'cavity-qed-superradiant-tc'" />
+    </Transition>
+    <Transition name="fade">
+      <MagnonPolaritonBecInterferometerModal v-if="ui.mode === 'magnon-polariton-bec'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1001,6 +1013,10 @@ import ExceptionalSurfaceGyroscopeModal from '@/components/ExceptionalSurfaceGyr
 import CausalDynamicalTriangulationsModal from '@/components/CausalDynamicalTriangulationsModal.vue'
 import UraniumSpinTripletSuperconductorModal from '@/components/UraniumSpinTripletSuperconductorModal.vue'
 import DipolarFerroelectricSuperfluidModal from '@/components/DipolarFerroelectricSuperfluidModal.vue'
+import FractionalExcitonicInsulatorModal from '@/components/FractionalExcitonicInsulatorModal.vue'
+import HolographicQuantumErrorCorrectionModal from '@/components/HolographicQuantumErrorCorrectionModal.vue'
+import CavityQedSuperradiantTimeCrystalModal from '@/components/CavityQedSuperradiantTimeCrystalModal.vue'
+import MagnonPolaritonBecInterferometerModal from '@/components/MagnonPolaritonBecInterferometerModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'
