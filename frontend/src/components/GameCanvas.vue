@@ -270,6 +270,10 @@ import { penroseTwistorSelfDualGravitonEngine } from '@/engine/penroseTwistorSel
 import { doubleFieldTheoryNonGeometricFluxEngine } from '@/engine/doubleFieldTheoryNonGeometricFlux'
 import { nonAbelianFciAnomalousWignerCrystalEngine } from '@/engine/nonAbelianFciAnomalousWignerCrystal'
 import { ultralongRangeRydbergTrilobitePolaronEngine } from '@/engine/ultralongRangeRydbergTrilobitePolaron'
+import { primordialBlackHoleAxionGravitationalAtomEngine } from '@/engine/primordialBlackHoleAxionGravitationalAtom'
+import { majoranaSuperfluidVortexBraidingComputerEngine } from '@/engine/majoranaSuperfluidVortexBraidingComputer'
+import { holographicFluidGravityHorizonTurbulenceEngine } from '@/engine/holographicFluidGravityHorizonTurbulence'
+import { attosecondWeylHighHarmonicBerrySpectrometerEngine } from '@/engine/attosecondWeylHighHarmonicBerrySpectrometer'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -624,6 +628,10 @@ function loop(): void {
   doubleFieldTheoryNonGeometricFluxEngine.update(delta)
   nonAbelianFciAnomalousWignerCrystalEngine.update(delta)
   ultralongRangeRydbergTrilobitePolaronEngine.update(delta)
+  primordialBlackHoleAxionGravitationalAtomEngine.update(delta)
+  majoranaSuperfluidVortexBraidingComputerEngine.update(delta)
+  holographicFluidGravityHorizonTurbulenceEngine.update(delta)
+  attosecondWeylHighHarmonicBerrySpectrometerEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

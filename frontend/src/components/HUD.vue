@@ -748,6 +748,18 @@
       <button class="hud-btn rydberg-trilobite-btn" @click="ui.openRydbergTrilobitePolaron" title="超長程里德堡三葉蟲分子與玻色極化子多體束縛態光譜儀 (Ultralong-Range Rydberg Trilobite Polaron)">
         🦋 里德堡三葉蟲
       </button>
+      <button class="hud-btn pbh-atom-btn" @click="ui.openPbhAxionGravitationalAtom" title="原初黑洞超輻射軸子玻色雲與引力原子躍遷干涉儀 (PBH Superradiant Axion Gravitational Atom)">
+        ⚛️ 引力原子
+      </button>
+      <button class="hud-btn majorana-braid-btn" @click="ui.openMajoranaVortexBraiding" title="拓撲非阿貝爾馬約拉納超流渦旋晶格與通用拓撲量子編織計算機 (Majorana Superfluid Vortex Braiding)">
+        🧬 馬約拉納編織
+      </button>
+      <button class="hud-btn fluid-gravity-btn" @click="ui.openHolographicFluidGravity" title="全息流體-引力對偶與反德西特黑洞視界相對論性量子湍流引擎 (Holographic Fluid/Gravity Turbulence)">
+        🌊 流體引力湍流
+      </button>
+      <button class="hud-btn atto-weyl-btn" @click="ui.openAttosecondWeylHhgBerry" title="阿秒雷射強場高次諧波外爾半金屬與非微擾貝里曲率動態布洛赫譜儀 (Attosecond Weyl HHG Berry Spectrometer)">
+        ⚡ 阿秒外爾諧波
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -2005,5 +2017,21 @@ onUnmounted(() => {
 .rydberg-trilobite-btn {
   border-color: rgba(244, 63, 94, 0.4);
   color: #fb7185;
+}
+.pbh-atom-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.majorana-braid-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.fluid-gravity-btn {
+  border-color: rgba(192, 132, 252, 0.4);
+  color: #c084fc;
+}
+.atto-weyl-btn {
+  border-color: rgba(250, 204, 21, 0.4);
+  color: #facc15;
 }
 </style>

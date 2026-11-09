@@ -792,6 +792,18 @@
       <RydbergTrilobitePolaronModal v-if="ui.mode === 'rydberg-trilobite-polaron'" />
     </Transition>
     <Transition name="fade">
+      <PbhAxionGravitationalAtomModal v-if="ui.mode === 'pbh-axion-gravitational-atom'" />
+    </Transition>
+    <Transition name="fade">
+      <MajoranaVortexBraidingModal v-if="ui.mode === 'majorana-vortex-braiding'" />
+    </Transition>
+    <Transition name="fade">
+      <HolographicFluidGravityModal v-if="ui.mode === 'holographic-fluid-gravity'" />
+    </Transition>
+    <Transition name="fade">
+      <AttosecondWeylHhgBerryModal v-if="ui.mode === 'attosecond-weyl-hhg-berry'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1081,6 +1093,10 @@ import PenroseTwistorGravitonModal from '@/components/PenroseTwistorGravitonModa
 import DoubleFieldTheoryFluxModal from '@/components/DoubleFieldTheoryFluxModal.vue'
 import NonAbelianFciWignerModal from '@/components/NonAbelianFciWignerModal.vue'
 import RydbergTrilobitePolaronModal from '@/components/RydbergTrilobitePolaronModal.vue'
+import PbhAxionGravitationalAtomModal from '@/components/PbhAxionGravitationalAtomModal.vue'
+import MajoranaVortexBraidingModal from '@/components/MajoranaVortexBraidingModal.vue'
+import HolographicFluidGravityModal from '@/components/HolographicFluidGravityModal.vue'
+import AttosecondWeylHhgBerryModal from '@/components/AttosecondWeylHhgBerryModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

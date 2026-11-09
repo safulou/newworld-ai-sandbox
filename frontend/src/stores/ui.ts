@@ -263,6 +263,10 @@ export type UIMode =
   | 'double-field-theory-flux'
   | 'non-abelian-fci-wigner'
   | 'rydberg-trilobite-polaron'
+  | 'pbh-axion-gravitational-atom'
+  | 'majorana-vortex-braiding'
+  | 'holographic-fluid-gravity'
+  | 'attosecond-weyl-hhg-berry'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -828,6 +832,18 @@ export const useUIStore = defineStore('ui', () => {
   function openRydbergTrilobitePolaron(): void { mode.value = 'rydberg-trilobite-polaron' }
   function setRydbergTrilobitePolaronModal(open: boolean): void { mode.value = open ? 'rydberg-trilobite-polaron' : 'game' }
   function setRydbergTrilobitePolaronOpen(open: boolean): void { mode.value = open ? 'rydberg-trilobite-polaron' : 'game' }
+  function openPbhAxionGravitationalAtom(): void { mode.value = 'pbh-axion-gravitational-atom' }
+  function setPbhAxionGravitationalAtomModal(open: boolean): void { mode.value = open ? 'pbh-axion-gravitational-atom' : 'game' }
+  function setPbhAxionGravitationalAtomOpen(open: boolean): void { mode.value = open ? 'pbh-axion-gravitational-atom' : 'game' }
+  function openMajoranaVortexBraiding(): void { mode.value = 'majorana-vortex-braiding' }
+  function setMajoranaVortexBraidingModal(open: boolean): void { mode.value = open ? 'majorana-vortex-braiding' : 'game' }
+  function setMajoranaVortexBraidingOpen(open: boolean): void { mode.value = open ? 'majorana-vortex-braiding' : 'game' }
+  function openHolographicFluidGravity(): void { mode.value = 'holographic-fluid-gravity' }
+  function setHolographicFluidGravityModal(open: boolean): void { mode.value = open ? 'holographic-fluid-gravity' : 'game' }
+  function setHolographicFluidGravityOpen(open: boolean): void { mode.value = open ? 'holographic-fluid-gravity' : 'game' }
+  function openAttosecondWeylHhgBerry(): void { mode.value = 'attosecond-weyl-hhg-berry' }
+  function setAttosecondWeylHhgBerryModal(open: boolean): void { mode.value = open ? 'attosecond-weyl-hhg-berry' : 'game' }
+  function setAttosecondWeylHhgBerryOpen(open: boolean): void { mode.value = open ? 'attosecond-weyl-hhg-berry' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -1061,6 +1077,10 @@ export const useUIStore = defineStore('ui', () => {
     openDoubleFieldTheoryFlux, setDoubleFieldTheoryFluxModal, setDoubleFieldTheoryFluxOpen,
     openNonAbelianFciWigner, setNonAbelianFciWignerModal, setNonAbelianFciWignerOpen,
     openRydbergTrilobitePolaron, setRydbergTrilobitePolaronModal, setRydbergTrilobitePolaronOpen,
+    openPbhAxionGravitationalAtom, setPbhAxionGravitationalAtomModal, setPbhAxionGravitationalAtomOpen,
+    openMajoranaVortexBraiding, setMajoranaVortexBraidingModal, setMajoranaVortexBraidingOpen,
+    openHolographicFluidGravity, setHolographicFluidGravityModal, setHolographicFluidGravityOpen,
+    openAttosecondWeylHhgBerry, setAttosecondWeylHhgBerryModal, setAttosecondWeylHhgBerryOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

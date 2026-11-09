@@ -268,6 +268,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕸️` | O(D,D) Double Field Theory T-Duality Doubled Torus, Non-Geometric Q/R-Flux & 3-Cocycle Non-Associative Phase Space |
 | `HUD 💎` | Zero-Field Non-Abelian ν=5/2 Moore-Read Fractional Chern Insulator (FCI) & Anomalous Wigner Hall Crystal |
 | `HUD 🦋` | Ultralong-Range Rydberg Trilobite Dimers, Kilodebye Permanent Electric Dipoles & Many-Body Bose Polaron Spectroscopy |
+| `HUD ⚛️` | Primordial Black Hole Superradiant Axion Cloud, Gravitational Atom |322⟩→|211⟩ GW Transitions & Bosenova Collapse |
+| `HUD 🧬` | Topological p+ip Superfluid Half-Quantum Vortex Lattice, Ivanov Non-Abelian Braiding & Magic-State Universal QC |
+| `HUD 🌊` | Holographic Fluid/Gravity Correspondence, KSS Minimal Viscosity, k^(-5/3) Inverse Cascade & Fractal Black Hole Horizon |
+| `HUD ⚡` | Attosecond Strong-Field High-Harmonic Weyl Semimetal, Berry-Monopole Even Harmonics & Sub-100as Chiral XUV Pulses |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

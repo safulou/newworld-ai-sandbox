@@ -273,6 +273,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'double_field_theory_non_geometric_r_flux', title: '雙場論 T-對偶加倍環面與非幾何 R-磁通大師', description: '在 O(D,D) 協變雙場論加倍環面上透過 T-對偶變換將幾何 H-磁通演化為局部非幾何 R-磁通，觸發纏繞數亞普朗克定位與量子相空間三閉鏈非結合性', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'non_abelian_fci_anomalous_wigner_crystal', title: '零磁場非阿貝爾分數陳絕緣體與霍爾晶體大師', description: '在菱方堆疊莫爾平帶理想量子幾何極限下實現零磁場 ν=5/2 Moore-Read 非阿貝爾分數陳絕緣體，並跨越反常維格納霍爾晶體展現空間晶格與量子化霍爾電導共存', icon: '💎', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'ultralong_range_rydberg_trilobite_polaron', title: '超長程里德堡三葉蟲分子與玻色極化子大師', description: '在玻色-愛因斯坦凝聚體中激發高角動量簡併里德堡三葉蟲分子，實現千倍德布羅意常規雙原子鍵長、千德拜永久電偶極矩與多體聲子包覆里德堡玻色極化子', icon: '🦋', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'pbh_superradiant_axion_gravitational_atom', title: '原初黑洞超輻射軸子雲與引力原子大師', description: '在旋轉克爾原初黑洞能層激發超輕軸子玻色雲超輻射不穩定性，操控 |322⟩→|211⟩ 引力原子能階躍遷單色引力波與軸子自吸引玻色新星內爆', icon: '⚛️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'majorana_superfluid_vortex_braiding_computer', title: '馬約拉納超流渦旋非阿貝爾編織量子計算大師', description: '在二維手性 p+ip 超流體中操控半量子渦旋核心馬約拉納零模，執行伊凡諾夫 π/4 世界線編織與 15-to-1 魔術態蒸餾 π/8 T-閘通用容錯量子計算', icon: '🧬', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'holographic_fluid_gravity_horizon_turbulence', title: '全息流體-引力對偶與碎形黑洞視界湍流大師', description: '基於流體/引力對偶將邊界共形流體科爾莫戈羅夫 k^{-5/3} 逆能量級聯映射為反德西特黑膜碎形事件視界 D_H>2、KSS 極小黏滯度與 Raychaudhuri 剪切熵增', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'attosecond_weyl_high_harmonic_berry_pulse', title: '阿秒強場高次諧波外爾貝里單極光譜大師', description: '以強場少週期雷射驅動外爾半金屬非微擾動態布洛赫振盪，藉由貝里曲率單極子激發正交偶次高次諧波並合成短於 100 阿秒之手性極紫外脈衝', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

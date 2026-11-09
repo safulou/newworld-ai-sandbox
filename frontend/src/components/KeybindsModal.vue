@@ -315,6 +315,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕸️', desc: '開啟 雙場論 T-對偶加倍時空與非幾何 R-磁通非對易幾何模擬器 (Double Field Theory & Non-Geometric Flux)' },
       { combo: 'HUD 💎', desc: '開啟 零磁場非阿貝爾分數陳絕緣體與反常維格納霍爾晶體反應堆 (Non-Abelian FCI & Anomalous Wigner Crystal)' },
       { combo: 'HUD 🦋', desc: '開啟 超長程里德堡三葉蟲分子與玻色極化子多體束縛態光譜儀 (Ultralong-Range Rydberg Trilobite Polaron)' },
+      { combo: 'HUD ⚛️', desc: '開啟 原初黑洞超輻射軸子玻色雲與引力原子躍遷干涉儀 (PBH Superradiant Axion Gravitational Atom)' },
+      { combo: 'HUD 🧬', desc: '開啟 拓撲非阿貝爾馬約拉納超流渦旋晶格與通用拓撲量子編織計算機 (Majorana Superfluid Vortex Braiding)' },
+      { combo: 'HUD 🌊', desc: '開啟 全息流體-引力對偶與反德西特黑洞視界相對論性量子湍流引擎 (Holographic Fluid/Gravity Turbulence)' },
+      { combo: 'HUD ⚡', desc: '開啟 阿秒雷射強場高次諧波外爾半金屬與非微擾貝里曲率動態布洛赫譜儀 (Attosecond Weyl HHG Berry Spectrometer)' },
     ]
   }
 ]
