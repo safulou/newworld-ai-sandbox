@@ -736,6 +736,18 @@
       <button class="hud-btn axion-gw-btn" @click="ui.openAxionStringDomainWallGw" title="宇宙軸子弦-疇壁網路湮滅與納赫茲隨機引力波背景譜儀 (Axion String-Domain Wall GW Background)">
         🌊 軸子弦引力波
       </button>
+      <button class="hud-btn twistor-grav-btn" @click="ui.openPenroseTwistorGraviton" title="彭羅斯非線性引力子扭量空間與自對偶全息散射振幅引擎 (Penrose Twistor Self-Dual Graviton)">
+        🌀 扭量引力子
+      </button>
+      <button class="hud-btn dft-flux-btn" @click="ui.openDoubleFieldTheoryFlux" title="雙場論 T-對偶加倍時空與非幾何 R-磁通非對易幾何模擬器 (Double Field Theory & Non-Geometric Flux)">
+        🕸️ 雙場論磁通
+      </button>
+      <button class="hud-btn nafci-wigner-btn" @click="ui.openNonAbelianFciWigner" title="零磁場非阿貝爾分數陳絕緣體與反常維格納霍爾晶體反應堆 (Non-Abelian FCI & Anomalous Wigner Crystal)">
+        💎 非阿貝爾陳晶
+      </button>
+      <button class="hud-btn rydberg-trilobite-btn" @click="ui.openRydbergTrilobitePolaron" title="超長程里德堡三葉蟲分子與玻色極化子多體束縛態光譜儀 (Ultralong-Range Rydberg Trilobite Polaron)">
+        🦋 里德堡三葉蟲
+      </button>
       <button class="hud-btn weather-btn" @click="cycleWeather" title="切換元宇宙天候 (晴/雨/雪/雷暴/沙暴)">
         {{ weatherIcon }} {{ weatherName }}
       </button>
@@ -1977,5 +1989,21 @@ onUnmounted(() => {
 .axion-gw-btn {
   border-color: rgba(250, 204, 21, 0.4);
   color: #facc15;
+}
+.twistor-grav-btn {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.dft-flux-btn {
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #c084fc;
+}
+.nafci-wigner-btn {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.rydberg-trilobite-btn {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fb7185;
 }
 </style>

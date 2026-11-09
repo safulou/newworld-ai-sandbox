@@ -266,6 +266,10 @@ import { quantumSpinIceMonopolePlasmaEngine } from '@/engine/quantumSpinIceMonop
 import { holographicWormholeComplexityVolumeEngine } from '@/engine/holographicWormholeComplexityVolume'
 import { weylSuperconductorChiralAndreevLaserEngine } from '@/engine/weylSuperconductorChiralAndreevLaser'
 import { axionStringDomainWallGwBackgroundEngine } from '@/engine/axionStringDomainWallGwBackground'
+import { penroseTwistorSelfDualGravitonEngine } from '@/engine/penroseTwistorSelfDualGraviton'
+import { doubleFieldTheoryNonGeometricFluxEngine } from '@/engine/doubleFieldTheoryNonGeometricFlux'
+import { nonAbelianFciAnomalousWignerCrystalEngine } from '@/engine/nonAbelianFciAnomalousWignerCrystal'
+import { ultralongRangeRydbergTrilobitePolaronEngine } from '@/engine/ultralongRangeRydbergTrilobitePolaron'
 
 const emit = defineEmits<{
   (e: 'ready', world: WorldEngine): void
@@ -616,6 +620,10 @@ function loop(): void {
   holographicWormholeComplexityVolumeEngine.update(delta)
   weylSuperconductorChiralAndreevLaserEngine.update(delta)
   axionStringDomainWallGwBackgroundEngine.update(delta)
+  penroseTwistorSelfDualGravitonEngine.update(delta)
+  doubleFieldTheoryNonGeometricFluxEngine.update(delta)
+  nonAbelianFciAnomalousWignerCrystalEngine.update(delta)
+  ultralongRangeRydbergTrilobitePolaronEngine.update(delta)
 
   // Hound Combat Support: if Boss Guardian is active, hounds fire laser at Boss
   const activeBoss = survivalCombat.getBoss()

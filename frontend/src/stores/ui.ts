@@ -259,6 +259,10 @@ export type UIMode =
   | 'holographic-wormhole-complexity'
   | 'weyl-superconductor-andreev'
   | 'axion-string-domain-wall-gw'
+  | 'penrose-twistor-graviton'
+  | 'double-field-theory-flux'
+  | 'non-abelian-fci-wigner'
+  | 'rydberg-trilobite-polaron'
 
 export type TimeOfDay = 'dawn' | 'day' | 'sunset' | 'night'
 
@@ -812,6 +816,18 @@ export const useUIStore = defineStore('ui', () => {
   function openAxionStringDomainWallGw(): void { mode.value = 'axion-string-domain-wall-gw' }
   function setAxionStringDomainWallGwModal(open: boolean): void { mode.value = open ? 'axion-string-domain-wall-gw' : 'game' }
   function setAxionStringDomainWallGwOpen(open: boolean): void { mode.value = open ? 'axion-string-domain-wall-gw' : 'game' }
+  function openPenroseTwistorGraviton(): void { mode.value = 'penrose-twistor-graviton' }
+  function setPenroseTwistorGravitonModal(open: boolean): void { mode.value = open ? 'penrose-twistor-graviton' : 'game' }
+  function setPenroseTwistorGravitonOpen(open: boolean): void { mode.value = open ? 'penrose-twistor-graviton' : 'game' }
+  function openDoubleFieldTheoryFlux(): void { mode.value = 'double-field-theory-flux' }
+  function setDoubleFieldTheoryFluxModal(open: boolean): void { mode.value = open ? 'double-field-theory-flux' : 'game' }
+  function setDoubleFieldTheoryFluxOpen(open: boolean): void { mode.value = open ? 'double-field-theory-flux' : 'game' }
+  function openNonAbelianFciWigner(): void { mode.value = 'non-abelian-fci-wigner' }
+  function setNonAbelianFciWignerModal(open: boolean): void { mode.value = open ? 'non-abelian-fci-wigner' : 'game' }
+  function setNonAbelianFciWignerOpen(open: boolean): void { mode.value = open ? 'non-abelian-fci-wigner' : 'game' }
+  function openRydbergTrilobitePolaron(): void { mode.value = 'rydberg-trilobite-polaron' }
+  function setRydbergTrilobitePolaronModal(open: boolean): void { mode.value = open ? 'rydberg-trilobite-polaron' : 'game' }
+  function setRydbergTrilobitePolaronOpen(open: boolean): void { mode.value = open ? 'rydberg-trilobite-polaron' : 'game' }
   function setWormholeBridgeModal(open: boolean): void { mode.value = open ? 'wormhole-bridge' : 'game' }
   function setGutColliderModal(open: boolean): void { mode.value = open ? 'gut-collider' : 'game' }
   function setTopologicalChernModal(open: boolean): void { mode.value = open ? 'topological-chern' : 'game' }
@@ -1041,6 +1057,10 @@ export const useUIStore = defineStore('ui', () => {
     openHolographicWormholeComplexity, setHolographicWormholeComplexityModal, setHolographicWormholeComplexityOpen,
     openWeylSuperconductorAndreev, setWeylSuperconductorAndreevModal, setWeylSuperconductorAndreevOpen,
     openAxionStringDomainWallGw, setAxionStringDomainWallGwModal, setAxionStringDomainWallGwOpen,
+    openPenroseTwistorGraviton, setPenroseTwistorGravitonModal, setPenroseTwistorGravitonOpen,
+    openDoubleFieldTheoryFlux, setDoubleFieldTheoryFluxModal, setDoubleFieldTheoryFluxOpen,
+    openNonAbelianFciWigner, setNonAbelianFciWignerModal, setNonAbelianFciWignerOpen,
+    openRydbergTrilobitePolaron, setRydbergTrilobitePolaronModal, setRydbergTrilobitePolaronOpen,
     setMode, openHelp, openNPCChat, openBuildProgress, closeOverlay, closeModals: closeOverlay,
     setLocked, setBuildStatus, setProgressData, setSelectedBlock, setTimeOfDay, toggleMinimap,
   }

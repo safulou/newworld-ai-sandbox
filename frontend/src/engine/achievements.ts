@@ -269,6 +269,10 @@ export const INITIAL_ACHIEVEMENTS: Achievement[] = [
   { id: 'holographic_wormhole_complexity_volume_plateau', title: '全息蟲洞複雜度等於體積與嬰兒宇宙高原大師', description: '在雙邊永恆反德西特黑洞中追蹤最大類空超曲面愛因斯坦-羅森橋勞埃德線性複雜度暴脹、蝴蝶效應衝擊波折返延遲與指數時間嬰兒宇宙穿隧高原', icon: '🕳️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'weyl_superconductor_chiral_andreev_laser', title: '拓撲外爾超導手性安德烈夫弧與貝里雷射大師', description: '在時間反演破缺外爾超導體中操控動量空間 Bogoliubov-Weyl 節點對、手性馬約拉納-安德烈夫表面費米弧與貝里曲率偶極非線性受激微波雷射', icon: '⚡', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
   { id: 'axion_string_domain_wall_nanohertz_gw', title: '宇宙軸子弦-疇壁湮滅與納赫茲引力波大師', description: '模擬佩切伊-奎因對稱破缺宇宙軸子弦與 QCD 瞬子疇壁網路張力坍縮，重建脈衝星計時陣列 Hellings-Downs 四極相關納赫茲隨機引力波背景', icon: '🌊', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'penrose_twistor_self_dual_graviton_amplitude', title: '彭羅斯非線性引力子扭量與天球全息大師', description: '透過彭羅斯非線性引力子複數扭量空間 CP³ 全純漸近剪下變換重構自對偶愛因斯坦度規，驗證天球全息 w_{1+∞} 迴路代數與 MHV 霍奇斯散射振幅', icon: '🌀', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'double_field_theory_non_geometric_r_flux', title: '雙場論 T-對偶加倍環面與非幾何 R-磁通大師', description: '在 O(D,D) 協變雙場論加倍環面上透過 T-對偶變換將幾何 H-磁通演化為局部非幾何 R-磁通，觸發纏繞數亞普朗克定位與量子相空間三閉鏈非結合性', icon: '🕸️', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'non_abelian_fci_anomalous_wigner_crystal', title: '零磁場非阿貝爾分數陳絕緣體與霍爾晶體大師', description: '在菱方堆疊莫爾平帶理想量子幾何極限下實現零磁場 ν=5/2 Moore-Read 非阿貝爾分數陳絕緣體，並跨越反常維格納霍爾晶體展現空間晶格與量子化霍爾電導共存', icon: '💎', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
+  { id: 'ultralong_range_rydberg_trilobite_polaron', title: '超長程里德堡三葉蟲分子與玻色極化子大師', description: '在玻色-愛因斯坦凝聚體中激發高角動量簡併里德堡三葉蟲分子，實現千倍德布羅意常規雙原子鍵長、千德拜永久電偶極矩與多體聲子包覆里德堡玻色極化子', icon: '🦋', unlocked: false, progress: 0, maxProgress: 1, category: 'mastery' },
 
 
   // Mastery

@@ -264,6 +264,10 @@ A live demo will be deployed at `https://safulou.github.io/newworld-ai-sandbox/`
 | `HUD 🕳️` | Holographic Wormhole Complexity-Equals-Volume (CV 2.0), Lloyd Growth Ramp, Switchback Delay & Baby-Universe Plateau |
 | `HUD ⚡` | Topological Weyl Superconductor Bogoliubov-Weyl Nodes, Chiral Majorana-Andreev Fermi Arcs & Berry-Dipole Laser |
 | `HUD 🌊` | Cosmic Axion String-Domain Wall Network Annihilation, N_DW Ribbon Collapse & Nano-Hz Hellings-Downs PTA GW Background |
+| `HUD 🌀` | Penrose Non-Linear Graviton Twistor Space CP³, Celestial w_{1+∞} Loop Algebra & Self-Dual Hodges Graviton Amplitude |
+| `HUD 🕸️` | O(D,D) Double Field Theory T-Duality Doubled Torus, Non-Geometric Q/R-Flux & 3-Cocycle Non-Associative Phase Space |
+| `HUD 💎` | Zero-Field Non-Abelian ν=5/2 Moore-Read Fractional Chern Insulator (FCI) & Anomalous Wigner Hall Crystal |
+| `HUD 🦋` | Ultralong-Range Rydberg Trilobite Dimers, Kilodebye Permanent Electric Dipoles & Many-Body Bose Polaron Spectroscopy |
 | `ESC` | Unlock cursor |
 
 ## AI Providers

@@ -780,6 +780,18 @@
       <AxionStringDomainWallGwModal v-if="ui.mode === 'axion-string-domain-wall-gw'" />
     </Transition>
     <Transition name="fade">
+      <PenroseTwistorGravitonModal v-if="ui.mode === 'penrose-twistor-graviton'" />
+    </Transition>
+    <Transition name="fade">
+      <DoubleFieldTheoryFluxModal v-if="ui.mode === 'double-field-theory-flux'" />
+    </Transition>
+    <Transition name="fade">
+      <NonAbelianFciWignerModal v-if="ui.mode === 'non-abelian-fci-wigner'" />
+    </Transition>
+    <Transition name="fade">
+      <RydbergTrilobitePolaronModal v-if="ui.mode === 'rydberg-trilobite-polaron'" />
+    </Transition>
+    <Transition name="fade">
       <ChainExplorer v-if="ui.mode === 'chain'" />
     </Transition>
     <Transition name="fade">
@@ -1065,6 +1077,10 @@ import QuantumSpinIceMonopoleModal from '@/components/QuantumSpinIceMonopoleModa
 import HolographicWormholeComplexityModal from '@/components/HolographicWormholeComplexityModal.vue'
 import WeylSuperconductorAndreevLaserModal from '@/components/WeylSuperconductorAndreevLaserModal.vue'
 import AxionStringDomainWallGwModal from '@/components/AxionStringDomainWallGwModal.vue'
+import PenroseTwistorGravitonModal from '@/components/PenroseTwistorGravitonModal.vue'
+import DoubleFieldTheoryFluxModal from '@/components/DoubleFieldTheoryFluxModal.vue'
+import NonAbelianFciWignerModal from '@/components/NonAbelianFciWignerModal.vue'
+import RydbergTrilobitePolaronModal from '@/components/RydbergTrilobitePolaronModal.vue'
 
 import ChainExplorer from '@/components/ChainExplorer.vue'
 import BuildPrompt from '@/components/BuildPrompt.vue'

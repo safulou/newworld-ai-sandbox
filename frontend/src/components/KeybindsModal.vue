@@ -311,6 +311,10 @@ const keyCategories: KeyCategory[] = [
       { combo: 'HUD 🕳️', desc: '開啟 全息蟲洞複雜度等於體積生長與後佩奇量子洛倫茲橋 (Holographic Wormhole Complexity=Volume)' },
       { combo: 'HUD ⚡', desc: '開啟 拓撲外爾超導體手性安德烈夫束縛態與貝里偶極微波雷射 (Weyl Superconductor Chiral Andreev Laser)' },
       { combo: 'HUD 🌊', desc: '開啟 宇宙軸子弦-疇壁網路湮滅與納赫茲隨機引力波背景譜儀 (Axion String-Domain Wall GW Background)' },
+      { combo: 'HUD 🌀', desc: '開啟 彭羅斯非線性引力子扭量空間與自對偶全息散射振幅引擎 (Penrose Twistor Self-Dual Graviton)' },
+      { combo: 'HUD 🕸️', desc: '開啟 雙場論 T-對偶加倍時空與非幾何 R-磁通非對易幾何模擬器 (Double Field Theory & Non-Geometric Flux)' },
+      { combo: 'HUD 💎', desc: '開啟 零磁場非阿貝爾分數陳絕緣體與反常維格納霍爾晶體反應堆 (Non-Abelian FCI & Anomalous Wigner Crystal)' },
+      { combo: 'HUD 🦋', desc: '開啟 超長程里德堡三葉蟲分子與玻色極化子多體束縛態光譜儀 (Ultralong-Range Rydberg Trilobite Polaron)' },
     ]
   }
 ]
